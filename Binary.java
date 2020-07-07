@@ -46,9 +46,8 @@ public class Binary {
 
 
     /**
-     * This method is used to add two integers. This is
-     * a the simplest form of a class method, just to
-     * show the usage of various javadoc Tags.
+     * This method implemented searching elements in array 
+	 * using classical Binary algorithm.
      * @param arr This is the input array to search method
      * @param search  This is the element for searching
      * @return int This returns position of searched element in array.
