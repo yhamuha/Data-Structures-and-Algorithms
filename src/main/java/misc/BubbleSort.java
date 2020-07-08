@@ -6,12 +6,6 @@ import java.util.Arrays;
  */
 public class BubbleSort {
 
-    /**
-     * ANSI code for particular color also with reset code.
-     */
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_RESET = "\u001B[0m";
-
     public static void main(String[] args) {
         int[] arr = {7, 3, 4, 11, 27, 8};
         System.out.println("input: \n" + Arrays.toString(arr));
@@ -23,7 +17,7 @@ public class BubbleSort {
      * Sorts the array using bubble classic algorithm.
      * @param arr the array to be sorted
      */
-    private static int[] sort(int[] arr) {
+    public static int[] sort(int[] arr) {
         for (int i=0; i<arr.length-1; i++){
             for(int j=arr.length-1; j>i; j--){
                 if (arr[j]<arr[j-1]) {
@@ -35,5 +29,4 @@ public class BubbleSort {
         }
         return arr;
     }
-
 }
