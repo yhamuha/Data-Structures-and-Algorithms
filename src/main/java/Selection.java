@@ -1,4 +1,3 @@
-package misc;
 import java.lang.*;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;

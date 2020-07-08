@@ -1,5 +1,3 @@
-package misc;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -40,7 +38,7 @@ public class Binary {
         long start = System.currentTimeMillis();
         int index = search(arr, search);
         long end = System.currentTimeMillis();
-        System.out.println(ANSI_BLUE + "running time: " + (end-start) + "ms" + ANSI_RESET);
+        System.out.println(ANSI_BLUE + "running time: " + (end-start) + " ms" + ANSI_RESET);
         System.out.println("index of element: " + index);
     }
 
@@ -55,7 +53,7 @@ public class Binary {
     static int search(int[] arr, int search){
         int start = 0;
         int end = arr.length - 1;
-        int i = 0;
+        int i = 1;
         while((start+end)>0) {
             int mid = (start + end) / 2;
             if (arr[mid] == search) {
@@ -67,7 +65,7 @@ public class Binary {
                     end = mid - 1;
                 }
             }
-            System.out.println("Iteration: "+i);
+            System.out.println("Iteration: " + i);
             i++;
         }
         return -1;

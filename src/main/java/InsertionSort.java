@@ -1,5 +1,3 @@
-package misc;
-
 import java.util.Arrays;
 /**
  * <h1>InsertionSort</h1>
