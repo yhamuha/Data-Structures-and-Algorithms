@@ -1,0 +1,269 @@
+<html>
+<head>
+  <style>
+    pre#one.one{
+    border: 1px solid yellow;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    #full-screen-background-image {
+      z-index: -999;
+      min-height: 100%;
+      min-width: 1024px;
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    #wrapper {
+      position: relative;
+      width: 800px;
+      min-height: 400px;
+      margin: 100px auto;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+
+<img alt="full screen background image" src="/../html/img/background.jpg" id="full-screen-background-image" />
+
+<div id="wrapper">
+  <p title ="About W3Schools">W3Schools is a web developer's sissssste.</p>
+  <hr>
+  <div style="text-align: center">
+    <img height="100" width="100" src="..\html\img\images.png" alt="w3schools Logo">
+  </div>
+  <hr>
+
+  <p style="  background-color: yellow; text-align:center; font-family: times;
+            font-size:50px; font-style:italic;">font style example
+  </p>
+
+  <a href="default.html" title="Open Default Page" style="text-decoration: none" target="_blank">
+
+    <!--  default html-->
+    <img src="../html/img/default.png" width="50" height="50" style="float:right">
+  </a>
+
+  <hr>
+  <p> This is <mark>text_marked </mark> text with <em style="color:green; font-size:25px;">emphasize</em> and continue output the text</p>
+
+  <hr>
+  <p> HTML is <mark>FUN4</mark> to learn! </p>
+
+  <table style="width: 300px">
+    <caption>Names</caption>
+    <tr>
+      <th rowspan="2">Name</th>
+      <th>Age</th>
+    </tr>
+
+    <ol type="I">
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+    </ol>
+
+    <ul style="list-style-type:circle">
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+
+    <dl>
+      <dt>Coffee</dt>
+
+      <dd>
+        - black hot drink
+      </dd>
+
+      <dt>Milk</dt>
+
+      <dd>
+        - white cold drink
+      </dd>
+
+    </dl>
+
+    <tr>
+      <td>Jill Smith</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve Jackson</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Mr Smith</td>
+      <td>34</td>
+    </tr>
+
+  </table>
+
+  <pre id="one" class="one">
+  My <strong>Bonnie</strong> lies over the ocean.
+
+  My <em>Bonnie</em> lies over the sea.
+
+  My <strong>Bonnie</strong> lies over
+          the ocean.
+
+  Oh, bring back my Bonnie to me.
+</pre>
+
+
+  <p>
+    <span style="font-size: 40px">H <sub>2</sub>O</span>
+    is the scientific term for water. </p>
+
+
+  <hr>
+
+  <p> My favorite color is <q>blue</q> red. </p>
+
+  <hr>
+
+  <blockquote cite ="http://www.worldwildlife.org/who/index.html">
+    For 50 years, <em>WWF</em> has been protecting the future of nature.
+    The world's leading conservation organization,
+    WWF works in 100 countries and is supported
+    by 1.2 million members in the United States
+    and close to 5 million globally.
+  </blockquote>
+  <p><u>Stress emphasized text goes here</u> but not here</p>
+  <p> The following continue the regular (no blockquote) text</p>
+  <hr>
+
+  <bdo dir="ltr"> This is the text with direction </bdo>
+
+  <hr>
+
+  <p> The <abbr title= "World Health Organization"> WHO</abbr > was founded in 1948. </p>
+
+  <hr>
+  <h1>This is a heading</h1>
+  <!--
+   This is a comment
+  -->
+
+  <p>This is a paragraph and we know about it and it is a true +.</p>
+
+  <hr>
+
+  <p> this is the test really yes</p>
+  <p>A simple math equation:
+    <var>
+      x
+    </var>
+    = 3 + 2; </p>
+
+  <hr>
+  <form>
+    <input type="button" value="OK">
+  </form>
+  <hr>
+
+  <form>
+    <input type="radio" name="gender"
+           value="male"> Male
+    <input type="radio" name="gender"
+           value="female"> Female
+  </form>
+
+  <form
+    action="/action_page.php" method="POST">
+    Name QQQQQQQQQQQQQQQQQ: <input type="text" readonly name="name" maxlength="4">
+    <input type="submit">
+  </form>
+
+  <form action="/action_page.php">
+    <select name="cars">
+    </select>
+  </form>
+
+  <form action="/action_page.php">
+    <select name="cars">
+      <option value="Volvo">Volvo</option>
+      <option value="Ford">Ford</option>
+    </select>
+  </form>
+
+  <form action="/action_page.php">
+    <textarea name="note"></textarea>
+  </form>
+
+  <form action="/action_page.php">
+    <input type="text" name="username">
+    <input type="submit" value="Submit Form">
+  </form>
+
+  <form action="/action_page.php">
+    Favorite color:
+    Blue
+    <input value="blue"
+           type="radio"
+
+           name="color">
+    Red
+    <input value="red"
+           type="radio"
+
+           name="color">
+    <input type="submit" disabled>
+  </form>
+
+  <form action="/action_page.php">
+    <button>Click Me</button>
+
+  </form>
+
+  <form action="/action_page.php">
+    <input type="
+number
+"
+           min
+             ="1"
+           max
+             ="5">
+  </form>
+
+  <p>Code example:</p>
+
+  <pre>
+<code>var person = {
+  firstName:"John",
+  lastName:"Doe"
+}</code>
+</pre>
+
+
+
+  <p>Code example:
+    <code>
+      var person;
+    </code>
+  </p>
+
+  <p id="demo">Hi.</p>
+
+</div>
+
+
+<script>
+  document.
+  getElementById
+  ("demo").innerHTML = "Hello World!";
+</script>
+</body>
+</html>

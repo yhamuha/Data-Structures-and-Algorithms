@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+  p, h1 {
+    border: 10px solid green;
+    /*margin: 10px auto 10px auto;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    height: 80px;
+    width: 40%;
+    text-align: justify;
+  }
+  div#element {
+    border: 10px solid green;
+    margin: 10px auto 10px auto;
+    padding: 30px;
+    height: 50%;
+    width: 40%;
+    text-align: justify;
+    font-weight: normal;
+    /*display: none;*/
+    /*visibility: hidden;*/
+
+  }
+  div {
+    width: 40%;
+    text-transform: uppercase;
+    margin: 10px auto 10px auto;
+    color:black;
+    font-size: 16px;
+    font-family: "Verdana";
+    font-weight: bold;
+    padding: 30px;
+    border: 10px solid green;
+    text-align: center;
+  }
+  p#ref, a {
+    font-weight: bold;
+    color: darkred;
+    height: 50%;
+    text-align: center;
+    font: 30px verdana;
+    text-transform: uppercase;
+  }
+  a:link {
+    color: blue;
+  }
+  a:hover {
+    color: darkred;
+  }
+  #full-screen-background-image {
+    z-index:-999;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+  }
+  a{
+    text-decoration: none;
+    height: 50%;
+  }
+  h1#cap {
+    text-transform: uppercase;
+  }
+  p#indent {
+    text-indent: 30px;
+  }
+  body {
+    font-size: 16px;
+  }
+  ul {
+    list-style: circle inside url('../html/img/5px.png');
+  }
+
+  table, th, td {
+    border: 2px solid green;
+    border-collapse: collapse;
+    width: 40%;
+    margin: 10px auto 10px auto;
+  }
+  td {
+    text-align: center;
+  }
+  th {
+    background-color: lightgray;
+  }
+
+  ul.generic-list {
+    border-collapse: collapse;
+    width: 40%;
+    margin: 10px auto 10px auto;
+    font-size: 12px;
+  }
+  li {
+    display: inline;
+  }
+
+  p#asBlock strong {
+    display: block;
+    position: absolute;
+    right: 0px;
+  }
+  #fixedH1 {
+    /*position: fixed;*/
+    /*!*position: relative;*! differences is about float elements*/
+    /*position: absolute;*/
+    /*z-index: -1;*/ /*layers*/
+    top: 200px;
+    left: 50px;
+    color: red;
+  }
+   /* div p       all child of div
+    div > p     immediate child of div
+    div + p     sibling
+    div ~ p     siblings
+    */
+
+  div.scrollBar {
+    background-color: #eee;
+    width: 200px;
+    height: 70px;
+    border: 1px dotted black;
+    /*overflow: scroll;*/
+    overflow-x:scroll;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+
+    width: 40%;
+    text-transform: uppercase;
+    margin: 10px auto 10px auto;
+    color:black;
+    font-size: 16px;
+    font-family: "Verdana";
+    font-weight: bold;
+    padding: 30px;
+    border: 10px solid green;
+    text-align: center;
+  }
+</style>
+<body>
+
+
+<h1 id="cap">This is a Heading</h1>
+
+<h1 id="fixedH1"> This is fixed element</h1>
+
+<div id="element">
+    <ul>
+      <li>  Lorem ipsum dolor sit amet.</li>
+      <li>  Lorem ipsum dolor sit amet. </li>
+      <li>  Lorem ipsum dolor sit amet. </li>
+      <li>  Lorem ipsum dolor sit amet. </li>
+    </ul>
+</div>
+
+<p id="elements">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet, esse labore officiis quasi quibusdam repellat sunt. A ab aliquam asperiores dignissimos error excepturi inventore laudantium mollitia praesentium, temporibus voluptatem!This is a paragraph 5</p>
+
+<div class="scrollBar">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum error harum non quae ratione?
+  Aliquam assumenda atque blanditiis deserunt dicta error exercitationem, hic labore laborum molestiae necessitatibus
+  officiis omnis, perferendis rerum, soluta! Accusamus accusantium adipisci alias aperiam architecto blanditiis
+  consequuntur debitis eius et fugit id illo illum incidunt inventore ipsam, iste itaque laborum magni maiores
+  necessitatibus, omnis pariatur quaerat quo, quos repellat sint voluptatum. Architecto dignissimos ex nisi odit quia.
+  Aspernatur at consequatur ipsa laudantium necessitatibus provident quam rem similique suscipit tempore. Deserunt
+  distinctio doloribus dolorum eveniet fuga iure quam ratione, reprehenderit! Ab accusamus aliquam amet assumenda atque
+  consequuntur cumque dicta doloribus expedita hic id illum incidunt, laboriosam maxime molestias nisi non nostrum
+  officiis quaerat quisquam quo quos repellendus suscipit tenetur unde vel veniam. A ad consequuntur dignissimos dolores
+  ducimus, illo inventore iure, magnam necessitatibus nobis reprehenderit sint, sit totam! A accusantium ad amet
+  asperiores atque cum cumque deleniti doloremque doloribus eum facilis fuga harum illum incidunt ipsa ipsam iure maxime
+  minus molestias nemo nisi non pariatur quasi quod reiciendis repellat sint, sit tempora vitae voluptate? Accusantium
+  ducimus, laboriosam maiores nihil non sed vero! Enim facere optio sapiente voluptatum! A accusamus atque cumque
+  excepturi illum inventore ipsum nobis totam, ut!
+</div>
+<p id="ref"><a href="css_text.asp">CSS text tutorial</a></p>
+
+<ul class="generic-list">
+  <li class="item">Lorem ipsum dolor sit amet.</li>
+  <li class="item">Ab aliquid eius quis sit.</li>
+  <li class="item">At beatae deserunt perferendis voluptate.</li>
+  <li class="item">Dicta id nobis velit veritatis!</li>
+</ul>
+
+<ul class="generic-list">
+  <li class="item">Lorem ipsum dolor sit amet, consectetur g elit. </li>
+  <li class="item">Commodi cum doloribus fugiat, laborum neerferendire.</li>
+  <li class="item">Autem corporis dolore eius est fuga iusente.</li>
+  <li class="item">Culpa cupiditate dicta expedita minus nesciam?</li>
+</ul>
+
+
+<p id="asBlock"> Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit. Culpa deleniti odit reiciendis.</p>
+
+<img src="/../html/img/background.jpg" id="full-screen-background-image" />
+
+<table>
+  <caption>Names</caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>Mr Smith</td>
+    <td>34</td>
+  </tr>
+</table>
+
+</body>
+</html>
