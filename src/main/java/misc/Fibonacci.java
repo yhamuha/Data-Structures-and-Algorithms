@@ -18,6 +18,7 @@ public class Fibonacci {
         System.out.println(fibNaive(10));
         System.out.println(fibEffective(10));
         System.out.println(fibEffective(100));
+
     }
 
     /**
@@ -60,3 +61,6 @@ public class Fibonacci {
         return arr[n];
     }
 }
+
+
+
