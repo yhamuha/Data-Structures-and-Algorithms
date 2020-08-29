@@ -31,10 +31,12 @@ public class SimplyTests {
 
         // infinity loop !
         // we couldn't reach 1.9f
+
         // SimplyTests.floatTest();
 
         // will have heavy load by RAM
         // Strings in java immutable
+
         //SimplyTests.stringTest();
 
 
