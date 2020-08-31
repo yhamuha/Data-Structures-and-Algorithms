@@ -18,7 +18,7 @@ public class FindMaxBinaryRecursively {
         int rightMax = findMaxBinary(arr, middle+1, end);
         return leftMax > rightMax ? leftMax : rightMax;
     }
-    
+
 
     static int findMaxBinary (int[] arr) {
         return findMaxBinary(arr, 0, arr.length-1);
