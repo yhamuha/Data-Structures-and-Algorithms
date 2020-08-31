@@ -20,6 +20,7 @@ public class FindMaxBinaryRecursively {
     }
 
 
+    // function wrapper for coders
     static int findMaxBinary (int[] arr) {
         return findMaxBinary(arr, 0, arr.length-1);
     }
