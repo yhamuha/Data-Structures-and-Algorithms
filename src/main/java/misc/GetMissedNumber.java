@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class GetMissedNumber {
 
-    int getMissedNumber(String path, int start, int end) throws FileNotFoundException {
+    static int getMissedNumber(String path, int start, int end) throws FileNotFoundException {
 
         BitSet bitSet = new BitSet(end - start + 1);
         Scanner in = new Scanner(new FileReader(path));
@@ -25,4 +25,11 @@ public class GetMissedNumber {
         return -1;
     }
 
+    public static void main(String[] args) {
+        try {
+            System.out.println(getMissedNumber("C:/tmp/numbers.txt", 3, 8));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
