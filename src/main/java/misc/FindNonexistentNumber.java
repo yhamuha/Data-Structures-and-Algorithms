@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 
 public class FindNonexistentNumber {
-    private BitSet bitSet;
 
     int[] getFilledCounters(String path) throws FileNotFoundException {
 
@@ -30,7 +29,7 @@ public class FindNonexistentNumber {
     BitSet getBitVector(String path, int start, int end) throws FileNotFoundException {
 
         // space complexity: 125 KB
-        BitSet bitsSet = new BitSet(1_000_000);
+        BitSet bitSet = new BitSet(1_000_000);
 
         Scanner in = new Scanner(new FileReader(path));
 
