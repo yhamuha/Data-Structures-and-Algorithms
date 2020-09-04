@@ -61,6 +61,29 @@ public class FindNonexistentNumber {
         return -1;
     }
 
+
+    // General time complexity O(N)
+    // General space complexity 129 KB = 125.9 KiB
+
+    int findFirstMissedNumber(String path) throws FileNotFoundException {
+        int rangeSize = 1_000_000;
+        // time O(N)
+        // space 4 KB
+        int[] counters = getFilledCounters(path);
+        // O(1)
+        int rangeIndex = getMissingNumberRangeIndex(counters);
+        if (rangeIndex == -1) return -1;
+
+        int start = rangeIndex * rangeSize;
+        int end = start + rangeSize -1;
+
+        // time O(N)
+        // space 125 KB
+        BitSet bitSet = getBitVector(path, start, end);
+        // O(1)
+        return getMissingNumber(bitSet, start);
+    }
+
 }
 
 
