@@ -29,9 +29,12 @@ public class FindNonexistentNumber {
 
     BitSet getBitVector(String path, int start, int end) throws FileNotFoundException {
 
+        // space complexity: 125 KB
         BitSet bitsSet = new BitSet(1_000_000);
+
         Scanner in = new Scanner(new FileReader(path));
 
+        // time complexity: O(N)
         while (in.hasNextInt()) {
             int number = in.nextInt();
             if (number >= start && number <= end) {
@@ -43,6 +46,21 @@ public class FindNonexistentNumber {
         return bitSet;
 
     }
+
+    // space complexity O(1)
+    int getMissingNumberRangeIndex(int[] counters) {
+        for (int i=0; i<counters.length; i++)
+            if (counters[i] < 1_000_000) return i;
+            return -1;
+    }
+
+    // space complexity .. takes a long time but .. O(1)
+    int getMissingNumber(BitSet bitSet, int start) {
+        for(int i=0; i< bitSet.size(); i++)
+            if (!bitSet.get(i)) return i + start;
+        return -1;
+    }
+
 }
 
 
