@@ -1,0 +1,37 @@
+package misc;
+
+
+public class FindPreviousNumber {
+
+    int rightBit(int num) {
+        return 1 & num;
+    }
+
+    // time complexity O(N)
+    // constant int = 32 bits in worst case iteration
+
+    int[] getTrailingBitsCount(int num) {
+        if (num<=0) return null;
+        // quantity of zeroes
+        int trailingZeroesCount = 0;
+        // quantity of ones
+        int trailingOnesCount = 0;
+
+        while (rightBit(num) == 0) {
+            trailingZeroesCount++;
+            num = num >>> 1;
+        }
+
+        // check the end cases
+        if (num ==0) return null;
+
+        while (rightBit(num) ==0) {
+            trailingZeroesCount++;
+            num = num >>> 1;
+        }
+        return new int[] {
+                trailingZeroesCount,
+                trailingOnesCount
+        };
+    }
+}
