@@ -34,4 +34,16 @@ public class FindPreviousNumber {
                 trailingOnesCount
         };
     }
+
+    // time O(1)
+    int clearRightBits (int num, int count) {
+        return(-1 << count) & num;
+    }
+
+    // time O(N)
+    int setBits(int num, int start, int count) {
+        return (((1<< count) - 1) << start) | num;
+    }
+
+
 }
