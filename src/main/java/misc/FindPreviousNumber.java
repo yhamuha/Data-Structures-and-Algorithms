@@ -7,7 +7,7 @@ public class FindPreviousNumber {
         return 1 & num;
     }
 
-    // time complexity O(N)
+    // time complexity O(1)
     // constant int = 32 bits in worst case iteration
 
     int[] getTrailingBitsCount(int num) {
@@ -35,14 +35,30 @@ public class FindPreviousNumber {
         };
     }
 
-    // time O(1)
+    // time O(1) instantly
     int clearRightBits (int num, int count) {
         return(-1 << count) & num;
     }
 
-    // time O(N)
+    // time O(1) instantly
     int setBits(int num, int start, int count) {
         return (((1<< count) - 1) << start) | num;
+    }
+
+    // driver method
+    // time O(1)
+    int getClosestLowerNumber(int num) {
+        int[] zeroesAndOnesCount = getTrailingBitsCount(num);
+        if (zeroesAndOnesCount == null) return -1;
+
+        int trailingZeroesCount = zeroesAndOnesCount[0];
+        int trailingOnesCount = zeroesAndOnesCount[1];
+
+        int bitsToClearCount = trailingZeroesCount + trailingOnesCount + 1;
+        num = clearRightBits(num, bitsToClearCount);
+        num = setBits(num, trailingZeroesCount - 1,trailingOnesCount +1);
+
+        return num;
     }
 
 
