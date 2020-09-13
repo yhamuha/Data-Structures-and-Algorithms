@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StringAndBuffered {
@@ -131,6 +132,37 @@ public class StringAndBuffered {
 //        } catch (Exception e) {
 //            System.out.println("String doesn't have this symbol");
 //        }
+        
+        String str = "just a string";
+        int index = 0;
+        char[] charArray = new char[20];
+
+//        for (index=0; index<str.length();index++) {
+//            System.out.println(str.substring(index, index + 1));
+//        }
+
+
+        charArray = str.toCharArray();
+        System.out.println("given string: " + Arrays.toString(charArray));
+
+        int sCount = 1;
+
+        for (int indexOfCharArray=0; indexOfCharArray<charArray.length; indexOfCharArray++) {
+
+            if (charArray[indexOfCharArray] == 's') {
+                System.out.println("symbol s detected " + sCount + "st time");
+                sCount++;
+            }
+        }
+        System.out.println("quantity of 's' in the array: " + (sCount-1));
+
+//        ===============================================================
+//        output:
+//        given string: [j, u, s, t,  , a,  , s, t, r, i, n, g]
+//        symbol s detected 1st time
+//        symbol s detected 2st time
+//        quantity of 's' in the array: 2
+
 
     }
 }
