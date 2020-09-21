@@ -10,6 +10,7 @@ class BinaryToDecimal {
         int binNum, d, s = 0, power = 0;
         System.out.print("Binary number: ");
         binNum = sc.nextInt();
+
         while (binNum != 0) {
             d = binNum % 10;
             s += d * (int) Math.pow(2, power++);

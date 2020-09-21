@@ -10,5 +10,9 @@ public class CollectionsFramTest {
 
         byte five = 0b101;
         assertEquals((byte)5, five);
+
+
+
+
     }
 }
