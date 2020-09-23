@@ -34,9 +34,9 @@ public class Miscellaneous {
 
     // parse given number to Integer array
     // input:
-    // decNumber = 24
+    //          decNumber = 24
     // output:
-    // ArrayList = {2, 4}
+    //          ArrayList = {2, 4}
     static List<Integer> parseIntegerToArray (Integer decNumber) {
         int temp = decNumber;
         List<Integer> arrayOfDigits = new ArrayList<Integer>();
