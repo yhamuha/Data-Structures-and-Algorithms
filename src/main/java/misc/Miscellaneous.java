@@ -1,9 +1,15 @@
 package misc;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Miscellaneous {
     public static void main(String[] args) {
 
         AddValuesToString();
+
+        System.out.println(parseIntegerToArray(24));
 
     }
 
@@ -24,5 +30,21 @@ public class Miscellaneous {
             }
         }
         System.out.println(string);
+    }
+
+    // parse given number to Integer array
+    // input:
+    // decNumber = 24
+    // output:
+    // ArrayList = {2, 4}
+    static List<Integer> parseIntegerToArray (Integer decNumber) {
+        int temp = decNumber;
+        List<Integer> arrayOfDigits = new ArrayList<Integer>();
+        do {
+            arrayOfDigits.add(temp % 10);
+            temp /= 10;
+        } while (temp > 0);
+        Collections.reverse(arrayOfDigits);
+        return arrayOfDigits;
     }
 }
