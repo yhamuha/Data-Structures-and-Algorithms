@@ -3,7 +3,6 @@ package misc;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class Miscellaneous {
     public static void main(String[] args) {
@@ -19,6 +18,8 @@ public class Miscellaneous {
         System.out.println(printBaseAndExponent(2,3));
 
         drawRect();
+
+        printMultiplicationEvenAndOdd();
 
     }
 
@@ -125,5 +126,21 @@ public class Miscellaneous {
             }
             System.out.println();
         }
+    }
+
+    // multiplication for 100 odd and even values
+    static void printMultiplicationEvenAndOdd() {
+        int even=0, odd=1;
+
+        // for 100 odd
+        for (int i=1;i<=100;i+=2) {
+            odd = odd*i;
+        }
+
+        // for 100 even
+        for(int i=2;i<=100; i+=2){
+            even= even+i;
+        }
+        System.out.println("Even: " + even + "   Odd: " + odd);
     }
 }
