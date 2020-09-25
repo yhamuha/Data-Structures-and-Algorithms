@@ -1,6 +1,7 @@
 package misc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,6 +21,8 @@ public class Miscellaneous {
         drawRect();
 
         printMultiplicationEvenAndOdd();
+
+        System.out.println(Arrays.toString(intToDigitsArray(12435)));
 
     }
 
@@ -142,5 +145,10 @@ public class Miscellaneous {
             even= even+i;
         }
         System.out.println("Even: " + even + "   Odd: " + odd);
+    }
+
+    static int[] intToDigitsArray ( int num) {
+       int[]digits = Integer.toString(num).chars().map(c -> c-'0').toArray();
+       return digits;
     }
 }
