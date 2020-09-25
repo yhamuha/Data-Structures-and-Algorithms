@@ -11,6 +11,8 @@ public class Miscellaneous {
 
         System.out.println(parseIntegerToArray(24));
 
+        byteShift();
+
     }
 
     // check the array elements and add to string some value
@@ -46,5 +48,14 @@ public class Miscellaneous {
         } while (temp > 0);
         Collections.reverse(arrayOfDigits);
         return arrayOfDigits;
+    }
+
+    static void byteShift() {
+        byte b = 100;
+        // ASL = *2
+        //
+        System.out.println(b << 1);
+        // ASR = /2
+        System.out.println(b >> 1);
     }
 }
