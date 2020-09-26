@@ -15,6 +15,10 @@ public class BitShifts {
 
         LSRfor32bit();
 
+        int i = 3;
+        System.out.println( getHighestBit(i) + " " + getLowestBit(i));
+
+        lowToHigh(i);
     }
 
     // array for bit vector
@@ -52,4 +56,25 @@ public class BitShifts {
         System.out.println(resultForLSR32);
         System.out.println(resultForLSR31plusLSR1);
     }
+
+    // get MSB
+    static int getHighestBit (int data) {
+        return data >> 31;
+    }
+
+    // get LSB
+    static int getLowestBit (int data) {
+        return data & 1;
+    }
+
+    // lowToHighTraversal bit by bit on int
+    static void lowToHigh(int bits) {
+        int data = bits;
+        for (int i=0; i< 32; i++) {
+            int bit = getLowestBit(data);
+            System.out.print(bit);
+            data = data >> 1;
+        }
+    }
+
 }
