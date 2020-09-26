@@ -45,8 +45,11 @@ public class BitShifts {
     static void LSRfor32bit (){
         int x = 0b10000000_00000000_00000000_00000000;
         int resultForLSR31 = (x >>> 31);
+        // but we ca'nt do that using >> 32:
+        int resultForLSR32 = (x >>> 32);
         int resultForLSR31plusLSR1 = (x >>> 31) >>> 1;
         System.out.println(resultForLSR31);
+        System.out.println(resultForLSR32);
         System.out.println(resultForLSR31plusLSR1);
     }
 }
