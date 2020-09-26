@@ -6,18 +6,15 @@ public class BitShifts {
 
     // driver method
     public static void main(String[] args) {
-
         /*try {
             System.out.println(Arrays.toString(initBitVector(16)));
         } catch (Exception e) {
             e.printStackTrace();
         }*/
-
-        LSRfor32bit();
-
-        int i = 3;
+        // LSRfor32bit();
+        int i = 20;
         System.out.println( getHighestBit(i) + " " + getLowestBit(i));
-
+        // traversal
         lowToHigh(i);
     }
 
@@ -70,7 +67,9 @@ public class BitShifts {
     // lowToHighTraversal bit by bit on int
     static void lowToHigh(int bits) {
         int data = bits;
-        for (int i=0; i< 32; i++) {
+        /*for (int i=0; i< 32; i++)*/
+        // we can decrease not necessaries cpu's cycles
+        while (data !=0) {
             int bit = getLowestBit(data);
             System.out.print(bit);
             data = data >> 1;
