@@ -1,5 +1,7 @@
 package misc;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.Arrays;
 
 public class BitShifts {
@@ -13,9 +15,19 @@ public class BitShifts {
         }*/
         // LSRfor32bit();
         int i = 20;
-        System.out.println( getHighestBit(i) + " " + getLowestBit(i));
+        System.out.println(getHighestBit(i) + " " + getLowestBit(i));
         // traversal
         lowToHigh(i);
+
+
+        // how to implement Math.ceil inside JDK
+        Math.ceil(100.0);
+        System.out.println();
+
+        // 2^6
+        System.out.println((int)Math.pow(2,6));
+
+
     }
 
     // array for bit vector
@@ -75,5 +87,7 @@ public class BitShifts {
             data = data >> 1;
         }
     }
+
+
 
 }
