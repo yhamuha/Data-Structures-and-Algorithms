@@ -1,6 +1,12 @@
 package misc;
 
+import com.sun.corba.se.impl.presentation.rmi.ExceptionHandlerImpl;
+
+import java.util.Arrays;
+
 public class BitShifts {
+
+    public static long VECTOR_SIZE = 0;
 
     // driver method
     public static void main(String[] args) throws Exception {
@@ -23,12 +29,42 @@ public class BitShifts {
         // 2^6
         // bitwiseSandbox();
 
-        System.out.println(inverseBits((byte) 15, 2));
-        System.out.println(setBits((byte) 16, 2));
-        System.out.println(unsetBits((byte) 15, 2));
-        System.out.println(unsetLSBits((byte) 15, 6));
-        System.out.println(unsetMSBits((byte) 15, 2));
-        System.out.println(getBit((byte) 15, 3));
+//        System.out.println(inverseBits((byte) 15, 2));
+//        System.out.println(setBits((byte) 16, 2));
+//        System.out.println(unsetBits((byte) 15, 2));
+//        System.out.println(unsetLSBits((byte) 15, 6));
+//        System.out.println(unsetMSBits((byte) 15, 2));
+//        System.out.println(getBit((byte) 85, 2));
+
+//        int bitsCount = 10;
+//        boolean[] bitVector = new boolean[bitsCount];
+//
+//        for(int evenIndex=0; evenIndex<10; evenIndex+=2) {
+//            bitVector[evenIndex] = true;
+//        }
+//        for(int oddIndex=1; oddIndex<10; oddIndex+=2) {
+//            bitVector[oddIndex] = false;
+//        }
+
+//        System.out.println("19 % 64: " + 19 % 64);
+//        System.out.println("19 / 64: " + 19 / 64);
+//
+//        System.out.println(Arrays.toString(bitVector));
+
+
+        /*int data = 0b10000000_00000000_00000000_00000000;*/
+        /*System.out.println(getHighestBit(data));
+        System.out.println(getLowestBit(data));*/
+
+        long[] bitVector = initBitVector(10);
+        setBitForBitVector(bitVector, 3);
+        unsetBitForBitVector(bitVector,4);
+        boolean a = getBitForBitVector(bitVector, 3);
+        boolean b = getBitForBitVector(bitVector, 4);
+        boolean c = getBitForBitVector(bitVector, 17);
+
+//        System.out.println(String.format("%32s",
+//                Long.toBinaryString(bitVector[0])).replaceAll(" ", "0"));
 
 
 
@@ -51,6 +87,59 @@ public class BitShifts {
     }
 
 
+    // getBit
+    static boolean getBitForBitVector(long[] bitVector, long bitIndex) throws Exception {
+        validateRange(bitVector, bitIndex);
+
+        int bucketIndex = (int) (bitIndex >> 6);
+        long indexInBucket = bitIndex % 64;
+
+        return ((bitVector[bucketIndex] >>> indexInBucket) & 1) == 1;
+    }
+
+    // unsetBit for bitVector
+    static void unsetBitForBitVector (long[] bitVector, long bitIndex) throws Exception {
+        validateRange(bitVector, bitIndex);
+
+        int bucketIndex = (int) (bitIndex >> 6);
+        long indexInBucket = bitIndex % 64;
+
+        bitVector[bucketIndex] &= ~(1L << indexInBucket);
+    }
+
+    // setBit for bitVector
+    static void setBitForBitVector (long[] bitVector, long bitIndex) throws Exception {
+        validateRange(bitVector, bitIndex);
+        //
+        int bucketIndex = (int) (bitIndex >> 6);
+        long indexInBucket = bitIndex % 64;
+
+        bitVector[bucketIndex] |= 1L << indexInBucket;
+    }
+
+
+
+    // array for bit vector
+    static long[] initBitVector(long bitsCount) throws Exception {
+
+        // check for type overflow
+        if (bitsCount < 0 || bitsCount > 137_438_953_408L)
+            throw new Exception("bits should be from 1 to 137_438_953_408");
+
+        VECTOR_SIZE = bitsCount;
+
+        int bucketCount = (int) (((bitsCount - 1) >> 6) + 1);
+
+        return new long[bucketCount];
+    }
+
+    // validate bitVector
+    static void validateRange (long[] bitVector, long bitIndex) throws Exception {
+        long bitLastIndex = VECTOR_SIZE - 1;
+
+        if( bitIndex < 0 | bitIndex > bitLastIndex)
+            throw new Exception (" bitIndex should be in range from 0 to " + bitLastIndex);
+    }
 
     // (data>>>i)&1u
     static byte getBit(byte data, int i) {
@@ -114,21 +203,6 @@ public class BitShifts {
         return (byte) ((byte) n >> count);
     }
 
-    // array for bit vector
-    static long[] initBitVector(long bitsCount) throws Exception {
-
-        // check for type overflow
-        if (bitsCount < 0 || bitsCount > 137_438_953_408L)
-            throw new Exception("bits should be from 1 to 137_438_953_408");
-
-        long VECTOR_SIZE = bitsCount;
-
-        int bucketCount = (int) (((bitsCount - 1) >> 6) + 1);
-
-        return new long[bucketCount];
-    }
-
-
     // ASR(L) doesn't work with float and double types
     static void floatDoubleShiftTest () {
         float x = 1f;
@@ -153,7 +227,7 @@ public class BitShifts {
 
     // get MSB
     static int getHighestBit (int data) {
-        return data >> 31;
+        return data >>> 31;
     }
 
     // get LSB
