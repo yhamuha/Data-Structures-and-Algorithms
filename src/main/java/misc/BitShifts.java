@@ -102,19 +102,20 @@ public class BitShifts {
         validateRange(bitVector, bitIndex);
 
         int bucketIndex = (int) (bitIndex >> 6);
-        long indexInBucket = bitIndex % 64;
 
-        bitVector[bucketIndex] &= ~(1L << indexInBucket);
+        //! explicit the same of 1L << (bitIndex % 64)
+        bitVector[bucketIndex] &= ~(1L << bitIndex);
     }
 
     // setBit for bitVector
     static void setBitForBitVector (long[] bitVector, long bitIndex) throws Exception {
         validateRange(bitVector, bitIndex);
-        //
+
         int bucketIndex = (int) (bitIndex >> 6);
         long indexInBucket = bitIndex % 64;
 
-        bitVector[bucketIndex] |= 1L << indexInBucket;
+        // ! explicit the same of 1L << (bitIndex % 64)
+        bitVector[bucketIndex] |= 1L << bitIndex;
     }
 
 
