@@ -1,6 +1,6 @@
 package misc;
 
-public class countBits {
+public class CountBits {
 
     // 11101   a
     // 01111   b
