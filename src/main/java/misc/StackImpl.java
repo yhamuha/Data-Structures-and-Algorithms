@@ -6,6 +6,7 @@ public class StackImpl {
    // stack size
    int STACK_SIZE = 3;
    int[] STACK = new int[STACK_SIZE];
+   int stackSize = 0;
 
    // push
    void push(int value) throws Exception {
@@ -15,6 +16,7 @@ public class StackImpl {
        STACK_TOP += 1;
        // add value to current STACK_TOP
        STACK[STACK_TOP] = value;
+       stackSize += 1;
    }
 
    // pop
@@ -25,6 +27,7 @@ public class StackImpl {
        int value = STACK[STACK_TOP];
        // decrease STACK_TOP pointer
        STACK_TOP -= 1;
+       stackSize -= 1;
        return value;
    }
 
@@ -38,5 +41,10 @@ public class StackImpl {
    // isEmpty
    boolean isEmpty() {
        return STACK_TOP == -1;
+   }
+
+   // get size of stack
+   int getSize() {
+       return stackSize;
    }
 }
