@@ -2,7 +2,12 @@ package misc;
 
 public class SwapBitsFromEvenToOdd {
 
-    int pairwiseSwap(int num){
+
+    public static void main(String[] args) {
+        System.out.println(pairwiseSwap(8));
+    }
+
+    static int pairwiseSwap(int num){
         int oddMask = 0xAAAAAAAA;       // 1010 .... 1010
         int evenMask = 0x55555555;      // 0101 .... 0101
 
