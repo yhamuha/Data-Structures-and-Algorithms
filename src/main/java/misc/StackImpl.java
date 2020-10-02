@@ -27,4 +27,16 @@ public class StackImpl {
        STACK_TOP -= 1;
        return value;
    }
+
+   // peek
+   int peek() throws Exception {
+       if (STACK_TOP == -1)
+           throw new Exception("Stack is empty");
+       return STACK[STACK_TOP];
+   }
+
+   // isEmpty
+   boolean isEmpty() {
+       return STACK_TOP == -1;
+   }
 }
