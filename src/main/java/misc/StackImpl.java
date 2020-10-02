@@ -11,7 +11,20 @@ public class StackImpl {
    void push(int value) throws Exception {
        if (STACK_TOP == STACK_SIZE - 1)
            throw new Exception("Stack overflow");
+       // increase STACK_TOP pointer
        STACK_TOP += 1;
+       // add value to current STACK_TOP
        STACK[STACK_TOP] = value;
+   }
+
+   // pop
+   int pop() throws Exception {
+       if (STACK_TOP == -1)
+           throw new Exception("Stack is empty");
+       // grab value from STACK_TOP
+       int value = STACK[STACK_TOP];
+       // decrease STACK_TOP pointer
+       STACK_TOP -= 1;
+       return value;
    }
 }
