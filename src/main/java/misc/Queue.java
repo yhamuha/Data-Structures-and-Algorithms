@@ -37,7 +37,18 @@ public class Queue {
         if (HEAD == null)
             TAIL = null;
         return value;
-
     }
+
+    // view HEAD
+    int peek() throws Exception {
+        if (HEAD == null)
+            throw new Exception ("Queue is empty");
+        return HEAD.value;
+    }
+
+    boolean isEmpty() {
+        return HEAD == null;
+    }
+
 
 }
