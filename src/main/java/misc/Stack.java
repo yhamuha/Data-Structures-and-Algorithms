@@ -1,6 +1,6 @@
 package misc;
 
-public class StackImpl {
+public class Stack {
    // top of the stack pointer
    int STACK_TOP = -1;
    // stack size
