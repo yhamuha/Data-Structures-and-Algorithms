@@ -2,7 +2,9 @@ package misc;
 
 public class Queue {
 
+    // start queue pointer
     Node HEAD = null;
+    // end queue pointer
     Node TAIL = null;
 
     // node of queue
@@ -23,6 +25,19 @@ public class Queue {
         TAIL = newNode;
         if (HEAD == null)
             HEAD = TAIL;
+    }
+
+    // del node from HEAD
+    // and peak (return value)
+    int dequeue() throws Exception {
+        if (HEAD == null)
+            throw new Exception("Queue is empty");
+        int value = HEAD.value;
+        HEAD = HEAD.prev;
+        if (HEAD == null)
+            TAIL = null;
+        return value;
+
     }
 
 }
