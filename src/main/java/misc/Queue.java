@@ -6,6 +6,7 @@ public class Queue {
     Node HEAD = null;
     // end queue pointer
     Node TAIL = null;
+    int queueSize = 0;
 
     // node of queue
     class Node {
@@ -25,6 +26,7 @@ public class Queue {
         TAIL = newNode;
         if (HEAD == null)
             HEAD = TAIL;
+        queueSize++;
     }
 
     // del node from HEAD
@@ -36,6 +38,7 @@ public class Queue {
         HEAD = HEAD.prev;
         if (HEAD == null)
             TAIL = null;
+        queueSize--;
         return value;
     }
 
@@ -48,6 +51,10 @@ public class Queue {
 
     boolean isEmpty() {
         return HEAD == null;
+    }
+
+    int getSize() {
+        return queueSize;
     }
 
 
