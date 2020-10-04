@@ -1,5 +1,8 @@
 package misc;
- /**
+
+import java.util.Stack;
+
+/**
  * Java program to implement Queue using
  * two stacks with costly enQueue()
  *
@@ -7,14 +10,12 @@ package misc;
  * deQueue(q): time complexity will be O(1)
  */
 
-import java.util.*;
-
 class QueueUsingTwoStacks
 {
     static class Queue
     {
         static Stack<Integer> s1 = new Stack<Integer>();
-        static Stack<Integer> s2 = new Stack<Integer>();
+        static Stack<Integer> s2 = new Stack<>();
 
         static void enQueue(int x)
         {

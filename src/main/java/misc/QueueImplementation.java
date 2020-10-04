@@ -1,6 +1,6 @@
 package misc;
 
-public class Queue {
+public class QueueImplementation {
 
     // start queue pointer
     Node HEAD = null;

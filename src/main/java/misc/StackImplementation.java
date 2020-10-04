@@ -1,7 +1,8 @@
 package misc;
 
-public class Stack {
-   // top of the stack pointer
+public class StackImplementation {
+
+    // top of the stack pointer
    int STACK_TOP = -1;
    // stack size
    int STACK_SIZE = 3;
@@ -47,4 +48,6 @@ public class Stack {
    int getSize() {
        return stackSize;
    }
+
+
 }
