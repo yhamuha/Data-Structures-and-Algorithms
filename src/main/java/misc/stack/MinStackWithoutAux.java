@@ -1,4 +1,4 @@
-package misc;
+package misc.stack;
 
 /**
  * MinStack implementation without auxiliary second stack

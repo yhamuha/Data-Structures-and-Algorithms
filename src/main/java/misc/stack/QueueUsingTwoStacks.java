@@ -1,4 +1,4 @@
-package misc;
+package misc.stack;
 
 import java.util.Stack;
 
