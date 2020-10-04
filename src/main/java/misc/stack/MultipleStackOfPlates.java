@@ -19,4 +19,13 @@ public class MultipleStackOfPlates {
     void deleteLastStack() {
         stacksList.pop();
     }
+
+    // push values into stacks which have dynamical behaviour
+    void push(int value) {
+        if (stacksList.isEmpty() || lastStackIsFull())
+            stacksList.push(new Stack<Integer>());
+        getLastStack().push(value);
+    }
+
+
 }
