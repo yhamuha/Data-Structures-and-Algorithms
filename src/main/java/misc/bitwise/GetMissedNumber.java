@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.util.BitSet;
 import java.util.Scanner;
 
+// file contains 4_000_000_000 integers
+// and 1 GiB RAM
 
 public class GetMissedNumber {
 
