@@ -27,5 +27,25 @@ public class MultipleStackOfPlates {
         getLastStack().push(value);
     }
 
+    int pop() throws Exception {
+        if(stacksList.isEmpty())
+            throw new Exception("Stack is empty");
+        Stack<Integer> lastStack = getLastStack();
+        if(lastStack.isEmpty()) {
+            deleteLastStack();
+            return getLastStack().pop();
+        }
+        return lastStack.pop();
+    }
 
+    int peek() throws Exception{
+        if(stacksList.isEmpty())
+            throw new Exception("Stack is empty");
+        Stack<Integer> lastStack = getLastStack();
+        if(lastStack.isEmpty()) {
+            deleteLastStack();
+            return getLastStack().pop();
+        }
+        return lastStack.pop();
+    }
 }
