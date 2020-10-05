@@ -1,4 +1,4 @@
-package misc;
+package misc.binary;
 
 public class DoubleToBinary {
 

@@ -1,8 +1,4 @@
-package misc;
-
-import com.sun.corba.se.impl.presentation.rmi.ExceptionHandlerImpl;
-
-import java.util.Arrays;
+package misc.bitwise;
 
 public class BitShifts {
 

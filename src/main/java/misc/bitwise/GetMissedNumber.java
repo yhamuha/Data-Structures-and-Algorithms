@@ -1,4 +1,4 @@
-package misc;
+package misc.bitwise;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

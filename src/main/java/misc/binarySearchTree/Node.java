@@ -1,4 +1,4 @@
-package misc.bst;
+package misc.binarySearchTree;
 
 /**
  *  The {@code Node} class
