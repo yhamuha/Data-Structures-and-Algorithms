@@ -52,18 +52,39 @@ public class BitShifts {
         /*System.out.println(getHighestBit(data));
         System.out.println(getLowestBit(data));*/
 
-        long[] bitVector = initBitVector(10);
+       /* long[] bitVector = initBitVector(10);
         setBitForBitVector(bitVector, 3);
         unsetBitForBitVector(bitVector,4);
         boolean a = getBitForBitVector(bitVector, 3);
         boolean b = getBitForBitVector(bitVector, 4);
-        boolean c = getBitForBitVector(bitVector, 17);
+        boolean c = getBitForBitVector(bitVector, 17);*/
 
 //        System.out.println(String.format("%32s",
 //                Long.toBinaryString(bitVector[0])).replaceAll(" ", "0"));
 
 
+        System.out.println(getHighestBit(8));
 
+        highToLow(0b00000000_00000000_00000000_00001000);
+
+
+    }
+
+
+
+    // print bits from high to low
+    static void highToLow (int bits) {
+        int data = bits;
+        while (data!=0) {
+            int bit = getHighestBit(data);
+            System.out.print(bit);
+            data = data << 1;
+        }
+    }
+
+    // get MSB
+    static int getHighestBit (int data) {
+        return data >>> 31;
     }
 
     static void bitwiseSandbox() throws Exception {
@@ -222,17 +243,13 @@ public class BitShifts {
         System.out.println(resultForLSR31plusLSR1);
     }
 
-    // get MSB
-    static int getHighestBit (int data) {
-        return data >>> 31;
-    }
-
     // get LSB
+
     static int getLowestBit (int data) {
         return data & 1;
     }
-
     // lowToHighTraversal bit by bit on int
+
     static void lowToHigh(int bits) {
         int data = bits;
         /*for (int i=0; i< 32; i++)*/
@@ -243,5 +260,9 @@ public class BitShifts {
             data = data >> 1;
         }
     }
+
+
+
+
 
 }
