@@ -23,4 +23,11 @@ public class Strings {
             subStr[i - start] = str.charAt(i);
         return new String(subStr);
     }
+
+    String joinWords(String[] words) {
+        String sentence = "";
+        for (String w: words)
+            sentence = sentence + w;
+        return sentence;
+    }
 }
