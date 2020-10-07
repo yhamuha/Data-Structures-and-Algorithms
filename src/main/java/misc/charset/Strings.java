@@ -30,4 +30,16 @@ public class Strings {
             sentence = sentence + w;
         return sentence;
     }
+
+    // for ASCII 32->127
+    boolean isUniqueChars(String str) {
+        if (str.length() > 96) return false;
+        boolean[] chars = new boolean[96];
+        for (int i = 0; i < str.length(); i++) {
+            int charCode = str.charAt(i) - 32;
+            if (chars[charCode]) return false;
+            chars[charCode] = true;
+        }
+        return true;
+    }
 }
