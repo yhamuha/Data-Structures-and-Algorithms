@@ -15,4 +15,12 @@ public class Strings {
             resultStr[i] = s2.charAt(i - s1.length());
         return new String(resultStr);
     }
+
+    static String substring(String str, int start, int end) {
+        int subStrLength = end - start;
+        char[] subStr = new char[subStrLength];
+        for (int i = start; i < end; i++)
+            subStr[i - start] = str.charAt(i);
+        return new String(subStr);
+    }
 }
