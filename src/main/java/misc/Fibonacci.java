@@ -14,10 +14,21 @@ public class Fibonacci {
      * @param args the command-line arguments (none)
      */
     public static void main(String[] args) {
-        System.out.println(fibNaive(5));
-        System.out.println(fibNaive(10));
-        System.out.println(fibEffective(10));
-        System.out.println(fibEffective(100));
+
+        long start =  System.currentTimeMillis();
+        System.out.println(start);
+        System.out.println(fibNaive(9));
+        long end =  System.currentTimeMillis();
+        System.out.println(end);
+        System.out.println("Time for naive: " + (end - start));
+
+
+        long start1 =  System.currentTimeMillis();
+        System.out.println(start1);
+        System.out.println("fib: " + fibEffective(4));
+        long end1 =  System.currentTimeMillis();
+        System.out.println(end1);
+        System.out.println("Time for effective: " + (end1 - start1));
 
     }
 
