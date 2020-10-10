@@ -42,4 +42,21 @@ public class Strings {
         }
         return true;
     }
+
+    // using bitVector
+    boolean isUniqueCharsBitVector(String str) {
+        if (str.length() > 96) return false;
+        byte[] bitVector = new byte[12];
+        for (int i = 0; i < str.length(); i++) {
+            int charCode = str.charAt(i) - 32;
+            /*if (isBitSet(bitVector, charCode))
+                return false;
+            setBit(bitVector, charCode);*/
+        }
+        return true;
+    }
+
+//    boolean isShift(String s1, String s2) {
+//        return isSubString(s2 + s2, s1);
+//    }
 }
