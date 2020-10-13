@@ -26,8 +26,12 @@ public class RecursionSum {
 
         // minimal base case
         if (n == 0) return 0;
-        // min size task
+
+        // min size task,
+        // will create area stacks included unique n value
+        // for each step
         int digitsSumExceptLast = digitsSum(n / 10);
+
         // current size task
         int currentDigit = n % 10;
 
