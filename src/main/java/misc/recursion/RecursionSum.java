@@ -1,14 +1,38 @@
 package misc.recursion;
-
+/**
+ *  The {@code RecursionSum} class calculate
+ *  each number of sum from given string number
+ *
+ *  It includes methods for generation Fibonacci number.
+ *
+ */
 public class RecursionSum {
+
+    /**
+     * driver method
+     * @param args the command-line arguments (none)
+     */
     public static void main(String[] args) {
-        System.out.println(digitsSum(457));
+        System.out.println(digitsSum(123));
     }
 
-    static int digitsSum(int n) {
+    /**
+     * find sum of each digits
+     * recursively approach
+     * @param n         input number
+     * @return int      sum of all digits
+     */
+    static int digitsSum (int n) {
+
+        // minimal base case
         if (n == 0) return 0;
-        int digitsSum_except_last = digitsSum(n / 10);
+        // min size task
+        int digitsSumExceptLast = digitsSum(n / 10);
+        // current size task
         int currentDigit = n % 10;
-        return digitsSum_except_last + currentDigit;
+
+        return digitsSumExceptLast + currentDigit;
     }
 }
+
+
