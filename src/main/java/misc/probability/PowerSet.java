@@ -1,6 +1,8 @@
 package misc.probability;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * The {@code PowerSet} class contain function
@@ -13,7 +15,6 @@ public class PowerSet {
      * @param args the command line arguments (none)
      */
     public static void main(String[] args) {
-
     }
 
     /**
@@ -21,7 +22,7 @@ public class PowerSet {
      * @param set   given set
      * @return  powerSet as ArraylList<int[]>
      */
-    ArrayList<int[]> generatePowerSet (int[]set) {
+    static ArrayList<int[]> generatePowerSet (int[]set) {
         ArrayList<int[]> powerSet = new ArrayList<>();
         powerSet.add(new int[0]);
 
@@ -40,7 +41,7 @@ public class PowerSet {
      * @param value     given value
      * @return          new cloned and extended array
      */
-    int[] cloneAndExtend(int[] subset, int value) {
+    static int[] cloneAndExtend(int[] subset, int value) {
         // create
         int[] arrCopy = new int[subset.length + 1];
         // clone
@@ -51,4 +52,5 @@ public class PowerSet {
         // return
         return arrCopy;
     }
+
 }
