@@ -6,6 +6,7 @@ public class SlowRemove {
     }
 
     // slow remove i-th element from array
+    // time complexity: 0(n)
     int[] removeIthElement(int[] arr, int index) {
         if (arr.length == 0 || index >= arr.length || index < 0) return null;
         int[] result = new int[arr.length - 1];
