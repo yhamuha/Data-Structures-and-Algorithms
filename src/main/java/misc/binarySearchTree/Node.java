@@ -27,7 +27,7 @@ public class Node {
      * @param value int - node value
      * @return  void
      */
-    void createNode(Node node, int value) {
+    public void createNode(Node node, int value) {
         node.left = new Node();
         node.right = new Node();
         node.value = value;
@@ -39,7 +39,7 @@ public class Node {
      * @param value int - value
      * @return  void
      */
-    void insert(Node node, int value) {
+    public void insert(Node node, int value) {
         if (!nodeExists(node)) createNode(node, value);
         else if (value < node.value) insert (node.left, value);
         else if (value >= node.value) insert (node.right, value);
@@ -86,7 +86,7 @@ public class Node {
      * @param node Node  - root
      * @return  void
      */
-    void inOrderTraversal(Node node) {
+    public void inOrderTraversal(Node node) {
         if (!nodeExists(node)) return;
         inOrderTraversal(node.left);
         System.out.println(node.value);
@@ -175,5 +175,6 @@ public class Node {
         }
         return true;
     }
+
 
 }
