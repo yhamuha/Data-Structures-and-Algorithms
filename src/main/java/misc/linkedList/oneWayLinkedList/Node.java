@@ -113,6 +113,31 @@ public class Node {
             return head;
         }
 
+    /**
+     *
+     * @param k     index of element to find from end of linked list
+     * @return      value of sought-for element
+     */
+    public Node getKToLastNode(int k) {
+        // set a,b to head
+        Node a = head, b = head;
+
+        // move b to k nodes
+        while (k > 0) {
+            b = b.next;
+            k--;
+        }
+
+        // move sync a, b to the end of linked list
+        while (b.next != null) {
+            a = a.next;
+            b = b.next;
+        }
+
+        // a will be sought-for element
+        return a;
+    }
+
     @Override
     public String toString() {
         return "{data: " + data +
