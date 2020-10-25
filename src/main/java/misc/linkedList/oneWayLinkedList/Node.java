@@ -138,6 +138,13 @@ public class Node {
         return a;
     }
 
+
+    void removeNode(Node toDelete) {
+        toDelete.data = toDelete.next.data;
+        toDelete.next = toDelete.next.next;
+    }
+
+
     @Override
     public String toString() {
         return "{data: " + data +
