@@ -21,5 +21,14 @@ public class FrogAndStairs {
         getPathCount(n-1);
     }
 
+    // solution without using pathCount
+    int getWaysCount (int n) {
+        if (n < 0) return 0;
+        if (n == 0) return 1;
+
+        return getWaysCount(n-2) +
+                getWaysCount(n - 1);
+    }
+
 
 }
