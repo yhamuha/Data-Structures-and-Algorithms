@@ -18,6 +18,9 @@ public class ChangeState {
 
     // put the value by reference
     private static void processClaim (Claim value) {
+        // if we use new ref we will see "bug"
+        // value = new Claim();
+
         value.name = "task";
     }
 }
