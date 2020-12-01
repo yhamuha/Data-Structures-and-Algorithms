@@ -1,5 +1,7 @@
 package misc.some;
 
+import java.util.HashSet;
+
 /**
  *
  */
@@ -13,6 +15,7 @@ public class Intersection {
 
         intersectionOfTwoArray_MmultN(arr1,arr2);
         intersectionOfTwoArray_MPlusN(arr1, arr2);
+        intersectionOfTwoArray_usingHashSet(arr1, arr2);
     }
 
     // Time Complexity O(mn)
@@ -40,8 +43,20 @@ public class Intersection {
             }
         }
 
+    // using HashSet
+        static void intersectionOfTwoArray_usingHashSet (int[] arr1, int[] arr2){
 
-    }
+            HashSet<Integer> set1 = new HashSet();
+                for(int val: arr1){
+                set1.add(val);
+            }
+            for(int val:arr2){
+              if(set1.contains((val))){
+                    System.out.println(val);
+                }
+          }
+        }
+}
 
 
 
