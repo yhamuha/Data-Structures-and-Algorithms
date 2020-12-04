@@ -7,12 +7,12 @@ package misc.multithreading;
  */
 public class LifeCycle {
     public static void main(String[] args)  throws Exception {
-        MyThread myThread = new MyThread();
+        ThreadforLifeCycle threadforLifeCycle = new ThreadforLifeCycle();
 
         /**
         *  interrupt();
         */
-        //        myThread.interrupt();
+        //        threadforLifeCycle.interrupt();
         //
         //        try {
         //            Thread.sleep(1000);
@@ -25,8 +25,8 @@ public class LifeCycle {
          *  multithreading sheduler;
          *  from Running to Runnable;
          */
-        // myThread.setPriority(Thread.MAX_PRIORITY);
-        myThread.start();
+        // threadforLifeCycle.setPriority(Thread.MAX_PRIORITY);
+        threadforLifeCycle.start();
         // wait, run other thread
         // we'll have a probability for running other thread
         // but no guarantee
@@ -34,12 +34,12 @@ public class LifeCycle {
 
         // join() waiting to end previous thread
         // we can joined threads in this way
-        myThread.join();
+        threadforLifeCycle.join();
         System.out.println("thread main");
     }
 }
 
-class MyThread extends Thread {
+class ThreadforLifeCycle extends Thread {
     @Override
     public void run() {
 
