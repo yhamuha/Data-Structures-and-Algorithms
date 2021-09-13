@@ -8,6 +8,7 @@ public class Bucket {
     public String key;
     public int value;
 
+    // prime numbers for hash table growth
     int[] primes = {
             5, 11, 23, 47, 97, 193, 389, 769, 1543, 3079, 12289, 24593,
             49157, 98317, 196613, 393241, 786433, 1572869, 3145739,
@@ -15,8 +16,11 @@ public class Bucket {
             402653189, 805306457, 1610612741, 2147483629
     };
 
+    // quantity of elements in hashTable
     int size = 0;
+    // index for getting size of hash table from prime array
     int capacityIndex = 0;
+    // init size array by prime number
     Bucket[] buckets = new Bucket[primes[capacityIndex]];
 
     // constructor
@@ -46,13 +50,16 @@ public class Bucket {
     }
 
     void addOrUpdate(String key, int value) {
+        // index
         int i = getBucketIndex(key);
+
         while (buckets[i] != null &&
                 buckets[i].key != null) {
             if (buckets[i].key.equals(key)) {
                 buckets[i].value = value;
                 return;
             }
+            // step +1
             i = (i + 1) % primes[capacityIndex];
         }
         buckets[i] = new Bucket(key, value);

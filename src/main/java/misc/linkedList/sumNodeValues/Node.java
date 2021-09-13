@@ -1,10 +1,12 @@
 package misc.linkedList.sumNodeValues;
 
+import java.util.Stack;
+
 public class Node {
         Node next;
         int digit;
 
-        Node(int digit){
+    Node(int digit){
             this.digit = digit;
         }
 
@@ -36,6 +38,40 @@ public class Node {
 
         if (carry == 1) resultTail.next = new Node(carry);
         return resultHead;
+    }
+
+    boolean isPalindrome(Node head) {
+
+        // slow, fast init for head
+        Node slow = head, fast = head;
+
+        // use stack ds
+        Stack<Integer> stack = new Stack<>();
+
+        // use runner method
+        while (fast != null && fast.next != null) {
+            stack.push(slow.digit);
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // for odd nodes cases
+        if (fast != null) slow = slow.next;
+
+        // go through stack and check each element
+        while (slow.next != null) {
+
+            if (slow.digit != stack.pop())
+                // if false - not palindrome
+                return false;
+            // go next
+            slow = slow.next;
+
+        }
+        // after all checking we are deciding
+        // that all the values in linked list nodes
+        // are palindrome
+        return true;
     }
 
 }

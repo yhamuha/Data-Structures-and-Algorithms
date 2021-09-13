@@ -1,7 +1,7 @@
 package misc.charset;
 
 /**
- *  The {@code ReplaceSpaces} class 
+ *  The {@code ReplaceSpaces} class
  */
 public class ReplaceSpaces {
     public static void main(String[] args) {

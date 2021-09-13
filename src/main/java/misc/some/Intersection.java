@@ -30,6 +30,7 @@ public class Intersection {
     }
 
     // Complexity O(m+n)
+    // buffered
         static void intersectionOfTwoArray_MPlusN (int[] arr1, int[] arr2){
             int i = 0;
             int j = 0;

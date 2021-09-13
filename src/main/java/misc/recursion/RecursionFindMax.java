@@ -15,7 +15,6 @@ public class RecursionFindMax {
         System.out.println(findMax(arr, 4));
     }
 
-
     /**
      * looking for a replaces
      * @param arr       input array
@@ -33,5 +32,4 @@ public class RecursionFindMax {
                 ? maxElementIn_N_minus_1_arr
                 : arr[n - 1];
     }
-
 }

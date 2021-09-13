@@ -1,5 +1,5 @@
 package misc.charset;
-
+import misc.bitwise.*;
 /**
  *  The {@code StringPalindrome} class
  *  determine a palindrome from given String

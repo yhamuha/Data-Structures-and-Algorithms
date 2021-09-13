@@ -5,6 +5,11 @@ package misc.charset;
  *  string edited in one element or not
  */
 public class IsOneEditEffective {
+
+    /**
+     * driver method
+     * @param args the command-line arguments (none)
+     */
     public static void main(String[] args) {
         System.out.println(strHasOneEdit("beer", "bear"));
     }
@@ -25,6 +30,7 @@ public class IsOneEditEffective {
         }
         return true;
     }
+
     /**
      * looking for a insertions
      * @param source        input string1

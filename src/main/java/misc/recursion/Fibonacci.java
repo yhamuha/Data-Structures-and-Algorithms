@@ -1,4 +1,4 @@
-package misc;
+package misc.recursion;
 
 /**
  *  The {@code Fibonacci} class represents implementation of Fibonacci.
@@ -17,7 +17,7 @@ public class Fibonacci {
 
         long start =  System.currentTimeMillis();
         System.out.println(start);
-        System.out.println(fibNaive(9));
+        System.out.println("fib naive value: " + fibNaive(100));
         long end =  System.currentTimeMillis();
         System.out.println(end);
         System.out.println("Time for naive: " + (end - start));
@@ -25,7 +25,7 @@ public class Fibonacci {
 
         long start1 =  System.currentTimeMillis();
         System.out.println(start1);
-        System.out.println("fib: " + fibEffective(4));
+        System.out.println("fib effective value: " + fibEffective(100));
         long end1 =  System.currentTimeMillis();
         System.out.println(end1);
         System.out.println("Time for effective: " + (end1 - start1));

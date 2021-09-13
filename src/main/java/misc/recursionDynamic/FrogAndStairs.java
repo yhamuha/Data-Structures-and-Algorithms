@@ -9,6 +9,11 @@ public class FrogAndStairs {
     public static void main(String[] args) {
         getPathCount(1);
         System.out.println(pathCount);
+        String str = "abc";
+
+        System.out.println(removeIthChar(str, 0));
+        System.out.println(removeIthChar(str, 1));
+        System.out.println(removeIthChar(str, 2));
     }
 
     static void getPathCount(int n) {
@@ -31,4 +36,15 @@ public class FrogAndStairs {
     }
 
 
+    // permutations
+    static void permutations(String candidate, String letters) {
+        if (letters.length() == 0) System.out.println(candidate);
+        for (int i = 0; i < letters.length(); i++)
+            permutations(candidate + letters.charAt(i), removeIthChar(letters, i));
+    }
+
+    //
+    static String removeIthChar (String str, int i) {
+        return str.substring(0, i) + str.substring(i + 1);
+    }
 }
