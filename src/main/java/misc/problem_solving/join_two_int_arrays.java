@@ -12,8 +12,12 @@ public class join_two_int_arrays {
         int index = 0;
 
         for (int i = 0; i < arr1.length; i++) {
-            arr3[index++] = arr1[0];
-            arr3[index++] = arr2[0];
+            arr3[index++] = arr1[i];
+            arr3[index++] = arr2[i];
+        }
+
+        for (int i = 0; i< arr3.length; i++) {
+            System.out.print(arr3[i] + " ");
         }
 
     }
