@@ -22,6 +22,24 @@ public class FixtureClass {
         return maxSetSize;
     }
 
+    static int getMaxSetSizeWithGaps (int[] arr) {
+        int maxSetSize = 0;
+        int firstZeroIndex = -1;
+        int windowStart = -1;
+        int windowEnd = 0;
+
+        while (windowEnd < arr.length) {
+            if (arr[windowEnd] == 0) {
+                int setSize = windowEnd - windowStart;
+                maxSetSize = Math.max(maxSetSize, setSize);
+                windowStart = firstZeroIndex + 1;
+                firstZeroIndex = windowEnd;
+            }
+            windowEnd++;
+        }
+        return Math.max(maxSetSize, windowEnd - windowStart);
+    }
+
     public static void main(String[] args) {
         // define the array
         int[] intArray = new int[]{1,1,1,0,0,0,0,1,1,2,2,2,2,2,2};
