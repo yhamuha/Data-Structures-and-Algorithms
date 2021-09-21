@@ -43,11 +43,29 @@ public class FixtureClass {
         return Math.max(maxSetSize, windowEnd - windowStart);
     }
 
+    //       ex:
+    //       index:  0 1  2 3 4 5
+    //       value:  8 7 -1 2 5 6
+
+    static int getMaxSubArrayEndIndex (int[] arr) {
+        int maxSum = 0;
+        int curSum = 0;
+        int endIndex = 0;
+
+        for (int i=0; i< arr.length; i++) {
+            curSum += arr[i];
+            if (curSum > maxSum) {
+                maxSum = curSum;
+                endIndex = i;
+            }
+        }
+        return endIndex;
+    }
+
     public static void main(String[] args) {
         // define the array
-        int[] intArray = new int[]{1,1,1,0,0,0,0,1,1,2,2,2,2,2,2};
+        int[] intArray = new int[]{3,1,-4,7,0,-2};
 
-        // calculate max sequence of '1's'
-        System.out.println(FixtureClass.getMaxSetSize(intArray));
+        System.out.println(getMaxSubArrayEndIndex(intArray));
     }
 }
