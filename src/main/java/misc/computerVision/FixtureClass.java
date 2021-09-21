@@ -22,6 +22,8 @@ public class FixtureClass {
         return maxSetSize;
     }
 
+    // O(n) - complexity
+    // O(1) - memory
     static int getMaxSetSizeWithGaps (int[] arr) {
         int maxSetSize = 0;
         int firstZeroIndex = -1;
@@ -37,6 +39,7 @@ public class FixtureClass {
             }
             windowEnd++;
         }
+        if (windowStart == -1) return arr.length;
         return Math.max(maxSetSize, windowEnd - windowStart);
     }
 
