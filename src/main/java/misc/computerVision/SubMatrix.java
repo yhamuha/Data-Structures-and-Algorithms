@@ -19,6 +19,7 @@ public class SubMatrix {
         this.sum = sum;
     }
 
+    // N^2*10
     SubMatrix getMaxSumMatrix (int[][] matrix) {
         int rowsCount = matrix.length;
         int rowLength = matrix[0].length;
