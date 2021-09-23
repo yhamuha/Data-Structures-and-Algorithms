@@ -8,7 +8,7 @@ public class int_reverse {
     int x = 12345;
     System.out.println(reverse(x));
     }
-
+    // time: O(log)
     static int reverse(int x) {
         int rev = 0;
         while (x != 0) {
