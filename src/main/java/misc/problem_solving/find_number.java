@@ -1,5 +1,6 @@
 package misc.problem_solving;
 
+
 /**
  *
  */
@@ -16,6 +17,7 @@ public class find_number {
     int num = 25;
         System.out.println(pairwiseSwap(num));
 
+    System.out.println(getBit(5,2));
     }
     //XOR
     static int findNumber(int[] arr) {
@@ -50,4 +52,14 @@ public class find_number {
 
         return oddMask | evenMask;
     }
+
+    // fast retrieving bit
+    static int getBit (int data, int bit) {
+        int _1u = 1;
+        data = (data >> bit) & _1u;
+
+        return data;
+    }
+
+
 }
