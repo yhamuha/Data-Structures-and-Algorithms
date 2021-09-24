@@ -13,6 +13,9 @@ public class find_number {
 
     System.out.println(countBits(a,b));
 
+    int num = 25;
+        System.out.println(pairwiseSwap(num));
+
     }
     //XOR
     static int findNumber(int[] arr) {
@@ -32,5 +35,19 @@ public class find_number {
             diffBits = diffBits >>> 1;
         }
         return onesCount;
+    }
+
+    // swap even and odd bits in given number
+    static int pairwiseSwap(int num) {
+        int oddMask = 0xAAAAAAAA;
+        int evenMask = 0x55555555;
+
+        oddMask = (num & oddMask);
+        oddMask = oddMask >>> 1;
+
+        evenMask = (num & evenMask);
+        evenMask = evenMask << 1;
+
+        return oddMask | evenMask;
     }
 }
