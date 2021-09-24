@@ -1,6 +1,7 @@
 package misc.problem_solving;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -8,18 +9,12 @@ import java.util.Stack;
  */
 class ParenthesesSolution {
 
-    // Hash table that takes care of the mappings.
-    private HashMap<Character, Character> mappings;
-
-    // Initialize hash map with mappings. This simply makes the code easier to read.
-    public ParenthesesSolution() {
-        this.mappings = new HashMap<Character, Character>();
-        this.mappings.put(')', '(');
-        this.mappings.put('}', '{');
-        this.mappings.put(']', '[');
-    }
-
     public boolean isValid(String s) {
+
+        Map<Character, Character> mappings = new HashMap<Character, Character>();
+        mappings.put(')', '(');
+        mappings.put('}', '{');
+        mappings.put(']', '[');
 
         // Initialize a stack to be used in the algorithm.
         Stack<Character> stack = new Stack<Character>();
@@ -28,13 +23,13 @@ class ParenthesesSolution {
             char c = s.charAt(i);
 
             // is closing bracket ?
-            if (this.mappings.containsKey(c)) {
+            if (mappings.containsKey(c)) {
 
                 // check stack ang pop the top element
                 char topElement = stack.empty() ? '#' : stack.pop();
 
                 // check for matching opening and closing brackets in HashMap
-                if (topElement != this.mappings.get(c)) {
+                if (topElement != mappings.get(c)) {
                     return false;
                 }
             } else {
