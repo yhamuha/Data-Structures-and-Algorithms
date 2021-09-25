@@ -7,7 +7,8 @@ public class LastWordLength {
     public static void main(String[] args) {
         String str = "yes it is it the world  ";
 //        System.out.println(lengthOfLastWord(str));
-        System.out.println(lengthOfLastWord2(str));
+//        System.out.println(lengthOfLastWord2(str));
+        System.out.println(lengthOfLastWord3(str));
     }
 
     // compute last word from the end, trimmed the trailing spaces
@@ -39,5 +40,11 @@ public class LastWordLength {
             }
         }
         return length;
+    }
+
+    // using built-in java functions
+    static int lengthOfLastWord3(String s) {
+        s = s.trim();  // trim the trailing spaces in the string
+        return s.length() - s.lastIndexOf(" ") - 1;
     }
 }
