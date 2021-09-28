@@ -6,7 +6,7 @@ package misc.problem_solving;
 public class ValidPalindrome {
     public static void main(String[] args) {
         String s = "abba";
-        System.out.println(isPalindrome(s));
+        System.out.println(isPalindromeUsingStreams(s));
     }
 
     // O(n), O(n)
@@ -24,5 +24,17 @@ public class ValidPalindrome {
         String reversedString = builder.reverse().toString();
 
         return filteredString.equals(reversedString);
+    }
+
+    // using java8 streams
+    static boolean isPalindromeUsingStreams(String s) {
+        StringBuilder builder = new StringBuilder();
+
+        s.chars()
+                .filter(c -> Character.isLetterOrDigit(c))
+                .mapToObj(c -> Character.toLowerCase((char) c))
+                .forEach(builder::append);
+
+        return builder.toString().equals(builder.reverse().toString());
     }
 }
