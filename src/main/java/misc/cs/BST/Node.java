@@ -32,13 +32,12 @@ public class Node {
     public static void main(String[] args) {
 
         Node root = new Node();
-        Node node1 = new Node();
-        Node node2 = new Node();
+
         root.insert(root, 3, 12);
-        root.insert(node1, 1, 6);
-        root.insert(node2, 12, 33);
+        root.insert(root, 1, 6);
+        root.insert(root, 12, 33);
         System.out.println(root.value);
-        System.out.println(node1.value);
-        System.out.println(node2.value);
+        System.out.println(root.value);
+        System.out.println(root.value);
     }
 }
