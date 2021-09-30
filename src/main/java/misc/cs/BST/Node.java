@@ -29,6 +29,36 @@ public class Node {
             insert(node.right, key, value);
     }
 
+    Node search(Node node, int key) {
+        if(!nodeExists(node)) return null;
+        if (key == node.key) return node;
+        return (key < node.key)
+                ? search(node.left, key)
+                : search(node.right, key);
+    }
+
+    Node getMin(Node node) {
+        if(!nodeExists(node)) return null;
+        if(!nodeExists(node.left)) return node;
+        return getMin(node.left);
+    }
+
+    Node getMax(Node node) {
+        if(!nodeExists(node)) return null;
+        if(!nodeExists(node.right)) return node;
+        return getMin(node.right);
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "key=" + key +
+                ", value=" + value +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
+
     public static void main(String[] args) {
 
         Node root = new Node();
@@ -39,5 +69,8 @@ public class Node {
         System.out.println(root.value);
         System.out.println(root.value);
         System.out.println(root.value);
+        System.out.println(root.search(root, 12));
+        System.out.println(root.getMin(root));
+        System.out.println(root.getMax(root));
     }
 }
