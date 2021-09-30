@@ -10,7 +10,7 @@ import java.util.List;
 public class SingleNumber {
     public static void main(String[] args) {
         int[] nums = {1,2,2,1,3};
-        System.out.println(singleNumber2(nums));
+        System.out.println(singleNumber3(nums));
     }
 
     // O(n^2), O(n)
@@ -43,5 +43,14 @@ public class SingleNumber {
             }
         }
         return 0;
+    }
+
+    // bit manipulation approach
+    static int singleNumber3(int[] nums) {
+        int a = 0;
+        for (int i : nums) {
+            a ^= i;
+        }
+        return a;
     }
 }
