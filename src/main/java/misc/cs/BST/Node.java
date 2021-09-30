@@ -13,8 +13,8 @@ public class Node {
     void createNode(Node node, int key, int value) {
         node.key    = key;
         node.value  = value;
-        node.left   =   null;
-        node.right   =   null;
+        node.left   = new Node();
+        node.right  = new Node();
     }
 
     boolean nodeExists(Node node) {
@@ -31,22 +31,14 @@ public class Node {
 
     public static void main(String[] args) {
 
-        System.out.println("===");
         Node root = new Node();
-        root.createNode(root, 1, 2);
-        System.out.println(root.value);
-        System.out.println(root.nodeExists(root));
-
-        System.out.println("===");
+        Node node1 = new Node();
         Node node2 = new Node();
-        node2.createNode(node2, 10,10);
+        root.insert(root, 3, 12);
+        root.insert(node1, 1, 6);
+        root.insert(node2, 12, 33);
+        System.out.println(root.value);
+        System.out.println(node1.value);
         System.out.println(node2.value);
-        System.out.println(node2.nodeExists(node2));
-
-        System.out.println("===");
-        Node node3 = new Node();
-        root.insert(node3, 10, 10);
-        System.out.println(node3.value);
-        System.out.println(node3.nodeExists(node3));
     }
 }
