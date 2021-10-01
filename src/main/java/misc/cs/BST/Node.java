@@ -49,6 +49,33 @@ public class Node {
         return getMin(node.right);
     }
 
+    void inOrderTraversal(Node node) {
+        if (!nodeExists(node)) return;
+        inOrderTraversal(node.left);
+        System.out.println(node.value);
+        inOrderTraversal(node.right);
+    }
+
+    void preOrderTraversal(Node node) {
+        if (!nodeExists(node)) return;
+        System.out.println(node.value);
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);
+    }
+
+    void postOrderTraversal(Node node) {
+        if (!nodeExists(node)) return;
+        postOrderTraversal(node.left);
+        postOrderTraversal(node.right);
+        System.out.println(node.value);
+    }
+
+    void showNodesInOrder(Node node) {
+        if (!nodeExists(node)) return;
+        System.out.print(node.left.value);
+        System.out.print(node.value);
+        System.out.print(node.right.value);
+    }
     @Override
     public String toString() {
         return "Node{" +
@@ -72,5 +99,11 @@ public class Node {
         System.out.println(root.search(root, 12));
         System.out.println(root.getMin(root));
         System.out.println(root.getMax(root));
+        System.out.println("= in-Order traversal: sort =");
+        root.inOrderTraversal(root);
+        System.out.println("= pre-Order traversal: clone =");
+        root.preOrderTraversal(root);
+        System.out.println("= post-Order traversal: delete =");
+        root.postOrderTraversal(root);
     }
 }
