@@ -23,12 +23,26 @@ public class RemoveVowels
 
         return sb.toString();
     }
+
+    // remove vowels
+    static String removeVowels(String s) {
+        StringBuilder ans = new StringBuilder();
+        for(char ch : s.toCharArray()){
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch =='o' || ch == 'u')
+                continue;
+            else
+                ans.append(ch);
+        }
+        return ans.toString();
+    }
+
     // Driver method to test the above function
     public static void main(String[] args)
     {
         String str = "This is a sentence which will be used to removing vowels";
 
         System.out.println(remVowel(str));
+        System.out.println(removeVowels(str));
     }
 }
 
