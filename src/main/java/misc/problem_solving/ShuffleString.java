@@ -3,18 +3,20 @@ package misc.problem_solving;/**
  */
 public class ShuffleString {
     public static void main(String[] args) {
-        String s = "LIKE";
-        int[] indicies = {1,0,3,2};
-        System.out.println(shuffleString(s, indicies));
+        String s = "codeleet";
+        int[] indicies = {4,5,6,7,0,2,1,3};
+        System.out.println(shuffleString2(s, indicies));
     }
 
     // O(n), O(n)
-    static String shuffleString(String s, int[] indices) {
+    static String shuffleString2(String s, int[] indices){
+        char[] c1 = new char[s.length()];
+        for(int i=0;i<s.length();i++){
 
-        StringBuffer strBuf = new StringBuffer();
-        for (int i = 0; i < indices.length; i++) {
-           strBuf.append(s.charAt(indices[i]));
+            c1[indices[i]] = s.charAt(i);
+
         }
-        return strBuf.toString();
+        String str = String.valueOf(c1);
+        return str;
     }
 }
