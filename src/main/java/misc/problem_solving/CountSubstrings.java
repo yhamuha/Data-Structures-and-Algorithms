@@ -5,7 +5,7 @@ package misc.problem_solving;
  */
 public class CountSubstrings {
     public static void main(String[] args) {
-        String s = "aaaba";
+        String s = "aaaabbccc";
         System.out.println(countLetters2(s));
 
     }
@@ -30,14 +30,14 @@ public class CountSubstrings {
         return count;
     }
 
-    // !
-
+    // Arithmetic Sequence;
     static int countLetters2(String s) {
 
         int ans = 0, count = 0;
 
         for (int i = 0; i < s.length (); i++) {
             if (i == 0 || s.charAt (i) == s.charAt (i - 1)) {
+                // Arithmetic Sequence;
                 ans += ++count;
             }
             else {
@@ -47,5 +47,28 @@ public class CountSubstrings {
         }
 
         return ans;
+    }
+
+    //
+    static int countLetters3(String s) {
+        int res = 0;
+        int temp = 0;
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                temp++;
+                res += temp;
+            } else {
+                temp++;
+                res += temp;
+                temp = 0;
+            }
+        }
+
+        // temp will be zero if next letter is not the same at s.length() - 1
+        // I add 1 here because when we start count
+        // the same letters we start from 1
+        res += temp + 1;
+        return res;
     }
 }
