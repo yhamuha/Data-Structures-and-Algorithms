@@ -5,9 +5,9 @@ package misc.problem_solving;
  */
 public class MergeStringsAlternately {
     public static void main(String[] args) {
-        String word1 = "ab";
-        String word2 = "xyzz";
-        System.out.println(mergeAlternately(word1, word2));
+        String word1 = "abzz";
+        String word2 = "xy";
+        System.out.println(mergeAlternately2(word1, word2));
     }
 
     //
@@ -41,4 +41,22 @@ public class MergeStringsAlternately {
         return sb.toString();
     }
 
+
+    static String mergeAlternately2(String word1, String word2) {
+
+        StringBuilder st= new StringBuilder();
+        for(int i=0;i<word1.length();i++){
+
+            for(int j=i;j<=i;j++){
+                st.append(word1.charAt(i));
+                if(j==word1.length()-1 && j<word2.length()){
+                    st.append(word2.substring(j));
+                }else if(j<word2.length()){
+                    st.append(word2.charAt(j));
+                }
+
+            }
+        }
+        return st.toString();
+    }
 }
