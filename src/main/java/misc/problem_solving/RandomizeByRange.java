@@ -13,6 +13,7 @@ public class RandomizeByRange {
         System.out.println(Arrays.toString(randomizeByRange(size, i_from, i_to)));
         int[] array = {2,5,11,16};
         System.out.println(maxArray(array));
+        System.out.println(averageArray(array));
     }
 
     static int[] randomizeByRange (int size, int i_from, int i_to){
@@ -25,7 +26,6 @@ public class RandomizeByRange {
     }
 
     // max array
-
     public static int maxArray (int[] array){
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -33,5 +33,15 @@ public class RandomizeByRange {
                 max = array[i];
         }
         return max;
+    }
+
+    // average array
+    public static int averageArray (int[] array){
+        int N = array.length;
+        int sum = 0;
+        for (int i = 0; i < N; i++)
+            sum += array[i];
+        int average = sum / N;
+        return average;
     }
 }
