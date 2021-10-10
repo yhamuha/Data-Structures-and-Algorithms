@@ -37,7 +37,6 @@ public class DecompressRunLengthEncodedList {
     // time: O(N) with better performance;
     // space: O(1)
     static int[] decompressRLElist2(int[] nums) {
-
         int solutionLength = 0;
         for (int i = 0; i < nums.length; i += 2) {
             solutionLength += nums[i];
