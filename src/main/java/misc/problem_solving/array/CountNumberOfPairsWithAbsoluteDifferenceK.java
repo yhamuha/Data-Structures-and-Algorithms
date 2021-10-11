@@ -1,5 +1,8 @@
 package misc.problem_solving.array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  */
@@ -7,7 +10,7 @@ public class CountNumberOfPairsWithAbsoluteDifferenceK {
     public static void main(String[] args) {
         int[] nums = {3,2,1,5,4};
         int k = 2;
-        System.out.println(countKDifference2(nums, k));
+        System.out.println(countKDifference3(nums, k));
     }
 
     // brute force
@@ -38,5 +41,25 @@ public class CountNumberOfPairsWithAbsoluteDifferenceK {
             sum+=arr[i]*arr[i+k];
         }
         return sum;
+    }
+
+    //
+    static int countKDifference3(int[] nums, int k) {
+        Map<Integer, Integer> hm = new HashMap<>();
+        int ans = 0;
+        for(int i = 0; i < nums.length ; i++) {
+            int complement = Math.abs(nums[i] - k);
+            int complement1 = Math.abs(nums[i] + k);
+            if(hm.containsKey(complement) && Math.abs(nums[i] - complement ) == k) {
+                ans += hm.get(complement);
+            }
+            if(hm.containsKey(complement1)) {
+                ans += hm.get(complement1);
+            }
+
+            hm.put(nums[i], hm.getOrDefault(nums[i],0) +1);
+
+        }
+        return ans;
     }
 }
