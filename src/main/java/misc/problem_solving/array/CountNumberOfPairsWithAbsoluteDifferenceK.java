@@ -31,6 +31,7 @@ public class CountNumberOfPairsWithAbsoluteDifferenceK {
     }
 
     // O(n)
+    // perfect solution
     static int countKDifference2(int[] nums, int k) {
         int sum=0;
         int[] arr=new int[100];
