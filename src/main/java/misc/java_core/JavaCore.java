@@ -1,6 +1,7 @@
 package misc.java_core;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,7 +24,18 @@ public class JavaCore {
     >> 4
     */
 
+    // array.add (index, elem)
+   /* public static void main(String[] args) {
+        List<Integer> array = new ArrayList<Integer>(2);
+        array.add(5);
+        array.add(6);
+        array.add(0, 7);
+        System.out.println(array);
+        System.out.println("6st: " +array.indexOf(6));
 
-
+        array.remove(1);
+        System.out.println(array);
+        System.out.println("6st: " + array.indexOf(6));
+    }*/
 
 }
