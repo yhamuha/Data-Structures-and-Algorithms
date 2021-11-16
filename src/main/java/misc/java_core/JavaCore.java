@@ -38,4 +38,17 @@ public class JavaCore {
         System.out.println("6st: " + array.indexOf(6));
     }*/
 
+    // have access to private method other instance from the same class
+    /*private int getX() {
+        return 5;
+    }
+
+    public int get2X() {
+        return 2 * getX();
+    }
+
+    public static void main(String[] args) {
+        JavaCore jc = new JavaCore();
+        System.out.println(2 * jc.getX());
+    }*/
 }
