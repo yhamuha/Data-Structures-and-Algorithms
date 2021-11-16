@@ -51,4 +51,18 @@ public class JavaCore {
         JavaCore jc = new JavaCore();
         System.out.println(2 * jc.getX());
     }*/
+
+    // remove return from finally
+    /*public static void main(String... args) {
+        System.out.println("" + new JavaCore().summ(3, 3));
+    }
+
+    public int summ(int a, int b) {
+        try {
+            return a + b;
+        } finally {
+            if (a == b)
+                return 0;
+        }
+    }*/
 }
