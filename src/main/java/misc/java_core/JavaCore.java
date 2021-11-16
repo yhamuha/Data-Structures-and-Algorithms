@@ -65,4 +65,15 @@ public class JavaCore {
                 return 0;
         }
     }*/
+
+    // automatically change type from int to byte
+    /*public static void main(String[] s) {
+        byte b = 8;
+        m(b);
+        m(7);
+    }
+
+    static void m(byte b) {
+        System.out.print("byte");
+    }*/
 }
