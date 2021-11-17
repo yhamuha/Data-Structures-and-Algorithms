@@ -76,4 +76,18 @@ public class JavaCore {
     static void m(byte b) {
         System.out.print("byte");
     }*/
+
+    // nested if else
+    /*public static void main(String...args) {
+        boolean b = false;
+        if (b == false)
+            if (b = false)
+                System.out.println("if statement");
+            else
+                System.out.println("else 1");
+        else
+            System.out.println("else 2");
+    }*/
+
+
 }
