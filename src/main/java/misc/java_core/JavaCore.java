@@ -89,5 +89,28 @@ public class JavaCore {
             System.out.println("else 2");
     }*/
 
+   // by def equals compare references; == too
+   // with @override equals compare obj internals
+   /* public static void main(String[] args) {
+        V v1 = new V("abc");
+        V v2 = new V("abc");
+        System.out.println((v1 == v2) + " " + v1.equals(v2));
+        }
+    }*/
 
+    /*class V {
+        String s = null;
+
+        V(String str){
+            this.s = str;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            V v = (V) o;
+            return s != null ? s.equals(v.s) : v.s == null;
+        }
+   */
 }
