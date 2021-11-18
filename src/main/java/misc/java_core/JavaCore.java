@@ -7,7 +7,7 @@ import java.util.List;
 /**
  *
  */
-public class JavaCore {
+public class JavaCore extends Thread {
 
     // List is dynamic
     /*public static void main( String[] args ) {
@@ -113,4 +113,29 @@ public class JavaCore {
             return s != null ? s.equals(v.s) : v.s == null;
         }
    */
+
+    // separate thread in main
+
+    /* !! here field x is not volatile */
+    /*private int x = 2;
+
+    public static void main(String[] args) throws Exception {
+        new JavaCore().makeItSo();
+    }
+
+    public JavaCore() {
+        x = 5;
+        start();
+    }
+
+    public void makeItSo() throws Exception {
+        join();
+        x = x - 1;
+        System.out.println(x);
+    }
+
+    public void run() { x *= 2; }*/
+
+    /* result will be 9 */
+
 }
