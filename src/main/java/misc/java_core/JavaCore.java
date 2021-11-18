@@ -138,4 +138,27 @@ public class JavaCore extends Thread {
 
     /* result will be 9 */
 
+
+    // references to method are transmitted by value
+
+    /*private String name;
+
+    JavaCore(String name) {
+        this.name =  name;
+    }
+
+    public void test(JavaCore test) {
+        test = new JavaCore("three");
+    }
+
+    public String toString() {
+        return name;
+    }
+
+    public static void main(String[] args) {
+        JavaCore t1 = new JavaCore("one");
+        JavaCore t2 = new JavaCore("two");
+        t1.test(t2);
+        System.out.println(t2);
+    }*/
 }
