@@ -199,5 +199,14 @@ public class JavaCore extends Thread {
         test(n.intValue());
     }*/
 
-
+    // for
+    // iterations:
+    // 2 → 1 → 3 → 4
+    // 4 → 3 → 7 → 8
+    // 8 → 7 → 15 → 16
+    /*public static void main(String[] s) {
+        for (int i = 2; i < 10; i = (i++) + i--, i++) {
+            System.out.print(--i);
+        }
+    }*/
 }
