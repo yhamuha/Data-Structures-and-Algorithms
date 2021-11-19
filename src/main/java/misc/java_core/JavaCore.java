@@ -1,5 +1,7 @@
 package misc.java_core;
 
+import misc.binary.DoubleToBinary;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -161,4 +163,17 @@ public class JavaCore extends Thread {
         t1.test(t2);
         System.out.println(t2);
     }*/
+
+
+    // empty operator is allowed
+    /*public static void main(String[] args) {
+
+        int i, j;
+        i = 100;
+        j = 200;
+        while(++i < --j);
+        System.out.println(i);
+
+    }*/
+
 }
