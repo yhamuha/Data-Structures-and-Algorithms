@@ -91,15 +91,14 @@ public class JavaCore extends Thread {
             System.out.println("else 2");
     }*/
 
-   // by def equals compare references; == too
-   // with @override equals compare obj internals
-   /* public static void main(String[] args) {
+    // by def equals compare references; == too
+    // with @override equals compare obj internals
+    /* public static void main(String[] args) {
         V v1 = new V("abc");
         V v2 = new V("abc");
         System.out.println((v1 == v2) + " " + v1.equals(v2));
         }
     }*/
-
     /*class V {
         String s = null;
 
@@ -117,7 +116,6 @@ public class JavaCore extends Thread {
    */
 
     // separate thread in main
-
     /* !! here field x is not volatile */
     /*private int x = 2;
 
@@ -137,12 +135,9 @@ public class JavaCore extends Thread {
     }
 
     public void run() { x *= 2; }*/
-
     /* result will be 9 */
 
-
     // references to method are transmitted by value
-
     /*private String name;
 
     JavaCore(String name) {
@@ -163,7 +158,6 @@ public class JavaCore extends Thread {
         t1.test(t2);
         System.out.println(t2);
     }*/
-
 
     // empty operator is allowed
     /*public static void main(String[] args) {
@@ -210,3 +204,26 @@ public class JavaCore extends Thread {
         }
     }*/
 }
+
+    // hiding
+    /*class A {
+        int i = 0;
+        public int increment() {
+            return ++i;
+        }
+    }
+    class B extends A {
+        int i = 10;
+        public int increment() {
+            return ++i;
+        }
+
+        public static void main(String[] args) {
+            A a = new A();
+            System.out.println(a.increment());
+            *//*hiding*//*
+            A obj = new B();
+            System.out.println(obj.increment());
+        }
+    }*/
+
