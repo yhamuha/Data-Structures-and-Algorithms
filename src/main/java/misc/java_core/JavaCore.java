@@ -294,6 +294,16 @@ public class JavaCore extends Thread {
         System.out.println(Test2.name);
         System.out.println(Test2.var2);
     }*/
+
+    // Integer pool range is -128 .. 127
+    /*public static void main(String[] args) {
+        Integer a = 128;
+        Integer b = 128;
+        Integer c = -128;
+        Integer d = -128;
+        System.out.println(a == b);
+        System.out.println(c == d);
+    }*/
 }
 
 
