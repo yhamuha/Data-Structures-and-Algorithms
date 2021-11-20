@@ -275,6 +275,12 @@ public class JavaCore extends Thread {
         System.out.print("5 ");
     }*/
 
+    // byte, char , short to int implicit and explicit convert
+    /*public static void main(String[] args) {
+        byte b = 12;
+        byte k = (byte)(b + 1);
+        System.out.println(k);
+    }*/
 
 }
 
