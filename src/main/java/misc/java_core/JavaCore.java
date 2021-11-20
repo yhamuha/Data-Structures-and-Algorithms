@@ -282,6 +282,18 @@ public class JavaCore extends Thread {
         System.out.println(k);
     }*/
 
+    // inner static class
+    /*private static String var1 = "var1";
+
+    private static class Test2 {
+        private static final String name = "Name";
+        static String var2= var1 + "+update";
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Test2.name);
+        System.out.println(Test2.var2);
+    }*/
 }
 
 
