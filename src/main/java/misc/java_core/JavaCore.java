@@ -1,5 +1,5 @@
 package misc.java_core;
-
+import java.util.*;
 import misc.binary.DoubleToBinary;
 
 import java.util.ArrayList;
@@ -343,7 +343,17 @@ public class JavaCore extends Thread {
         }
     }*/
 
-
+    // boolean "true/false" = true/false; null==false; others == true
+    /*public static void main(String... args){
+        Boolean I1 = false;
+        Integer I2 = -1;
+        Number I3 = 1;
+        Formatter f = new Formatter();
+        f.format("%1$b ", I1)
+                .format("%1$b ", I2.toString())
+                .format("%1$b ", I3.toString());
+        System.out.println(f.toString());
+    }*/
 }
 
 
