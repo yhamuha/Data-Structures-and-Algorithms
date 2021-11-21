@@ -316,6 +316,23 @@ public class JavaCore extends Thread {
         }
     }*/
     /*java.lang.NumberFormatException: For input string: "Two"*/
+
+    // non-primitives or null values in if
+    /*private static Boolean b1, b2;
+
+    public static void main (String[] args) {
+        //if should use primitives or correct values of Wrapper types*
+        //*Boolean nulls won't work here*
+        if (b1 || !b2 || !b1 || b2) {
+            System.out.println(true);
+        }
+        else {
+            System.out.println(false);
+        }
+    }*/
+    /*NullPointerException*/
+
+
 }
 
 
