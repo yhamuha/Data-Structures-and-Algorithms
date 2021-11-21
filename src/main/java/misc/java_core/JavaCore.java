@@ -354,6 +354,29 @@ public class JavaCore extends Thread {
                 .format("%1$b ", I3.toString());
         System.out.println(f.toString());
     }*/
+
+    // objects init order
+    /*class A {
+        public A() { System.out.print(" A;"); }
+    }
+    class B {
+        public B() { System.out.print(" B;"); }
+    }
+    class C {
+        public C() { System.out.print(" C;"); }
+    }
+    class D extends C {
+        private A objA = new A();
+        private static B objB = new B();
+        static {
+            System.out.println(" before static B;");
+        }
+        public D() { System.out.print(" D;"); }
+
+        public static void main(String[] args){
+            new D();
+        }
+    }*/
 }
 
 
