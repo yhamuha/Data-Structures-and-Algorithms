@@ -391,7 +391,21 @@ public class JavaCore extends Thread {
         }
     }*/
 
+    // java.lang.Math declared as final
+    /*class Funcs extends java.lang.Math {
+        public int add(int x, int y) {
+            return x + y;
+        }
+        public int sub(int x, int y) {
+            return x - y;
+        }
+        public static void main(String[] a) {
+            misc.java_core.Funcs f = new misc.java_core.Funcs();
+            System.out.println("" + f.add(1, 2));
+        }
+    }*/
 
+    //
 }
 
 
