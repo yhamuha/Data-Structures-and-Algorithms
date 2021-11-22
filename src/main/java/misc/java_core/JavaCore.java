@@ -441,6 +441,13 @@ public class JavaCore extends Thread {
     /*public static void main(String s[]) {
         System.out.println((1<2) ? "1_true answer" : 1 == 1 ? "otherwise_ second true answer" : "otherwise_ second false answer");
     }*/
+
+    // can't call non-static from static
+    /*private final String DUMMY = "DUMMY";
+
+    public static void main(String[] args) {
+        System.out.println(DUMMY);
+    }*/
 }
 
 
