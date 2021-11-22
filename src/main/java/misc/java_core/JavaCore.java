@@ -436,6 +436,11 @@ public class JavaCore extends Thread {
         JavaCore test=new JavaCore();
         System.out.println("Size is: "+test.list.size());
     }*/
+
+    // ternary
+    /*public static void main(String s[]) {
+        System.out.println((1<2) ? "1_true answer" : 1 == 1 ? "otherwise_ second true answer" : "otherwise_ second false answer");
+    }*/
 }
 
 
