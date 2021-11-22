@@ -422,7 +422,20 @@ public class JavaCore extends Thread {
         c.process("asd","asd","asd");
     }*/
 
-
+    // two references to list in method
+    /*List<Integer> list;
+    JavaCore(){
+        list = new ArrayList<Integer>();
+        someVoid(list);
+    }
+    void someVoid(List<Integer> l){
+        l.add(0);
+        l=null;
+    }
+    public static void main(String[] args) {
+        JavaCore test=new JavaCore();
+        System.out.println("Size is: "+test.list.size());
+    }*/
 }
 
 
