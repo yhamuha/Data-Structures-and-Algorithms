@@ -519,7 +519,21 @@ public class JavaCore extends Thread {
         System.out.println("Result: " + s1 == s2);
     }*/
 
-
+    // float + double = XX.XXXtail
+    /*public static void main(String[] args) {
+        try {
+            String value = "29.1";
+            float fl = Float.valueOf(value);
+            double doub = fl + 1.0;
+            System.out.println(doub);
+        }
+        catch (NumberFormatException ex) {
+            System.out.println("NumberFormatException");
+        }
+        catch (ArithmeticException ex) {
+            System.out.println("ArithmeticException");
+        }
+    }*/
 }
 
 
