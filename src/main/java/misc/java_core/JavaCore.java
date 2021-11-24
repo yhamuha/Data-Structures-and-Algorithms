@@ -467,7 +467,30 @@ public class JavaCore extends Thread {
     /*could use: List temp = Collections.checkedList(ar, Integer.class);
     *  for checking the right object come into collection*/
 
-    //
+    // transmit primitive types by value
+    /*private double x = 2;
+    public static void multX(JavaCore a, double n){
+        a.setX(a.getX()*n);
+    }
+    public double getX() {return x;}
+    public void setX(double xn) {x = xn;}
+    public static void trippleValue(double x){
+        x*=3;
+    }
+    public static JavaCore resetX(JavaCore a){
+        a = new JavaCore();
+        return a;
+    }
+    public static void main(String[] args) {
+        int x = 3;
+        trippleValue(x);
+        JavaCore anA = new JavaCore();
+        multX(anA,x);
+        resetX(anA);
+        x=0;
+        System.out.print(anA.getX());
+    }*/
+
 
 }
 
