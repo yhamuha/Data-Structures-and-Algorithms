@@ -547,8 +547,30 @@ public class JavaCore extends Thread {
         System.out.println(sum);
     }*/
 
+    // abstract class should be extended and overrided
+    /*abstract class Parent {
+        String s = "hello!";
+        public void test() {
+            System.out.println(s);
+        }
+    }
 
+    class T extends Parent {
+        @Override
+        public void test() {
+            System.out.println("T");
+        }
+    }
+
+    class P {
+        public static void main(String[] args) {
+            Parent p = new T();
+            p.test();
+        }
+    }*/
 }
+
+
 
 
 
