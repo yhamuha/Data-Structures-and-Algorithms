@@ -534,6 +534,20 @@ public class JavaCore extends Thread {
             System.out.println("ArithmeticException");
         }
     }*/
+
+    // variable can be init outside the loop
+    /*public static void main(String[] arg) {
+        int limit = 10;
+        int sum = 0;
+
+        int i = 1;
+        for (; i <= limit;) {
+            sum += i++;
+            }
+        System.out.println(sum);
+    }*/
+
+
 }
 
 
