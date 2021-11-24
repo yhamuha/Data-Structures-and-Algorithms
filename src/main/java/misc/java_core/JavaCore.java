@@ -501,8 +501,20 @@ public class JavaCore extends Thread {
         System.out.println(i1 == 1000);
     }*/
 
+    // polymorphism doesn't allow for static methods
+    /*class Tenor extends Singer {
+        public static String sing() { return "fa"; }
+        public static void main(String[] args) {
+            Tenor t = new Tenor();
+            Singer s = new Tenor();
+            System.out.println(t.sing() + " " + s.sing());
+        }
+    }
+    class Singer { public static String sing() { return "la"; } }*/
+
 
 }
+
 
 
 
