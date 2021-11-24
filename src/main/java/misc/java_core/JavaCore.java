@@ -512,6 +512,13 @@ public class JavaCore extends Thread {
     }
     class Singer { public static String sing() { return "la"; } }*/
 
+    // concat priority is higher than "=="
+    /*public static void main(String[] args) {
+        String s1 = "str";
+        String s2 = "str";
+        System.out.println("Result: " + s1 == s2);
+    }*/
+
 
 }
 
