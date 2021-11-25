@@ -26,8 +26,17 @@ public class Apple {
         return false;
     }*/
 
+    // missing number through XOR
+    /*public static int missingNumber(int[] nums) {
+        int missingNum = nums.length;
+        for(int i =0; i< nums.length; i++) {
+            missingNum = missingNum ^ i ^ nums[i];
+        }
+        return missingNum;
+    }*/
+
     public static void main(String[] args) {
-        int[] nums = {1,2,3};
-        System.out.println();
+        int[] nums = {0,1,3};
+        System.out.println(missingNumber(nums));
     }
 }
