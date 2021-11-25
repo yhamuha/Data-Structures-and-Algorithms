@@ -570,6 +570,33 @@ public class JavaCore extends Thread {
     }*/
 }
 
+class HelloWorld {
+    static void changeIt(String value) {
+        value = new
+                String("Hello!");
+    }
+    public static void main(String[] argvc)
+    {
+        String test = new String("Hello World!");
+        changeIt(test);
+        System.out.println("After changing : " + test);
+    }
+}
+
+class HelloWorld2 {
+    private int iValue;
+    static void changeIt(HelloWorld2 value) {
+        value.iValue = 10;
+    }
+    public static void main(String[] argvc)
+    {
+        HelloWorld2 hw = new HelloWorld2();
+        hw.iValue = 20;
+        changeIt(hw);
+        System.out.println("After changing : " + hw.iValue);
+    }
+}
+
 
 
 
