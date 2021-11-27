@@ -27,6 +27,7 @@ public class TestFuncProgramming {
         Runner runner = new Runner();
         // effectively final: won't change before using lambda
         int a = 1;
+        // lambda doesn't have own scope
         runner.run((x)-> (x + a));
 
     }
