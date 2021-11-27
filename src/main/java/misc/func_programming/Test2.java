@@ -47,7 +47,18 @@ public class Test2 {
         System.out.println(Arrays.toString(arr2));
         System.out.println(list2);
 
-        //
+        // reduce
+        int[] arr3 = new int[10];
+        List<Integer>  list3 = new ArrayList<>();
+
+        fillArray(arr3);
+        fillList(list3);
+
+        int sum1 = Arrays.stream(arr3).reduce((acc, curr) -> acc + curr).getAsInt();
+        int sum2 = list3.stream().reduce((acc, curr) -> acc * curr).get();
+
+        System.out.println(sum1);
+        System.out.println(sum2);
 
     }
 
