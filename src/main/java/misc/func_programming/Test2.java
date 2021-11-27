@@ -26,11 +26,29 @@ public class Test2 {
         }*/
 
         // for array
+        // map method
         arr1 = Arrays.stream(arr1).map(a -> a*2).toArray();
         list1 = list1.stream().map(a -> a*2).collect(Collectors.toList());
 
-        System.out.println(list1);
-        System.out.println(Arrays.toString(arr1));
+        arr1 = Arrays.stream(arr1).map(a -> 3).toArray();
+        arr1 = Arrays.stream(arr1).map(a -> a + 1).toArray();
+
+
+        // filter method
+
+        int[] arr2 = new int[10];
+        List<Integer> list2 = new ArrayList<>();
+
+        fillArray(arr2);
+        fillList(list2);
+
+        arr2 = Arrays.stream(arr2).filter(a -> a % 2 == 0).toArray();
+        list2 = list2.stream().filter(a -> a % 2 == 0).collect(Collectors.toList());
+        System.out.println(Arrays.toString(arr2));
+        System.out.println(list2);
+
+        //
+
     }
 
     private static void fillList (List<Integer> list) {
