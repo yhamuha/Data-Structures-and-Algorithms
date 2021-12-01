@@ -2,6 +2,7 @@ package misc.func_programming;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,8 +28,8 @@ public class Test2 {
 
         // for array
         // map method
-        arr1 = Arrays.stream(arr1).map(a -> a*2).toArray();
-        list1 = list1.stream().map(a -> a*2).collect(Collectors.toList());
+        arr1 = Arrays.stream(arr1).map(a -> a * 2).toArray();
+        list1 = list1.stream().map(a -> a * 2).collect(Collectors.toList());
 
         arr1 = Arrays.stream(arr1).map(a -> 3).toArray();
         arr1 = Arrays.stream(arr1).map(a -> a + 1).toArray();
@@ -49,7 +50,7 @@ public class Test2 {
 
         // reduce
         int[] arr3 = new int[10];
-        List<Integer>  list3 = new ArrayList<>();
+        List<Integer> list3 = new ArrayList<>();
 
         fillArray(arr3);
         fillList(list3);
@@ -62,12 +63,13 @@ public class Test2 {
 
     }
 
-    private static void fillList (List<Integer> list) {
-        for (int i =0;i< 10; i++) list.add(i+1);
+    private static void fillList(List<Integer> list) {
+        for (int i = 0; i < 10; i++) list.add(i + 1);
     }
 
-    private static void fillArray (int[] arr) {
-        for (int i =0;i< 10; i++) arr[i] = i+1;
+    private static void fillArray(int[] arr) {
+        for (int i = 0; i < 10; i++) arr[i] = i + 1;
     }
 
 }
+
