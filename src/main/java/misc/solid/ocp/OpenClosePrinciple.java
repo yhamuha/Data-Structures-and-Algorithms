@@ -15,7 +15,7 @@ import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 public class OpenClosePrinciple {
 
     // driver method
-    public static void main(String[] args) {
+    public static final void main(String[] args) {
         int arr[] = {1,5,3,2,4};
         ArrayUtil.sort(arr, new DscComparator());
         System.out.println("sorted values in array are:");
