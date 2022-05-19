@@ -1,5 +1,7 @@
 package misc;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class BubbleSortNext {
 
     // logic to sort the elements
@@ -13,7 +15,7 @@ public class BubbleSortNext {
                     swapNumbers(i, k, array);
                 }
             }
-            printNumbers(array);
+            // printNumbers(array);
         }
     }
 
@@ -34,8 +36,22 @@ public class BubbleSortNext {
     }
 
     public static void main(String[] args) {
-        int[] input = { 4, 2, 9, 6, 23, 12, 34, 0, 1 };
+
+        int min = 0;
+        int max = 10000;
+        int[] input = new int[5_000];
+        int j=0;
+        for (int i = input.length-1; i>=0; i--) {
+            int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+            input[j]=randomNum;
+            j++;
+        }
+
+
+        long start = System.currentTimeMillis();
         bubble_srt(input);
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
 
     }
 }

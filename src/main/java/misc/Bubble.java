@@ -23,8 +23,7 @@ public class Bubble {
         long start = System.currentTimeMillis();
         bubbleSort(arr);
         long end = System.currentTimeMillis();
-        System.out.println("output arr: \n" + Arrays.toString(arr));
-        System.out.println("running time: " + (end - start) + " ms");
+        System.out.println(end-start);
     }
 
     public static void bubbleSort(int[] array) {

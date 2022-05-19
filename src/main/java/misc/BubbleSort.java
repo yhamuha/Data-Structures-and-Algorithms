@@ -1,17 +1,31 @@
 package misc;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * This class contains only one private method to bubble sorting.
+ * ~75 ms in average
+ *
  */
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] arr = {7, 3, 4, 11, 27, 8, 5};
-        System.out.println(System.currentTimeMillis());
+
+        int min = 0;
+        int max = 10000;
+        int[] arr = new int[5_000];
+        int j=0;
+        for (int i = arr.length-1; i>=0; i--) {
+            int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+            arr[j]=randomNum;
+            j++;
+        }
+
+        long start = System.currentTimeMillis();
         int array[] = sort(arr);
         System.out.println("output: \n" + Arrays.toString(array));
-        System.out.println(System.currentTimeMillis());
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
     }
 
     /**
