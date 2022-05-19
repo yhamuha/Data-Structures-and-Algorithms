@@ -5,13 +5,17 @@ package misc.problem_solving;
  */
 public class ChessboardColor {
     public static void main(String[] args) {
-     String coordinates = "h3";
-        System.out.println(squareIsWhite3(coordinates));
+     String coordinates = "c2";
+        System.out.println(squareIsWhite(coordinates));
     }
 
-    static boolean squareIsWhite(String coordinates) {
-        return ((coordinates.charAt(0)-'a'+1)+(coordinates.charAt(1)-'1'+1))%2!=0;
+
+    static boolean squareIsWhite (String coordinate) {
+
+        return ((coordinate.charAt(0)-'a') + (coordinate.charAt(1)-'1')) % 2 != 0 ? true : false;
     }
+
+
 
     static boolean squareIsWhite2(String coordinates) {
         if(coordinates.isEmpty() || coordinates.length() != 2)
