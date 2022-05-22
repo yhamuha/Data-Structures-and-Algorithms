@@ -4,21 +4,35 @@ import java.util.Arrays;
  * <h1>InsertionSort</h1>
  * The InsertionSort implements classic insertion sort algorithm.
  * <p>
- * Implementation include time estimate measurements for _k elements.
+ * Implementation include time estimate measurements for ARRAY_SIZE elements.
+ * 47-53 ms in average by 10 times measures
  */
 public class InsertionSort {
 
     public static final int ARRAY_SIZE = 10000;
-    public static final int ARRAY[] = {1,5,4,0};
+    private static long[] timeValue = new long[10];
 
     public static void main(String[] args) {
 
-//        int array[] = initArray(ARRAY_SIZE);
+        // run 10 times
+        for (int i = 0; i<10; i++) {
+            int array[] = initArray(ARRAY_SIZE);
+            long start = System.currentTimeMillis();
+            int result[]  = sort(array);
+            long end = System.currentTimeMillis();
+            // collect values
+            timeValue[i] = end-start;
+        }
 
-        long start = System.currentTimeMillis();
-        int result[]  = sort(ARRAY);
-        long end = System.currentTimeMillis();
-        System.out.println(end-start);
+        // get average
+        long tempValue = 0;
+        for (int i=0; i<timeValue.length; i++) {
+            tempValue += timeValue[i];
+        }
+        long average = tempValue / timeValue.length;
+
+        System.out.println("average: " + average);
+
     }
 
     static int[] sort(int[] arr){

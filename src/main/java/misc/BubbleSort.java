@@ -4,28 +4,35 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * This class contains only one private method to bubble sorting.
- * ~75 ms in average
+ *  88-91 ms in average by 10 times measures
  *
  */
 public class BubbleSort {
 
+    public static final int ARRAY_SIZE = 10000;
+    private static long[] timeValue = new long[10];
+
     public static void main(String[] args) {
 
-        int min = 0;
-        int max = 10000;
-        int[] arr = new int[5_000];
-        int j=0;
-        for (int i = arr.length-1; i>=0; i--) {
-            int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
-            arr[j]=randomNum;
-            j++;
+        // run 10 times
+        for (int i = 0; i<10; i++) {
+            int array[] = initArray(ARRAY_SIZE);
+            long start = System.currentTimeMillis();
+            int result[]  = sort(array);
+            long end = System.currentTimeMillis();
+            // collect values
+            timeValue[i] = end-start;
         }
 
-        long start = System.currentTimeMillis();
-        int array[] = sort(arr);
-        System.out.println("output: \n" + Arrays.toString(array));
-        long end = System.currentTimeMillis();
-        System.out.println(end-start);
+        // get average
+        long tempValue = 0;
+        for (int i=0; i<timeValue.length; i++) {
+            tempValue += timeValue[i];
+        }
+        long average = tempValue / timeValue.length;
+
+        System.out.println("average: " + average);
+
     }
 
     /**
@@ -33,7 +40,7 @@ public class BubbleSort {
      * @param arr the array to be sorted
      */
     public static int[] sort(int[] arr) {
-        for(int i=0; i< arr.length-1; i++){
+        for(int i=0; i< arr.length-1; i++) {
             for (int j=arr.length-1; j>i; j--) {
                 if (arr[j]<arr[j-1]) {
                     int temp = arr[j-1];
@@ -41,6 +48,16 @@ public class BubbleSort {
                     arr[j]=temp;
                 }
             }
+        }
+        return arr;
+    }
+
+    static int[] initArray (int arraySize) {
+        int[] arr = new int[arraySize];
+        int j=0;
+        for (int i = arr.length-1; i>=0; i--) {
+            arr[j]=i;
+            j++;
         }
         return arr;
     }
