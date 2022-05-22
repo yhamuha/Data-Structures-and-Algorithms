@@ -1,13 +1,13 @@
-package misc;
+package misc.transition;
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
-
 /**
- * This class contains only one private method to bubble sorting.
- *  88-91 ms in average by 10 times measures
- *
+ * <h1>InsertionSort</h1>
+ * The InsertionSort implements classic insertion sort algorithm.
+ * <p>
+ * Implementation include time estimate measurements for ARRAY_SIZE elements.
+ * 47-53 ms in average by 10 times measures
  */
-public class BubbleSort {
+public class InsertionSort {
 
     public static final int ARRAY_SIZE = 10000;
     private static long[] timeValue = new long[10];
@@ -35,18 +35,12 @@ public class BubbleSort {
 
     }
 
-    /**
-     * Sorts the array using bubble classic algorithm.
-     * @param arr the array to be sorted
-     */
-    public static int[] sort(int[] arr) {
-        for(int i=0; i< arr.length-1; i++) {
-            for (int j=arr.length-1; j>i; j--) {
-                if (arr[j]<arr[j-1]) {
-                    int temp = arr[j-1];
-                    arr[j-1] = arr[j];
-                    arr[j]=temp;
-                }
+    static int[] sort(int[] arr){
+        for(int i=1; i<arr.length; i++) {
+            for(int j=i; j>0 && (arr[j]<arr[j-1]); j--){
+                int tmp = arr[j];
+                arr[j]=arr[j-1];
+                arr[j-1]=tmp;
             }
         }
         return arr;
@@ -61,4 +55,5 @@ public class BubbleSort {
         }
         return arr;
     }
+
 }
