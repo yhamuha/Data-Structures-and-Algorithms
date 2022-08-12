@@ -1,7 +1,7 @@
 package misc.a__xTraining.quickSort;
 
 /**
- *
+ * Quick Sort implementation using recursion
  */
 public class QuickSort {
 
