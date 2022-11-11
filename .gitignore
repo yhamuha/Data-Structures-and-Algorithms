@@ -651,5 +651,4 @@ fabric.properties
 /target/classes/misc/patterns/bridgePattern/Workshop.class
 /target/classes/misc/patterns/builderTP/Wrapper.class
 /target/classes/misc/XMod.class
-/.idea/
-/src/main/java/misc/.idea/
+/.idea/*.*
