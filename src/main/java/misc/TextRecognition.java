@@ -1,6 +1,6 @@
 package misc;
 
-import com.sun.deploy.util.StringUtils;
+
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -50,11 +50,11 @@ public class TextRecognition {
     }
 
     // time - O(N^2 + N) = O(N^2)
-    String parse (String sentence, HashSet<String> dictionary) {
-        if (sentence == null || sentence.equals("")) return null;
-
-        ArrayList<String> r = parseHelper(sentence, dictionary);
-        return StringUtils.join(r, " ");
-    }
+//    String parse (String sentence, HashSet<String> dictionary) {
+//        if (sentence == null || sentence.equals("")) return null;
+//
+//        ArrayList<String> r = parseHelper(sentence, dictionary);
+//        return StringUtils.join(r, " ");
+//    }
 
 }
