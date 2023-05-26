@@ -1,4 +1,4 @@
-package misc.problem_solving;
+package onemoretime.palindrome;
 
 /**
  *
@@ -13,7 +13,9 @@ public class string_is_palindrome {
 
     static boolean isPalindrome(String str)
     {
+        // define left and right position
         int i = 0, j = str.length() - 1;
+        // go through all the symbols comparing edge-left and edge-right elements on each iteration
         while (i < j) {
             if (str.charAt(i) != str.charAt(j))
                 return false;

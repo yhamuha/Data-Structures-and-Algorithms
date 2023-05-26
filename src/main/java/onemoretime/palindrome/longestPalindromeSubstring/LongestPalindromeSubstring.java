@@ -1,4 +1,4 @@
-package misc.a__xTraining.longestPalindromeSubstring;
+package onemoretime.palindrome.longestPalindromeSubstring;
 
     // L P S
     // Extracting a longest palindrome from a String

@@ -1,4 +1,4 @@
-package misc;
+package onemoretime.palindrome;
 
 public class IsPalindrome
 {

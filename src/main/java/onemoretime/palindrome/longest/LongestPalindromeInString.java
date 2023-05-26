@@ -1,4 +1,4 @@
-package misc;
+package onemoretime.palindrome.longest;
 
 // Java implementation of O(n^2)
 // time and O(1) space method

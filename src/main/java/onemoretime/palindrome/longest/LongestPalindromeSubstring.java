@@ -1,4 +1,4 @@
-package misc;
+package onemoretime.palindrome.longest;
 
 /**
  *  The {@code LongestPalindromeSubstring} class
