@@ -6,12 +6,12 @@ package onemoretime.fibonacci;
  */
 
 public class Wh_Fibonacci_sequence {
-    public static int calc_fibonacci_seq (int number){
+    public static long calc_fibonacci_seq (int number){
         if (number <= 1) return number;
 
-        int fib = 0;
-        int prev0 = 0;
-        int prev1 = 1;
+        long fib = 0;
+        long prev0 = 0;
+        long prev1 = 1;
 
         for (int i=2; i<=number; i++) {
             fib = prev0 + prev1;
@@ -24,7 +24,9 @@ public class Wh_Fibonacci_sequence {
 
     public static void main (String[] str) {
         int number = 5;
-        System.out.println ("Fibonacci seq for " + number + "is : " + calc_fibonacci_seq(number));
+        for (int i =1; i<=number; i++) {
+            System.out.println ("Fibonacci seq for " + number + "is : " + calc_fibonacci_seq(i));
+        }
     }
 }
 
