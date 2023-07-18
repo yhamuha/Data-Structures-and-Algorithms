@@ -1,4 +1,4 @@
-package cs.arrayandlinkedlist.bidirect;
+package cs.arrayandlinkedlist.bidirectional;
 
 public class Node {
 

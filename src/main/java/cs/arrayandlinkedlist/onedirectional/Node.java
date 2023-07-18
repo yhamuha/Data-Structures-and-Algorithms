@@ -1,4 +1,4 @@
-package cs.arrayandlinkedlist.undirect;
+package cs.arrayandlinkedlist.onedirectional;
 
 public class Node {
 
