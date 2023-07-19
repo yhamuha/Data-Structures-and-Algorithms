@@ -25,6 +25,15 @@ public class Node {
             insert (node.right, key, value);
     }
 
+    // node : root
+    static Node search (Node node, int key) {
+        if (!nodeExist(node)) return null;
+        if (node.key == key) return node;
+        return (key < node.key)
+                ? search(node.left, key)
+                : search (node.right, key);
+    }
+
     @Override
     public String toString() {
         return "Node{" +
@@ -45,5 +54,18 @@ public class Node {
         System.out.println(" " + root.key);
         System.out.print(root.left.key); System.out.println(" " + root.right.key);
 
+        System.out.println(search(root, 3));
+
     }
 }
+
+/*
+
+Node    {key=3, value=12,   left=Node {key=1, value=6,
+                                left=Node {key=null, value=null, left=null, right=null},
+                                right=Node{key=null, value=null, left=null, right=null}},
+
+                            right=Node{key=4, value=33,
+                                left=Node{key=null, value=null, left=null, right=null},
+                                right=Node{key=null, value=null, left=null, right=null}}}
+*/
