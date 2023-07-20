@@ -6,32 +6,66 @@ public class Node {
     Node left = null;
     Node right = null;
 
-    static void createNode (Node node, int key, int value) {
+    static void createNode(Node node, int key, int value) {
         node.key = key;
         node.value = value;
         node.left = new Node();
         node.right = new Node();
     }
 
-    static boolean nodeExist (Node node) {
+    static boolean nodeExist(Node node) {
         return node.key != null;
     }
 
-    static void insert (Node node, int key, int value) {
+    static void insert(Node node, int key, int value) {
         if (!nodeExist(node)) createNode(node, key, value);
         else if (key < node.key)
-            insert (node.left, key, value);
+            insert(node.left, key, value);
         else
-            insert (node.right, key, value);
+            insert(node.right, key, value);
     }
 
     // node : root
-    static Node search (Node node, int key) {
+    static Node search(Node node, int key) {
         if (!nodeExist(node)) return null;
         if (node.key == key) return node;
         return (key < node.key)
                 ? search(node.left, key)
-                : search (node.right, key);
+                : search(node.right, key);
+    }
+
+    static Node getMin(Node node) {
+        if (!nodeExist(node)) return null;
+        if (!nodeExist(node.left)) return node;
+        return getMin(node.left);
+    }
+
+    static Node getMax(Node node) {
+        if (!nodeExist(node)) return null;
+        if (!nodeExist(node.right)) return node;
+        return getMax(node.right);
+    }
+
+    // symmetric l-t-r
+    static void inOrderTraversal(Node node) {
+        if (!nodeExist(node)) return;
+        inOrderTraversal(node.left);
+        System.out.println(node.value);
+        inOrderTraversal(node.right);
+    }
+
+    // backward l-r-t
+    static void postOrderTraversal(Node node) {
+        inOrderTraversal(node.left);
+        inOrderTraversal(node.right);
+        System.out.println(node.value);
+    }
+
+    // straight t-l-r
+    static void preOrderTraversal(Node node) {
+        System.out.println(node.value);
+        inOrderTraversal(node.left);
+        inOrderTraversal(node.right);
     }
 
     @Override
@@ -52,20 +86,17 @@ public class Node {
         insert(root, 4, 33);
 
         System.out.println(" " + root.key);
-        System.out.print(root.left.key); System.out.println(" " + root.right.key);
+        System.out.print(root.left.key);
+        System.out.println(" " + root.right.key);
 
         System.out.println(search(root, 3));
+
+        System.out.println(getMin(root));
+        System.out.println(getMax(root));
+
+        inOrderTraversal(root);
 
     }
 }
 
-/*
 
-Node    {key=3, value=12,   left=Node {key=1, value=6,
-                                left=Node {key=null, value=null, left=null, right=null},
-                                right=Node{key=null, value=null, left=null, right=null}},
-
-                            right=Node{key=4, value=33,
-                                left=Node{key=null, value=null, left=null, right=null},
-                                right=Node{key=null, value=null, left=null, right=null}}}
-*/
