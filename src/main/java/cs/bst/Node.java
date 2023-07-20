@@ -68,6 +68,26 @@ public class Node {
         inOrderTraversal(node.right);
     }
 
+    void transparentNode(Node toNode, Node fromNode) {
+        toNode.key = fromNode.key;
+        toNode.value = fromNode.value;
+        toNode.left = fromNode.left;
+        toNode.right = fromNode.right;
+    }
+
+    Node getChildOrNil(Node node) {
+        return nodeExist(node.left)
+                ? node.left
+                : node.right;
+    }
+
+    int getChildrenCount(Node node) {
+        int count = 0;
+        if (nodeExist(node.left)) count += 1;
+        if (nodeExist(node.right)) count += 1;
+        return count;
+    }
+
     @Override
     public String toString() {
         return "Node{" +
