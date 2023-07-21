@@ -68,7 +68,7 @@ public class Node {
         inOrderTraversal(node.right);
     }
 
-    void transparentNode(Node toNode, Node fromNode) {
+    void transplantNode(Node toNode, Node fromNode) {
         toNode.key = fromNode.key;
         toNode.value = fromNode.value;
         toNode.left = fromNode.left;
@@ -86,6 +86,35 @@ public class Node {
         if (nodeExist(node.left)) count += 1;
         if (nodeExist(node.right)) count += 1;
         return count;
+    }
+
+    void removeNodeWithOneOrZeroChild(Node nodeToDelete) {
+        Node childOrNil = getChildOrNil(nodeToDelete);
+        transplantNode(nodeToDelete, childOrNil);
+    }
+
+    boolean remove (Node root, int key) {
+
+        // search node
+        Node nodeToDelete = search(root, key);
+        if (nodeToDelete == null) return false;
+
+        int childrenCount = getChildrenCount(nodeToDelete);
+
+        if (childrenCount < 2) {
+            // replace child to the deleted node place
+            removeNodeWithOneOrZeroChild(nodeToDelete);
+        } else {
+            // getMin node in the right subTree
+            Node minNode = getMin(nodeToDelete.right);
+
+            // copy min key and value
+            nodeToDelete.key = minNode.key;
+            nodeToDelete.value = minNode.value;
+            // remove min node
+            removeNodeWithOneOrZeroChild(minNode);
+        }
+        return true;
     }
 
     @Override
