@@ -12,15 +12,22 @@ public class Stack {
         }
         STACK_TOP += 1;
         STACK[STACK_TOP] = value;
-        System.out.println(STACK[STACK_TOP]);
+    }
+
+    static int pop() throws Exception {
+        if (STACK_TOP == -1) throw new Exception("Stack is empty");
+        int value = STACK[STACK_TOP];
+        STACK_TOP -= 1;
+        return value;
     }
 
     public static void main(String[] args) {
         try {
             push(1);
+            pop();  //
             push(1);
             push(1); // 1 1 1
-            push(1); // Stack overflow
+            // push(1); // Stack overflow
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
