@@ -8,6 +8,8 @@ public class BitVector {
     int NETWORK = 8;
     int EXDRIVE = 16;
 
+    long VECTOR_SIZE;
+
     void processData(int flags) {
         if ((flags & HDD) != 0) System.out.println("HDD");
         if ((flags & PRINT) != 0) System.out.println("PRINT");
@@ -27,9 +29,27 @@ public class BitVector {
         // 137_438_953_408 = 64 * (2^31-1)
         if (bitsCount < 0 || bitsCount > 137_438_953_408L)
             throw new Exception("bitsCount should be from 1 to 137,438,953,408");
-        long VECTOR_SIZE = bitsCount;
+        VECTOR_SIZE = bitsCount;
         // /64 equals of /2^6 (>> 6)
         int bucketsCount = (int) (((bitsCount - 1) >> 6) + 1);
         return new long[bucketsCount];
+    }
+
+    void validateRange(long[] bitVector, long bitIndex) throws Exception {
+        long bitLastIndex = VECTOR_SIZE - 1;
+        if (bitIndex < 0 || bitIndex > bitLastIndex)
+            throw new Exception("bitIndex should be in range from 0 to " + bitLastIndex);
+    }
+    void setBit(long[] bitVector, long bitIndex) throws Exception {
+        validateRange(bitVector, bitIndex);
+        int bucketIndex = (int) (bitIndex >> 6);
+        long indexInBucket = bitIndex % 64;
+        bitVector[bucketIndex] |= 1L << indexInBucket;
+    }
+    void unsetBit(long[] bitVector, long bitIndex) throws Exception {
+        validateRange(bitVector, bitIndex);
+        int bucketIndex = (int) (bitIndex >> 6);
+        long indexInBucket = bitIndex % 64;
+        bitVector[bucketIndex] &= ~(1L << indexInBucket);
     }
 }
