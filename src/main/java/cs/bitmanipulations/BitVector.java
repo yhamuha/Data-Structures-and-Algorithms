@@ -43,13 +43,11 @@ public class BitVector {
     void setBit(long[] bitVector, long bitIndex) throws Exception {
         validateRange(bitVector, bitIndex);
         int bucketIndex = (int) (bitIndex >> 6);
-        long indexInBucket = bitIndex % 64;
-        bitVector[bucketIndex] |= 1L << indexInBucket;
+        bitVector[bucketIndex] |= 1L << bitIndex;
     }
     void unsetBit(long[] bitVector, long bitIndex) throws Exception {
         validateRange(bitVector, bitIndex);
         int bucketIndex = (int) (bitIndex >> 6);
-        long indexInBucket = bitIndex % 64;
-        bitVector[bucketIndex] &= ~(1L << indexInBucket);
+        bitVector[bucketIndex] &= ~(1L << bitIndex);
     }
 }
