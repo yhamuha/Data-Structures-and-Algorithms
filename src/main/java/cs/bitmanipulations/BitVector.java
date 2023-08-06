@@ -20,4 +20,16 @@ public class BitVector {
         BitVector bv = new BitVector();
         bv.processData(1);
     }
+
+    long[] initBitVector(long bitsCount) throws Exception {
+
+        // 64 bit type for cell; 32 bit in each of cell (2^31 -1)
+        // 137_438_953_408 = 64 * (2^31-1)
+        if (bitsCount < 0 || bitsCount > 137_438_953_408L)
+            throw new Exception("bitsCount should be from 1 to 137,438,953,408");
+        long VECTOR_SIZE = bitsCount;
+        // /64 equals of /2^6 (>> 6)
+        int bucketsCount = (int) (((bitsCount - 1) >> 6) + 1);
+        return new long[bucketsCount];
+    }
 }
