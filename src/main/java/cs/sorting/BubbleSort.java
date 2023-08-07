@@ -21,4 +21,25 @@ public class BubbleSort {
             length = newLength;
         }
     }
+
+    void selectionSort(int arr[]) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[minIndex] > arr[j]) minIndex = j;
+            }
+            if (minIndex != i) swap(arr, minIndex, i);
+        }
+    }
+
+    void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int unsorted = i;
+            int sorted = unsorted - 1;
+            while (sorted > -1 && arr[sorted] > arr[sorted + 1]) {
+                swap(arr, sorted, sorted + 1);
+                sorted--;
+            }
+        }
+    }
 }
