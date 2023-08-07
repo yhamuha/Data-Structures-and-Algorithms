@@ -1,4 +1,4 @@
-package leetcode.draw;
+package lc.draw;
 
 public class Draw {
 

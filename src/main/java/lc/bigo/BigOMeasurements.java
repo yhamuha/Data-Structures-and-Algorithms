@@ -1,4 +1,4 @@
-package leetcode.bigo;
+package lc.bigo;
 
 public class BigOMeasurements {
 
