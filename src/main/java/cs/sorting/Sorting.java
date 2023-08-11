@@ -1,14 +1,16 @@
 package cs.sorting;
 
-public class BubbleSort {
+import java.util.Arrays;
 
-    void swap (int[] arr, int a, int b) {
+public class Sorting {
+
+    static void swap (int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
     }
 
-    void bubbleSortOptimized(int[] arr) {
+    static void bubbleSortOptimized(int[] arr) {
         int length = arr.length;
         while (length != 0) {
             int newLength = 0;
@@ -22,7 +24,7 @@ public class BubbleSort {
         }
     }
 
-    void selectionSort(int arr[]) {
+    static void selectionSort(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
@@ -32,7 +34,7 @@ public class BubbleSort {
         }
     }
 
-    void insertionSort(int[] arr) {
+    static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int unsorted = i;
             int sorted = unsorted - 1;
@@ -43,10 +45,13 @@ public class BubbleSort {
         }
     }
 
-    String joinWords(String[] words) {
-        String sentence = "";
-        for (String w: words)
-            sentence = sentence + w;
-        return sentence;
+    public static void main(String[] args) {
+        int[] arr = {5,4,3,1,2};
+        bubbleSortOptimized(arr);
+        selectionSort(arr);
+        insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
+
+
     }
 }
