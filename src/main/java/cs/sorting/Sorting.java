@@ -10,6 +10,20 @@ public class Sorting {
         arr[b] = temp;
     }
 
+
+    // O(n^2)
+    static void bubbleSort(int[] arr) {
+        boolean swapped = true;
+        while (swapped) {
+            for (int i = 1; i < arr.length; i++) {
+                swapped = false;
+                if (arr[i-1] > arr[i]) swap(arr, i-1, i);
+                swapped = true;
+            }
+        }
+    }
+
+    // won't going to pass already sorted elements
     static void bubbleSortOptimized(int[] arr) {
         int length = arr.length;
         while (length != 0) {
@@ -24,6 +38,7 @@ public class Sorting {
         }
     }
 
+    // O(n^2)
     static void selectionSort(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
@@ -47,11 +62,9 @@ public class Sorting {
 
     public static void main(String[] args) {
         int[] arr = {5,4,3,1,2};
-        bubbleSortOptimized(arr);
-        selectionSort(arr);
+//        bubbleSortOptimized(arr);
+//        selectionSort(arr);
         insertionSort(arr);
         System.out.println(Arrays.toString(arr));
-
-
     }
 }
