@@ -1,5 +1,8 @@
 package lc.strings;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class RemovingDuplicate {
 
     public static String removeDuplicates(String str) {
@@ -13,9 +16,20 @@ public class RemovingDuplicate {
         }
         return sb.toString();
     }
+    public static String removeDuplicates_hs(String str) {
+        char[] chArray = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        Set<Character> chHashSet = new HashSet<>();
+        for (char c: chArray) {
+            if (chHashSet.add(c)) {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
 
     public static void main(String[] args) {
         String str = new String("abba");
-        System.out.println(removeDuplicates(str));
+        System.out.println(removeDuplicates_hs(str));
     }
 }
