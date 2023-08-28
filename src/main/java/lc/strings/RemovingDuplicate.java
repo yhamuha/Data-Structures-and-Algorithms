@@ -1,7 +1,9 @@
 package lc.strings;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class RemovingDuplicate {
 
@@ -28,8 +30,14 @@ public class RemovingDuplicate {
         return sb.toString();
     }
 
+    public static String removeDuplicates_func(String str) {
+        return Arrays.asList(str.split("")).stream()
+                .distinct()
+                .collect(Collectors.joining());
+    }
+
     public static void main(String[] args) {
         String str = new String("abba");
-        System.out.println(removeDuplicates_hs(str));
+        System.out.println(removeDuplicates_func(str));
     }
 }
