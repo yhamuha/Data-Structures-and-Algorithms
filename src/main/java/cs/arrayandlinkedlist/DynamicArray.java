@@ -1,7 +1,5 @@
 package cs.arrayandlinkedlist;
 
-import java.util.Arrays;
-
 public class DynamicArray {
     int capacity;
     int length;;
@@ -13,32 +11,66 @@ public class DynamicArray {
         arr = new int[2];
     }
 
-    // Insert n in the last position of the array
     public void pushback(int n) {
         if (length == capacity) {
             this.resize();
         }
-
-        // insert at next empty position
         arr[length] = n;
         length++;
     }
 
     public void resize() {
-        // Create new array of double capacity
         capacity = 2 * capacity;
         int[] newArr = new int[capacity];
 
-        // Copy elements to newArr
         for (int i = 0; i < length; i++) {
             newArr[i] = arr[i];
         }
         arr = newArr;
     }
 
+    public void popback() {
+        if (length > 0) {
+            length--;
+        }
+    }
+
+    public int get(int i) {
+        if (i < length) {
+            return arr[i];
+        }
+        return -1;
+    }
+
+    public void insert(int i, int n) {
+        int firstZeroElem = 0;
+        if (i < length) {
+            for (int p = i; p<arr.length; p++) {
+                if (arr[p] == 0) {
+                    firstZeroElem = p;
+                }
+            }
+            for (int j = firstZeroElem; j>i; j--) {
+                 arr[j] = arr[j-1];
+            }
+            arr[i] = n;
+
+        }
+    }
+
+    public void print() {
+        for (int i = 0; i < length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
     public static void main(String[] args) {
         DynamicArray dynamicArray = new DynamicArray();
+        dynamicArray.pushback(1);
+        dynamicArray.pushback(2);
+        // resize
         dynamicArray.pushback(3);
-        System.out.println(Arrays.toString(dynamicArray.arr));
+        dynamicArray.insert(1,0);
+        dynamicArray.print();
     }
 }
