@@ -1,6 +1,8 @@
 package lc.strings;
 
 public class LongestCommonPrefix {
+
+    // tc: O (n*m)
     public static String longestCommonPrefix(String[] strs) {
 
         if (strs.length == 1) {
