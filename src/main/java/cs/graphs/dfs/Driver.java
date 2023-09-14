@@ -1,4 +1,4 @@
-package cs.graphs;
+package cs.graphs.dfs;
 
 public class Driver {
     public static void main(String[] args) {

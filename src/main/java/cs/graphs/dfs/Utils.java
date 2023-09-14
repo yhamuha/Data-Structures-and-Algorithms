@@ -1,4 +1,4 @@
-package cs.graphs;
+package cs.graphs.dfs;
 
 import java.util.HashMap;
 import java.util.HashSet;

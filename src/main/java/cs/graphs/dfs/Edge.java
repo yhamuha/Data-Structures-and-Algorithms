@@ -1,4 +1,4 @@
-package cs.graphs;
+package cs.graphs.dfs;
 
 class Edge {
     public Node adjacentNode;
