@@ -1,7 +1,8 @@
-package lc.arrays;
+package lc.arraysandhashing;
 
-public class BinarySearch {
-    static public int binarySearch(int[] nums, int target) {
+public class BinarySearchFirstOne {
+
+    static public int binarySearchFirstOne(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;
 
@@ -12,14 +13,16 @@ public class BinarySearch {
             } else if (nums[mid] < target) {
                 lo = mid + 1;
             } else {
-                return mid;
+                if (mid == 0 || nums[mid - 1] < target) return mid;
+                hi = mid - 1;
             }
         }
+
         return -1;
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,5,7,9,22,31};
-        System.out.println(binarySearch(arr, 9));
+        int[] arr = {0,1,1,1,1,1,1,1,1};
+        System.out.println(binarySearchFirstOne(arr, 1));
     }
 }

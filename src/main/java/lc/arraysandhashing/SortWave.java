@@ -1,4 +1,4 @@
-package lc.arrays;
+package lc.arraysandhashing;
 
 // Java implementation of naive method for sorting
 // an array in wave form.

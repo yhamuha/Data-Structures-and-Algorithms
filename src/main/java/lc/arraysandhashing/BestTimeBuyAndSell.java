@@ -1,4 +1,4 @@
-package lc.arrays;
+package lc.arraysandhashing;
 
 public class BestTimeBuyAndSell {
 

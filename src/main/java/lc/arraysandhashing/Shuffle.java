@@ -1,4 +1,4 @@
-package lc.arrays;
+package lc.arraysandhashing;
 
 import java.util.Arrays;
 import java.util.Random;
