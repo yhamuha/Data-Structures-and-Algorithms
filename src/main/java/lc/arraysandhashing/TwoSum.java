@@ -34,7 +34,7 @@ public class TwoSum {
 
     public static void main(String[] args) {
         int[] arr = new int[] {1,5,6,2,7};
-        System.out.println(Arrays.toString(findTwoSum(arr, 3)));
+        //System.out.println(Arrays.toString(findTwoSum(arr, 3)));
 
         System.out.println(Arrays.toString(findTwoSumImproved(arr, 3)));
     }

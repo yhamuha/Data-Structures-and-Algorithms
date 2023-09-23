@@ -20,6 +20,13 @@ public class JewelsAndStones {
             return score;
 
         }
+
+    public static void main(String[] args) {
+        JewelsAndStones jas = new JewelsAndStones();
+        String jewels = "aAc";
+        String stones = "AaaaABbcccCC";
+        System.out.println(jas.numJewelsInStones(jewels,stones));
+    }
     }
 
 
