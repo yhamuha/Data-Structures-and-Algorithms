@@ -1,5 +1,7 @@
 package lc.stack;
 
+import java.util.Stack;
+
 public class MaximumNestingDepthOfTheParentheses {
     // TC: O(n), SC: O(1)
     public int maxDepth(String s) {
@@ -10,6 +12,27 @@ public class MaximumNestingDepthOfTheParentheses {
             depth = Math.max(depth, open);
         }
         return depth;
+    }
+
+    // O(n) O(n)
+    public int maxDepth_stack(String s) {
+
+        int depth = 0;
+
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+
+            if (c == '(' || c== '{' || c=='[' ) {
+                stack.push(c);
+            }
+            if (c == ')' || c== '}' || c==']') {
+                stack.pop();
+            }
+            depth = Math.max(stack.size(), depth);
+        }
+        return depth;
+
+
     }
 
     public static void main(String[] args) {
