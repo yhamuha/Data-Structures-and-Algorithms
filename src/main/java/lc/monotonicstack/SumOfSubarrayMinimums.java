@@ -39,7 +39,7 @@ public class SumOfSubarrayMinimums {
         for (int i = 0; i < len; i++){
             int left= i -preSmaller[i];
             int right=nextSmaller[i]-i;
-            res=(res+ ((long)arr[i]*left*right)%mod)%mod;
+            res=(res+ ((long)arr[i]*left*right)%mod);
         }
         return (int)res;
     }

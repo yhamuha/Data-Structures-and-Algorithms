@@ -9,8 +9,7 @@ public class CrawlerLogFolder {
             else if (log.equals("../")) {
                 depth--;
                 if (depth<0) depth =0;
-            }
-            depth++;
+            } else depth++;
         }
         return depth;
     }

@@ -48,8 +48,10 @@ public class MyStack {
         MyStack obj = new MyStack();
         int x = 1;
         int y = 2;
+        int z = 3;
         obj.push(x);
         obj.push(y);
+        obj.push(z);
         System.out.println(obj.pop());
         System.out.println(obj.empty());
     }
