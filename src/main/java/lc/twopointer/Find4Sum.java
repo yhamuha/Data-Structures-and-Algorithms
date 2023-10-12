@@ -25,8 +25,6 @@ public class Find4Sum {
         return new ArrayList<>(set);
     }
 
-    // O(n^2)
-
     public static void main(String[] args) {
         int[] nums = {1,0,-1,0,-2,2};
         int target = 0;
