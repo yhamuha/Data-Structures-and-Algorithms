@@ -20,7 +20,7 @@ public class TwoSum {
         return null;
     }
 
-    // O(n)
+    // O(n) O(n)
     static public int[] findTwoSumImproved(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

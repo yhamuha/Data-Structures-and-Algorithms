@@ -16,6 +16,7 @@ public class ContainsDuplicate {
         return false;
     }
 
+    // O(n) O(n)
     static public boolean containsDuplicateEnhanced(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
@@ -29,7 +30,7 @@ public class ContainsDuplicate {
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,3,4,5};
-        System.out.println(containsDuplicate(arr));
+        // System.out.println(containsDuplicate(arr));
         System.out.println(containsDuplicateEnhanced(arr));
     }
 }
