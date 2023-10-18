@@ -3,6 +3,7 @@ package lc.arraysandhashing;
 import java.util.*;
 
 public class GroupAnagrams {
+    // O(n) O(n)
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> groupedAnagrams = new HashMap<>();
         for (String str : strs){
