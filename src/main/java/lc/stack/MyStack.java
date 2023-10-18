@@ -7,7 +7,6 @@ public class MyStack {
 
         Queue<Integer> q = new LinkedList<>();
         public MyStack() {
-
         }
 
         // O(n), O(1)
@@ -24,11 +23,9 @@ public class MyStack {
         public int pop() {
             return q.remove();
         }
-
         public int top() {
             return q.peek();
         }
-
         public boolean empty() {
             return q.isEmpty();
         }
@@ -45,14 +42,10 @@ public class MyStack {
 
 
     public static void main(String[] args) {
-        MyStack obj = new MyStack();
-        int x = 1;
-        int y = 2;
-        int z = 3;
-        obj.push(x);
-        obj.push(y);
-        obj.push(z);
-        System.out.println(obj.pop());
-        System.out.println(obj.empty());
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        System.out.println(stack.top());
     }
 }

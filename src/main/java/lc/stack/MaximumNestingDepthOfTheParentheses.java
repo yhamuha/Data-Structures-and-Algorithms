@@ -15,13 +15,11 @@ public class MaximumNestingDepthOfTheParentheses {
     }
 
     // O(n) O(n)
+    // implementation with stack
     public int maxDepth_stack(String s) {
-
         int depth = 0;
-
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
-
             if (c == '(' || c== '{' || c=='[' ) {
                 stack.push(c);
             }
@@ -31,14 +29,12 @@ public class MaximumNestingDepthOfTheParentheses {
             depth = Math.max(stack.size(), depth);
         }
         return depth;
-
-
     }
 
     public static void main(String[] args) {
         String s = "(1+(2*3)+((8)/4))+1";
         MaximumNestingDepthOfTheParentheses maxNestedOfParentheses = new MaximumNestingDepthOfTheParentheses();
-        System.out.println(maxNestedOfParentheses.maxDepth(s));
+        System.out.println(maxNestedOfParentheses.maxDepth_stack(s));
     }
 }
 

@@ -8,27 +8,22 @@ public class MinStack {
     Stack<Integer> min_vals = new Stack<>();
 
     public MinStack() {
-
     }
-
     public void push(int val) {
         if (min_vals.isEmpty() || val <= min_vals.peek()) {
             min_vals.push(val);
         }
         stack.push(val);
     }
-
     public void pop() {
         if(stack.peek().equals(min_vals.peek())) {
             min_vals.pop();
         }
         stack.pop();
     }
-
     public int top() {
         return stack.peek();
     }
-
     // O(1), O(n)
     public int getMin() {
         return min_vals.peek();
@@ -39,6 +34,7 @@ public class MinStack {
         ms.push(11);
         ms.push(2);
         ms.push(3);
+        ms.pop();
         System.out.println(ms.getMin());
     }
 }
