@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ValidSudoku {
+    // O(n^2) O(n)
     public boolean isValidSudoku(char[][] board) {
         Set<String> set = new HashSet<>();
         for (int row = 0; row < 9; row++) {
