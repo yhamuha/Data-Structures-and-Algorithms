@@ -4,33 +4,32 @@ import java.util.Stack;
 
 public class BrowserHistory {
 
-    Stack<String> bStack = new Stack<>();
-    Stack<String> fStack = new Stack<>();
+    Stack<String> backwardStack = new Stack<>();
+    Stack<String> forwardStack = new Stack<>();
 
     public BrowserHistory(String homepage) {
-        bStack.push(homepage);
+        backwardStack.push(homepage);
     }
 
     public void visit(String url) {
-        while(!fStack.isEmpty()) fStack.pop();
-        bStack.push(url);
-
+        while(!forwardStack.isEmpty()) forwardStack.pop();
+        backwardStack.push(url);
     }
 
     public String back(int steps) {
-        while(bStack.size()>1 && steps-- > 0){
-            fStack.push(bStack.peek());
-            bStack.pop();
+        while(backwardStack.size()>1 && steps-- > 0){
+            forwardStack.push(backwardStack.peek());
+            backwardStack.pop();
         }
-        return bStack.peek();
+        return backwardStack.peek();
     }
 
     public String forward(int steps) {
-        while(!fStack.isEmpty() && steps-- > 0){
-            bStack.push(fStack.peek());
-            fStack.pop();
+        while(!forwardStack.isEmpty() && steps-- > 0){
+            backwardStack.push(forwardStack.peek());
+            forwardStack.pop();
         }
-        return bStack.peek();
+        return backwardStack.peek();
     }
 
     public static void main(String[] args) {
@@ -39,6 +38,7 @@ public class BrowserHistory {
         bh.visit("google");
         bh.visit("amazon");
         System.out.println(bh.back(1));
+        System.out.println(bh.forward(1));
 
     }
 }
