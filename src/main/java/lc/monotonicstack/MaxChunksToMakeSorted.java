@@ -21,7 +21,7 @@ public class MaxChunksToMakeSorted {
     }
 
     public static void main(String[] args) {
-        int[] arr = {4,3,2,1,0};
+        int[] arr = {1,0,2,3,4};
         MaxChunksToMakeSorted mcs = new MaxChunksToMakeSorted();
         System.out.println(mcs.maxChunksToSorted(arr));
     }

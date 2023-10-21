@@ -9,6 +9,11 @@ import java.util.Stack;
 
            3
       _1_/   \_2_  132pattern (what we need to find)
+      needs to track this elements sequence
+
+      predefine minimum element
+      going through from right to the left using stack for check on each step
+
  */
 
 // O(n) O(n)
