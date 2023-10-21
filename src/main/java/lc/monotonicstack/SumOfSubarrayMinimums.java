@@ -16,7 +16,6 @@ public class SumOfSubarrayMinimums {
             preSmaller[i] = -1;
             nextSmaller[i] = len;
         }
-
         for (int i = 0; i < len; i++){
             while(!s.isEmpty() && arr[s.peek()] >= arr[i]){
                 int index= s.pop();
@@ -25,7 +24,6 @@ public class SumOfSubarrayMinimums {
             s.push(i);
         }
         s.clear();
-
         for (int i = len-1; i >= 0; i--){
             while(!s.isEmpty() && arr[s.peek()] > arr[i]){
                 int index= s.pop();

@@ -5,6 +5,7 @@ import java.util.Stack;
 
 public class NextGreaterElementII {
     // cyclic
+    // O(n) O(n)
     public int[] nextGreaterElements(int[] nums){
        int n = nums.length;
        int[] output_arr = new int[n];

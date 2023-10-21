@@ -11,7 +11,9 @@ public class StockSpanner {
 
     public int next(int price) {
         int span = 1;
+        // stack.peek()[0] == stack(int[] {price,})
         while (!stack.isEmpty() && stack.peek()[0] <= price) {
+            // stack.pop()[1] == stack(int[] {,span})
             span += stack.pop()[1];
         }
         stack.push(new int[] {price, span});
@@ -26,7 +28,7 @@ public class StockSpanner {
         System.out.print(ss.next(70));
         System.out.print(ss.next(60));
         System.out.print(ss.next(75));
-        System.out.print(ss.next(85));
+        System.out.println(ss.next(85));
     }
 }
 
