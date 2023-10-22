@@ -8,7 +8,7 @@ public class SmallestLetterGreaterThanTarget {
 
         while (start <= end) {
 
-            int mid = end + (start - end) / 2;
+            int mid = start + (end - start) / 2;
 
             if ( target > letters[mid] ) {
                 start = mid + 1;
