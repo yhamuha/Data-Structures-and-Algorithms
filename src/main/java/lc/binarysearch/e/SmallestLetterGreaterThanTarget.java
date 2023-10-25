@@ -1,4 +1,4 @@
-package lc.binarysearch;
+package lc.binarysearch.e;
 
 public class SmallestLetterGreaterThanTarget {
     // O(log n) O(1)

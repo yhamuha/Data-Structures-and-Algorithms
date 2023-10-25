@@ -1,4 +1,4 @@
-package lc.binarysearch;
+package lc.binarysearch.e;
 
 public class MinimumCommonValue {
     //Overall time complexity: O(n log n)

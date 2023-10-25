@@ -1,4 +1,4 @@
-package lc.binarysearch;
+package lc.binarysearch.e;
 
 public class BinarySearch {
     public int binarySearch (int[] nums, int target) {
