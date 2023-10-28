@@ -1,7 +1,7 @@
 package lc.binarysearch.e;
 
 public class CountNegativeNumbersInASortedMatrix {
-    //O(n^2)
+    // O(n^2) not acceptable
     public int countNegatives_(int[][] grid) {
         int count = 0;
         for(int i = grid.length - 1; i >= 0; i--) {
