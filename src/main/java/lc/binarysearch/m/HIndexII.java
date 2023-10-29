@@ -8,7 +8,8 @@ public class HIndexII {
         int low = 0, high = n-1;
         while(low <= high){
             int mid = low + (high - low)/2;
-            // h index value is the number where arr[hindex] == arr.size() - hindex
+            // h index value is the number
+            // where arr[hindex] == arr.size() - hindex
             if(citations[mid] < n-mid){
                 low = mid + 1;
             }else{
