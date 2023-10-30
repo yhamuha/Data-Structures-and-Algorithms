@@ -54,7 +54,7 @@ public class MinimumArrayLengthAfterPairRemovals {
 
     public static void main(String[] args) {
         var mar = new MinimumArrayLengthAfterPairRemovals();
-        List<Integer> nums = Arrays.asList(1,1,2);
+        List<Integer> nums = Arrays.asList(1,3,4,9);
         System.out.println(mar.minLengthAfterRemovals(nums));
     }
 }

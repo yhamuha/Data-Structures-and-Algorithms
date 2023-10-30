@@ -7,7 +7,6 @@ public class RandomPointInNonOverlappingRectangles {
     int sums[] ;
     Random rand = new Random();
     int arrs[][];
-
     // O(n)
     public RandomPointInNonOverlappingRectangles(int[][] rects) {
         this.sums = new int[rects.length];
@@ -19,7 +18,6 @@ public class RandomPointInNonOverlappingRectangles {
             sums[i] = sum;
         }
     }
-
     // O(log n)
     public int[] pick() {
         int target = rand.nextInt(sums[sums.length-1]);
@@ -35,7 +33,6 @@ public class RandomPointInNonOverlappingRectangles {
         }
         return pickFromRect(arrs[low]);
     }
-
     private int[] pickFromRect(int rect[]) {
         int left = rect[0];
         int right = rect[2];
