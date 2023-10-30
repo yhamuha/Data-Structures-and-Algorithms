@@ -23,6 +23,8 @@ public class MaxSumRange {
                 '}';
     }
 
+    // 2,-8,3,-2,4,-10
+    // get sub array with maxSum: start, end indexes and sum
     MaxSumRange getMaxSumRange (int[] arr) {
         if (arr== null || arr.length == 0) return null;
         int windowStart = 0;
@@ -46,4 +48,5 @@ public class MaxSumRange {
         MaxSumRange msr = new MaxSumRange();
         System.out.println(msr.getMaxSumRange(new int[] {2,-8,3,-2,4,-10}));
     }
+
 }
