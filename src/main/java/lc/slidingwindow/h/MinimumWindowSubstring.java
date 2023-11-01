@@ -16,7 +16,7 @@ public class MinimumWindowSubstring {
         for(int end=0; end<s.length(); end++){
             if(map.containsKey(s.charAt(end))){
                 if(map.get(s.charAt(end))>0){
-                    count++;
+                    count+=1;
                 }
                 map.put(s.charAt(end), map.get(s.charAt(end))-1);
             }
@@ -25,7 +25,7 @@ public class MinimumWindowSubstring {
                     if(map.containsKey(s.charAt(start))){
                         map.put(s.charAt(start), map.get(s.charAt(start))+1);
                     }
-                    start++;
+                    start+=1;
                 }
                 if(min_length > end-start+1){
                     min_length = end-(min_start=start)+1;
@@ -33,8 +33,8 @@ public class MinimumWindowSubstring {
                 if(map.containsKey(s.charAt(start))){
                     map.put(s.charAt(start), map.get(s.charAt(start))+1);
                 }
-                count--;
-                start++;
+                count-=1;
+                start+=1;
             }
         }
         return min_length == Integer.MAX_VALUE ? "" : s.substring(min_start, min_start+min_length);
