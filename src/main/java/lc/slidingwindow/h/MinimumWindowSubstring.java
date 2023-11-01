@@ -8,6 +8,12 @@ public class MinimumWindowSubstring {
         if(s.length() < t.length()){
             return "";
         }
+        // map
+        // *SD - sliding window
+        // K ; V = 1    element present in sliding window
+        // K ; V = 0    element not present in sliding window
+        // K ; V = -1   duplicate of element in  window
+
         Map<Character,Integer> map = new HashMap<>();
         for(int i=0;i<t.length();i++){
             map.put(t.charAt(i), map.getOrDefault(t.charAt(i), 0) + 1);
