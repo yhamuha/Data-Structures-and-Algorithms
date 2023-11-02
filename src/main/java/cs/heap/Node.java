@@ -47,4 +47,23 @@ public class Node {
     boolean hasChildren (int nodeIndex) {
         return nodeIndex <= getLastParentIndex();
     }
+
+    int getLargestChildIndex (int parentIndex) {
+        int leftChildIndex = getLeftChildIndex(parentIndex);
+        int rightChildIndex = getRightChildIndex(parentIndex);
+
+        if (leftChildIndex == -1 && rightChildIndex == -1) return -1;
+
+        if (leftChildIndex == -1 || rightChildIndex == -1)
+            return leftChildIndex !=1 ? leftChildIndex : rightChildIndex;
+
+        if (heap[leftChildIndex].key > heap[rightChildIndex].key)
+            if (!subTreeIsBalanced(rightChildIndex, parentIndex))
+                return leftChildIndex;
+
+        if(!subTreeIsBalanced(rightChildIndex, parentIndex))
+            return rightChildIndex;
+
+        return -1;
+    }
 }
