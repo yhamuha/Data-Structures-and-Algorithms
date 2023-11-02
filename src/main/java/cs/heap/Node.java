@@ -51,12 +51,13 @@ public class Node {
     int getLargestChildIndex (int parentIndex) {
         int leftChildIndex = getLeftChildIndex(parentIndex);
         int rightChildIndex = getRightChildIndex(parentIndex);
-
+        // make sure if we have a nodes
         if (leftChildIndex == -1 && rightChildIndex == -1) return -1;
 
         if (leftChildIndex == -1 || rightChildIndex == -1)
             return leftChildIndex !=1 ? leftChildIndex : rightChildIndex;
 
+        // return largest left or right node
         if (heap[leftChildIndex].key > heap[rightChildIndex].key)
             if (!subTreeIsBalanced(rightChildIndex, parentIndex))
                 return leftChildIndex;
