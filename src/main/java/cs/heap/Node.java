@@ -67,4 +67,34 @@ public class Node {
 
         return -1;
     }
+
+    // bubble up node to level up
+    void bubbleUpNode(int childIndex) {
+
+    }
+
+    // insert node
+    void insert(Node node) {
+        // isFull throw new Exception
+        // put node to heap[lastIndex]
+        // call bubbleUpNode()
+    }
+
+    // transform BT to Heap
+    void heapify(int parentIndex) {
+
+    }
+
+    //
+    Node extractRoot() throws Exception {
+        if (isEmpty()) throw new Exception("Heap is empty");
+        Node root = heap[0];
+        heap[0] = heap[heapLastIndex];
+        heapLastIndex-=1;
+
+        heapify(0);
+        return root;
+    }
+
+
 }
