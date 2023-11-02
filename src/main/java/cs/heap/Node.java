@@ -80,7 +80,7 @@ public class Node {
         // call bubbleUpNode()
     }
 
-    // transform BT to Heap
+    // transform Full BT to Heap
     void heapify(int parentIndex) {
 
     }
