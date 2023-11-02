@@ -30,6 +30,12 @@ public class Node {
         return leftChildIndex <= heapLastIndex ? leftChildIndex : -1;
     }
 
+    int getRightChildIndex(int parentIndex) {
+        int rightChildIndex = 2 * parentIndex + 2;
+        return rightChildIndex <= heapLastIndex ? rightChildIndex : -1;
+    }
+
+
     int getParentIndex(int childIndex) {
         return (childIndex - 1) / 2;
     }
