@@ -8,16 +8,17 @@ public class PermutationInString {
         Map<Character, Integer> sMap = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
+            // TC avg O(1), worst O(n)
             sMap.merge(c, 1, Integer::sum);
         }
         Map<Character, Integer> window = new HashMap<>();
-        for (int r = 0; r < p.length(); r++) {
-            char c = p.charAt(r);
+        for (int right = 0; right < p.length(); right++) {
+            char c = p.charAt(right);
             // Increment the characters in the window
             window.merge(c, 1, Integer::sum);
-            if (r >= s.length()) {
-                // r - s.length() will give us the position of the left pointer
-                c = p.charAt(r - s.length());
+            if (right >= s.length()) {
+                // right - s.length() will give us the position of the left pointer
+                c = p.charAt(right - s.length());
                 if (window.get(c) == 1) {
                     window.remove(c);
                 } else {
@@ -25,6 +26,7 @@ public class PermutationInString {
                     window.merge(c, -1, Integer::sum);
                 }
             }
+            // checking on each iteration if windows map conatins elements of s
             if (window.equals(sMap)) {
                 return true;
             }
