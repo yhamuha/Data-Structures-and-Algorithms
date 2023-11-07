@@ -7,6 +7,7 @@ class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
+ // https://www.youtube.com/watch?v=jY-EUKXYT20&ab_channel=DineshVaryani
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
@@ -23,25 +24,28 @@ public class ReverseLinkedList {
 
     public static void main(String[] args) {
 
-        // Create a linked list with values 1 -> 2 -> 3 -> 4 -> 5
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-
-        // Create an instance of ReverseLinkedList class
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+        //  1 > 2 > 3 > 4 > 5 > null
+        //  ^
+        // head
 
-        // Reverse the linked list
+        ListNode head = new ListNode(1);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(3);
+        ListNode fourth = new ListNode(4);
+        ListNode fifth = new ListNode(5);
+
+        head.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+
         ListNode reversedHead = reverseLinkedList.reverseList(head);
 
-        // Print the reversed linked list
         ListNode current = reversedHead;
         while (current != null) {
-            System.out.print(current.val + " -> ");
+            System.out.print(current.val + " ");
             current = current.next;
         }
-        System.out.println("null");
     }
 }
