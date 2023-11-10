@@ -26,4 +26,8 @@ public class LinkedListCycleII {
             }
         }return null;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
