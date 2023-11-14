@@ -1,5 +1,8 @@
 package lc.binarytree.e;
 
+import lc.binarytree.BinarySearchTreeFromArray;
+import lc.binarytree.TreeNode;
+
 public class BalancedBinaryTree {
     public boolean isBalanced(TreeNode root) {
         if (root == null)  return true;
@@ -16,10 +19,13 @@ public class BalancedBinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
+
         BalancedBinaryTree bbt = new BalancedBinaryTree();
+
+        BinarySearchTreeFromArray searchTreeFromArray = new BinarySearchTreeFromArray();
+        Integer[] inputArray = {3, 9, 20, null, null, 15, 7};
+        TreeNode root = searchTreeFromArray.arrayToBST(inputArray);
+
         System.out.println(bbt.isBalanced(root));
     }
 }

@@ -1,5 +1,7 @@
 package lc.binarytree.e;
 
+import lc.binarytree.TreeNode;
+
 public class DiameterOfBinaryTree {
     public int diameterOfBinaryTree(TreeNode root) {
         // SC O(1)
