@@ -1,4 +1,4 @@
-package lc.binarytree.e;
+package lc.binarytree.e1;
 
 import lc.binarytree.BinarySearchTreeFromArray;
 import lc.binarytree.TreeNode;
