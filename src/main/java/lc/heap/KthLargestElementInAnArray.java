@@ -3,6 +3,9 @@ package lc.heap;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+ return the kth largest element in the array
+ */
 public class KthLargestElementInAnArray {
     public int findKthLargest(int[] nums, int k) {
         Queue<Integer> minHeap = new PriorityQueue<>(k);
