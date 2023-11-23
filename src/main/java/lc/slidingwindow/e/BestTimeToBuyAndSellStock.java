@@ -6,7 +6,7 @@ package lc.slidingwindow.e;
 *   res: 5 (buy for 1 -> sell for 6)
 */
 public class BestTimeToBuyAndSellStock {
-    int maxProfit (int[] prices) {
+    /*int maxProfit (int[] prices) {
         int prevDay = 0;
         int maxProfit = 0;
         for(int nextDay=0; nextDay<prices.length; nextDay++) {
@@ -18,10 +18,24 @@ public class BestTimeToBuyAndSellStock {
             }
         }
         return maxProfit;
-    }
+    }*/
 
+    public int maxProfit(int[] prices) {
+        int prevDay = 0;
+        int maxProfit = 0;
+
+        for (int nextDay=0; nextDay <= prices.length-1; nextDay++) {
+            if (prices[prevDay] < prices[nextDay]) {
+                int currentProfit = prices[nextDay] - prices[prevDay];
+                maxProfit = Math.max(maxProfit, currentProfit);
+            } else {
+                prevDay = nextDay;
+            }
+        }
+        return maxProfit;
+    }
     public static void main(String[] args) {
         var bttb = new BestTimeToBuyAndSellStock();
-        System.out.println(bttb.maxProfit(new int[]{7,1,5,3,6,4}));
+        System.out.println(bttb.maxProfit(new int[]{1,2}));
     }
 }
