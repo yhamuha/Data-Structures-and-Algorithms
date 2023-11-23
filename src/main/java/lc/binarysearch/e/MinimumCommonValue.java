@@ -2,24 +2,19 @@ package lc.binarysearch.e;
 
 public class MinimumCommonValue {
     //Overall time complexity: O(n log n)
-    public int getCommon(int[] arr, int[] nums2) {
-        // O(n)
-        for(int num:nums2){
-            int start=0;
-            int end=arr.length-1;
-            // O(log n)
-            while(start<=end){
-                int mid=start + (end-start)/2;
-                if(arr[mid]==num){
-                    return arr[mid];
-                }
-                else if(arr[mid]>num){
-                    end=mid-1;
-                }else{
-                    start=mid+1;
-                }
-            }
+    public int getCommon(int[] nums1, int[] nums2) {
+    for (int num : nums2) {
+        int left = 0;
+        int right = nums1.length-1;
+        while (left <= right) {
+            int mid = left + (right-left)/2;
+            if (nums1[mid]==num)
+                return num;
+            else if (nums1[mid] < num)
+                left = mid + 1;
+            else right = mid - 1;
         }
+    }
         return -1;
     }
 
