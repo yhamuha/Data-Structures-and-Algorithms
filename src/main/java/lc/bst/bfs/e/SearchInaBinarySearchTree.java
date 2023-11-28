@@ -5,9 +5,11 @@ import lc.bst.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class SearchInaBinarySearchTree {
-    public TreeNode searchBST(TreeNode root, int val) {
+    /*public TreeNode searchBST(TreeNode root, int val) {
         Deque<TreeNode> deque = new ArrayDeque<>();
         deque.add(root);
         while(!deque.isEmpty()) {
@@ -20,6 +22,20 @@ public class SearchInaBinarySearchTree {
                 deque.add(temp.right);
         }
 
+        return null;
+    }*/
+    public TreeNode searchBST(TreeNode root, int val) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            TreeNode temp = queue.poll();
+            if(temp.val == val)
+                return temp;
+            if (temp.left != null)
+                queue.add(temp.left);
+            if (temp.right != null)
+                queue.add(temp.right);
+        }
         return null;
     }
 
