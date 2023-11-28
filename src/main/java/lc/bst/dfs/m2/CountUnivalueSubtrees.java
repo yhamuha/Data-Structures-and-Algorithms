@@ -1,6 +1,6 @@
-package lc.binarytree.m2;
+package lc.bst.dfs.m2;
 
-import lc.binarytree.TreeNode;
+import lc.bst.TreeNode;
 
 public class CountUnivalueSubtrees {
     public int countUnivalSubtrees(TreeNode root) {

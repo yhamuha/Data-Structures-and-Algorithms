@@ -1,5 +1,6 @@
-package lc.binarytree.e2;
-import lc.binarytree.TreeNode;
+package lc.bst.dfs.e2;
+
+import lc.bst.TreeNode;
 
 public class MergeTwoBinaryTrees {
     // preorder-dfs

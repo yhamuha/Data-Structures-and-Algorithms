@@ -1,6 +1,6 @@
-package lc.binarytree.e2;
+package lc.bst.dfs.e2;
 
-import lc.binarytree.TreeNode;
+import lc.bst.TreeNode;
 
 public class PathSum {
     public boolean rootToLeafPathSum(TreeNode root, int targetSum, int sum){

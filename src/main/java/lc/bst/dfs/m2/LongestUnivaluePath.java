@@ -1,4 +1,4 @@
-package lc.binarytree.m2;
+package lc.bst.dfs.m2;
 
 public class LongestUnivaluePath {
 }

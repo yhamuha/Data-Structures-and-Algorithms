@@ -1,4 +1,4 @@
-package lc.binarytree.m1;
+package lc.bst.dfs.m1;
 
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 }

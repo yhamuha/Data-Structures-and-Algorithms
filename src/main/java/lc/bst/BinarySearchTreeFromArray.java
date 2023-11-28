@@ -1,4 +1,4 @@
-package lc.binarytree;
+package lc.bst;
 
 public class BinarySearchTreeFromArray {
     public TreeNode arrayToBST(Integer[] nums) {

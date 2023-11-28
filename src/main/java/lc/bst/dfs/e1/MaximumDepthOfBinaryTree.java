@@ -1,6 +1,6 @@
-package lc.binarytree.e1;
+package lc.bst.dfs.e1;
 
-import lc.binarytree.TreeNode;
+import lc.bst.TreeNode;
 
 public class MaximumDepthOfBinaryTree {
     public int maxDepth(TreeNode root) {

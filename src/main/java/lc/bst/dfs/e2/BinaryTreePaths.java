@@ -1,6 +1,6 @@
-package lc.binarytree.e2;
+package lc.bst.dfs.e2;
 
-import lc.binarytree.TreeNode;
+import lc.bst.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package lc.binarytree.e1;
+package lc.bst.dfs.e1;
 
-import lc.binarytree.BinarySearchTreeFromArray;
-import lc.binarytree.TreeNode;
+import lc.bst.BinarySearchTreeFromArray;
+import lc.bst.TreeNode;
 
 public class SubtreeOfAnotherTree {
     // O(mn)

@@ -1,4 +1,4 @@
-package lc.binarytree;
+package lc.bst;
 
 public class TreeNode {
     public int val;
