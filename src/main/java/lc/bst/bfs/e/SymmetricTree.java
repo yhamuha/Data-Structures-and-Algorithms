@@ -36,13 +36,13 @@ public class SymmetricTree {
     public static void main(String[] args) {
         var st = new SymmetricTree();
 
-        /*TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(2));
-        root.left = new TreeNode(2, new TreeNode(3), new TreeNode(4));
-        root.right = new TreeNode(2, new TreeNode(4), new TreeNode(3));*/
-
         TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(2));
+        root.left = new TreeNode(2, new TreeNode(3), new TreeNode(4));
+        root.right = new TreeNode(2, new TreeNode(4), new TreeNode(3));
+
+        /*TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(2));
         root.left = new TreeNode(2, null, new TreeNode(3));
-        root.right = new TreeNode(2, null, new TreeNode(3));
+        root.right = new TreeNode(2, null, new TreeNode(3));*/
 
         System.out.println(st.isSymmetric(root));
     }
