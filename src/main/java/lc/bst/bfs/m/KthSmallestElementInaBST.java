@@ -6,6 +6,12 @@ import java.util.*;
 
 public class KthSmallestElementInaBST {
 
+    //                  use PriorityQueue to have O(log n + m) TC
+    //
+    //                  pq.push(node->val);
+    //                  if (pq.size() > k) {
+    //                        pq.pop();
+    //                  }
     public int kthSmallest(TreeNode root, int k) {
         Queue<TreeNode> q = new LinkedList<>();
         List<Integer> l = new ArrayList<>();
