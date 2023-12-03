@@ -2,28 +2,29 @@ package lc.bst.bfs.m;
 
 import lc.bst.TreeNode;
 
+import java.util.Stack;
 // https://www.youtube.com/watch?v=gGsEVFP0aQo&ab_channel=NickWhite
 public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
-        return root == null || isValid(root, null, null);
-    }
+    Stack<TreeNode> stack = new Stack<>();
+    int left_child_val = - Integer.MAX_VALUE;
 
-    private boolean isValid(TreeNode node, Integer lowerLimit, Integer upperLimit) {
-        if (node == null) {
-            return true;
+    while (!stack.isEmpty() || root != null) {
+        while (root != null) {
+            stack.push(root);
+            root = root.left;
         }
-        if (lowerLimit != null && node.val <= lowerLimit) {
-            return false;
-        }
-        if (upperLimit != null && node.val >= upperLimit) {
-            return false;
-        }
-        return isValid(node.left, lowerLimit, node.val) && isValid(node.right, node.val, upperLimit);
+        root = stack.pop();
+        if (root.val <= left_child_val) return false;
+        left_child_val = root.val;
+        root = root.right;
+    }
+    return true;
     }
 
     public static void main(String[] args) {
         var vbst = new ValidateBinarySearchTree();
-        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        System.out.println(vbst.isValid(root, 1,3));
+        TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        System.out.println(vbst.isValidBST(root));
     }
 }
