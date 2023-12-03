@@ -4,11 +4,12 @@ import lc.bst.TreeNode;
 
 public class LowestCommonAncestorOfaBinarySearchTree {
     // O(log n)
+    // worst case O(n) if tree unbalanced
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (p.val < root.val && q.val<root.val)
-            return lowestCommonAncestor(root,p,q);
+            return lowestCommonAncestor(root.left,p,q);
         if (p.val > root.val && q.val > root.val)
-            return lowestCommonAncestor(root,p,q);
+            return lowestCommonAncestor(root.right,p,q);
         return root;
     }
 
