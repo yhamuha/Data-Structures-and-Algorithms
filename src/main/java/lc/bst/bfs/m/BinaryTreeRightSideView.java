@@ -9,9 +9,8 @@ import java.util.Queue;
 public class BinaryTreeRightSideView {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        if (root == null) {
+        if (root == null)
             return result;
-        }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
