@@ -8,11 +8,8 @@ public class LongestCommonPrefix {
         if (strs == null || strs.length == 0) {
             return "";
         }
-
         Arrays.sort(strs);
-
         LinkedHashMap<Character, Integer> hm = new LinkedHashMap<>();
-
         for (int j = 0; j < strs[0].length(); j++) {
             char currentChar = strs[0].charAt(j);
             boolean isCommon = true;
@@ -28,7 +25,6 @@ public class LongestCommonPrefix {
                 break;
             }
         }
-
         StringBuilder result = new StringBuilder();
         for (char c : hm.keySet()) {
             while(hm.get(c)!=0){
@@ -36,7 +32,6 @@ public class LongestCommonPrefix {
                 hm.put(c,hm.get(c)-1);
             }
         }
-
         return result.toString();
     }
 }
