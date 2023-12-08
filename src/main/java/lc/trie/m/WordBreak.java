@@ -6,7 +6,6 @@ public class WordBreak {
     static class Node{
         Node children[] = new Node[26];
         boolean ewo = false;
-
         public Node(){
             for(int i=0; i<26; i++){
                 children[i] = null;
