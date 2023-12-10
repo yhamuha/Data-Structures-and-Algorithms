@@ -1,6 +1,9 @@
 package lc.trie.e;
 
 public class MaximumStrongPairXORI {
+    // identify pairs
+    // get max XOR using two numbers from a pairs
+    // XOR gives 1 only by 01 10
     public int maximumStrongPairXor(int[] nums) {
         int ans = 0;
         for (int x : nums) {
