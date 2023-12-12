@@ -1,43 +1,60 @@
 package lc.trie.e;
 
-import java.util.Arrays;
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
+import java.util.List;
 
-public class LongestCommonPrefix {
-    public String longestCommonPrefix(String[] strs) {
-        if (strs == null || strs.length == 0) {
-            return "";
+    // O (mn)
+    public class LongestCommonPrefix {
+        Node root;
+        public String longestCommonPrefix(String[] strs) {
+            if (strs == null || strs.length == 0) {
+                return "";
+            }
+
+            root = new Node('\0');
+            int min = Integer.MAX_VALUE;
+            List<Integer> list  = new ArrayList<>();
+            for(int i = 0; i < strs.length; i++) {
+                int count = insert(strs[i], i);
+                if(i != 0) //skip for first word or else min wont be updated
+                    min = Math.min(min, count);
+            }
+            min = Math.min(min, strs[0].length());
+            return strs[0].substring(0, min);
         }
-        Arrays.sort(strs);
-        LinkedHashMap<Character, Integer> hm = new LinkedHashMap<>();
-        for (int j = 0; j < strs[0].length(); j++) {
-            char currentChar = strs[0].charAt(j);
-            boolean isCommon = true;
-            for (int i = 1; i < strs.length; i++) {
-                if (j >= strs[i].length() || strs[i].charAt(j) != currentChar) {
-                    isCommon = false;
-                    break;
+
+        public int insert(String word, int n) {
+            Node curr = root;
+            int count  = 0;
+            for(char ch: word.toCharArray()) {
+                if(curr.children[ch - 'a'] == null) {
+                    if(n != 0) //skip for first word or else trie wont be constructed
+                        return count;
+                    curr.children[ch - 'a'] = new Node(ch);
+                } else {
+                    count++;
                 }
+                curr = curr.children[ch - 'a'];
             }
-            if (isCommon) {
-                hm.put(currentChar, hm.getOrDefault(currentChar, 0) + 1);
-            } else {
-                break;
+            return count;
+        }
+
+        class Node {
+            private char value;
+            private Node[] children;
+
+            public Node(char val) {
+                this.value = val;
+                this.children = new Node[26];
             }
         }
-        StringBuilder result = new StringBuilder();
-        for (char c : hm.keySet()) {
-            while(hm.get(c)!=0){
-                result.append(c);
-                hm.put(c,hm.get(c)-1);
-            }
+
+        public static void main(String[] args) {
+            LongestCommonPrefix lcp = new LongestCommonPrefix();
+            String[] strs = {"flower", "flow", "flight"};
+            String result = lcp.longestCommonPrefix(strs);
+            System.out.println(result);
         }
-        return result.toString();
     }
 
-    public static void main(String[] args) {
-        var lcp = new LongestCommonPrefix();
-        String str[] = {"flower","flow","flight"};
-        System.out.println(lcp.longestCommonPrefix(str));
-    }
-}
+
