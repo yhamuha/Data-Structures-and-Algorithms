@@ -12,12 +12,15 @@ public class CombinationSum {
         backtrack(list, new ArrayList<>(), nums, target, 0);
         return list;
     }
+
     // briefly: O (n^2)
     // deeply: O (n ^ (T/M + 1)) where T is target, M - min of nums;
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
-        if(remain < 0) return;
-        else if(remain == 0) list.add(new ArrayList<>(tempList));
-        else{
+    // in worst case extent depends on T-target and M-min of nums array
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                           int [] nums, int remain, int start){
+        if (remain < 0) return;
+        else if (remain == 0) list.add(new ArrayList<>(tempList));
+        else {
             for(int i = start; i < nums.length; i++){
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, remain - nums[i], i);
