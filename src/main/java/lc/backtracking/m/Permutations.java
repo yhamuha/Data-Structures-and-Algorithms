@@ -10,7 +10,7 @@ public class Permutations {
         backtrack(resultList, new ArrayList<>(), nums);
         return resultList;
     }
-
+    // TC:O(n!), SC:O(n)
     private void backtrack(List<List<Integer>> resultList,
                            ArrayList<Integer> tempList, int[] nums) {
         if (tempList.size() == nums.length) {
