@@ -13,16 +13,16 @@ public class SubsetsII {
         return resultList;
     }
 
-    private void backtrack(List<List<Integer>> resultSets, List<Integer> tempSet,
+    private void backtrack(List<List<Integer>> resultList, List<Integer> tempSet,
                            int[] nums, int start) {
-        if (resultSets.contains((tempSet)))
+        if (resultList.contains((tempSet)))
             return;
 
-        resultSets.add(new ArrayList<>(tempSet));
+        resultList.add(new ArrayList<>(tempSet));
 
         for (int i = start; i < nums.length; i++) {
             tempSet.add(nums[i]);
-            backtrack(resultSets, tempSet, nums, i + 1);
+            backtrack(resultList, tempSet, nums, i + 1);
             tempSet.remove(tempSet.size() - 1);
         }
     }

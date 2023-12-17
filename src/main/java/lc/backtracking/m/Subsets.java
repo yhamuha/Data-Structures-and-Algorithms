@@ -6,18 +6,17 @@ import java.util.List;
 public class Subsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> resultList = new ArrayList<>();
-
         backtrack(resultList, new ArrayList<>(), nums, 0);
         return resultList;
     }
 
-    private void backtrack(List<List<Integer>> resultSets, List<Integer> tempSet,
+    private void backtrack(List<List<Integer>> resultList, List<Integer> tempList,
                            int[] nums, int start) {
-        resultSets.add(new ArrayList<>(tempSet));
+        resultList.add(new ArrayList<>(tempList));
         for (int i = start; i < nums.length; i++) {
-            tempSet.add(nums[i]);
-            backtrack(resultSets, tempSet, nums, i + 1);
-            tempSet.remove(tempSet.size() - 1);
+            tempList.add(nums[i]);
+            backtrack(resultList, tempList, nums, i + 1);
+            tempList.remove(tempList.size() - 1);
         }
     }
 
