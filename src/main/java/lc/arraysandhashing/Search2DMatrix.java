@@ -25,7 +25,7 @@ public class Search2DMatrix {
     }
 
     public static void main(String[] args) {
-        var s2dm = new Searcha2DMatrix();
+        var s2dm = new Search2DMatrix();
         int[][] matrix = {
                 {1, 3, 5, 7},
                 {10, 11, 16, 20},
