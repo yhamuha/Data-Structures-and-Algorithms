@@ -2,13 +2,17 @@ package lc.heap_priority_queue;
 
 import java.util.PriorityQueue;
 
+
+// O(n log n)
 public class KthLargestElementInAStream {
     private PriorityQueue<Integer> heap = new PriorityQueue<>();
     private int k;
 
+    // O(n)
     public void KthLargest(int k, int[] nums) {
         this.k = k;
-        for (var n : nums) add(n);
+        for (var n : nums)
+            add(n);
     }
 
     // O (log n)
