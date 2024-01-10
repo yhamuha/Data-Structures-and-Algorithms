@@ -8,11 +8,13 @@ public class TopKFrequentWords {
         HashMap<String, Integer> wordCounts = new HashMap<>();
         for(String word : words)
             wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1);
+
         // define comparator for heap
         Comparator<String> wordComparator = (s1, s2) -> {
             return wordCounts.get(s1) == wordCounts.get(s2) ? s2.compareTo(s1)
                                                             : wordCounts.get(s1) - wordCounts.get(s2);
         };
+
         // minHeap: lowest occurrences always on the top
         PriorityQueue<String> minHeap = new PriorityQueue<>(wordComparator);
         // O(n log k) fill in heap up to k
