@@ -5,20 +5,22 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 public class UglyNumberII {
-    int[] factors = {2, 3, 5};
     public int nthUglyNumber(int n) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        Set<Integer> seen = new HashSet<>();
-        pq.offer(1);
-        seen.add(1);
-        for (int i = 0; i < n - 1; i++) {
-            int core = pq.poll();
-            for (int f: factors) {
-                if (core <= (Integer.MAX_VALUE / f) && seen.add(core * f))
-                    pq.offer(core * f);
-            }
+        PriorityQueue<Long>pq= new PriorityQueue<Long>();
+        pq.add(1l);
+        n=n-1;
+        while(n>0){
+            long a=pq.poll();
+            if(!pq.contains(a*2))
+                pq.add(a*2);
+            if(!pq.contains(a*3))
+                pq.add(a*3);
+            if(!pq.contains(a*5))
+                pq.add(a*5);
+            n--;
         }
-        return pq.poll();
+        long ans=pq.poll();
+        return (int)ans;
     }
 
     public static void main(String[] args) {
