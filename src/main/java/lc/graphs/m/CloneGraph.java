@@ -4,8 +4,7 @@ import java.util.*;
 import lc.graphs.Node;
 
 public class CloneGraph {
-    public Node cloneGraph(Node node) {
-        if (node == null) {
+    /* if (node == null) {
             return null;
         }
         HashMap<Node, Node> visited = new HashMap<>();
@@ -24,7 +23,21 @@ public class CloneGraph {
                 newNeighbors.add(visited.get(n));
             }
         }
-        return newNode;
+        return newNode;*/
+    // O(n) O(n)
+    public Node cloneGraph(Node node) {
+        if (node == null) return null;
+        Map<Integer, Node> map = new HashMap<>();
+        return cloneGraph(node, map);
+    }
+
+    private Node cloneGraph(Node node, Map<Integer, Node>map){
+        if (map.containsKey(node.val)) return map.get(node.val);
+        Node copy = new Node(node.val);
+        map.put(node.val, copy);
+        for (Node neighbor : node.neighbors)
+            copy.neighbors.add(cloneGraph(neighbor, map));
+        return copy;
     }
 
     public static void main(String[] args) {
