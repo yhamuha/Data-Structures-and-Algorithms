@@ -1,6 +1,7 @@
 package lc.arraysandhashing;
 
 public class HouseRobber {
+    // O(n) O(1)
     int getMaxAmount(int[] money) {
         if (money.length == 1) return money[0];
         if (money.length == 2) return Math.max(money[0], money[1]);
@@ -14,6 +15,12 @@ public class HouseRobber {
         }
 
         return maxAmount[maxAmount.length-1];
+    }
+
+    public static void main(String[] args) {
+        var hr = new HouseRobber();
+        int[] nums = {1,2,3,1};
+        System.out.println(hr.getMaxAmount(nums));
     }
 
 }
