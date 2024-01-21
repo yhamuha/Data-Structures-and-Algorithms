@@ -30,9 +30,10 @@ public class CloneGraph {
         Map<Integer, Node> map = new HashMap<>();
         return cloneGraph(node, map);
     }
-
+    // DFS
     private Node cloneGraph(Node node, Map<Integer, Node>map){
-        if (map.containsKey(node.val)) return map.get(node.val);
+        if (map.containsKey(node.val))
+            return map.get(node.val);
         Node copy = new Node(node.val);
         map.put(node.val, copy);
         for (Node neighbor : node.neighbors)
