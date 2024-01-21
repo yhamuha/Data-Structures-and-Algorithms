@@ -54,7 +54,7 @@ public class SurroundedRegions {
         int m = board.length, n = board[0].length;
         for(int i=0; i<m; i++){
             markBoard(board,m,n,i,0);   // left border
-            markBoard(board,m,n,n-1,i);   // right border
+            markBoard(board,m,n,i,n-1);   // right border
         }
         for(int i=0; i<n; i++){
             markBoard(board,m,n,0,i); // top border
@@ -85,10 +85,9 @@ public class SurroundedRegions {
 
     public static void main(String[] args) {
         var sr = new SurroundedRegions();
-        char[][] board = {  {'X','X','X','X'},
-                            {'X','O','O','X'},
-                            {'X','X','O','X'},
-                            {'X','O','X','X'}};
+        char[][] board = {  {'X','O','X'},
+                            {'O','X','O'},
+                            {'X','O','X'}};
         sr.solve(board);
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
