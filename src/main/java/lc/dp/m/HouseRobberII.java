@@ -27,4 +27,11 @@ public class HouseRobberII {
         }
         return dp[nums.length - 1];
     }
+
+    public static void main(String[] args) {
+        var hrII = new HouseRobberII();
+        int[] nums = {2,3,2};
+        System.out.println(hrII.rob(nums));
+    }
+
 }
