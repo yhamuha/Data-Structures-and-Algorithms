@@ -2,6 +2,7 @@ package lc.arraysandhashing;
 
 public class HouseRobber {
     // O(n) O(1)
+    // Memoization
     int getMaxAmount(int[] money) {
         if (money.length == 1) return money[0];
         if (money.length == 2) return Math.max(money[0], money[1]);
