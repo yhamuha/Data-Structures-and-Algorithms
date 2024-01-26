@@ -15,12 +15,14 @@ public class GetSeries {
     }
 
     // backtracking
+    // TC: O(n/step)
     LinkedList<Integer> getSeries (int n, int step){
         if (n <= 0) {
             LinkedList<Integer> list = new LinkedList<>();
             list.addLast(0);
             return list;
         }
+        // SC: O(n/step)
         LinkedList<Integer> result = getSeries(n-step, step);
         result.addFirst(n);
         return result;
