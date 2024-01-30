@@ -1,4 +1,4 @@
-package cs.recursion;
+package cs.dynamic;
 
 public class CoinsChange {
     // recursion
