@@ -1,24 +1,25 @@
 package lc.dp.m;
 
 public class PalindromicSubstrings {
+    // SC: O(1)
     int result = 0;
-    // O(n^2) O(1)
     public int countSubstrings(String s) {
-        // O(n)
-        for(int i=0; i<s.length();i++){
-            // O(n)
-            count(s,i,i);
-            count(s,i,i+1);
+        // TC: O(n)
+        for(int start=0; start<s.length(); start++){
+            expand(s,start,start);
+            expand(s,start,start+1);
         }
         return result;
     }
-    private void count(String s, int start, int end){
-        while(start>=0 && end < s.length() && s.charAt(start) == s.charAt(end)){
+    private void expand (String s, int start, int end){
+        // TC: O(n)
+        while (start>=0 && end <s.length() && s.charAt(start) == s.charAt(end)){
             result++;
             start--;
             end++;
         }
     }
+
 
     public static void main(String[] args) {
         var ps = new PalindromicSubstrings();
