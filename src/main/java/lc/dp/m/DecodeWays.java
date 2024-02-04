@@ -1,7 +1,7 @@
 package lc.dp.m;
 
 public class DecodeWays {
-    // TC: O(n^2)
+    /*// TC: O(n^2)
     // Recursive + memoization
     char[] arr;
     Integer[] cache;
@@ -29,10 +29,10 @@ public class DecodeWays {
         if(str.charAt(0)=='0') return false;
         Integer num = Integer.parseInt(str);
         return num < 27;
-    }
+    }*/
     //O(n) O(n)
     // Dynamic
-    /*public int numDecodings(String s) {
+    public int numDecodings(String s) {
         char[] arr = s.toCharArray();
         int[] cache = new int[arr.length];
         int n = cache.length;
@@ -40,14 +40,14 @@ public class DecodeWays {
             if(arr[i] == '0'){
                 continue;
             }
-            if(i == n - 1){
+            if(i == n - 1){     // if the last right element of array
                 cache[i] = 1;
                 continue;
             }
             String str = s.substring(i, i + 2);
             if(Integer.parseInt(str) > 26){
                 cache[i] = cache[i + 1];
-            }else if(i == n - 2){
+            }else if(i == n - 2){       // check if 2 digits number (pair)
                 cache[i] = cache[i + 1] + 1;
             }
             else{
@@ -55,7 +55,7 @@ public class DecodeWays {
             }
         }
         return cache[0];
-    }*/
+    }
     public static void main(String[] args) {
         var dw = new DecodeWays();
         String s = "226";
