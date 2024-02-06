@@ -4,26 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutations {
-
+    // TC: O(n!)
     public List<List<Integer>> permute(int[] nums) {
+        // SC: O(n)
         List<List<Integer>> resultList = new ArrayList<>();
-        backtrack(resultList, new ArrayList<>(), nums);
+        backtracking(resultList, new ArrayList<>(), nums);
         return resultList;
     }
-    // TC:O(n!), SC:O(n)
-    private void backtrack(List<List<Integer>> resultList,
-                           ArrayList<Integer> tempList, int[] nums) {
-        if (tempList.size() == nums.length) {
+    private void backtracking(List<List<Integer>> resultList, List<Integer> tempList, int[] nums){
+        if(tempList.size() == nums.length){
             resultList.add(new ArrayList<>(tempList));
             return;
         }
-
-        for (int number : nums) {
-            if (tempList.contains(number))
-                continue;
-            tempList.add(number);
-            backtrack(resultList, tempList, nums);
-            tempList.remove(tempList.size() - 1);
+        for(int num : nums){
+            if (tempList.contains(num)) continue;
+            tempList.add(nums[num]);
+            backtracking(resultList, tempList, nums);
+            tempList.remove(tempList.size()-1);
         }
     }
 
