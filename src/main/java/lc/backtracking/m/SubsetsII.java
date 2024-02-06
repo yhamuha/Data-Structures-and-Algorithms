@@ -5,25 +5,24 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SubsetsII {
+    // TC: O(2^n) because of line 19
     public List<List<Integer>> subsetsWithDup(int[] nums) {
+        // SC: O(n)
         List<List<Integer>> resultList = new ArrayList<>();
         Arrays.sort(nums);
-
-        backtrack(resultList, new ArrayList<>(), nums, 0);
+        backtracking(resultList, new ArrayList<>(), nums, 0);
         return resultList;
     }
 
-    private void backtrack(List<List<Integer>> resultList, List<Integer> tempSet,
-                           int[] nums, int start) {
-        if (resultList.contains((tempSet)))
-            return;
+    private void backtracking (List<List<Integer>> resultList, List<Integer> tempList, int[] nums, int start){
+        if (resultList.contains(tempList)) return;
 
-        resultList.add(new ArrayList<>(tempSet));
+        resultList.add(new ArrayList<>(tempList));
 
-        for (int i = start; i < nums.length; i++) {
-            tempSet.add(nums[i]);
-            backtrack(resultList, tempSet, nums, i + 1);
-            tempSet.remove(tempSet.size() - 1);
+        for(int i=start; i<nums.length; i++) {
+            tempList.add(nums[i]);
+            backtracking(resultList, tempList, nums, i+1);
+            tempList.remove(tempList.size()-1);
         }
     }
 
