@@ -2,23 +2,22 @@ package lc.heap_priority_queue;
 
 import java.util.PriorityQueue;
 
-
-// O(n log n)
 public class KthLargestElementInAStream {
-    private PriorityQueue<Integer> heap = new PriorityQueue<>();
-    private int k;
-
-    // O(n)
+    // SC: O(n)
+    PriorityQueue<Integer> heap = new PriorityQueue<>();
+    int k;
+    // in case of constructor it schould avoid "void"
     public void KthLargest(int k, int[] nums) {
         this.k = k;
-        for (var n : nums)
+        for(int n : nums) {
             add(n);
+        }
     }
 
-    // O (log n)
+    // TC: O(n log n)
     public int add(int val) {
         heap.offer(val);
-        if (heap.size() > k)
+        if(heap.size() > k)
             heap.poll();
         return heap.peek();
     }
@@ -32,5 +31,6 @@ public class KthLargestElementInAStream {
         System.out.println(kleis.add(10));
         System.out.println(kleis.add(9));
         System.out.println(kleis.add(4));
+        System.out.println("Final heap values: " + kleis.heap);
     }
 }
