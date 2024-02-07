@@ -7,19 +7,16 @@ import java.util.Queue;
  return the kth largest element in the array
  */
 public class KthLargestElementInAnArray {
-    // O(n * log k)
-    // n - quantity of elements
-    // k - value
     public int findKthLargest(int[] nums, int k) {
-        // create pq with init capacity
-        Queue<Integer> minHeap = new PriorityQueue<>(k);
-
+        // SC: O(n)
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        // TC: (O n log n)
         for(int num : nums) {
-            if (minHeap.size() < k)
-                minHeap.add(num);
-            else if (num > minHeap.peek()) {
+            if (minHeap.size() < k) {
+                minHeap.offer(num);
+            } else if ( num > minHeap.peek()) {
                 minHeap.poll();
-                minHeap.add(num);
+                minHeap.offer(num);
             }
         }
         return minHeap.peek();
