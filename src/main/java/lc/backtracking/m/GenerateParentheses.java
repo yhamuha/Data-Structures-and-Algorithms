@@ -4,22 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParentheses {
+    // TC: O(2^n)
     public List<String> generateParenthesis(int n) {
-        List<String> output_array = new ArrayList<>();
-        backtrack(output_array, "", 0, 0, n);
-        return output_array;
+        List<String> resultList = new ArrayList<>();
+        backtrack(resultList, "", 0, 0, n);
+        return resultList;
     }
 
-    private void backtrack(List<String> output_arr, String current_string, int open, int close,  int max){
+    private void backtrack(List<String> resultList, String current_string, int open, int close,  int max){
+        // SC: O(2n)
         if(current_string.length() == max * 2){ // base case: "((()))"
-            output_arr.add(current_string);
+            resultList.add(current_string);
             return; // return from the particular stack call
         }
         if (open < max)
-            backtrack(output_arr, current_string + "(", open + 1, close, max);
+            backtrack(resultList, current_string + "(", open + 1, close, max);
 
         if (close < open)
-            backtrack(output_arr, current_string + ")", open, close + 1, max);
+            backtrack(resultList, current_string + ")", open, close + 1, max);
     }
 
     public static void main(String[] args) {
