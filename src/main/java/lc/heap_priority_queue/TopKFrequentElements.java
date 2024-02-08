@@ -3,29 +3,22 @@ package lc.heap_priority_queue;
 import java.util.*;
 
 public class TopKFrequentElements {
-    // O(n log n + k log n)
+    // TC: O(n log n)
+    // SC: O(n)
     public int[] topKFrequent(int[] nums, int k) {
-        // O(n)
         Map<Integer, Integer> map = new HashMap<>();
-        for(int n: nums){
-            map.put(n, map.getOrDefault(n,0)+1);
+        for(int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);     // 1-3, 2-2, etc...
         }
-
-        // maxHeap; sort by value
-        PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
-                new PriorityQueue<>((a,b)->(b.getValue()-a.getValue()));
-        // O (n)
-        for(Map.Entry<Integer,Integer> entry: map.entrySet()){
-            // O (log n)
+        PriorityQueue<Map.Entry<Integer,Integer>> maxHeap = // heap by max values
+                new PriorityQueue<>((a,b)-> (b.getValue() - a.getValue()));
+        for(Map.Entry<Integer,Integer> entry : map.entrySet()){
             maxHeap.add(entry);
         }
-
         int[] result = new int[k];
         int index = 0;
-        // O(k)
-        while(index < k){
-            // O (log n)
-            Map.Entry<Integer, Integer> entry = maxHeap.poll();
+        while (index < k){
+            Map.Entry<Integer,Integer> entry = maxHeap.poll();
             result[index] = entry.getKey();
             index++;
         }
