@@ -5,38 +5,34 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class ReorganizeString {
+    // O(n log n) O(n)
     public String reorganizeString(String s) {
-        // O(n)
-        Map<Character, Integer> freq_map = new HashMap<>();
-        for (char c: s.toCharArray()) {
-            freq_map.put(c, freq_map.getOrDefault(c, 0) + 1);
+        Map<Character, Integer> map = new HashMap<>();
+        for(char c : s.toCharArray()){
+            map.put(c, map.getOrDefault(c,0)+1);
         }
-        // O(k log k)
-        // k - numbers of unique characters in input string
-        PriorityQueue<Character> maxheap = new PriorityQueue<>(
-                (a, b) -> freq_map.get(b) - freq_map.get(a)
-        );
-        maxheap.addAll(freq_map.keySet());
-        // O(n log k)
-        // n - input str; k - unique chars
+
+        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a,b)->(map.get(b)-map.get(a)));
+        maxHeap.addAll(map.keySet());
+
         StringBuilder sb = new StringBuilder();
-        while (maxheap.size() > 1) {
-            char first = maxheap.poll();
-            char second = maxheap.poll();
+        while(maxHeap.size() > 1){              // control to have a pairs in maxHeap
+            char first = maxHeap.poll();
+            char second = maxHeap.poll();
             sb.append(first);
             sb.append(second);
-            freq_map.put(first, freq_map.get(first) - 1);
-            freq_map.put(second, freq_map.get(second) - 1);
-            if (freq_map.get(first) > 0)
-                maxheap.offer(first);
-            if (freq_map.get(second) > 0)
-                maxheap.offer(second);
+            map.put(first,map.get(first)-1);
+            map.put(second,map.get(second)-1);
+            if (map.get(first) > 0)
+                maxHeap.offer(first);
+            if (map.get(second) > 0)
+                maxHeap.offer(second);
         }
-        if (!maxheap.isEmpty()) {
-            if (freq_map.get(maxheap.peek()) > 1)
+        if(!maxHeap.isEmpty()){                 // have only 1 element in heap
+            if(map.get(maxHeap.peek())>1)       // we have more than 1 adjacent and must return empty String
                 return "";
             else
-                sb.append(maxheap.poll());
+                sb.append(maxHeap.poll());      // otherwise add the last char
         }
         return sb.toString();
     }
