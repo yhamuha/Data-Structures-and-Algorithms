@@ -5,22 +5,23 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 public class UglyNumberII {
+    // O(n log n) O(n)
     public int nthUglyNumber(int n) {
-        PriorityQueue<Long>pq= new PriorityQueue<Long>();
-        pq.add(1l);
-        n=n-1;
-        while(n>0){
-            long a=pq.poll();
-            if(!pq.contains(a*2))
-                pq.add(a*2);
-            if(!pq.contains(a*3))
-                pq.add(a*3);
-            if(!pq.contains(a*5))
-                pq.add(a*5);
+        PriorityQueue<Long> minHeap = new PriorityQueue<>();
+        minHeap.add(1L);
+        n = n - 1;
+        while (n > 0) {
+            long a = minHeap.poll();
+            if (!minHeap.contains(a*2))
+                minHeap.add(a*2);
+            if (!minHeap.contains(a*3))
+                minHeap.add(a*3);
+            if (!minHeap.contains(a*5))
+                minHeap.add(a*5);
             n--;
         }
-        long ans=pq.poll();
-        return (int)ans;
+        long result = minHeap.poll();
+        return (int)result;
     }
 
     public static void main(String[] args) {
