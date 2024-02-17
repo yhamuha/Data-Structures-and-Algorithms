@@ -5,24 +5,27 @@ import java.util.List;
 
 public class InsertInterval {
     // O(n) O(n)
-    public int[][] insert(int[][] intervals, int[] newInterval) {
-        List<int[]> mergedIntervals = new ArrayList<>();
-
-        for(int[] interval : intervals){
-
-            if (interval[1] < newInterval[0])
-                mergedIntervals.add(newInterval);
-            else if(interval[0] > newInterval[1]) {
-                mergedIntervals.add(newInterval);
-                newInterval = interval;
+        public int[][] insert(int[][] intervals, int[] newInterval) {
+            List<int[]> mergedIntervals = new ArrayList<>();
+            boolean inserted = false;
+            for (int[] interval : intervals) {
+                if (interval[1] < newInterval[0])
+                    mergedIntervals.add(interval);
+                else if (interval[0] > newInterval[1]) {
+                    if (!inserted) {
+                        mergedIntervals.add(newInterval);
+                        inserted = true;
+                    }
+                    mergedIntervals.add(interval);
+                } else {
+                    newInterval[0] = Math.min(interval[0], newInterval[0]);
+                    newInterval[1] = Math.max(interval[1], newInterval[1]);
+                }
             }
-            else {
-                newInterval[0] = Math.min(interval[0], newInterval[0]);
-                newInterval[1] = Math.max(interval[1], newInterval[1]);
+            if (!inserted) {
+                mergedIntervals.add(newInterval);
             }
-        }
-        mergedIntervals.add(newInterval);
-        return mergedIntervals.toArray(new int[mergedIntervals.size()][2]);
+            return mergedIntervals.toArray(new int[mergedIntervals.size()][2]);
     }
 
     public static void main(String[] args) {
