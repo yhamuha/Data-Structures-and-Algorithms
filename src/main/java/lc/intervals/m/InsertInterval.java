@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InsertInterval {
-    // O(n) O(1)
+    // O(n) O(n)
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> mergedIntervals = new ArrayList<>();
 
