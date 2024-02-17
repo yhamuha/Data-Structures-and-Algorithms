@@ -5,19 +5,26 @@ import java.util.Arrays;
 public class RemoveCoveredIntervals {
     // O(n log n) O(1)
     public int removeCoveredIntervals(int[][] intervals) {
-        Arrays.sort(intervals, (a,b) -> a[0] - b[0]);
-        int index = 0;
-        int overlapCounter = 0;
-        while (index < intervals.length) {
-            int min = intervals[index][0];
-            int max = intervals[index][1];
-            while (index < intervals.length - 1 && min <= intervals[index + 1][0] && max >= intervals[index + 1][1]) {
-                overlapCounter++;
-                index++;
+        Arrays.sort(intervals, this::compare);
+        int i = 0;
+        int c = 0;
+        while (i < intervals.length) {
+            int min = intervals[i][0];
+            int max = intervals[i][1];
+            while (i < intervals.length - 1 && min <= intervals[i + 1][0] && max >= intervals[i + 1][1]) {
+                c++;
+                i++;
             }
-            index++;
+            i++;
         }
-        return intervals.length - overlapCounter;
+        return intervals.length - c;
+    }
+
+    private int compare(int[] a, int[] b) {
+        if (a[0] == b[0]) {
+            return b[1] - a[1];
+        }
+        return a[0] - b[0];
     }
 
     public static void main(String[] args) {
