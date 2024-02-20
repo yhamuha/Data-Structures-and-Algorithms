@@ -1,7 +1,7 @@
 package lc.greedy.m;
 
 public class JumpGame {
-    // O(n)
+    // O(n) O(1)
     public boolean canJump(int[] nums) {
         int lastGoodIndexPosition = nums.length - 1;
         for (int i=nums.length-1; i>=0; i--) {
