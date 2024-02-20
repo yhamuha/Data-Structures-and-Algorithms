@@ -1,6 +1,7 @@
 package lc.greedy.m;
 
 public class MaximumSubarray {
+    // O(n) O(1)
     public int maxSubArray(int[] nums) {
         int maxValue = Integer.MIN_VALUE;
         int sum = 0;
