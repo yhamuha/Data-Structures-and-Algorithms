@@ -7,26 +7,25 @@ import java.util.TreeMap;
 public class HandOfStraights {
     // TC: O(n log n) <- TreeMap for n's numbers
     // SC: O(n)
-    public boolean isNStraightHand(int[] hand, int W) {
-        TreeMap<Integer, Integer> card_counts = new TreeMap<>(); // sorted
+    public boolean isNStraightHand(int[] hand, int groupSize) {
+        TreeMap<Integer, Integer> cardCount = new TreeMap<>();
         for (int card : hand) {
-            if (!card_counts.containsKey(card)) {
-                card_counts.put(card, 1);
-            } else {
-                card_counts.replace(card, card_counts.get(card) + 1);
-            }
+            if (!cardCount.containsKey(card))
+                cardCount.put(card,1);
+            else
+                cardCount.replace(card, cardCount.get(card)+1);
         }
-        while (card_counts.size() > 0) {
-            int first_card = card_counts.firstKey();
-            for (int i=first_card; i< first_card + W; i++) {
-                if (!card_counts.containsKey(i))
+
+        while (cardCount.size() > 0) {
+            int firstCard = cardCount.firstKey();
+            for(int i=firstCard; i<firstCard + groupSize; i++){
+                if (!cardCount.containsKey(i))
                     return false;
-                int count = card_counts.get(i);
-                if (count == 1) {
-                    card_counts.remove(i);
-                } else {
-                    card_counts.replace(i, card_counts.get(i) - 1);
-                }
+                int count = cardCount.get(i);
+                if (count == 1)
+                    cardCount.remove(i);
+                else
+                    cardCount.replace(i, cardCount.get(i)-1);
             }
         }
         return true;
