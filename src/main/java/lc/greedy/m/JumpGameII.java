@@ -3,18 +3,19 @@ package lc.greedy.m;
 public class JumpGameII {
     // O(n) O(1)
     int jump(int[] nums) {
-        int totalJumps = 0;
-        int destination = nums.length - 1;
-        int coverage = 0, lastJumpIdx = 0;
+        int destIdx = nums.length-1;
+        int totalJumps =0;
+        int lastJumpIdx = 0, coverageIdx = 0;
+
         if (nums.length == 1) return 0;
-        for (int i = 0; i < nums.length; i++) {
-            coverage = Math.max(coverage, i + nums[i]);
+
+        for(int i=0; i<nums.length; i++){
+            coverageIdx = Math.max(coverageIdx, i + nums[i]);
             if (i == lastJumpIdx) {
-                lastJumpIdx = coverage;
+                lastJumpIdx = coverageIdx;
                 totalJumps++;
-                if (coverage >= destination) {
+                if(coverageIdx >= destIdx)
                     return totalJumps;
-                }
             }
         }
         return totalJumps;
