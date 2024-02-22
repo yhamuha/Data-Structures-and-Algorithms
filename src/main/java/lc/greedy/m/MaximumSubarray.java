@@ -3,21 +3,20 @@ package lc.greedy.m;
 public class MaximumSubarray {
     // O(n) O(1)
     public int maxSubArray(int[] nums) {
-        int maxValue = Integer.MIN_VALUE;
-        int sum = 0;
+        int sum =0;
+        int max = Integer.MIN_VALUE;
         for(int num: nums){
-            sum = sum + num;
-            maxValue = Math.max(maxValue,sum);
-            if(sum < 0){
-                sum = 0;
-            }
+            sum += num;
+            max = Math.max(max, sum);
+            if(sum <0)
+                sum =0;
         }
-        return maxValue;
+        return max;
     }
 
     public static void main(String[] args) {
         var ms = new MaximumSubarray();
-        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        int[] nums = {1,2,-2,1,2};
         System.out.println(ms.maxSubArray(nums));
     }
 }
