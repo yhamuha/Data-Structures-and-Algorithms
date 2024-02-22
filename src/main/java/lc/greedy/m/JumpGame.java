@@ -3,12 +3,12 @@ package lc.greedy.m;
 public class JumpGame {
     // O(n) O(1)
     public boolean canJump(int[] nums) {
-        int lastGoodIndexPosition = nums.length - 1;
-        for (int i=nums.length-1; i>=0; i--) {
-            if (i + nums[i] >= lastGoodIndexPosition)
-                lastGoodIndexPosition = i;
+        int lastGoodIndex = nums.length-1;
+        for(int i=nums.length-1; i>=0; i--){
+            if (i+nums[i] >= lastGoodIndex)
+                lastGoodIndex = i;
         }
-        return lastGoodIndexPosition == 0;
+        return lastGoodIndex == 0;
     }
 
     public static void main(String[] args) {
