@@ -3,17 +3,21 @@ package lc.greedy.m;
 public class GasStation {
     // O(n) O(1)
     public int canCompleteCircuit(int[] gas, int[] cost) {
-        int position =0 , sum =0 , total =0;
-        for(int index=0;index<gas.length;index++){
-            sum += gas[index] - cost[index];
-            if(sum<0){
-                total+=sum;
-                sum=0;
-                position = index+1;
+        int remains = 0, total = 0, start = 0;
+        for (int i = 0; i < gas.length; i++) {
+            int diff = gas[i] - cost[i];
+            if (remains >= 0)
+                remains += diff;
+            else {
+                remains = diff;
+                start = i;
             }
+            total += diff;
         }
-        total += sum;
-        return total>=0?position:-1;
+        if (total >= 0)
+            return start;
+        else
+            return -1;
     }
 
     public static void main(String[] args) {
