@@ -8,24 +8,24 @@ public class HandOfStraights {
     // TC: O(n log n) <- TreeMap for n's numbers
     // SC: O(n)
     public boolean isNStraightHand(int[] hand, int groupSize) {
-        TreeMap<Integer, Integer> cardCount = new TreeMap<>();
-        for (int card : hand) {
-            if (!cardCount.containsKey(card))
-                cardCount.put(card,1);
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        for(int card : hand){
+            if(!map.containsKey(card))
+                map.put(card, 1);
             else
-                cardCount.replace(card, cardCount.get(card)+1);
+                map.replace(card, map.get(card)+1);
         }
 
-        while (cardCount.size() > 0) {
-            int firstCard = cardCount.firstKey();
-            for(int i=firstCard; i<firstCard + groupSize; i++){
-                if (!cardCount.containsKey(i))
+        while (map.size() > 0){
+            int firstCard = map.firstKey();
+            for(int i=firstCard; i<firstCard+groupSize; i++){
+                if (!map.containsKey(i))
                     return false;
-                int count = cardCount.get(i);
+                int count = map.get(i);
                 if (count == 1)
-                    cardCount.remove(i);
+                    map.remove(i);
                 else
-                    cardCount.replace(i, cardCount.get(i)-1);
+                    map.replace(i, map.get(i)-1);
             }
         }
         return true;
