@@ -8,20 +8,20 @@ public class PartitionLabels {
     public List<Integer> partitionLabels(String s) {
         int n = s.length();
         int end = 0;
-        int [] lastIndex = new int [26];
-        List<Integer> ans = new ArrayList<>();
-        for (int i = 0; i < n; i++){
-            lastIndex [s.charAt(i) - 'a'] = i;
+        List<Integer> answer = new ArrayList<>();
+        int[] lastIndex = new int[26];
+        for(int i=0; i<n;i++) {
+            lastIndex[s.charAt(i)-'a'] = i;
         }
         int prev = 0;
-        for (int j = 0; j < n; j++){
+        for(int j=0; j< n; j++) {
             end = Math.max(end, lastIndex[s.charAt(j) - 'a']);
             if (end == j) {
-                ans.add(end + 1- prev);
+                answer.add(end + 1 - prev);
                 prev = j + 1;
             }
         }
-        return ans;
+        return answer;
     }
 
     public static void main(String[] args) {
