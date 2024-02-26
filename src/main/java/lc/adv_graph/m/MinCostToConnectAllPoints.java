@@ -9,12 +9,12 @@ public class MinCostToConnectAllPoints {
         Arrays.fill(dist, Integer.MAX_VALUE);
         int ans = 0;
 
-        for (int i = 0; i < points.length - 1; ++i) {
-            for (int j = i + 1; j < points.length; ++j) {
+        for (int i = 0; i < points.length - 1; i++) {
+            for (int j = i + 1; j < points.length; j++) {
                 dist[j] = Math.min(dist[j], Math.abs(points[i][0] - points[j][0]) +
                         Math.abs(points[i][1] - points[j][1]));
                 if (dist[j] < dist[i + 1]) {
-                    final int[] tempPoint = points[j];
+                    final int[] tempPoint = points[j];          // swap
                     points[j] = points[i + 1];
                     points[i + 1] = tempPoint;
                     final int tempDist = dist[j];
