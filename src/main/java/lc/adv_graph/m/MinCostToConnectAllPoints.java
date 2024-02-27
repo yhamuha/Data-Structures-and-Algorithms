@@ -6,25 +6,23 @@ public class MinCostToConnectAllPoints {
     // O(n^2) O(1)
     public int minCostConnectPoints(int[][] points) {
         int[] dist = new int[points.length];
-        Arrays.fill(dist, Integer.MAX_VALUE);
+        Arrays.fill(dist,Integer.MAX_VALUE);
         int ans = 0;
-
-        for (int i = 0; i < points.length - 1; i++) {
-            for (int j = i + 1; j < points.length; j++) {
-                dist[j] = Math.min(dist[j], Math.abs(points[i][0] - points[j][0]) +
-                        Math.abs(points[i][1] - points[j][1]));
-                if (dist[j] < dist[i + 1]) {
-                    final int[] tempPoint = points[j];          // swap
-                    points[j] = points[i + 1];
-                    points[i + 1] = tempPoint;
-                    final int tempDist = dist[j];
-                    dist[j] = dist[i + 1];
-                    dist[i + 1] = tempDist;
+        for(int i=0; i<points.length-1;i++){
+            for(int j =i+1; j<points.length;j++){
+                dist[j] = Math.min(dist[j], (Math.abs(points[i][0] - Math.abs(points[j][0]) +
+                        Math.abs(points[i][1] - Math.abs(points[j][1])))));
+                if(dist[j] < dist[i+1]) {
+                    int[] tempPoint = points[j];
+                    points[j] = points[i+1];
+                    points[i+1] = tempPoint;
+                    int tempDist = dist[j];
+                    dist[j] = dist[i+1];
+                    dist[i+1] = tempDist;
                 }
             }
-            ans += dist[i + 1];
+            ans+=dist[i+1];
         }
-
         return ans;
     }
 
