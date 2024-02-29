@@ -32,7 +32,7 @@ public class CheapestFlightsWithinKStops {
     // O(V + E) O(V + E)
     // Vertex Edge
     public int findCheapestPrice(int V, int[][] edges, int src, int dst, int k) {
-        ArrayList<Edge> graph[]=new ArrayList[V];
+        ArrayList<Edge> graph[]=new ArrayList[V]; // transform to List as DIRECTED graph
         for(int i=0;i<V;i++) graph[i]=new ArrayList<>();
         for(int i=0;i<edges.length;i++){
             graph[edges[i][0]].add(new Edge(edges[i][0],edges[i][1],edges[i][2]));
