@@ -6,7 +6,7 @@ public class NetworkDelayTime {
     // TC: O(E log N); Edges, Nodes
     // SC: O(N + E)
     public int networkDelayTime(int[][] times, int n, int k) {
-        List[] adj = new List[n+1];
+        List[] adj = new List[n+1]; // using adj List
         for(int[] time:times){
             int u = time[0];
             int v = time[1];
@@ -16,10 +16,10 @@ public class NetworkDelayTime {
             }
             adj[u].add(new int[]{v,t});
         }
-        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b)->Integer.compare(a[1],b[1]));
-        boolean[] vis = new boolean[n+1];
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b)->Integer.compare(a[1],b[1])); // pq; comparator by times
+        boolean[] vis = new boolean[n+1];  // visited
 
-        int[] reachTime = new int[n+1];
+        int[] reachTime = new int[n+1]; // reach time
         Arrays.fill(reachTime, Integer.MAX_VALUE);
         int count = 0;
         int max = 0;
@@ -36,7 +36,7 @@ public class NetworkDelayTime {
             vis[u] = true;
             count++;
             max = Math.max(max, reachTime_u);
-            if(adj[u]!=null){
+            if(adj[u]!=null){ // if node has neighbors
                 Iterator<int[]> it = adj[u].iterator();
                 while(it.hasNext()){
                     int[] neighbor = it.next();
