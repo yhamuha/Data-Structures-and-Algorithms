@@ -3,7 +3,7 @@ package lc.adv_graph.m;
 import java.util.Arrays;
 
 public class MinCostToConnectAllPoints {
-    // O(n^2) O(1)
+    // O(n^2) O(n)
     public int minCostConnectPoints(int[][] points) {
         int[] dist = new int[points.length];
         Arrays.fill(dist, Integer.MAX_VALUE);
@@ -30,7 +30,7 @@ public class MinCostToConnectAllPoints {
 
     public static void main(String[] args) {
         var mctcap = new MinCostToConnectAllPoints();
-        int[][] points = {{0, 0}, {2, 2}, {3, 10}, {5, 2}, {7, 0}};
+        int[][] points = {{3, 12}, {-2, 5}, {-4, 1}};
         System.out.println(mctcap.minCostConnectPoints(points));
     }
 }
