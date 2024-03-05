@@ -9,31 +9,38 @@ class ListNode {
  }
 
 class MergeTwoSortedList {
+        // O(n+m) O(1)
         public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-            ListNode res = new ListNode();
-            ListNode r = res;
-            while(list1 != null && list2 != null) {
-                if(list1.val < list2.val) {
-                    r.next = list1;
-                    r= r.next;
-                    list1 = list1.next;
+            ListNode root = new ListNode(), curr = root;
+            ListNode index1 = list1, index2 = list2;
+
+            while(index1 != null && index2 != null) {
+                if(index1.val < index2.val) {
+                    curr.next = index1; curr = index1; index1=index1.next;
                 } else {
-                    r.next = list2;
-                    r = r.next;
-                    list2 = list2.next;
+                    curr.next = index2; curr = index2; index2=index2.next;
                 }
             }
-            while(list1 != null) {
-                r.next = list1;
-                r = r.next;
-                list1 = list1.next;
+            while(index1 != null) {
+                curr.next = index1; curr = index1; index1=index1.next;
             }
-            while(list2 != null) {
-                r.next = list2;
-                r = r.next;
-                list2 = list2.next;
+            while(index2 != null) {
+                curr.next = index2; curr = index2; index2=index2.next;
             }
-            return res.next;
+            return root.next;
         }
 
+        public static void main(String[] args) {
+            ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+            ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+            MergeTwoSortedList merger = new MergeTwoSortedList();
+            ListNode mergedList = merger.mergeTwoLists(list1, list2);
+
+            System.out.print("Merged List: ");
+            while (mergedList != null) {
+                System.out.print(mergedList.val + " ");
+                mergedList = mergedList.next;
+            }
+        }
 }
