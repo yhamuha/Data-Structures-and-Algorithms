@@ -16,16 +16,16 @@ class MergeTwoSortedList {
 
             while(index1 != null && index2 != null) {
                 if(index1.val < index2.val) {
-                    curr.next = index1; curr = index1; index1=index1.next;
+                    curr.next = index1; curr = curr.next; index1 = index1.next;
                 } else {
-                    curr.next = index2; curr = index2; index2=index2.next;
+                    curr.next = index2; curr = curr.next; index2 = index2.next;
                 }
             }
             while(index1 != null) {
-                curr.next = index1; curr = index1; index1=index1.next;
+                curr.next = index1; curr = curr.next; index1 = index1.next;
             }
             while(index2 != null) {
-                curr.next = index2; curr = index2; index2=index2.next;
+                curr.next = index2; curr = curr.next; index2 = index2.next;
             }
             return root.next;
         }
