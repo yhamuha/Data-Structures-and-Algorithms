@@ -7,12 +7,9 @@ class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
- // https://www.youtube.com/watch?v=jY-EUKXYT20&ab_channel=DineshVaryani
+
 public class ReverseLinkedList {
-     //            c
-     //  <1<2<3<4<5
-     //           p n
-     // return p
+    // O(n) O(1)
     public ListNode reverseList(ListNode head) {
        ListNode prev = null;
        ListNode curr = head;
