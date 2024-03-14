@@ -4,6 +4,7 @@ import lc.bst.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 public class MinimumDepthOfBinaryTree {
+    // O(n) O(n)
     public int minDepth(TreeNode root) {
         if (root==null)
             return 0;
@@ -27,21 +28,13 @@ public class MinimumDepthOfBinaryTree {
             depth++;
         }
         return 0;
-
     }
 
     public static void main(String[] args) {
         var mdobt = new MinimumDepthOfBinaryTree();
-
-       /* TreeNode root = new TreeNode(2, null,
-                            new TreeNode(3, null,
-                                    new TreeNode(4, null,
-                                            new TreeNode(5, null,
-                                                    new TreeNode(6)))));*/
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20));
         root.left = new TreeNode(9, null, null);
         root.right = new TreeNode(20, new TreeNode(18), new TreeNode(7));
-
         System.out.println(mdobt.minDepth(root));
     }
 }
