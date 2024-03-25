@@ -26,7 +26,7 @@ public class RomanToInteger {
     }
     public static void main(String[] args) {
         RomanToInteger converter = new RomanToInteger();
-        String romanNumeral = "LVIII";
+        String romanNumeral = "LCIII";
         int result = converter.romanToInt(romanNumeral);
         System.out.println("Roman numeral: " + romanNumeral);
         System.out.println("Integer value: " + result);
