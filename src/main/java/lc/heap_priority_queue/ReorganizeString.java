@@ -7,15 +7,16 @@ import java.util.PriorityQueue;
 public class ReorganizeString {
     // O(n log n) O(n)
     public String reorganizeString(String s) {
+        // TC: O(n)
         Map<Character, Integer> map = new HashMap<>();
         for(char c : s.toCharArray()){
             map.put(c, map.getOrDefault(c,0)+1);
         }
-
+        // TC: O(n)
         PriorityQueue<Character> maxHeap = new PriorityQueue<>((a,b)->(map.get(b)-map.get(a)));
-        maxHeap.addAll(map.keySet());
-
+        maxHeap.addAll(map.keySet()); // SC: O(n log n)
         StringBuilder sb = new StringBuilder();
+        // reorganize string SC: O(n log n)
         while(maxHeap.size() > 1){              // control to have a pairs in maxHeap
             char first = maxHeap.poll();
             char second = maxHeap.poll();
