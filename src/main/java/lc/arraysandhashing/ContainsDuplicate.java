@@ -28,9 +28,24 @@ public class ContainsDuplicate {
         return false;
     }
 
+    // O(n) O(1)
+    static public boolean containsDuplicateBitmanipulation(int[] nums) {
+        int checker = 0;
+        for (int num : nums) {
+            int mask = 1 << num;
+            if ((checker & mask) > 0) { // if bit present in checker
+                return true;
+            }
+            checker |= mask; // otherwise assign mask to checker
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         int[] arr = {1,2,3,3,4,5};
-         System.out.println(containsDuplicate(arr));
-//        System.out.println(containsDuplicateEnhanced(arr));
+        // System.out.println(containsDuplicate(arr));
+        // System.out.println(containsDuplicateEnhanced(arr));
+        System.out.println(containsDuplicateBitmanipulation(arr));
+
     }
 }
