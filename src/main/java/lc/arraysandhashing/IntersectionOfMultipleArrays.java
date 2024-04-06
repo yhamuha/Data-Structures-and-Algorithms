@@ -11,7 +11,7 @@ public class IntersectionOfMultipleArrays {
                 map.put(num, map.getOrDefault(num, 0) + 1);
             }
         }
-        int n = nums.length;    // num of subassrays
+        int n = nums.length;    // num of subarrays
         List<Integer> res = new ArrayList<>();
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() == n) {    // if entry contains particular number in each of subarrays
