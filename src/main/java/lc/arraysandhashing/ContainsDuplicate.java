@@ -30,9 +30,9 @@ public class ContainsDuplicate {
 
     // O(n) O(1)
     static public boolean containsDuplicateBitmanipulation(int[] nums) {
-        long checker = 0;
+        long checker = 0L;
         for (int num : nums) {
-            long mask = 1 << num;
+            long mask = 1L << num;
             if ((checker & mask) > 0) { // if bit present in checker
                 return true;
             }
