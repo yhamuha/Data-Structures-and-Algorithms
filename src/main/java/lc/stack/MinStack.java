@@ -3,10 +3,8 @@ package lc.stack;
 import java.util.Stack;
 
 public class MinStack {
-
-    Stack<Integer> stack = new Stack<>();
-    Stack<Integer> min_vals = new Stack<>();
-
+    Stack<Integer> stack = new Stack<>();       // stack1
+    Stack<Integer> min_vals = new Stack<>();    // stack2
     public MinStack() {
     }
     public void push(int val) {
@@ -16,26 +14,26 @@ public class MinStack {
         stack.push(val);
     }
     public void pop() {
-        if(stack.peek().equals(min_vals.peek())) {
-            min_vals.pop();
+        if(stack.peek().equals(min_vals.peek())) {  // sync both stacks
+            min_vals.pop();                         // remove from 1st
         }
-        stack.pop();
+        stack.pop();                                // and 2st stack
     }
-    public int top() {
-        return stack.peek();
-    }
+
+    public int top() {return stack.peek();}
+
     // O(1), O(n)
-    public int getMin() {
-        return min_vals.peek();
-    }
+    public int getMin(){return min_vals.peek();}
 
     public static void main(String[] args) {
         MinStack ms = new MinStack();
-        ms.push(11);
-        ms.push(2);
-        ms.push(3);
+        ms.push(-2);
+        ms.push(0);
+        ms.push(-3);
+        System.out.print(ms.getMin() + " ");
         ms.pop();
-        System.out.println(ms.getMin());
+        System.out.print(ms.top()+ " ");
+        System.out.print(ms.getMin());
     }
 }
 
