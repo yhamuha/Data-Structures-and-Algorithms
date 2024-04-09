@@ -1,0 +1,17 @@
+package lc.twopointer;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class BuyTwoChocolatesTest {
+    @Test
+    public void testBuyChoco2() {
+        BuyTwoChocolates buyTwoChocolates = new BuyTwoChocolates();
+        int[] prices = {1, 2, 2};
+        int money = 3;
+        int expectedRemainingMoney = 0;
+        int actualRemainingMoney = buyTwoChocolates.buyChoco(prices, money);
+        assertEquals(expectedRemainingMoney, actualRemainingMoney);
+    }
+}
