@@ -43,6 +43,6 @@ public class PalindromeLinkedList {
         head.next.next.next = new ListNode(1);
 
         PalindromeLinkedList solution = new PalindromeLinkedList();
-        System.out.println(solution.isPalindrome(head)); // Output: true
+        System.out.println(solution.isPalindrome(head));
     }
 }
