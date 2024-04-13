@@ -1,8 +1,9 @@
-package lc.bitmanipulation;
+package lc.bitmanipulation.e;
 
 import java.util.Arrays;
 
 public class CountingBits {
+    // O(n) O(1)
     public int[] countBits(int n) {
         int[] ans = new int[n + 1];
         for (int i = 1; i <= n; i++) {
