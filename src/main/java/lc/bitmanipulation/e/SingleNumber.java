@@ -1,4 +1,4 @@
-package lc.bitmanipulation;
+package lc.bitmanipulation.e;
 
 public class SingleNumber {
     // O(n) O(1)
@@ -11,10 +11,7 @@ public class SingleNumber {
     }
     public static void main(String[] args) {
         int[] nums1 = {2, 2, 1};
-        int[] nums2 = {4, 1, 2, 1, 2};
-
         var sn = new SingleNumber();
         System.out.println(sn.singleNumber(nums1));
-        System.out.println(sn.singleNumber(nums2));
     }
 }
