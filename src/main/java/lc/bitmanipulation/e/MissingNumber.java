@@ -1,12 +1,16 @@
-package lc.bitmanipulation;
+package lc.bitmanipulation.e;
 
 public class MissingNumber {
+    // O(n) O(1)
     public int missingNumber(int[] nums) {
-        int missingNum = nums.length;
-        for (int i = 0; i < nums.length; i++) {
-            missingNum = missingNum ^ i ^ nums[i];
-        }
-        return missingNum;
+        int allXOR = 0;
+
+        for(int i=0;i<=nums.length; i++)
+            allXOR=allXOR ^ i;
+        for(int num : nums)
+            allXOR = allXOR ^ num;
+
+        return allXOR;
     }
 
     public static void main(String[] args) {
