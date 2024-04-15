@@ -5,10 +5,10 @@ public class SumOfTwoIntegers {
     public int getSum(int a, int b) {
         while ((a&b) != 0) {
             int olda = a;
-            a = olda^b; //
-            b = (olda&b) << 1; //
+            a = olda^b; // get digit with "no carrie"
+            b = (olda&b) << 1; // get and left shift "carrie" digit
         }
-        return a|b; //
+        return a|b; // merge "no carries" digits
     }
     public static void main(String[] args) {
         SumOfTwoIntegers sumOfTwoIntegers = new SumOfTwoIntegers();

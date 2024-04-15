@@ -1,4 +1,4 @@
-package lc.bitmanipulation;
+package lc.bitmanipulation.m;
 
 public class GrayCode {
 
