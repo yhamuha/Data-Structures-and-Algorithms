@@ -1,16 +1,7 @@
 package misc.recursion;
 
-// 4
-
-// s[0] == s[n-1]   true
-// s[1] == s[n-2]   true
-// s[n/2] == s[n/2] true
-
 public class RecursionIsPalindrome {
-    public static void main(String[] args) {
-
-    }
-
+    // O(n/2) O(n/2)
     boolean symmetricCharsAreEqual(String str, int charIndex) {
         int symmetricChar = str.length() - 1 - charIndex;
         return str.charAt(charIndex) == str.charAt(symmetricChar);
@@ -21,10 +12,15 @@ public class RecursionIsPalindrome {
         return symmetricCharsAreEqual(str, n) && isPalindrome(str, n + 1);
     }
 
-    // wrapper
     boolean isPalindrome(String str) {
         return isPalindrome(str, 0);
     }
 
-
+    public static void main(String[] args) {
+        RecursionIsPalindrome palindromeChecker = new RecursionIsPalindrome();
+        String str1 = "racecar";
+        String str2 = "hello";
+        System.out.println(str1 + " is a palindrome: " + palindromeChecker.isPalindrome(str1));
+        System.out.println(str2 + " is a palindrome: " + palindromeChecker.isPalindrome(str2));
+    }
 }
