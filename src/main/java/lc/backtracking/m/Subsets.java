@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Subsets {
-    // O(2^n * n)
-    public List<List<Integer>> subsets(int[] nums) {
+    // O(2^n) O(2^n)
+    public List<List<Integer>> subsets (int[] nums){
         List<List<Integer>> resultList = new ArrayList<>();
         backtrack(resultList, new ArrayList<>(), nums, 0);
         return resultList;
     }
 
-    private void backtrack (List<List<Integer>> resultList, List<Integer> tempList, int[] nums, int start){
+    private void backtrack(List<List<Integer>> resultList, List<Integer> tempList, int[] nums, int start) {
         resultList.add(new ArrayList<>(tempList));
-        for(int i=start; i<nums.length; i++){
+        for(int i=start; i<nums.length; i++) {
             tempList.add(nums[i]);
             backtrack(resultList, tempList, nums, i+1);
             tempList.remove(tempList.size()-1);
