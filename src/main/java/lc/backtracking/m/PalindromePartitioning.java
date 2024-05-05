@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PalindromePartitioning {
-    // TC: O(n^2 * 2^n)
+    // O(2^n) O(2^n)
     public List<List<String>> partition(String s) {
-        // SC: O(m)
         List<List<String>> list = new ArrayList<>();
         backtrack(list, new ArrayList<>(), s, 0);
         return list;
@@ -28,7 +27,7 @@ public class PalindromePartitioning {
 
     private boolean isPalindrome(String s, int low, int high){
         while (low < high)
-            if (s.charAt(low++) != s.charAt(high--)) // from low to high toward to center
+            if (s.charAt(low++) != s.charAt(high--))
                 return false;
         return true;
     }
