@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class NQueens {
+    // O(n!) O(n^2)
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new ArrayList<List<String>>();
 
@@ -39,7 +40,7 @@ public class NQueens {
 
             solveNQueens(board, row + 1, result, columns, diagonals, antiDiagonals);
 
-            board[row][col] = '.'; // backtrack
+            board[row][col] = '.';
             columns.remove(col);
             diagonals.remove(diag);
             antiDiagonals.remove(antiDiag);
