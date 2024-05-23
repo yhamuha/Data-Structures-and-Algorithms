@@ -32,11 +32,12 @@ public class ContainsDuplicate {
     static public boolean containsDuplicateBitmanipulation(int[] nums) {
         long checker = 0L;
         for (int num : nums) {
-            long mask = 1L << num;
-            if ((checker & mask) > 0) { // if bit present in checker
+            long mask = 1L << num; // get unique bit mask for each num
+            // 0001 left shift for each of 3,2,3 numbers
+            if ((checker & mask) > 0) { // check if bit identifier match
                 return true;
             }
-            checker |= mask; // otherwise assign mask to checker
+            checker |= mask; // save particular bit from each bit mask for each num
         }
         return false;
     }
