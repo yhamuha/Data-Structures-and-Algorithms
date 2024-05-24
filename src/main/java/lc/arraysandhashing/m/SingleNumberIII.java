@@ -1,6 +1,4 @@
-package lc.arraysandhashing;
-
-import misc.problem_solving.array.SingleNumberGoogle;
+package lc.arraysandhashing.m;
 
 import java.util.ArrayList;
 import java.util.Arrays;

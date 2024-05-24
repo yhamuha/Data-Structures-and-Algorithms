@@ -1,9 +1,9 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.e;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class IntersectionOfTwoArray {
+public class IntersectionOfTwoArrays {
     // O(n) O(n)
     public int[] intersection(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<>();
@@ -25,7 +25,7 @@ public class IntersectionOfTwoArray {
 
     public static void main(String[] args) {
         int[] nums1 = {4,2,5}; int[] nums2 = {3,2,5};
-        IntersectionOfTwoArray intersectionOfTwoArray = new IntersectionOfTwoArray();
+        IntersectionOfTwoArrays intersectionOfTwoArray = new IntersectionOfTwoArrays();
         int[] result = intersectionOfTwoArray.intersection(nums1, nums2);
         for(int num : result) {
             System.out.print(num + " ");

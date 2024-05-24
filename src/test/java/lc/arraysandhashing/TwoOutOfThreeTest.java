@@ -1,5 +1,6 @@
 package lc.arraysandhashing;
 
+import lc.arraysandhashing.e.TwoOutOfThree;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

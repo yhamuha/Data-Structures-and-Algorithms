@@ -1,4 +1,4 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.e;
 
 import java.util.*;
 

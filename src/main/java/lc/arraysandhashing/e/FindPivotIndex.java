@@ -1,6 +1,6 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.e;
 
-public class PivotIndex {
+public class FindPivotIndex {
     // O(n) O(n)
     static public int pivotIndex(int[] nums) {
         if (nums.length == 0) return -1;

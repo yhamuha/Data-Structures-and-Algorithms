@@ -1,4 +1,4 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.m;
 
 import java.util.HashMap;
 import java.util.Map;

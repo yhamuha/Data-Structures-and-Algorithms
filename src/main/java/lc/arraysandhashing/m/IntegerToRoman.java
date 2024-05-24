@@ -1,6 +1,6 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.m;
 
-public class IntToRoman {
+public class IntegerToRoman {
 
     public String intToRoman(int num) {
         final String[] numerals = new String[]
@@ -30,7 +30,7 @@ public class IntToRoman {
     }
 
     public static void main(String[] args) {
-        IntToRoman itr = new IntToRoman();
+        IntegerToRoman itr = new IntegerToRoman();
         System.out.println(itr.intToRoman(8));
     }
 }

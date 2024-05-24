@@ -1,4 +1,4 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.m;
 
 import java.util.HashSet;
 import java.util.Set;

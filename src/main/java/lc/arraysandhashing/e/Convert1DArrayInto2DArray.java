@@ -1,4 +1,4 @@
-package lc.arraysandhashing;
+package lc.arraysandhashing.e;
 
 public class Convert1DArrayInto2DArray {
     // O(m*n) O(m*n)
