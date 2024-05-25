@@ -6,32 +6,28 @@ import java.util.List;
 import java.util.Set;
 
 public class FindTheDifferenceOfTwoArrays {
-    // T: O(n) S: O(n)
+    // O(n) O(n)
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
-
-        Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>();
-        for (int num : nums1)
-            set1.add(num);
-        for (int num : nums2)
-            set2.add(num);
-        List<Integer> a1 = new ArrayList<>();
-        List<Integer> a2 = new ArrayList<>();
-        for (int num : set1) {
-            if (!set2.contains(num)) {
-                a1.add(num);
-            }
-        }
-        for (int num : set2) {
-            if (!set1.contains(num)) {
-                a2.add(num);
-            }
-        }
-        List<List<Integer>> result = new ArrayList<>();
-        result.add(a1);
-        result.add(a2);
-        return result;
+        Set<Integer> setOfNums1 = new HashSet<>();
+        Set<Integer> setOfNums2 = new HashSet<>();
+        for(int num : nums1)
+            setOfNums1.add(num);
+        for(int num : nums2)
+            setOfNums2.add(num);
+        List<Integer> distinctNums1InNums2List = new ArrayList<>();
+        List<Integer> distinctNums2InNums1List = new ArrayList<>();
+        for(int num : nums1)
+            if(!setOfNums2.contains(num))
+                distinctNums1InNums2List.add(num);
+        for(int num : nums2)
+            if(!setOfNums1.contains(num))
+                distinctNums2InNums1List.add(num);
+        List<List<Integer>> resultList = new ArrayList<>();
+        resultList.add(distinctNums1InNums2List);
+        resultList.add(distinctNums2InNums1List);
+        return resultList;
     }
+
     public static void main(String[] args) {
         FindTheDifferenceOfTwoArrays finder = new FindTheDifferenceOfTwoArrays();
         int[] nums1 = {1, 2, 3};
