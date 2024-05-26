@@ -11,7 +11,7 @@ public class ValidSudoku {
             for (int column = 0; column < 9; column++) {
                 char number = board[row][column];
                 if (number != '.') {
-                    if (!set.add(number + " in row " + row) ||
+                    if (!set.add(number + " in row " + row) ||              // set.add return boolean
                             !set.add(number + " in column " + column) ||
                             !set.add(number + " in block " + (row / 3) + "," + (column / 3)))
                         return false;
