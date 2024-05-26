@@ -13,13 +13,13 @@ public class LongestConsecutiveSequence {
         for (int num : nums) {
             int currentLength = 1;
             int nextNum = num + 1;
-            while (map.containsKey(nextNum) && map.get(nextNum) == false) {
+            while (map.containsKey(nextNum) && !map.get(nextNum)) {
                 currentLength++;
                 map.put(nextNum,true);
                 nextNum++;
             }
             int prevNum = num - 1;
-            while (map.containsKey(prevNum) && map.get(prevNum) == false) {
+            while (map.containsKey(prevNum) && !map.get(prevNum)) {
                 currentLength++;
                 map.put(prevNum,true);
                 prevNum--;
