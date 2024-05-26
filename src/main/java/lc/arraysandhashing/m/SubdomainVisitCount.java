@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SubdomainVisitCount {
-    // TC/SC: O(n)
+    // O(n) O(n)
     public List<String> subdomainVisits(String[] cpdomains) {
         Map<String, Integer> map = new HashMap<>();
         for(String s: cpdomains) {
@@ -18,7 +18,6 @@ public class SubdomainVisitCount {
             } else {
                 map.put(array[1], number);
             }
-
             for (int i=0; i<length; i++) {
                 if(array[1].charAt(i) == '.') {
                     String temp = array[1].substring(i+1, length);
@@ -40,7 +39,7 @@ public class SubdomainVisitCount {
 
     public static void main(String[] args) {
         SubdomainVisitCount svc = new SubdomainVisitCount();
-        List<String> result = svc.subdomainVisits(new String[] {"900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"});
+        List<String> result = svc.subdomainVisits(new String[] {"901 google.mail.com"});
         System.out.println(result);
     }
 }
