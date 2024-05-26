@@ -4,47 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LongestConsecutiveSequence {
-
-    // O(n) O(n)
-/*    public int longestConsecutive(int[] nums) {
-        int longestLength = 0;
-        Map<Integer,Boolean> map = new HashMap<>();
-        for(int num : nums) {
-            map.put(num, Boolean.FALSE);
-        }
-
-        for (int num : nums)  {
-            int currentLength = 1;
-
-            int nextNum = num + 1;
-            while ( map.containsKey(nextNum) &&
-                    map.containsValue(nextNum) == false) {
-                currentLength++;
-                map.put(nextNum, Boolean.TRUE);
-                nextNum++;
-            }
-
-            int prevNum = num - 1;
-            while (map.containsKey(prevNum) &&
-                   map.containsValue(prevNum) == false) {
-                currentLength++;
-                map.put(num, Boolean.FALSE);
-                prevNum--;
-            }
-            longestLength = Math.max(longestLength, currentLength);
-        }
-        return longestLength;
-    }*/
-
+        // O(n) O(n)
     public int longestConsecutive(int[] nums) {
-
         int longestLength = 0;
-
         Map<Integer, Boolean> map = new HashMap();
-        for (int num : nums) {
+        for (int num : nums)
             map.put(num, Boolean.FALSE);
-        }
-
         for (int num : nums) {
             int currentLength = 1;
             int nextNum = num + 1;
@@ -61,7 +26,7 @@ public class LongestConsecutiveSequence {
             }
             longestLength = Math.max(longestLength, currentLength);
         }
-    return longestLength;
+        return longestLength;
     }
 
     public static void main(String[] args) {
