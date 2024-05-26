@@ -7,22 +7,22 @@ public class LongestConsecutiveSequence {
         // O(n) O(n)
     public int longestConsecutive(int[] nums) {
         int longestLength = 0;
-        Map<Integer, Boolean> map = new HashMap();
+        Map<Integer, Boolean> map = new HashMap<>();
         for (int num : nums)
-            map.put(num, Boolean.FALSE);
+            map.put(num, false);
         for (int num : nums) {
             int currentLength = 1;
             int nextNum = num + 1;
             while (map.containsKey(nextNum) && map.get(nextNum) == false) {
                 currentLength++;
-                map.put(nextNum,Boolean.TRUE);
+                map.put(nextNum,true);
                 nextNum++;
             }
-            int prevNum = num + 1;
+            int prevNum = num - 1;
             while (map.containsKey(prevNum) && map.get(prevNum) == false) {
                 currentLength++;
-                map.put(prevNum,Boolean.TRUE);
-                prevNum++;
+                map.put(prevNum,true);
+                prevNum--;
             }
             longestLength = Math.max(longestLength, currentLength);
         }
@@ -30,7 +30,7 @@ public class LongestConsecutiveSequence {
     }
 
     public static void main(String[] args) {
-        int[] nums = {100,4,200,1,3,2};
+        int[] nums = {100,4,200,1,3,2,5};
         LongestConsecutiveSequence lcs = new LongestConsecutiveSequence();
         System.out.println(lcs.longestConsecutive(nums));
     }
