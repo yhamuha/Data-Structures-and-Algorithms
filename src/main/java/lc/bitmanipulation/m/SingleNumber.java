@@ -1,4 +1,4 @@
-package lc.arraysandhashing.m;
+package lc.bitmanipulation.m;
 
 public class SingleNumber {
     // O(n) O(1)
