@@ -3,18 +3,19 @@ package lc.linkedlist.e;
 public class MiddleOfTheLinkedList {
     // O(n) O(1)
     public ListNode middleNode(ListNode head) {
-        int count = 0;
+        int length = 0;
         ListNode current = head;
-        while (current != null) {   // count all the nodes
-            count++;
+        while(current != null){
+            length++;
             current = current.next;
         }
-        current = head; // reset pointer
-        for (int i = 0; i < count / 2; i++) {   // determine the middle one
+        current=head;
+        for(int i=0; i<length/2; i++){
             current = current.next;
         }
         return current;
     }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
