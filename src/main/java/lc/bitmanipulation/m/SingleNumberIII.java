@@ -6,7 +6,8 @@ public class SingleNumberIII {
     // O(n) O(1)
     public int[] singleNumber(int[] nums) {
         int xor = 0;
-        for (int n: nums) xor ^=n;
+        for (int n: nums)
+            xor ^=n;
         int mask = (xor & (xor-1)) ^ xor;
         int num1=0;
         for (int n: nums)
