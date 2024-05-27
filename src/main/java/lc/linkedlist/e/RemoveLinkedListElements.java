@@ -6,14 +6,14 @@ public class RemoveLinkedListElements {
         ListNode newHead = new ListNode(0);
         newHead.next = head;
         ListNode temp = newHead;
-        if(head == null){
+        if(head==null){
             return head;
         }
         while(temp.next!=null){
-            if(temp.next.val == val){
-                temp.next = temp.next.next;
-            }else{
-                temp = temp.next;
+            if(temp.next.val==val){
+                temp.next=temp.next.next;
+            } else {
+                temp=temp.next;
             }
         }
         return newHead.next;
