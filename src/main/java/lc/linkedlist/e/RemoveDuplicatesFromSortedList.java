@@ -6,14 +6,14 @@ public class RemoveDuplicatesFromSortedList {
         if(head == null) return null;
         ListNode start = head;
         ListNode end = head;
-        while(end != null){
-            if(start.val != end.val ){
-                start.next = end;
+        while(end!=null){
+            if(start.val!=end.val){
+                start.next=end;
                 start = end;
             }
-            end = end.next;
+            end=end.next;
         }
-        start.next = null;
+        start.next=null;
         return head;
     }
 
