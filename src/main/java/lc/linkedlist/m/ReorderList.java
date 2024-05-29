@@ -1,25 +1,25 @@
 package lc.linkedlist.m;
 
 public class ReorderList {
+    // O(n) O(1)
     public void reorderList(ListNode head) {
         if(head==null || head.next==null)return ;
-        ListNode slow = head;                       // finding middle element
+        ListNode slow = head;
         ListNode fast= head;
         while(fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
         }
-        ListNode newNode = reverseList(slow.next);  // reversing the second half of the list
-        slow.next=null;                             // breaking the list from the middle
-        ListNode curr = head;                       // merging both list; first half list pointer
-        ListNode dummy = newNode;                   // second half list pointer
+        ListNode newNode = reverseList(slow.next);
+        slow.next=null;
+        ListNode curr = head;
+        ListNode dummy = newNode;
         while(head!=null && dummy!=null){
-            ListNode temp = curr.next;              // pointer to store next element of curr(1st half list)
-            curr.next=dummy;                        // link element of 1st half to that of second half
-            ListNode temp2=dummy.next;              // pointer to store next element of dummy(2nd half list)
-            dummy.next=temp;                        // link the rest of the first half list
-            curr=temp;                              // increment curr and dummy pointer to do the same thing again
-                                                    // and again util we reach end of any one list or both list
+            ListNode temp = curr.next;
+            curr.next=dummy;
+            ListNode temp2=dummy.next;
+            dummy.next=temp;
+            curr=temp;
             dummy=temp2;
         }
     }
