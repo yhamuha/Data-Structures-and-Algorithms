@@ -1,28 +1,26 @@
 package lc.linkedlist.m;
 
 public class RemoveNthNodeFromEndOfList {
+    // O(n) O(1)
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if(head==null)                          // if head is null - no node is found
-            return null;
-        if(head.next==null)                     // if only one node is found
-            return null;
-        int cnt=0;                              // To find the Size of the List
+        if(head==null) return null;
+        if(head.next==null) return null;
+        int nodeCounter=0;                              
         ListNode curr = head;
         while(curr!=null){
             curr=curr.next;
-            cnt++;
+            nodeCounter++;
         }
-        ListNode del = null;
-        ListNode move = head;
-        if(cnt==n){                             // Provision for the last node
+        ListNode del = null; ListNode move = head;
+        if(nodeCounter==n){    // border case if n is the same as node length
             head=move.next;
             move.next=null;
             return head;
         }
-        for(int i=1; i<cnt-n; i++){             // For iteration upto the position
+        for(int i=1; i<nodeCounter-n; i++){
             move=move.next;
         }
-        del=move.next;                          // Logic To delete the node
+        del=move.next;
         move.next = move.next.next;
         del.next=null;
         return head;
@@ -35,9 +33,7 @@ public class RemoveNthNodeFromEndOfList {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-
         ListNode result = rnelem.removeNthFromEnd(head,2);
-
         while (result != null) {
             System.out.print(result.val + " ");
             result = result.next;
