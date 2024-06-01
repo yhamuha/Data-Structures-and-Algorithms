@@ -1,23 +1,28 @@
 package lc.linkedlist.m;
 
 public class FindTheDuplicateNumber {
-    // Floyd
     // O(n) O(1)
-    public int findDuplicate(int[] arr){
-        int slowPtr = arr[0];
-        int fastPtr = arr[0];
-
-        do {
-            fastPtr = arr[arr[fastPtr]];
-            slowPtr = arr[slowPtr];
-        } while (fastPtr != slowPtr);
-
-        fastPtr = arr[0];
-
-        while (fastPtr != slowPtr){
-            fastPtr = arr[fastPtr];
-            slowPtr = arr[slowPtr];
+    public int findDuplicate(int[] nums){
+        if (nums.length < 1)    return -1;
+        int slow = nums[0], fast=nums[0];
+        while(fast != nums.length)
+        {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+            if(slow == fast)
+                break;
         }
-        return fastPtr;
+        slow=nums[0];
+        while(fast != slow)
+        {
+            fast=nums[fast];
+            slow=nums[slow];
+        }
+        return slow;
+    }
+    public static void main(String[] args) {
+        FindTheDuplicateNumber solution = new FindTheDuplicateNumber();
+        int[] nums = {1, 3, 4, 2, 2};
+        System.out.println(solution.findDuplicate(nums));
     }
 }
