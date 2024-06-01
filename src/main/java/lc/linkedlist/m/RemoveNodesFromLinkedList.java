@@ -3,7 +3,7 @@ package lc.linkedlist.m;
 import java.util.Stack;
 
 public class RemoveNodesFromLinkedList {
-
+    // O(n) O(n)
     public ListNode removeNodes(ListNode head) {
         Stack<Integer> stack = new Stack();
         ListNode rev = reverse(head);
@@ -21,7 +21,6 @@ public class RemoveNodesFromLinkedList {
         }
         return res.next;
     }
-
     ListNode reverse(ListNode head) {
         ListNode curr = head;
         ListNode prev = null;
@@ -36,18 +35,13 @@ public class RemoveNodesFromLinkedList {
     }
 
     public static void main(String[] args) {
-        // Create a linked list
         ListNode head = new ListNode(5);
         head.next = new ListNode(2);
         head.next.next = new ListNode(13);
         head.next.next.next = new ListNode(3);
         head.next.next.next.next = new ListNode(8);
-
         var remNodes = new RemoveNodesFromLinkedList();
-        // Call the removeNodes method
         ListNode result = remNodes.removeNodes(head);
-
-        // Print the result
         while (result != null) {
             System.out.print(result.val + " ");
             result = result.next;
