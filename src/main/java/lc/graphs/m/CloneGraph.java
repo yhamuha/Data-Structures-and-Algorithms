@@ -16,7 +16,7 @@ public class CloneGraph {
             return map.get(node.val);
         Node copy = new Node(node.val);
         map.put(node.val, copy);
-        for (Node neighbor : node.neighbors)
+        for (Node neighbor : node.neighbors) // ArrayList<>() neighbors
             copy.neighbors.add(cloneGraph(neighbor, map));
         return copy;
     }
