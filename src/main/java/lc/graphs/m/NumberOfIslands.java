@@ -1,7 +1,7 @@
 package lc.graphs.m;
 
 public class NumberOfIslands {
-    // O(m*n) O(1)
+    // O(m*n) O(m*n)
     public int numIslands(char[][] grid) {
         if (grid == null) return 0;
         int islandCount = 0;
@@ -17,7 +17,6 @@ public class NumberOfIslands {
     }
     // dfs
     private void markAsWater(char[][] grid, int i, int j){
-        // boundary check
         if(i<0 || j<0 || i>=grid.length ||j>=grid[0].length || grid[i][j] == '0' )
             return;
         grid[i][j] = '0';
