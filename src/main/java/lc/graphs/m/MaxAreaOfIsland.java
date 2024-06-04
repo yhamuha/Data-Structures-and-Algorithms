@@ -3,27 +3,25 @@ package lc.graphs.m;
 public class MaxAreaOfIsland {
     // O(m*n) O(m*n)
     public int maxAreaOfIsland(int[][] grid) {
-        int max = 0, n=grid.length, m = grid[0].length;
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<m;j++){
-                if (grid[i][j] == 1){
-                    int area = getArea(grid, i, j, n ,m);
-                    max = Math.max(max, area);
-                }
+        int max = 0; int m = grid.length; int n = grid[0].length;
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                int area = getArea(grid,i,j,m,n);
+                max = Math.max(max,area);
             }
         }
         return max;
     }
     // dfs
-    private int getArea(int[][] grid, int i, int j, int n, int m){
-        if ( i<0 || j<0 || i>= n || j>= m || grid[i][j]==0)
+    private int getArea(int[][] grid, int i, int j, int m, int n){
+        if (i<0 || j<0 || i>=m || j>=n || grid[i][j]==0)
             return 0;
-        grid[i][j] = 0;
-        int left = getArea(grid, i, j-1,n,m);
-        int right = getArea(grid, i, j+1,n,m);
-        int up = getArea(grid, i-1, j,n,m);
-        int down = getArea(grid, i+1, j,n,m);
-        return left + right + up + down + 1;
+        grid[i][j]=0;
+        int left = getArea(grid,i,j-1,m,n);
+        int right = getArea(grid,i,j+1,m,n);
+        int up = getArea(grid,i-1,j,m,n);
+        int down = getArea(grid,i+1,j,m,n);
+        return left+right+up+down+1;
     }
 
     public static void main(String[] args) {
