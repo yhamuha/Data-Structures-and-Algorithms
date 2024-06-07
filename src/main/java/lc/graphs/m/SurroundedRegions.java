@@ -2,27 +2,21 @@ package lc.graphs.m;
 
 public class SurroundedRegions {
 
-    private int[][] directions = {  {1,0},  // down
-                                    {-1,0}, // up
-                                    {0,1},  // right
-                                    {0,-1}} // left
-            ;
-    // O(m+n)
+    private int[][] directions = {  {1,0}, {-1,0}, {0,1}, {0,-1}};
+    // O(m*n) O(m*n)
     public void solve(char[][] board) {
-        // DFS
         int m = board.length, n = board[0].length;
         for(int i=0; i<m; i++){
-            markBoard(board,m,n,i,0);   // left border
-            markBoard(board,m,n,i,n-1);   // right border
+            markBoard(board,m,n,i,0);   // going through border cells
+            markBoard(board,m,n,i,n-1);
         }
-        for(int i=0; i<n; i++){
-            markBoard(board,m,n,0,i); // top border
-            markBoard(board,m,n,m-1,i); // bottom border
+        for(int i=0; i<n; i++){         // going through border cells
+            markBoard(board,m,n,0,i);
+            markBoard(board,m,n,m-1,i);
         }
         flipBoard(board, m, n);
     }
-    // O(m*n)
-    private void markBoard(char[][] board, int m, int n, int i, int j){
+    private void markBoard(char[][] board, int m, int n, int i, int j){ // mark in "M" border closed
         if(i<0 || j<0 || i>=m || j>= n || board[i][j] != 'O') return;
         board[i][j] = 'M';
         for (int[] direction : directions){
@@ -30,8 +24,7 @@ public class SurroundedRegions {
             markBoard(board,m,n,x,y);
         }
     }
-    // O(m*n)
-    private void flipBoard(char[][] board, int m, int n){
+    private void flipBoard(char[][] board, int m, int n){   // flip all "M"'s and "O"'s to "O" and "X" respectively
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(board[i][j] == 'M')
