@@ -8,11 +8,11 @@ public class CourseSchedule {
     // O(V+E) O(V)
     Set<Integer> set = new HashSet();
     public boolean canFinish(int n, int[][] prerequisites) {
-        int [] count = new int[n];
+        int[] count = new int[n];
         ArrayList<Integer>[] prereqs = new ArrayList[n];
         for(int k = 0; k < n; k++)
             prereqs[k] = new ArrayList();
-        for(int [] temp : prerequisites) {
+        for(int[] temp : prerequisites) {
             int a = temp[0];
             int b = temp[1];
             count[a]++;
