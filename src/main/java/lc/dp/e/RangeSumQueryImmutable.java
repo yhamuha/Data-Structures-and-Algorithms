@@ -1,4 +1,4 @@
-package lc.dynamicprogramming.e;
+package lc.dp.e;
 
 public class RangeSumQueryImmutable {
     int[] leftSideSum;

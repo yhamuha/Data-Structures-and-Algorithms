@@ -1,4 +1,4 @@
-package lc.dynamicprogramming;
+package lc.dp;
 
 public class ClimbingStairs {
     // O(n)
