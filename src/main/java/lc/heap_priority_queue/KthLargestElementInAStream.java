@@ -3,34 +3,32 @@ package lc.heap_priority_queue;
 import java.util.PriorityQueue;
 
 public class KthLargestElementInAStream {
-    // SC: O(n)
-    PriorityQueue<Integer> heap = new PriorityQueue<>();
+    // O(n log n) O(n)
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
     int k;
-    // in case of constructor it schould avoid "void"
-    public void KthLargest(int k, int[] nums) {
+    public void KthLargestElementInAStream (int k, int[] nums){
         this.k = k;
-        for(int n : nums) {
-            add(n);
+        for(int num : nums){
+            add(num);
         }
     }
-
-    // TC: O(n log n)
     public int add(int val) {
-        heap.offer(val);
-        if(heap.size() > k)
-            heap.poll();
-        return heap.peek();
+        maxHeap.offer(val);
+        if (maxHeap.size() > k){
+            maxHeap.poll();
+        }
+        return maxHeap.peek();
     }
 
     public static void main(String[] args) {
         int[] nums = {4,5,8,2};
         KthLargestElementInAStream kleis = new KthLargestElementInAStream();
-        kleis.KthLargest(3, new int[] {4,5,8,2});
+        kleis.KthLargestElementInAStream(3, new int[] {4,5,8,2});
         System.out.println(kleis.add(3));
         System.out.println(kleis.add(5));
         System.out.println(kleis.add(10));
         System.out.println(kleis.add(9));
         System.out.println(kleis.add(4));
-        System.out.println("Final heap values: " + kleis.heap);
+        System.out.println("Final heap values: " + kleis.maxHeap);
     }
 }
