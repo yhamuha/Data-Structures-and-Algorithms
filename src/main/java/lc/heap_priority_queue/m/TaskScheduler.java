@@ -1,18 +1,15 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
 import java.util.*;
 
 public class TaskScheduler {
-    // TC: O(n log n)
+    // O(n log n) O(n)
     public int leastInterval(char[] tasks, int n) {
-        // SC: O(n)
         Map<Character, Integer> map = new HashMap<>();
         for(char task : tasks)
             map.put(task, map.getOrDefault(task,0)+1);
-
         PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> b-a);
         heap.addAll(map.values());
-
         int cycle = 0;
         while(!heap.isEmpty()) {
             List<Integer> temp = new ArrayList<>();

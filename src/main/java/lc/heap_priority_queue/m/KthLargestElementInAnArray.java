@@ -1,4 +1,4 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
 import java.util.PriorityQueue;
 
