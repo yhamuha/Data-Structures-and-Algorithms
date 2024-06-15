@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class KthLargestElementInAStream {
     // O(n log n) O(n)
-    PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
     int k;
     public void KthLargestElementInAStream (int k, int[] nums){
         this.k = k;
@@ -13,11 +13,11 @@ public class KthLargestElementInAStream {
         }
     }
     public int add(int val) {
-        maxHeap.offer(val);
-        if (maxHeap.size() > k){
-            maxHeap.poll();
+        minHeap.offer(val);
+        if (minHeap.size() > k){
+            minHeap.poll();
         }
-        return maxHeap.peek();
+        return minHeap.peek();
     }
 
     public static void main(String[] args) {
@@ -29,6 +29,6 @@ public class KthLargestElementInAStream {
         System.out.println(kleis.add(10));
         System.out.println(kleis.add(9));
         System.out.println(kleis.add(4));
-        System.out.println("Final heap values: " + kleis.maxHeap);
+        System.out.println("Final heap values: " + kleis.minHeap);
     }
 }
