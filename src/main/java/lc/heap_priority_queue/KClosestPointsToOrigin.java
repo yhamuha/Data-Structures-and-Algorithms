@@ -4,20 +4,18 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class KClosestPointsToOrigin {
-    // O(n log n + k log n)
-    // O(n log n)
+    // O(n log n) O(n)
     public int[][] kClosest(int[][] points, int k) {
         int[][] result = new int[k][2];
-        // O(n)
         PriorityQueue<int[]> heap = new PriorityQueue<>((a, b)->a[1]-b[1]);
         for(int i=0;i<points.length;i++){
             int coordinate[] = new int[2];
             coordinate[0] = i;
+            // Euclidean distance is "sqrt ( (x1-x2)^2 + (y1-y2)^2 )"
+            // to check the min distance between the points
             coordinate[1] = (int)Math.pow(points[i][0],2)+(int)Math.pow(points[i][1],2);
-            // O(log n)
             heap.add(coordinate);
         }
-        // O(k)
         for(int i=0;i<k;i++){
             int temp[] = heap.poll();
             result[i] = points[temp[0]];
