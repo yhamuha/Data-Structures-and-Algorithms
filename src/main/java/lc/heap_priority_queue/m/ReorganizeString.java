@@ -1,4 +1,4 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,33 +7,29 @@ import java.util.PriorityQueue;
 public class ReorganizeString {
     // O(n log n) O(n)
     public String reorganizeString(String s) {
-        // TC: O(n)
         Map<Character, Integer> map = new HashMap<>();
-        for(char c : s.toCharArray()){
-            map.put(c, map.getOrDefault(c,0)+1);
-        }
-        // TC: O(n)
-        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a,b)->(map.get(b)-map.get(a)));
-        maxHeap.addAll(map.keySet()); // SC: O(n log n)
+        for(char c : s.toCharArray())
+            map.put(c,map.getOrDefault(c,0)+1);
+        PriorityQueue<Character> maxHeap = new PriorityQueue((a,b)->(map.get(b)-map.get(a)));
         StringBuilder sb = new StringBuilder();
-        // reorganize string SC: O(n log n)
-        while(maxHeap.size() > 1){              // control to have a pairs in maxHeap
+        maxHeap.addAll(map.keySet());
+        while(maxHeap.size()>1){
             char first = maxHeap.poll();
             char second = maxHeap.poll();
             sb.append(first);
             sb.append(second);
-            map.put(first,map.get(first)-1);
-            map.put(second,map.get(second)-1);
+            map.put(first, map.get(first)-1);
+            map.put(second, map.get(second)-1);
             if (map.get(first) > 0)
                 maxHeap.offer(first);
             if (map.get(second) > 0)
                 maxHeap.offer(second);
         }
-        if(!maxHeap.isEmpty()){                 // have only 1 element in heap
-            if(map.get(maxHeap.peek())>1)       // we have more than 1 adjacent and must return empty String
+        if(!maxHeap.isEmpty()){
+            if(map.get(maxHeap.peek())>1)
                 return "";
             else
-                sb.append(maxHeap.poll());      // otherwise add the last char
+                sb.append(maxHeap.poll());
         }
         return sb.toString();
     }
