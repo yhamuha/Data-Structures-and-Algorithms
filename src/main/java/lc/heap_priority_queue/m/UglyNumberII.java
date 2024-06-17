@@ -1,8 +1,6 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
-import java.util.HashSet;
 import java.util.PriorityQueue;
-import java.util.Set;
 
 public class UglyNumberII {
     // O(n log n) O(n)
