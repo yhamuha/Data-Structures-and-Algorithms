@@ -1,11 +1,9 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
-import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class KthSmallestElementInASortedMatrix {
-    // TC: O(k * log n)
-    // SC: O(n)
+    // O(n log n) O(n)
     public int kthSmallest(int[][] matrix, int k) {
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a,b) -> matrix[a[0]][a[1]] - matrix[b[0]][b[1]]);
         int n = matrix.length;
