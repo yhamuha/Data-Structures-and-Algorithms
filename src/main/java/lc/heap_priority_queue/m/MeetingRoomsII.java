@@ -1,4 +1,4 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -7,29 +7,24 @@ class Interval{
     int start;
     int end;
     Interval() {start =0; end =0;}
-    Interval(int s, int e) {start = s; end =e; }
+    Interval(int s, int e) {start = s; end =e;}
 }
 
 public class MeetingRoomsII {
-    // O(n log n)
+    // O(n log n) O(n)
     public int inMeetingRooms(Interval[] intervals) {
         if(intervals == null || intervals.length == 0)
             return 0;
-        // O(n log n)
         Arrays.sort(intervals, (a,b) -> a.start - b.start);
         PriorityQueue<Interval> minHeap = new PriorityQueue<>((a,b)->(a.end - b.end));
         minHeap.add(intervals[0]);
         for(int i=1; i<intervals.length; i++) {
             Interval current = intervals[i];
-            // O(log n)
-            Interval earliest = minHeap.remove();
+            Interval earliest = minHeap.poll();
             if(current.start <= earliest.end)
-                // O(1)
                 earliest.end = current.end;
             else
-                // O(log n)
                 minHeap.add(current);
-            // O(log  n)
             minHeap.add(earliest);
         }
         return minHeap.size();
