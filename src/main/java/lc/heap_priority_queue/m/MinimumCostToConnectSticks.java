@@ -1,19 +1,17 @@
-package lc.heap_priority_queue;
+package lc.heap_priority_queue.m;
 
 import java.util.PriorityQueue;
 
 public class MinimumCostToConnectSticks {
+    // O(n log n) O(n)
     public int connectSticks(int[] sticks){
         int cost = 0;
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-        // O(n log n)
         for (int stick : sticks)
             minHeap.add(stick);
         while (minHeap.size() > 1) {
-            // O(log n)
-            int sum = minHeap.remove() + minHeap.remove();
+            int sum = minHeap.poll() + minHeap.poll();
             cost += sum;
-            // O(log n)
             minHeap.add(sum);
         }
         return cost;
