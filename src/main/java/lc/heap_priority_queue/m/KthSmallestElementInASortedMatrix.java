@@ -22,7 +22,9 @@ public class KthSmallestElementInASortedMatrix {
 
     public static void main(String[] args) {
         var kseiasm = new KthSmallestElementInASortedMatrix();
-        int[][] matrix = {{1,5,9}, {10,11,13},{12,13,15}};
+        int[][] matrix = {  {1,5,9},
+                            {10,11,13},
+                            {12,13,15}};
         int k = 8;
         System.out.println(kseiasm.kthSmallest(matrix, k));
     }
