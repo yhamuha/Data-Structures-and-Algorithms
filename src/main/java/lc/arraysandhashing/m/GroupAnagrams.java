@@ -6,14 +6,13 @@ public class GroupAnagrams {
     // O(n log n) O(n)
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String,List<String>> groupedAnagrams = new HashMap<>();
-        for (String str : strs){                                // raw str
+        for (String str : strs){
             char[] strArray = str.toCharArray();
             Arrays.sort(strArray);
-            String sortedString = String.valueOf(strArray);     // sorted str
-
+            String sortedString = String.valueOf(strArray);
             if (!groupedAnagrams.containsKey(sortedString))
-                groupedAnagrams.put(sortedString, new ArrayList<>());   // put sorted as Key
-            groupedAnagrams.get(sortedString).add(str);                 // add raw as Value
+                groupedAnagrams.put(sortedString, new ArrayList<>());
+            groupedAnagrams.get(sortedString).add(str);
         }
         return new ArrayList<>(groupedAnagrams.values());
     }
