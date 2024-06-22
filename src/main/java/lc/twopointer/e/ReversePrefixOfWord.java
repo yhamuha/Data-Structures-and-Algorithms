@@ -1,4 +1,4 @@
-package lc.twopointer;
+package lc.twopointer.e;
 
 public class ReversePrefixOfWord {
     public String reversePrefix(String word, char ch) {

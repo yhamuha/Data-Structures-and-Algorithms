@@ -1,5 +1,6 @@
 package lc.twopointer;
 
+import lc.twopointer.e.BuyTwoChocolates;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

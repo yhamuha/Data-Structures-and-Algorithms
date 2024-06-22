@@ -1,4 +1,4 @@
-package lc.twopointer;
+package lc.twopointer.m;
 
 public class ContainerWithMostWater {
     // O(n^2)

@@ -1,4 +1,4 @@
-package lc.twopointer;
+package lc.twopointer.e;
 
 public class SquaresOfASortedArray {
     // O(n) O(n)

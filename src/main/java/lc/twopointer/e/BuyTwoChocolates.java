@@ -1,4 +1,4 @@
-package lc.twopointer;
+package lc.twopointer.e;
 
 public class BuyTwoChocolates {
     // O(n) O(1)

@@ -1,4 +1,4 @@
-package lc.twopointer;
+package lc.twopointer.m;
 
 public class ReverseWordsInAString {
     public void reverseWords(char[] str) {
