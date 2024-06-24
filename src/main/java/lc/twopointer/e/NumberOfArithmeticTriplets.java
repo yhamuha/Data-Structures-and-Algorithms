@@ -4,27 +4,26 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class NumberOfArithmeticTriplets {
+    // O(n) O(n)
     public int arithmeticTriplets(int[] nums, int diff) {
-        Set<Integer> hashset = new HashSet();
-        for(int num: nums)
-            hashset.add(num);
-
-        int i=0,j=1;
-        int cnt=0;
-        while(i<=j && j<nums.length){
-
-            if(nums[j]-nums[i] < diff)
-                j++;
-            else if(nums[j]-nums[i]>diff)
-                i++;
-            else{
-                if(hashset.contains(nums[j]+diff))
-                    cnt++;
-                i++;
-                j++;
+        Set<Integer> set = new HashSet<>();
+        for(int num : nums)
+            set.add(num);
+        int prev = 0, next = 1;
+        int counter = 0;
+        while(prev <= next && next < nums.length){
+            if (nums[next] - nums[prev] < diff)
+                next++;
+            else if (nums[next] - nums[prev] > diff)
+                prev++;
+            else {
+                if (set.contains(nums[next]+diff))
+                    counter++;
+                prev++;
+                next++;
             }
         }
-        return cnt;
+        return counter;
     }
 
     public static void main(String[] args) {
