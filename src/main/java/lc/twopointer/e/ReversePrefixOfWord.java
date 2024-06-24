@@ -1,19 +1,19 @@
 package lc.twopointer.e;
 
 public class ReversePrefixOfWord {
+    // O(n) O(n)
     public String reversePrefix(String word, char ch) {
         int right = word.indexOf(ch);
-        if(right == -1) {
+        if (right == -1)
             return word;
-        }
-        StringBuilder result = new StringBuilder(word);
+        StringBuilder sb = new StringBuilder(word);
         int left = 0;
-        for(; right > left; right--) {
-            result.setCharAt(left, word.charAt(right));
-            result.setCharAt(right, word.charAt(left));
+        for(;left<right;right--){
+            sb.setCharAt(left,word.charAt(right));
+            sb.setCharAt(right,word.charAt(left));
             left++;
         }
-        return result.toString();
+        return sb.toString();
     }
     public static void main(String[] args) {
         String word = "abcdefd";
