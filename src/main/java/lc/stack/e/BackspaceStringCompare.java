@@ -1,4 +1,4 @@
-package lc.twopointer.e;
+package lc.stack.e;
 
 import java.util.Stack;
 
