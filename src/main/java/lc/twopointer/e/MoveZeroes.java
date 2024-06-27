@@ -4,15 +4,15 @@ public class MoveZeroes {
     //O(n) O(1)
     public void moveZeroes(int[] nums) {
         int n = nums.length;
-        int i = 0;
-        for (int j=0; j<n; j++) {
-            if(nums[j] != 0) {
+        int i=0;
+        for(int j=0; j<n;j++) {
+            if (nums[j]!=0) {
                 nums[i] = nums[j];
                 i++;
             }
         }
-        for(int k = i ; k<n ;k++)
-            nums[k] = 0;
+        for(int k=i; k<n;k++)
+            nums[k]=0;
     }
     public static void main(String[] args) {
         MoveZeroes moveZeroesObj = new MoveZeroes();
