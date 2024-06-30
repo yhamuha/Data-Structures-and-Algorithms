@@ -3,18 +3,23 @@ package lc.twopointer.m;
 import java.util.Arrays;
 
 public class TwoSum_II_InputArrayIsSorted {
+    // O(n) O(1)
     public int[] twoSum(int[] nums, int target) {
-        int[] res = new int[2];
-        int i = 0, j = nums.length-1;
-        while(i < j){
-            int check = nums[i]+nums[j];
-            if(check == target) break;
-            if(check < target) i++;
-            else j--;
+        int i=0, j=nums.length-1;
+        int[] result = new int[2];
+        while (i<j){
+            int check = nums[i] + nums[j];
+            if (check == target) break;
+            if (check < target) {
+                i++;
+            }
+            else {
+                j--;
+            }
         }
-        res[0] = i+1;
-        res[1] = j+1;
-        return res;
+        result[0] = i+1;
+        result[1] = j+1;
+        return result;
     }
 
     public static void main(String[] args) {
