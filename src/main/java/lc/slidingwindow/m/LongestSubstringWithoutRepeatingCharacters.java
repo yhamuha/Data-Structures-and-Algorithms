@@ -14,11 +14,11 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 set.add(s.charAt(right));
                 maxLength = Math.max(maxLength, right-left+1);
             } else {
-                while (s.charAt(left) != s.charAt(right)) {
+                while (s.charAt(left) != s.charAt(right)) { // just remove
                     set.remove(s.charAt(left));
                     left+=1;
                 }
-                set.remove(s.charAt(left)); left+=1;
+                set.remove(s.charAt(left)); left+=1;        // remove and add
                 set.add(s.charAt(right));
             }
         }
@@ -27,6 +27,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
         var ls = new LongestSubstringWithoutRepeatingCharacters();
-        System.out.println(ls.lengthOfLongestSubstring(new String("abcabcbb")));
+        System.out.println(ls.lengthOfLongestSubstring(new String("pwwkew")));
     }
 }
