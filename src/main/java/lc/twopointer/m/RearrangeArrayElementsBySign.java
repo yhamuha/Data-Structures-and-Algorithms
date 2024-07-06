@@ -3,19 +3,18 @@ package lc.twopointer.m;
 import java.util.Arrays;
 
 public class RearrangeArrayElementsBySign {
+    // O(n) O(n)
     public int[] rearrangeArray(int[] arr) {
         int n = arr.length;
-        int [] ans = new int[n];
-        int start =0;
-        int end = 1;
+        int first=0, second=1;
+        int[] ans = new int[n];
         for(int i=0; i<n; i++){
-            if(arr[i] >=0){
-                ans[start] = arr[i];
-                start+=2;
-            }
-            else{
-                ans[end] = arr[i];
-                end+=2;
+            if(arr[i]>0) {
+                ans[first] = arr[i];
+                first+=2;
+            } else {
+                ans[second] = arr[i];
+                second+=2;
             }
         }
         return ans;
