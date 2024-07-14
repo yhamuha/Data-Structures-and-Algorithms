@@ -1,4 +1,4 @@
-package lc.stack;
+package lc.stack.e;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -6,23 +6,18 @@ import java.util.Map;
 import java.util.Stack;
 
 public class NextGreaterElementI {
-
-    // TC: O(n), SC: O(n)
+    // O(n) O(n)
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        Map<Integer, Integer> next_greates = new HashMap<>();
+        Map<Integer, Integer> next_greater = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
-
         for(Integer num : nums2) {
             while (!stack.isEmpty() && stack.peek()<num) {
-                next_greates.put(stack.pop(),num);
+                next_greater.put(stack.pop(),num);
             }
             stack.push(num);
         }
-
-        for(int i=0; i<nums1.length;i++) {
-            nums1[i] = next_greates.getOrDefault(nums1[i], -1);
-        }
-
+        for(int i=0; i<nums1.length;i++)
+            nums1[i] = next_greater.getOrDefault(nums1[i], -1);
         return nums1;
     }
 
