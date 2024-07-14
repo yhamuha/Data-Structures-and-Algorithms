@@ -1,14 +1,14 @@
-package lc.stack;
+package lc.stack.e;
 
 public class CrawlerLogFolder {
-    // TC: O(n), SC: O(1)
+    // O(n) O(1)
     public int minOperations(String[] logs) {
-        int depth =0;
-        for (String log : logs) {
+        int depth = 0;
+        for(String log : logs) {
             if (log.equals("./")) continue;
-            else if (log.equals("../")) {
+            else if (log.equals("../")){
                 depth--;
-                if (depth<0) depth =0;
+            if (depth<0) depth=0;
             } else depth++;
         }
         return depth;
