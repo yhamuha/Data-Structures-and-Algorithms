@@ -1,16 +1,16 @@
-package lc.stack;
+package lc.stack.e;
 
 import java.util.Stack;
 
 public class BaseballGame {
-    // T: O(n) S: O(n)
+    // O(n) O(n)
     public int calPoints(String[] operations) {
         Stack<Integer> stack = new Stack<>();
         for(int i=0; i<operations.length; i++){
-            if(operations[i].equals("C"))
+            if (operations[i].equals("C"))
                 stack.pop();
             else if(operations[i].equals("D"))
-                stack.push(2* stack.peek());
+                stack.push(2*stack.peek());
             else if(operations[i].equals("+") && stack.size()>=2){
                 int x = stack.pop();
                 int y = stack.pop();
@@ -18,11 +18,11 @@ public class BaseballGame {
                 stack.push(y);
                 stack.push(x);
                 stack.push(z);
-            }
-            else
+            } else {
                 stack.push(Integer.parseInt(operations[i]));
+            }
         }
-        int sum =0;
+        int sum = 0;
         while(!stack.isEmpty())
             sum+=stack.pop();
         return sum;
@@ -30,6 +30,6 @@ public class BaseballGame {
     public static void main(String[] args) {
         BaseballGame game = new BaseballGame();
         String[] operations = {"5", "2", "C", "D", "+"};
-        System.out.println("Total points: " + game.calPoints(operations));
+        System.out.println(game.calPoints(operations));
     }
 }
