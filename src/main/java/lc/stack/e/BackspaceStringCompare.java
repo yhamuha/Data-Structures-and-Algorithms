@@ -7,25 +7,26 @@ public class BackspaceStringCompare {
     public boolean backspaceCompare(String s, String t) {
         Stack<Character> stackOne = new Stack<>();
         Stack<Character> stackTwo = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (c == '#') {
-                if (!stackOne.isEmpty()) {
+        for(char c : s.toCharArray()){
+            if(c == '#'){
+                if (!stackOne.isEmpty()){
                     stackOne.pop();
                 }
             } else
                 stackOne.push(c);
         }
-        for (char c : t.toCharArray()) {
-            if (c == '#') {
-                if (!stackTwo.isEmpty()) {
+        for(char ch : t.toCharArray()){
+            if(ch == '#'){
+                if(!stackTwo.isEmpty()){
                     stackTwo.pop();
                 }
-            } else
-                stackTwo.push(c);
+            }    else
+                stackTwo.push(ch);
         }
-            if (stackOne.equals(stackTwo))
-                return true;
-            else return false;
+        if (stackOne.equals(stackTwo)){
+            return true;
+        }
+        else return false;
     }
 
         public static void main (String[]args){
