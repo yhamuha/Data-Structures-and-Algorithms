@@ -1,4 +1,4 @@
-package lc.stack;
+package lc.stack.m;
 
 import java.util.Arrays;
 import java.util.Stack;
@@ -11,9 +11,8 @@ public class DailyTemperatures {
         int[] ans = new int[n];
 
         for(int i = n - 1; i >= 0; i--) {
-            while(!st.isEmpty() && temperatures[i] >= temperatures[st.peek()]) {
+            while(!st.isEmpty() && temperatures[i] >= temperatures[st.peek()])
                 st.pop();
-            }
             if(!st.isEmpty()) {
                 ans[i] = st.peek() - i;
             }
