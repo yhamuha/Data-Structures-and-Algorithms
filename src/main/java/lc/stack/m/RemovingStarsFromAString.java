@@ -1,4 +1,4 @@
-package lc.stack;
+package lc.stack.m;
 
 import java.util.Stack;
 
@@ -8,18 +8,13 @@ public class RemovingStarsFromAString {
         StringBuilder str = new StringBuilder();
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++){
-            if (!stack.isEmpty() && s.charAt(i) == '*'){
+            if (!stack.isEmpty() && s.charAt(i) == '*')
                 stack.pop();
-            }
-            else if (s.charAt(i) != '*'){
+            else if (s.charAt(i) != '*')
                 stack.push(s.charAt(i));
-            }
         }
-
-        for (char chr : stack){
+        for (char chr : stack)
             str.append(chr);
-        }
-
         return str.toString();
     }
 
