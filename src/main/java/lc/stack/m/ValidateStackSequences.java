@@ -1,9 +1,9 @@
-package lc.stack;
+package lc.stack.m;
 
 import java.util.Stack;
 
 public class ValidateStackSequences {
-    // T:O(n) S:O(n)
+    // O(n) O(n)
     public boolean validateStackSequences(int[] pushed, int[] popped) {
         Stack<Integer> stack = new Stack<>();
         int j=0;

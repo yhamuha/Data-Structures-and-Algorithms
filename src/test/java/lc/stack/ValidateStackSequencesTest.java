@@ -1,5 +1,6 @@
 package lc.stack;
 
+import lc.stack.m.ValidateStackSequences;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
