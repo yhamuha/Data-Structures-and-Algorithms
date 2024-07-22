@@ -5,23 +5,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FindTargetIndicesAfterSortingArray {
-    // O(log n + k) O(n)
+    // O(log n) O(n)
     public List<Integer> targetIndices(int[] nums, int target) {
         Arrays.sort(nums);
         int left = leftPosition(nums, target);
         int right = rightPosition(nums, target);
-        if (left == -1 || right == -1) {
+        if (left == -1 || right == -1)
             return new ArrayList<>();
-        }
         List<Integer> indices = new ArrayList<>();
         for (int i=left; i<=right; i++){
-            if (nums[i] == target) {
+            if (nums[i] == target)
                 indices.add(i);
-            }
         }
         return indices;
     }
-
     private int leftPosition(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
@@ -44,8 +41,6 @@ public class FindTargetIndicesAfterSortingArray {
         }
         return (right >= 0) && (nums[right] == target) ? right : -1;
     }
-
-
 
     public static void main(String[] args) {
         FindTargetIndicesAfterSortingArray ft = new FindTargetIndicesAfterSortingArray();
