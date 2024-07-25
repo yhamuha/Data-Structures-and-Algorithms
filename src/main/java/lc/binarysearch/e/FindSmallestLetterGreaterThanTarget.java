@@ -5,7 +5,6 @@ public class FindSmallestLetterGreaterThanTarget {
     public char nextGreatestLetter(char[] letters, char target) {
         int left = 0;
         int right = letters.length - 1;
-
         while (left <= right) {
             int mid = left + (right-left)/2;
             if (target > letters[mid])
@@ -19,8 +18,8 @@ public class FindSmallestLetterGreaterThanTarget {
     }
     public static void main(String[] args) {
         FindSmallestLetterGreaterThanTarget fslgtt = new FindSmallestLetterGreaterThanTarget();
-        char[] letters = {'x', 'x', 'y','y'};
-        char target = 'z';
+        char[] letters = {'c', 'f', 'j'};
+        char target = 'a';
         System.out.println(fslgtt.nextGreatestLetter(letters, target));
     }
 }
