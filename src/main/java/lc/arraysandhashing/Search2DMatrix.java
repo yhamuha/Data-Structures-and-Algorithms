@@ -1,7 +1,5 @@
 package lc.arraysandhashing;
 
-import lc.binarysearch.m.Searcha2DMatrix;
-
 public class Search2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
