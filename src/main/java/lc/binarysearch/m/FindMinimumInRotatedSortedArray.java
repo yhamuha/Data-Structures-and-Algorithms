@@ -1,6 +1,7 @@
 package lc.binarysearch.m;
 
 public class FindMinimumInRotatedSortedArray {
+    // O(log n) O(1)
     public int findMin(int[] nums) {
         int low = 0;
         int high = nums.length-1;
@@ -15,9 +16,7 @@ public class FindMinimumInRotatedSortedArray {
                 ans = Math.min(ans, nums[mid]);
                 high = mid-1;
             }
-
         }
-
         return ans;
     }
 
