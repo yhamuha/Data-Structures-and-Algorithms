@@ -6,7 +6,7 @@ public class SearchInRotatedSortedArray {
         int low=0;
         int high=nums.length-1;
         while(low<=high){
-            int mid=(low+high)/2;
+            int mid=low + (high-low)/2;
             if (nums[mid] == target)
                 return mid;
             if (nums[low] <= nums[mid]) {
@@ -15,7 +15,7 @@ public class SearchInRotatedSortedArray {
                 else
                     low = mid + 1;
             } else {
-                if (nums[mid] <= target && target <= nums[high])
+                if (nums[mid] <= target && nums[high] >= target)
                     low = mid + 1;
                 else
                     high = mid - 1;
@@ -26,6 +26,6 @@ public class SearchInRotatedSortedArray {
 
     public static void main(String[] args) {
         var sir = new SearchInRotatedSortedArray();
-        System.out.println(sir.search(new int[]{4,5,6,7,0,1,2},0));
+        System.out.println(sir.search(new int[]{4,5,6,7,0,1,2},1));
     }
 }
