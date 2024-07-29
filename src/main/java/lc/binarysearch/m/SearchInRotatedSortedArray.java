@@ -1,6 +1,7 @@
 package lc.binarysearch.m;
 
 public class SearchInRotatedSortedArray {
+    // O(log n) O(1)
     public int search(int[] nums, int target) {
         int low=0;
         int high=nums.length-1;
@@ -8,7 +9,6 @@ public class SearchInRotatedSortedArray {
             int mid=(low+high)/2;
             if (nums[mid] == target)
                 return mid;
-
             if (nums[low] <= nums[mid]) {
                 if (nums[low] <= target && nums[mid] >= target)
                     high = mid - 1;
@@ -26,6 +26,6 @@ public class SearchInRotatedSortedArray {
 
     public static void main(String[] args) {
         var sir = new SearchInRotatedSortedArray();
-        System.out.println(sir.search(new int[]{4,5,6,7,0,1,2}, 0));
+        System.out.println(sir.search(new int[]{4,5,6,7,0,1,2},0));
     }
 }
