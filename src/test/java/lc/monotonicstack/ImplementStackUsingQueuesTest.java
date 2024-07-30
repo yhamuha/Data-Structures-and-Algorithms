@@ -1,6 +1,6 @@
 package lc.monotonicstack;
 
-import lc.stack.ImplementStackUsingQueues;
+import lc.stack.e.ImplementStackUsingQueues;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
