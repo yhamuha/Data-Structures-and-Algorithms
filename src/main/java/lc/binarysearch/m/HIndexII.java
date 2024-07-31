@@ -1,20 +1,15 @@
 package lc.binarysearch.m;
-// expl: https://www.youtube.com/watch?v=CjKJDloMnwE&ab_channel=Techdose
-// int[] citations in ASC order
 public class HIndexII {
-    // O(log n)
+    // O(log n) O(1)
     public int hIndex(int[] citations) {
         int n = citations.length;
         int low = 0, high = n-1;
         while(low <= high){
             int mid = low + (high - low)/2;
-            // h index value is the number
-            // where arr[hindex] == arr.size() - hindex
-            if(citations[mid] < n-mid){
+            if(citations[mid] < n-mid)
                 low = mid + 1;
-            }else{
+            else
                 high = mid - 1;
-            }
         }
         return n - low;
     }
