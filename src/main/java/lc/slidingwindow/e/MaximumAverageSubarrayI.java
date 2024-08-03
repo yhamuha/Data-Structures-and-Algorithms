@@ -11,7 +11,7 @@ public class MaximumAverageSubarrayI {
             sum += nums[i] - nums[i - k];
             maxSum = Math.max(maxSum, sum);
         }
-        return (double)maxSum / k;
+        return (double) maxSum / k;
     }
     public static void main(String[] args) {
         MaximumAverageSubarrayI solution = new MaximumAverageSubarrayI();
