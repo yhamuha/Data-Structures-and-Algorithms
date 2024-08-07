@@ -22,9 +22,8 @@ public class InsertInterval {
                     newInterval[1] = Math.max(interval[1], newInterval[1]);
                 }
             }
-            if (!inserted) {
+            if (!inserted)
                 mergedIntervals.add(newInterval);
-            }
             return mergedIntervals.toArray(new int[mergedIntervals.size()][2]);
     }
 
@@ -33,7 +32,6 @@ public class InsertInterval {
         int[][] intervals = {{1,3},{6,9}};
         int[] newInterval = {2,5};
         int[][] result = ii.insert(intervals, newInterval);
-
         for (int i = 0; i < result.length; i++) {
             System.out.print("[");
             for (int j = 0; j < result[i].length; j++) {
