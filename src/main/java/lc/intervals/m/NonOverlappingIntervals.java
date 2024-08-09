@@ -18,7 +18,7 @@ public class NonOverlappingIntervals {
 
     public static void main(String[] args) {
         var noi = new NonOverlappingIntervals();
-        int[][] intervals = {{1,2}, {2,3},{3,4},{1,3}};
+        int[][] intervals = {{1,2},{2,3},{3,4},{1,3}};
         System.out.println(noi.eraseOverlapIntervals(intervals));
     }
 }
