@@ -12,6 +12,7 @@ public class BestTimeToBuyAndSellStock {
         }
         return max;
     }
+
     public static void main(String[] args) {
         BestTimeToBuyAndSellStock stock = new BestTimeToBuyAndSellStock();
         int[] prices = {7, 1, 5, 3, 6, 4};
