@@ -4,16 +4,13 @@ public class MinimumHoursOfTrainingToWinACompetition {
     //O(n) O(1)
     public int minNumberOfHours(int initialEnergy, int initialExperience, int[] energy, int[] experience) {
         int traning=0,n=energy.length;
-        for(int i=0;i<n;i++)
-        {
-            if(energy[i]>=initialEnergy)
-            {
+        for(int i=0; i<n; i++) {
+            if(energy[i]>=initialEnergy) {
                 int diff=energy[i]-initialEnergy;
                 traning+=diff+1;
                 initialEnergy+=diff+1;
             }
-            if(experience[i]>=initialExperience)
-            {
+            if(experience[i]>=initialExperience) {
                 int diff=experience[i]-initialExperience;
                 traning+=diff+1;
                 initialExperience+=diff+1;
@@ -29,7 +26,6 @@ public class MinimumHoursOfTrainingToWinACompetition {
         int initialExperience = 3;
         int[] energy = {1, 4, 3, 2};
         int[] experience = {2, 6, 3, 1};
-
         int hours = competition.minNumberOfHours(initialEnergy, initialExperience, energy, experience);
         System.out.println(hours);
     }
