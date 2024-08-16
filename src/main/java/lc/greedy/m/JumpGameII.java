@@ -3,15 +3,15 @@ package lc.greedy.m;
 public class JumpGameII {
     // O(n) O(1)
     int jump(int[] nums) {
-        int destinationIdx = nums.length - 1;
-        int coverageIdx = 0, lastJumpIdx = 0;
+        int destinationIndex = nums.length - 1;
+        int coverageIndex = 0, lastJumpIndex = 0;
         int totalJumps = 0;
         for (int i = 0; i <= nums.length; i++) {
-            coverageIdx = Math.max(coverageIdx, i + nums[i]);
-            if (lastJumpIdx == i) {
-                lastJumpIdx = coverageIdx;
+            coverageIndex = Math.max(coverageIndex, i + nums[i]);
+            if (lastJumpIndex == i) {
+                lastJumpIndex = coverageIndex;
                 totalJumps++;
-                if (coverageIdx >= destinationIdx)
+                if (coverageIndex >= destinationIndex)
                     return totalJumps;
             }
         }
