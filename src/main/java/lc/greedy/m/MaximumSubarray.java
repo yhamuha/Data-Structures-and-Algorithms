@@ -16,7 +16,7 @@ public class MaximumSubarray {
 
     public static void main(String[] args) {
         var ms = new MaximumSubarray();
-        int[] nums = {1,2,-2,1,2};
+        int[] nums = {1,2,-2,1,5,2};
         System.out.println(ms.maxSubArray(nums));
     }
 }
