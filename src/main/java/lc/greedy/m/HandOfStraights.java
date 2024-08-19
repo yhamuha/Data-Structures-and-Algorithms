@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.TreeMap;
 
 public class HandOfStraights {
-    // TC: O(n log n) <- TreeMap for n's numbers
-    // SC: O(n)
+    // O(n log n) O(n)
     public boolean isNStraightHand(int[] hand, int groupSize) {
         TreeMap<Integer, Integer> map = new TreeMap<>();
         for(int card : hand){
@@ -15,7 +14,6 @@ public class HandOfStraights {
             else
                 map.replace(card, map.get(card)+1);
         }
-
         while (map.size() > 0){
             int firstCard = map.firstKey();
             for(int i=firstCard; i<firstCard+groupSize; i++){
