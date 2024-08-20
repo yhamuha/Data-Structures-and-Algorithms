@@ -9,11 +9,11 @@ public class MergeTripletsToFormTargetTriplet {
         boolean i = false;
         boolean j = false;
         boolean k = false;
-        for(int[] t : triplets) {
-            if (t[0]<=target[0] && t[1]<=target[1] && t[2]<=target[2]) {
-                if (t[0]==target[0]) i = true;
-                if (t[1]==target[1]) j = true;
-                if (t[2]==target[2]) k = true;
+        for(int[] triplet : triplets) {
+            if (triplet[0]<=target[0] && triplet[1]<=target[1] && triplet[1]<=target[1]) {
+                if (triplet[0]==target[0]) i=true;
+                if (triplet[1]==target[1]) j=true;
+                if (triplet[2]==target[2]) k=true;
             }
             if (i && j && k)
                 return true;
