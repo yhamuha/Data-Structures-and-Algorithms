@@ -10,9 +10,8 @@ public class PartitionLabels {
         int end = 0;
         List<Integer> answer = new ArrayList<>();
         int[] lastIndex = new int[26];
-        for(int i=0; i<n;i++) {
+        for(int i=0; i<n;i++)
             lastIndex[s.charAt(i)-'a'] = i;
-        }
         int prev = 0;
         for(int j=0; j< n; j++) {
             end = Math.max(end, lastIndex[s.charAt(j) - 'a']);
