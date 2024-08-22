@@ -9,14 +9,12 @@ public class ValidParenthesisString {
             char ch = s.charAt(i);
             if (ch == '(')
                 left++;
-            else
-                left--; // *)
-
+                else
+                    left--;
             if (ch !=')')
                 right++;
-            else
-                right--; //
-
+                else
+                    right--;
             if (right < 0)
                 break;
             left = Math.max(0, left);
