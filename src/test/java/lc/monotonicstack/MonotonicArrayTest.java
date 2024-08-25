@@ -1,5 +1,6 @@
 package lc.monotonicstack;
 
+import lc.monotonicstack.e.MonotonicArray;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
