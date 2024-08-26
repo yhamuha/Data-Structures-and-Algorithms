@@ -1,8 +1,9 @@
-package lc.monotonicstack;
+package lc.monotonicstack.m;
 
 import java.util.Stack;
 
 public class RemoveKDigits {
+        // O(n) O(n)
         public String removeKdigits(String num, int k) {
             Stack<Character> st = new Stack<>();
             for(Character ch : num.toCharArray()) {
@@ -10,13 +11,11 @@ public class RemoveKDigits {
                     st.pop();
                     k--;
                 }
-                if(!st.isEmpty() || ch != '0') {
+                if(!st.isEmpty() || ch != '0')
                     st.push(ch);
-                }
             }
-            while(!st.isEmpty() && k-- > 0) {
+            while(!st.isEmpty() && k-- > 0)
                 st.pop();
-            }
             if(st.isEmpty()) return "0";
             String ans = "";
             while(!st.isEmpty()) {
