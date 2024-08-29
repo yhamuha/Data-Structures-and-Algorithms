@@ -1,19 +1,18 @@
-package lc.monotonicstack;
+package lc.monotonicstack.m;
 
 import java.util.Stack;
 
 public class MaxChunksToMakeSorted {
+    // O(n) O(n)
     public int maxChunksToSorted(int[] arr) {
         Stack<Integer> st = new Stack<>();
         for(int x : arr) {
-            if(st.isEmpty() || st.peek() < x) {
+            if(st.isEmpty() || st.peek() < x)
                 st.push(x);
-            }
             else {
                 int max = x;
-                while(!st.isEmpty() && st.peek() > x) {
+                while(!st.isEmpty() && st.peek() > x)
                     max = Math.max(max, st.pop());
-                }
                 st.push(max);
             }
         }
