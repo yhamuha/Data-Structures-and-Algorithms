@@ -11,7 +11,7 @@ public class Find132Pattern {
             min[i] = Math.min(min[i-1], nums[i]);
         Stack<Integer> stack = new Stack();
         for (int j = size-1; j>=0; j--) {
-            if (nums[j] > min [j]) {
+            if (nums[j] > min[j]) {
                 while (!stack.isEmpty() && stack.peek() <= min[j])
                     stack.pop();
                 if (!stack.isEmpty() && stack.peek() < nums[j])
@@ -24,7 +24,7 @@ public class Find132Pattern {
 
     public static void main(String[] args) {
         Find132Pattern _132pattern = new Find132Pattern();
-        int[] nums = {1,3,2,4};
+        int[] nums = {-1,3,2,0};
         System.out.println(_132pattern.find132pattern(nums));
     }
 }
