@@ -5,18 +5,18 @@ import java.util.Stack;
 public class MaxChunksToMakeSorted {
     // O(n) O(n)
     public int maxChunksToSorted(int[] arr) {
-        Stack<Integer> st = new Stack<>();
-        for(int x : arr) {
-            if(st.isEmpty() || st.peek() < x)
-                st.push(x);
+        Stack<Integer> stack = new Stack();
+        for(int x : arr){
+            if (stack.isEmpty() || stack.peek() < x)
+                stack.push(x);
             else {
                 int max = x;
-                while(!st.isEmpty() && st.peek() > x)
-                    max = Math.max(max, st.pop());
-                st.push(max);
+                while(!stack.isEmpty() && stack.peek() > x)
+                    max = Math.max(max, stack.pop());
+                stack.push(x);
             }
         }
-        return st.size();
+        return stack.size();
     }
 
     public static void main(String[] args) {
