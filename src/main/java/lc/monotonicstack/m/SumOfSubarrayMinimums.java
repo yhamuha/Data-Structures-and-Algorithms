@@ -1,17 +1,13 @@
-package lc.monotonicstack;
+package lc.monotonicstack.m;
 
 import java.util.Stack;
 
 public class SumOfSubarrayMinimums {
+    // O(n) O(n)
     public int sumSubarrayMins(int[] arr) {
-        int mod = 1000000007;
-        int len = arr.length;
-
-        int[] preSmaller = new int[len];
-        int[] nextSmaller = new int[len];
-
+        int mod = 1000000007; int len = arr.length;
+        int[] preSmaller = new int[len]; int[] nextSmaller = new int[len];
         Stack<Integer> s = new Stack<>();
-
         for (int i = 0; i < len; i++){
             preSmaller[i] = -1;
             nextSmaller[i] = len;
@@ -32,7 +28,6 @@ public class SumOfSubarrayMinimums {
             s.push(i);
         }
         s.clear();
-
         long res = 0;
         for (int i = 0; i < len; i++){
             int left= i -preSmaller[i];
