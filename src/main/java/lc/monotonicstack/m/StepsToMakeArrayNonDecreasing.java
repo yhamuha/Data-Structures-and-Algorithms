@@ -1,7 +1,6 @@
 package lc.monotonicstack.m;
 
 import javafx.util.Pair;
-
 import java.util.Stack;
 
 public class StepsToMakeArrayNonDecreasing {
@@ -24,7 +23,7 @@ public class StepsToMakeArrayNonDecreasing {
     }
 
     public static void main(String[] args) {
-        int[] nums = {5,3,4,4,7,3,6,11,8,5,11};
+        int[] nums = {5,3,4,4,7,3};
         StepsToMakeArrayNonDecreasing stma = new StepsToMakeArrayNonDecreasing();
         System.out.println(stma.totalSteps(nums));
     }
