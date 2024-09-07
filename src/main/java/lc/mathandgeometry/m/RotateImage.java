@@ -4,7 +4,7 @@ public class RotateImage {
     // O(n^2) O(1)
     public void rotate(int[][] matrix) {
         int n = matrix.length-1, m = (n+1) / 2;
-        for(int i = 0; i < m; i++, n--){
+        for(int i = 0; i < m; i++, n--)
             for(int j = i; j < n; j++){
                 int xJ = matrix.length - j -1;
                 int temp = matrix[i][j];
@@ -13,7 +13,6 @@ public class RotateImage {
                 matrix[n][xJ] = matrix[j][n];
                 matrix[j][n] = temp;
             }
-        }
     }
     public static void main(String[] args) {
         int[][] matrix = {
