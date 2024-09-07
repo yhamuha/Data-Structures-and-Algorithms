@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpiralMatrix {
-    // O(m*n) O(1)
+    // O(m*n) O(m*n)
     public List<Integer> spiralOrder(int[][] matrix) {
-        int n=matrix.length;
-        int m=matrix[0].length;
+        int m=matrix.length;
+        int n=matrix[0].length;
         List<Integer> ans = new ArrayList<>();
         int top=0,left=0;
-        int right=m-1,bottom=n-1;
-
+        int right=n-1,bottom=m-1;
         while(top<=bottom && left<=right){
             for (int i = left; i <= right; i++)
                 ans.add(matrix[top][i]);
