@@ -49,7 +49,6 @@ public class DetectSquares {
         }
         return 0;
     }
-
     public static void main(String[] args) {
         DetectSquares detector = new DetectSquares();
         int[] point1 = {3, 10};
