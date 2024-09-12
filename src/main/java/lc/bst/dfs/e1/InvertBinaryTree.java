@@ -3,7 +3,7 @@ package lc.bst.dfs.e1;
 import lc.bst.TreeNode;
 
 public class InvertBinaryTree {
-    // O(n) O(h)
+    // O(n) O(n - for worst, log n - for balanced tree)
     public TreeNode invertTree(TreeNode root) {
         if (root == null)
             return null;
@@ -14,7 +14,6 @@ public class InvertBinaryTree {
         invertTree(root.right);
         return root;
     }
-    // O(n) O(h)
     public static void PreorderTraversal(TreeNode node) {
         if (node != null) {
             System.out.print(node.val + " ");
@@ -27,7 +26,6 @@ public class InvertBinaryTree {
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(2, new TreeNode(1), new TreeNode(3));
         root.right = new TreeNode(7, new TreeNode(6), new TreeNode(9));
-
         InvertBinaryTree invertBinaryTree = new InvertBinaryTree();
         TreeNode invertedRoot = invertBinaryTree.invertTree(root);
         PreorderTraversal(invertedRoot);
