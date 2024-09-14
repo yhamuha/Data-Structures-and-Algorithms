@@ -3,7 +3,7 @@ package lc.bst.dfs.e1;
 import lc.bst.TreeNode;
 
 public class MaximumDepthOfBinaryTree {
-    // O(n) O(h)
+    // O(n) O(h-worst, log n - balanced tree)
     public int maxDepth(TreeNode root) {
         return root == null ? 0 : 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
