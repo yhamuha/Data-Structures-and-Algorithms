@@ -1,4 +1,4 @@
-package lc.bst.dfs.e2;
+package lc.bst.dfs.e1;
 
 import lc.bst.TreeNode;
 
@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTreePaths {
+    // O(n*h) O(n*h)
     ArrayList<String> list=new ArrayList<>();
     public List<String> binaryTreePaths(TreeNode root) {
         String ans="";
@@ -22,5 +23,14 @@ public class BinaryTreePaths {
         ans=ans+"->";
         path(root.left,ans);
         path(root.right,ans);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1,new TreeNode(2,null,new TreeNode(5)), new TreeNode(3));
+        BinaryTreePaths binaryTreePaths = new BinaryTreePaths();
+        List<String> paths = binaryTreePaths.binaryTreePaths(root);
+        for (String path : paths) {
+            System.out.println(path);
+        }
     }
 }
