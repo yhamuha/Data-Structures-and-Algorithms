@@ -1,9 +1,9 @@
-package lc.bst.dfs.e2;
+package lc.bst.dfs.e1;
 
 import lc.bst.TreeNode;
 
 public class PathSum {
-    // O(n) O(h); h - tree height -> call stack
+    // O(n), O(n) unbalanced O(log n) balanced
     public boolean rootToLeafPathSum(TreeNode root, int targetSum, int sum){
         if(root == null)
             return false;
@@ -15,11 +15,11 @@ public class PathSum {
         return rootToLeafPathSum(root.left, targetSum, sum + root.val)
                 || rootToLeafPathSum(root.right, targetSum, sum + root.val);
     }
-
-    public boolean hasPathSum(TreeNode root, int targetSum) {   // wrapper func
+    public boolean hasPathSum(TreeNode root, int targetSum) {
         int sum = 0;
         return rootToLeafPathSum(root, targetSum, sum);
     }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(4);
