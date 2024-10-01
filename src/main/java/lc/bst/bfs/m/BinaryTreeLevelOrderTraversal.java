@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeLevelOrderTraversal {
+    // O(n) O(n)
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> answer = new LinkedList<>();
         if (root == null) return answer;
@@ -27,13 +28,10 @@ public class BinaryTreeLevelOrderTraversal {
 
     public static void main(String[] args) {
         var btlot = new BinaryTreeLevelOrderTraversal();
-
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20));
         root.left = new TreeNode(9, null, null);
         root.right = new TreeNode(20, new TreeNode(15), new TreeNode (7));
-
         List<List<Integer>> traversed = btlot.levelOrder(root);
         System.out.println(traversed);
-
     }
 }
