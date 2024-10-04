@@ -20,12 +20,10 @@ public class LowestCommonAncestorOfaBinarySearchTree {
             if (p.val < current.val && q.val < current.val) {
                 if (current.left != null)
                     queue.add(current.left);
-            }
-            else if (p.val > current.val && q.val > current.val) {
+            } else if (p.val > current.val && q.val > current.val) {
                 if (current.right != null)
                     queue.add(current.right);
-            }
-            else if (current.val == p.val || current.val == q.val)
+            } else if (current.val == p.val || current.val == q.val)
                 return current;
         }
         return null;
