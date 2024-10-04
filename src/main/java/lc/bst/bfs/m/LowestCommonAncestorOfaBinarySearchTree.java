@@ -10,13 +10,23 @@ public class LowestCommonAncestorOfaBinarySearchTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null)
             return null;
-        while (root != null) {
-            if (p.val < root.val && q.val < root.val)
-                root = root.left;
-            else if (p.val > root.val && q.val > root.val)
-                root = root.right;
-            else
-                return root;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.poll();
+            if ((p.val < current.val && q.val > current.val) ||
+                    (p.val > current.val && q.val < current.val))
+                return current;
+            if (p.val < current.val && q.val < current.val) {
+                if (current.left != null)
+                    queue.add(current.left);
+            }
+            else if (p.val > current.val && q.val > current.val) {
+                if (current.right != null)
+                    queue.add(current.right);
+            }
+            else if (current.val == p.val || current.val == q.val)
+                return current;
         }
         return null;
     }
