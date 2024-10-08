@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeZigzagLevelOrderTraversal {
+    // O(n) O(n)
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> answer = new LinkedList<>();
         if (root == null) return answer;
@@ -31,11 +32,9 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 
     public static void main(String[] args) {
         var btzlot = new BinaryTreeZigzagLevelOrderTraversal();
-
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20));
         root.left = new TreeNode(9, null, null);
         root.right = new TreeNode(20, new TreeNode(15), new TreeNode (7));
-
         System.out.println(btzlot.zigzagLevelOrder(root));
     }
 }
