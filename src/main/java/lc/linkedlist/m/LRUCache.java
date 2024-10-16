@@ -41,6 +41,7 @@ public class LRUCache {
         newnode.next = temp;
         temp.prev = newnode;
     }
+    // O(1) O(n)
     public int get(int key) {
         if (!m.containsKey(key))
             return -1;
@@ -50,6 +51,7 @@ public class LRUCache {
         m.put(key, head.next);
         return head.next.val;
     }
+    // O(1) O(n)
     public void put(int key, int value) {
         if (m.containsKey(key)) {
             Node2 c = m.get(key);
@@ -72,9 +74,17 @@ public class LRUCache {
             }
         }
     }
-}
 
-// Example usage:
-// LRUCache cache = new LRUCache(capacity);
-// int value = cache.get(key);
-// cache.put(key, value);
+    public static void main(String[] args) {
+        LRUCache lruCache = new LRUCache(2);
+        lruCache.put(1, 1);
+        lruCache.put(2, 2);
+        System.out.println(lruCache.get(1));
+        lruCache.put(3, 3);
+        System.out.println(lruCache.get(2));
+        lruCache.put(4, 4);
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(3));
+        System.out.println(lruCache.get(4));
+    }
+}
