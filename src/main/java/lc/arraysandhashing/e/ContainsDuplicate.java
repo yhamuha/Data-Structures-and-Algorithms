@@ -20,7 +20,7 @@ public class ContainsDuplicate {
     // O(n) O(n)
     static public boolean containsDuplicateEnhanced(int[] nums) {
         Set<Integer> set = new HashSet<>();
-        for (int num: nums) {
+        for(int num : nums) {
             if (set.contains(num))
                 return true;
             set.add(num);
