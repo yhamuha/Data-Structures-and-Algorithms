@@ -20,7 +20,6 @@ public class PalindromeLinkedList {
         }
         return true;
     }
-
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode next = null;
@@ -39,7 +38,6 @@ public class PalindromeLinkedList {
         head.next = new ListNode(2);
         head.next.next = new ListNode(2);
         head.next.next.next = new ListNode(1);
-
         PalindromeLinkedList solution = new PalindromeLinkedList();
         System.out.println(solution.isPalindrome(head));
     }
