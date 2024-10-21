@@ -2,13 +2,13 @@ package lc.trie.m;
 
 import java.util.HashMap;
 
-class Trie{
+class Trie {
     int val=0;
     Trie[] next = new Trie[26];
 }
+// O(n*t + m*k) O(m*k + n*t)
 class ExtraCharactersInaString {
     HashMap<String,Integer> h = new HashMap<>();
-
     int ch(String s,int i,int d,Trie r,Trie c){
         if(i==s.length())return ((c.val==1)?0:d);
         String y = "";
