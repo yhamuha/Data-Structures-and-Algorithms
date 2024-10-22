@@ -3,7 +3,7 @@ package lc.strings;
 import java.util.Arrays;
 
 public class ReverseString {
-    // TC: O(n); SC O(1)
+    // O(n) O(1)
     public static void reverseString(char[] s) {
         int len = s.length;
         int left = 0;
