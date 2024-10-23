@@ -5,7 +5,7 @@ import java.util.Stack;
 public class RemoveAllAdjacentDuplicatesInString {
     // O(n) O(n)
     public String removeDuplicates(String s) {
-        Stack<Character> st = new Stack<>(); // Stack to store characters
+        Stack<Character> st = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             if (!st.isEmpty() && st.peek() == s.charAt(i))
                 st.pop();
