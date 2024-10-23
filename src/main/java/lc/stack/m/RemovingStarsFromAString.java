@@ -13,8 +13,8 @@ public class RemovingStarsFromAString {
             else if (s.charAt(i) != '*')
                 stack.push(s.charAt(i));
         }
-        for (char chr : stack)
-            str.append(chr);
+        for (char ch : stack)
+            str.append(ch);
         return str.toString();
     }
 
