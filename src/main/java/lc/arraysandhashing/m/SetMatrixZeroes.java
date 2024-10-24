@@ -1,10 +1,10 @@
-package lc.mathandgeometry.m;
+package lc.arraysandhashing.m;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SetMatrixZeroes {
-    // O(n^2) O(n)
+    // O(m*n) O(m+n)
     public static void setZeroes(int[][] matrix) {
         ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < matrix.length; i++) {
@@ -29,10 +29,8 @@ public class SetMatrixZeroes {
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-        printMatrix(matrix);
+        int[][] matrix = {{0,1,2,0}, {3,4,5,2}, {1,3,1,5}};
         setZeroes(matrix);
-        System.out.println();
         printMatrix(matrix);
     }
 }
