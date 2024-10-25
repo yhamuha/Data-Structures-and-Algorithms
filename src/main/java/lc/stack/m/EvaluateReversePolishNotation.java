@@ -1,13 +1,9 @@
-package lc.stack;
+package lc.stack.m;
 
 import java.util.Set;
 import java.util.Stack;
 
 public class EvaluateReversePolishNotation {
-        /*  infix notation      5+3
-            polish notation     53+
-            For example, the infix expression (3 × 4) + (5 × 6) becomes 3 4 × 5 6 × + in reverse Polish notation
-                advantage - it removes the need of order operations and parentheses that required for infix notation */
         // O(n) O(n)
         public int evalRPN(String[] tokens) {
             Stack<Integer> stack = new Stack<>();
