@@ -9,13 +9,11 @@ public class DailyTemperatures {
         Stack<Integer> st = new Stack<>();
         int n = temperatures.length;
         int[] ans = new int[n];
-
-        for(int i = n - 1; i >= 0; i--) {
+        for(int i = n-1; i >= 0; i--) {
             while(!st.isEmpty() && temperatures[i] >= temperatures[st.peek()])
                 st.pop();
-            if(!st.isEmpty()) {
+            if(!st.isEmpty())
                 ans[i] = st.peek() - i;
-            }
             st.push(i);
         }
         return ans;
@@ -26,12 +24,5 @@ public class DailyTemperatures {
         DailyTemperatures dt = new DailyTemperatures();
         System.out.println(Arrays.toString(dt.dailyTemperatures(temperatures)));
     }
-
 }
 
-/*
-    here we need to calculate each of values by indexes
-        Input: temperatures = [30,40,50,60]
-        Output: [1,1,1,0]
-    how many steps is to increase the temperature
- */
