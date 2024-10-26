@@ -6,7 +6,7 @@ public class GroupAnagrams {
     // O(n log n) O(n)
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String,List<String>> groupedAnagrams = new HashMap<>();
-        for (String str : strs){
+        for (String str : strs) {
             char[] strArray = str.toCharArray();
             Arrays.sort(strArray);
             String sortedString = String.valueOf(strArray);
