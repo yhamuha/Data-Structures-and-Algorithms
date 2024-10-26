@@ -1,7 +1,7 @@
-package lc.arraysandhashing.m;
+package lc.arraysandhashing.e;
 
 public class MajorityElement {
-    // O(n) O(1) Boyer-Moore Voting
+    // O(n) O(1)
     public int majorityElement(int[] nums) {
         int res=0, count=0;
         for(int num : nums) {
