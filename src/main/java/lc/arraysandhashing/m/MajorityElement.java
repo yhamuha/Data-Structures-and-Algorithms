@@ -18,3 +18,5 @@ public class MajorityElement {
         System.out.println(me.majorityElement(nums));
     }
 }
+
+
