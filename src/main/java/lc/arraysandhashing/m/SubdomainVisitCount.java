@@ -13,19 +13,17 @@ public class SubdomainVisitCount {
             String[] array = s.split(" ");
             int number = Integer.parseInt(array[0]);
             int length = array[1].length();
-            if (map.containsKey(array[1])) {
+            if (map.containsKey(array[1]))
                 map.put(array[1], map.get(array[1]+number));
-            } else {
+            else
                 map.put(array[1], number);
-            }
             for (int i=0; i<length; i++) {
                 if(array[1].charAt(i) == '.') {
                     String temp = array[1].substring(i+1, length);
-                    if (map.containsKey(temp)) {
+                    if (map.containsKey(temp))
                         map.put(temp, map.get(temp) + number);
-                    } else {
+                    else
                         map.put(temp,number);
-                    }
                 }
             }
         }
