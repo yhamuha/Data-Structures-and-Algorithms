@@ -5,10 +5,8 @@ import java.util.Arrays;
 public class RunningSumOf1dArray {
     // O(n), O(1)
     static int[] getRunningSum (int[] arr) {
-
-        for (int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length-1; i++)
             arr[i+1] = arr[i] + arr[i+1];
-        }
         return arr;
     }
 
