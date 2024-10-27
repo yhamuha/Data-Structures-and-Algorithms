@@ -14,6 +14,7 @@ public class RotateImage {
                 matrix[j][n] = temp;
             }
     }
+
     public static void main(String[] args) {
         int[][] matrix = {
                 {1, 2, 3},
@@ -23,9 +24,8 @@ public class RotateImage {
         RotateImage rotateImage = new RotateImage();
         rotateImage.rotate(matrix);
         for (int[] row : matrix) {
-            for (int num : row) {
+            for (int num : row)
                 System.out.print(num + " ");
-            }
             System.out.println();
         }
     }
