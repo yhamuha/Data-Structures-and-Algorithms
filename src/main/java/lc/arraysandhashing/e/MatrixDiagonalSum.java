@@ -7,9 +7,8 @@ public class MatrixDiagonalSum {
         int sum =0;
         for(int i =0 ;i<mat.length;i++){
             sum+= mat[i][i];
-            if(!(i==j-i)){
+            if(!(i==j-i))
                 sum+= mat[i][j-i];
-            }
         }
         return sum;
     }
