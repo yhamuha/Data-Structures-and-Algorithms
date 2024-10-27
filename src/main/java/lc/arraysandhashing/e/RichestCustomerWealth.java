@@ -8,8 +8,8 @@ public class RichestCustomerWealth {
             int customer_amount=0;
             for(int j=0; j<accounts[i].length; j++)
                 customer_amount += accounts[i][j];
-            if(customer_amount > max_wealth)
-                max_wealth = customer_amount;
+                if(customer_amount > max_wealth)
+                    max_wealth = customer_amount;
         }
         return max_wealth;
     }
