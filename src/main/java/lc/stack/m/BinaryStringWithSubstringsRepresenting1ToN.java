@@ -11,9 +11,9 @@ public class BinaryStringWithSubstringsRepresenting1ToN {
             stack.push(binaryRepresentation);
         }
         while(!stack.isEmpty()) {
-        String substr = stack.pop();
-        if (!binaryString.contains(substr))
-            return false;
+            String substr = stack.pop();
+            if (!binaryString.contains(substr))
+                return false;
         }
         return true;
     }
