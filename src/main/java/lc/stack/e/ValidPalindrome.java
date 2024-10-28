@@ -7,9 +7,9 @@ public class ValidPalindrome {
     public boolean isPalindrome(String s) {
         char[] chars = s.toLowerCase().toCharArray();
         Stack<Character> stack = new Stack<>();
-        for(char c : chars) {
-            if (Character.isLetterOrDigit(c))
-                stack.push(c);
+        for(char ch : chars) {
+            if (Character.isLetterOrDigit(ch))
+                stack.push(ch);
         }
         for(char c : chars) {
             if(Character.isLetterOrDigit(c)) {
