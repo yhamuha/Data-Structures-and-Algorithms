@@ -17,10 +17,10 @@ public class MakeTheStringGreat {
                     stack.push(ch);
             }
         }
-        StringBuilder ans = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         while (!stack.isEmpty())
-            ans.append(stack.pop());
-        return ans.reverse().toString();
+            sb.append(stack.pop());
+        return sb.reverse().toString();
     }
 
     public static void main(String[] args) {
