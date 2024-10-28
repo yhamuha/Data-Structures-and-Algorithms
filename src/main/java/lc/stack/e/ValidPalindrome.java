@@ -11,9 +11,9 @@ public class ValidPalindrome {
             if (Character.isLetterOrDigit(ch))
                 stack.push(ch);
         }
-        for(char c : chars) {
-            if(Character.isLetterOrDigit(c)) {
-                if (c != stack.pop())
+        for(char ch : chars) {
+            if(Character.isLetterOrDigit(ch)) {
+                if (ch != stack.pop())
                     return false;
             }
         }
