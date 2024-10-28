@@ -5,7 +5,6 @@ import java.util.Stack;
 public class RemovingStarsFromAString {
     // O(n) O(n)
     public String removeStars(String s) {
-        StringBuilder str = new StringBuilder();
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++){
             if (!stack.isEmpty() && s.charAt(i) == '*')
@@ -13,6 +12,7 @@ public class RemovingStarsFromAString {
             else if (s.charAt(i) != '*')
                 stack.push(s.charAt(i));
         }
+        StringBuilder str = new StringBuilder();
         for (char ch : stack)
             str.append(ch);
         return str.toString();
