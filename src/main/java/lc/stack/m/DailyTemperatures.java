@@ -6,15 +6,15 @@ import java.util.Stack;
 public class DailyTemperatures {
     // O(n) O(n)
     public int[] dailyTemperatures(int[] temperatures) {
-        Stack<Integer> st = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         int n = temperatures.length;
         int[] ans = new int[n];
         for(int i = n-1; i >= 0; i--) {
-            while(!st.isEmpty() && temperatures[i] >= temperatures[st.peek()])
-                st.pop();
-            if(!st.isEmpty())
-                ans[i] = st.peek() - i;
-            st.push(i);
+            while(!stack.isEmpty() && temperatures[i] >= temperatures[stack.peek()])
+                stack.pop();
+            if(!stack.isEmpty())
+                ans[i] = stack.peek() - i;
+            stack.push(i);
         }
         return ans;
     }
