@@ -6,7 +6,7 @@ public class ValidPalindrome {
     // O(n) O(n)
     public boolean isPalindrome(String s) {
         char[] chars = s.toLowerCase().toCharArray();
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
         for(char c : chars) {
             if (Character.isLetterOrDigit(c))
                 stack.push(c);
