@@ -6,9 +6,8 @@ public class ReverseString {
     // O(n) O(n)
     public void reverseString(char[] s) {
         Stack<Character> stack = new Stack<>();
-        for(int i=0;i<s.length;i++){
+        for(int i=0;i<s.length;i++)
             stack.push(s[i]);
-        }
         int i=0;
         while(!stack.isEmpty()){
             s[i]=stack.pop();
