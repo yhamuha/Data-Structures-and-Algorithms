@@ -24,7 +24,7 @@ public class PalindromeLinkedList {
         ListNode prev = null;
         ListNode next = null;
         ListNode curr = head;
-        while(curr!=null){
+        while(curr!=null) {
             next=curr.next;
             curr.next=prev;
             prev=curr;
