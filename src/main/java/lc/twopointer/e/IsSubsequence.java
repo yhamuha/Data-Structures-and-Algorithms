@@ -1,7 +1,7 @@
 package lc.twopointer.e;
 
 public class IsSubsequence {
-    // O(s+t) O(1)
+    // O(n) O(1)
     public boolean isSubsequence(String s, String t) {
         int p1=0, p2=0;
         int n1 = s.length(), n2=t.length();
@@ -17,6 +17,7 @@ public class IsSubsequence {
         }
         return common==n1;
     }
+
     public static void main(String[] args) {
         IsSubsequence isSubsequence = new IsSubsequence();
         String s = "abc";
