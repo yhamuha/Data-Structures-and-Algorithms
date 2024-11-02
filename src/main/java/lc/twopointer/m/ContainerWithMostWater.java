@@ -1,18 +1,6 @@
 package lc.twopointer.m;
 
 public class ContainerWithMostWater {
-    // O(n^2) O(1)
-    public int maxArea_slow(int[] height) {
-        int maxArea = 0;
-        for (int i=0; i< height.length; i++) {
-            for (int j = 0; j<height.length; j++) {
-                int localArea = Math.abs(i-j)*Math.min(height[i], height[j]);
-                maxArea = Math.max(maxArea, localArea);
-            }
-        }
-        return maxArea;
-    }
-
     // O(n) O(1)
     public int maxArea(int[] height) {
         int maxArea = 0, left = 0, right = height.length-1;
