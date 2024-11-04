@@ -7,8 +7,6 @@ public class CompareVersionNumbers {
         int m = version2.length();
         int i = 0;
         int j = 0;
-        boolean flag1 = false;
-        boolean flag2 = false;
         while (i < n || j < m) {
             int num1 = 0;
             int num2 = 0;
@@ -32,8 +30,8 @@ public class CompareVersionNumbers {
 
     public static void main(String[] args) {
         CompareVersionNumbers obj = new CompareVersionNumbers();
-        String version1 = "1.0.1";
-        String version2 = "1";
+        String version1 = "1.2";
+        String version2 = "1.10";
         System.out.println(obj.compareVersion(version1, version2));
     }
 }
