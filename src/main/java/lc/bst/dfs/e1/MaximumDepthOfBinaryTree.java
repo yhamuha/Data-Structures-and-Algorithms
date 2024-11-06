@@ -9,9 +9,7 @@ public class MaximumDepthOfBinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         var md = new MaximumDepthOfBinaryTree();
         System.out.println(md.maxDepth(root));
     }
