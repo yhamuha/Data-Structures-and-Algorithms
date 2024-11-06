@@ -21,9 +21,7 @@ public class BalancedBinaryTree {
 
     public static void main(String[] args) {
         BalancedBinaryTree bbt = new BalancedBinaryTree();
-        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20));
-        root.left = new TreeNode(9, null, null);
-        root.right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         System.out.println(bbt.isBalanced(root));
     }
 }
