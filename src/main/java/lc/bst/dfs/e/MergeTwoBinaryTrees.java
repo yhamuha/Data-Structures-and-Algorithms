@@ -3,7 +3,7 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class MergeTwoBinaryTrees {
-    // O(n), O(n) unbalanced O(log n) balanced
+    // O(n); O(n) unbal, O(log n) bal
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
         if(root1 == null)
             return root2;
@@ -15,10 +15,8 @@ public class MergeTwoBinaryTrees {
         return root1;
     }
     private static void preOrderTraversal(TreeNode node) {
-        if (node == null) {
-            System.out.print("null ");
+        if (node == null)
             return;
-        }
         System.out.print(node.val + " ");
         preOrderTraversal(node.left);
         preOrderTraversal(node.right);
