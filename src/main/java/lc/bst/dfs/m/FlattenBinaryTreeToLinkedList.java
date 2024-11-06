@@ -1,4 +1,4 @@
-package lc.bst.dfs.m1;
+package lc.bst.dfs.m;
 
 import lc.bst.TreeNode;
 

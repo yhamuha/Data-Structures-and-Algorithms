@@ -1,19 +1,19 @@
-package lc.bst.dfs.e1;
+package lc.bst.dfs.e;
 
 import lc.bst.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreePreorderTraversal {
-    // O(n), O(log n) balanced O(n) unbalanced/skew
-    public void traversal(TreeNode root, List<Integer> res) {
-        if (root == null) return;
-        res.add(root.val);
+public class BinaryTreePostorderTraversal {
+    // O(n), O(log n) balanced O(n) unbalanced
+    public void traversal(TreeNode root, List<Integer> res){
+        if(root==null) return;
         traversal(root.left, res);
         traversal(root.right, res);
+        res.add(root.val);
     }
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         traversal(root, res);
         return res;
@@ -25,10 +25,8 @@ public class BinaryTreePreorderTraversal {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
-        BinaryTreePreorderTraversal btp = new BinaryTreePreorderTraversal();
-        List<Integer> result = btp.preorderTraversal(root);
+        BinaryTreePostorderTraversal btp = new BinaryTreePostorderTraversal();
+        List<Integer> result = btp.postorderTraversal(root);
         System.out.println(result);
     }
 }
-
-
