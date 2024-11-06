@@ -7,20 +7,20 @@ import java.util.*;
 public class KthSmallestElementInaBST {
     // O(n log n) O(n)
     public int kthSmallest(TreeNode root, int k) {
-        Queue<TreeNode> q = new LinkedList<>();
-        List<Integer> l = new ArrayList<>();
-        q.offer(root);
-        while(!q.isEmpty()) {
-            int lvlSize = q.size();
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            int lvlSize = queue.size();
             for(int i=0;i<lvlSize;i++) {
-                TreeNode curr = q.poll();
-                l.add(curr.val);
-                if(curr.left!=null) q.add(curr.left);
-                if(curr.right!=null) q.add(curr.right);
+                TreeNode curr = queue.poll();
+                list.add(curr.val);
+                if(curr.left!=null) queue.add(curr.left);
+                if(curr.right!=null) queue.add(curr.right);
             }
         }
-        Collections.sort(l);
-        return l.get(k-1);
+        Collections.sort(list);
+        return list.get(k-1);
     }
 
     public static void main(String[] args) {
