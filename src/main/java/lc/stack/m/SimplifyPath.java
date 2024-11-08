@@ -14,13 +14,13 @@ public class SimplifyPath {
             } else if (!p[i].equals("") && !p[i].equals("."))
                 stack.push(p[i]);
         }
-        StringBuilder res = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         while (!stack.isEmpty())
-            res.insert(0, stack.pop()).insert(0, "/");
-        if (res.length() == 0)
+            sb.insert(0, stack.pop()).insert(0, "/");
+        if (sb.length() == 0)
             return "/";
         else
-            return res.toString();
+            return sb.toString();
     }
 
     public static void main(String[] args) {
