@@ -7,9 +7,9 @@ public class EvaluateReversePolishNotation {
         // O(n) O(n)
         public int evalRPN(String[] tokens) {
             Stack<Integer> stack = new Stack<>();
-            Set<String> ops = Set.of("+", "-", "*", "/");
+            Set<String> operations = Set.of("+", "-", "*", "/");
             for (String s : tokens) {
-                if (ops.contains(s)) {
+                if (operations.contains(s)) {
                     int a = stack.pop();
                     int b = stack.pop();
                     int c = 0;
