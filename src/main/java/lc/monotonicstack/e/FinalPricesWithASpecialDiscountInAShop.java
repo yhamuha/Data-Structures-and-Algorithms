@@ -6,14 +6,14 @@ import java.util.Stack;
 public class FinalPricesWithASpecialDiscountInAShop {
     // O(n) O(n)
     public int[] finalPrices(int[] prices) {
-        Stack<Integer> st=new Stack<>();
+        Stack<Integer> stack =new Stack<>();
         for(int i=prices.length-1; i>=0; i--){
-            while( st.size()>0 && st.peek()>prices[i])
-                st.pop();
+            while(stack.size()>0 && stack.peek()>prices[i])
+                stack.pop();
             int n = prices[i];
-            if(!st.isEmpty())
-                prices[i]=prices[i]- st.peek();
-            st.push(n);
+            if(!stack.isEmpty())
+                prices[i]=prices[i]- stack.peek();
+            stack.push(n);
         }
         return prices;
     }
