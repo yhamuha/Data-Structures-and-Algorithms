@@ -7,11 +7,11 @@ import java.util.TreeMap;
 public class CarFleet {
     // O(n log n) O(n)
     public int carFleet(int target, int[] pos, int[] speed) {
-        Map<Integer, Double> m = new TreeMap<>(Collections.reverseOrder());
+        Map<Integer, Double> map = new TreeMap<>(Collections.reverseOrder());
         for (int i = 0; i < pos.length; ++i)
-            m.put(pos[i], (double)(target - pos[i]) / speed[i]);
+            map.put(pos[i], (double)(target - pos[i]) / speed[i]);
         int res = 0; double cur = 0;
-        for (double time : m.values()) {
+        for (double time : map.values()) {
             if (time > cur) {
                 cur = time;
                 res++;
