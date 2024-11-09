@@ -3,27 +3,26 @@ package lc.stack.m;
 import java.util.Stack;
 
 public class MinStack {
-    Stack<Integer> stack = new Stack<>();       // stack1
-    Stack<Integer> min_vals = new Stack<>();    // stack2
-    public MinStack() {
-    }
+    Stack<Integer> stack = new Stack<>();
+    Stack<Integer> min_values = new Stack<>();
+    // Overall O(1) O(n)
+    public MinStack() {}
+    // O(1)
     public void push(int val) {
-        if (min_vals.isEmpty() || val <= min_vals.peek()) {
-            min_vals.push(val);
-        }
+        if (min_values.isEmpty() || val <= min_values.peek())
+            min_values.push(val);
         stack.push(val);
     }
+    // O(1)
     public void pop() {
-        if(stack.peek().equals(min_vals.peek())) {  // sync both stacks
-            min_vals.pop();                         // remove from 1st
-        }
-        stack.pop();                                // and 2st stack
+        if(stack.peek().equals(min_values.peek()))
+            min_values.pop();
+        stack.pop();
     }
-
+    // O(1)
     public int top() {return stack.peek();}
-
-    // O(1), O(n)
-    public int getMin(){return min_vals.peek();}
+    // O(1)
+    public int getMin(){return min_values.peek();}
 
     public static void main(String[] args) {
         MinStack ms = new MinStack();
@@ -36,9 +35,3 @@ public class MinStack {
         System.out.print(ms.getMin());
     }
 }
-
-/*
-    existent solutions:
-    using 2 stacks:     min_vals contains always min element
-    using 1 stack
- */
