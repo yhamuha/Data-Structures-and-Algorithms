@@ -12,10 +12,10 @@ public class RemovingStarsFromAString {
             else if (s.charAt(i) != '*')
                 stack.push(s.charAt(i));
         }
-        StringBuilder str = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (char ch : stack)
-            str.append(ch);
-        return str.toString();
+            sb.append(ch);
+        return sb.toString();
     }
 
     public static void main(String[] args) {
