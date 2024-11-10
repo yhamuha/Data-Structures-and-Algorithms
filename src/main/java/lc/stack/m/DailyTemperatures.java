@@ -8,19 +8,19 @@ public class DailyTemperatures {
     public int[] dailyTemperatures(int[] temperatures) {
         Stack<Integer> stack = new Stack<>();
         int n = temperatures.length;
-        int[] ans = new int[n];
+        int[] answer = new int[n];
         for(int i = n-1; i >= 0; i--) {
             while(!stack.isEmpty() && temperatures[i] >= temperatures[stack.peek()])
                 stack.pop();
             if(!stack.isEmpty())
-                ans[i] = stack.peek() - i;
+                answer[i] = stack.peek() - i;
             stack.push(i);
         }
-        return ans;
+        return answer;
     }
 
     public static void main(String[] args) {
-        int[] temperatures = {1,5,3,6,10,8};
+        int[] temperatures = {73,74,75,71,69,72,76,73};
         DailyTemperatures dt = new DailyTemperatures();
         System.out.println(Arrays.toString(dt.dailyTemperatures(temperatures)));
     }
