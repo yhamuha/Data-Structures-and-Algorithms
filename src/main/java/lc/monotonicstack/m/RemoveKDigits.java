@@ -5,22 +5,21 @@ import java.util.Stack;
 public class RemoveKDigits {
         // O(n) O(n)
         public String removeKdigits(String num, int k) {
-            Stack<Character> st = new Stack<>();
+            Stack<Character> stack = new Stack<>();
             for(Character ch : num.toCharArray()) {
-                while(!st.isEmpty() && k > 0 && ch < st.peek()) {
-                    st.pop();
+                while(!stack.isEmpty() && k > 0 && ch < stack.peek()) {
+                    stack.pop();
                     k--;
                 }
-                if(!st.isEmpty() || ch != '0')
-                    st.push(ch);
+                if(!stack.isEmpty() || ch != '0')
+                    stack.push(ch);
             }
-            while(!st.isEmpty() && k-- > 0)
-                st.pop();
-            if(st.isEmpty()) return "0";
+            while(!stack.isEmpty() && k-- > 0)
+                stack.pop();
+            if(stack.isEmpty()) return "0";
             String ans = "";
-            while(!st.isEmpty()) {
-                ans = st.peek() + ans;
-                st.pop();
+            while(!stack.isEmpty()) {
+                ans = stack.pop() + ans;
             }
             return ans;
         }
