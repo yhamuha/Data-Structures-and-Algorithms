@@ -2,7 +2,7 @@ package lc.slidingwindow.e;
 
 public class BestTimeToBuyAndSellStock {
     // O(n) O(1)
-    public int maxProfit(int[] prices) {
+    public static int maxProfit(int[] prices) {
         int maxProfit = 0;
         int prev = 0;
         for(int next=0; next<prices.length; next++){
@@ -15,7 +15,6 @@ public class BestTimeToBuyAndSellStock {
         return maxProfit;
     }
     public static void main(String[] args) {
-        var bttb = new BestTimeToBuyAndSellStock();
-        System.out.println(bttb.maxProfit(new int[]{7,1,5,3,6,4}));
+        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
     }
 }
