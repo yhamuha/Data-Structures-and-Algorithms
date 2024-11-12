@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
     // O(n) O(n)
-    public int lengthOfLongestSubstring(String s) {
+     static int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
         int left = 0;
         int maxLength = 0;
@@ -26,7 +26,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static void main(String[] args) {
-        var ls = new LongestSubstringWithoutRepeatingCharacters();
-        System.out.println(ls.lengthOfLongestSubstring(new String("pwwkew")));
+        System.out.println(lengthOfLongestSubstring(new String("pwwkew")));
     }
 }
