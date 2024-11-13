@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class SymmetricTree {
     // O(n) O(n)
-    public boolean isSymmetric(TreeNode root) {
+    static boolean isSymmetric(TreeNode root) {
         if (root == null)
             return true;
         Queue<TreeNode> queue = new LinkedList<>();
@@ -31,10 +31,9 @@ public class SymmetricTree {
     }
 
     public static void main(String[] args) {
-        var st = new SymmetricTree();
         TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(2));
         root.left = new TreeNode(2, new TreeNode(3), new TreeNode(4));
         root.right = new TreeNode(2, new TreeNode(4), new TreeNode(3));
-        System.out.println(st.isSymmetric(root));
+        System.out.println(isSymmetric(root));
     }
 }
