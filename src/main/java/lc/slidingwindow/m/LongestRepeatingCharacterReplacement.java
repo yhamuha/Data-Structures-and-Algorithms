@@ -2,7 +2,7 @@ package lc.slidingwindow.m;
 
 public class LongestRepeatingCharacterReplacement {
 
-    public int characterReplacement(String s, int k) {
+    static int characterReplacement(String s, int k) {
         // O(n) O(1)
         int[] letters = new int[26];
         int left = 0;
@@ -21,7 +21,6 @@ public class LongestRepeatingCharacterReplacement {
     }
 
     public static void main(String[] args) {
-        var lrc = new LongestRepeatingCharacterReplacement();
-        System.out.println(lrc.characterReplacement("AABABBA", 1));
+        System.out.println(characterReplacement("ABAB", 2));
     }
 }
