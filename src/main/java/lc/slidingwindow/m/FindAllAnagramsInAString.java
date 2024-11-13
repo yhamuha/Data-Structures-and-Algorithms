@@ -6,10 +6,10 @@ import java.util.List;
 
 public class FindAllAnagramsInAString {
     // O(n) O(1)
-    public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> ans = new ArrayList<>();
+    static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> ansList = new ArrayList<>();
         if (p.length() > s.length())
-            return ans;
+            return ansList;
         int[] pFreq = new int[26];
         int[] sFreq = new int[26];
         for (int i = 0; i < p.length(); i++) {
@@ -17,21 +17,22 @@ public class FindAllAnagramsInAString {
             sFreq[s.charAt(i) - 'a']++;
         }
         if (Arrays.equals(pFreq, sFreq))
-            ans.add(0);
+            ansList.add(0);
         int i = 0, j = p.length();
         while (j < s.length()) {
-            sFreq[s.charAt(i++) - 'a']--;
-            sFreq[s.charAt(j++) - 'a']++;
+            sFreq[s.charAt(i) - 'a']--;
+            sFreq[s.charAt(j) - 'a']++;
+            i++;
             if (Arrays.equals(sFreq, pFreq))
-                ans.add(i);
+                ansList.add(i);
+            j++;
         }
-        return ans;
+        return ansList;
     }
 
     public static void main(String[] args) {
-        FindAllAnagramsInAString finder = new FindAllAnagramsInAString();
         String s = "cbaebabacd";
         String p = "abc";
-        System.out.println(finder.findAnagrams(s, p));
+        System.out.println(findAnagrams(s, p));
     }
 }
