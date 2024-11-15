@@ -2,7 +2,7 @@ package lc.linkedlist.m;
 
 public class SwapNodesInPairs {
     // O(n) O(1)
-    public ListNode swapPairs(ListNode head) {
+    static ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null)
             return head;
         ListNode curr = head.next.next;
@@ -28,9 +28,7 @@ public class SwapNodesInPairs {
     }
 
     public static void main(String[] args) {
-        SwapNodesInPairs swapper = new SwapNodesInPairs();
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-        ListNode swappedList = swapper.swapPairs(head);
-        printList(swappedList);
+        printList(swapPairs(head));
     }
 }
