@@ -4,7 +4,7 @@ import lc.bst.TreeNode;
 
 public class PathSum {
     // O(n), O(n) unbalanced O(log n) balanced
-    public boolean rootToLeafPathSum(TreeNode root, int targetSum, int sum){
+    static boolean rootToLeafPathSum(TreeNode root, int targetSum, int sum){
         if(root == null)
             return false;
         if(root.left == null && root.right == null){
@@ -15,7 +15,7 @@ public class PathSum {
         return rootToLeafPathSum(root.left, targetSum, sum + root.val)
                 || rootToLeafPathSum(root.right, targetSum, sum + root.val);
     }
-    public boolean hasPathSum(TreeNode root, int targetSum) {
+    static boolean hasPathSum(TreeNode root, int targetSum) {
         int sum = 0;
         return rootToLeafPathSum(root, targetSum, sum);
     }
@@ -31,7 +31,6 @@ public class PathSum {
         root.right.right = new TreeNode(4);
         root.right.right.right = new TreeNode(1);
         int targetSum = 22;
-        var ps = new PathSum();
-        System.out.println(ps.hasPathSum(root, targetSum));
+        System.out.println(hasPathSum(root, targetSum));
     }
 }
