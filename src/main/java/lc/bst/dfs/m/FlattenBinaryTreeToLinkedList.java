@@ -13,13 +13,14 @@ public class FlattenBinaryTreeToLinkedList {
         dfs(root);
         if (list.size() == 0)
             return;
-        for (int i = 0;i<list.size()-1;i++) {
+        for (int i = 0; i<list.size()-1 ;i++) {
             root.val = list.get(i);
             root.right = new TreeNode();
             root.left = null;
             root = root.right;
         }
-        root.val = list.get(list.size()-1);
+        root.val = list.get(list.size()-1); // put last node without creating the new one
+                                            // root.right = new TreeNode();
         root = node;
     }
     public void dfs(TreeNode root) {
