@@ -6,18 +6,13 @@ import java.util.Map;
 public class RansomNote {
     // O(m+n) O(1)
     public boolean canConstruct(String ransomNote, String magazine) {
-        Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < magazine.length(); i++) {
-            char c = magazine.charAt(i);
-            if (!map.containsKey(c))
-                map.put(c, 1);
-            else
-                map.put(c, map.get(c) + 1);
-        }
+        Map<Character, Integer> freqMap = new HashMap<>();
+        for(char c : magazine.toCharArray())
+            freqMap.put(c,freqMap.getOrDefault(c,0)+1);
         for (int i = 0; i < ransomNote.length(); i++) {
             char c = ransomNote.charAt(i);
-            if (map.containsKey(c) && map.get(c) > 0)
-                map.put(c, map.get(c) - 1);
+            if (freqMap.containsKey(c) && freqMap.get(c) > 0)
+                freqMap.put(c, freqMap.get(c) - 1);
             else
                 return false;
         }
