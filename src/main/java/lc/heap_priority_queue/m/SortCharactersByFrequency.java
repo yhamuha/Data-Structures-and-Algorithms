@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 
 public class SortCharactersByFrequency {
     // O(n log n) O(n)
-    public String frequencySort(String s) {
+    static String frequencySort(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for(char str : s.toCharArray())
             map.put(str, map.getOrDefault(str,0)+1);
@@ -22,8 +22,7 @@ public class SortCharactersByFrequency {
     }
 
     public static void main(String[] args) {
-        var scbf = new SortCharactersByFrequency();
         String s = "tree";
-        System.out.println(scbf.frequencySort(s));
+        System.out.println(frequencySort(s));
     }
 }
