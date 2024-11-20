@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class MinimumCostToConnectSticks {
     // O(n log n) O(n)
-    public int connectSticks(int[] sticks){
+    static int connectSticks(int[] sticks){
         int cost = 0;
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int stick : sticks)
@@ -18,8 +18,7 @@ public class MinimumCostToConnectSticks {
     }
 
     public static void main(String[] args) {
-        var mctcs = new MinimumCostToConnectSticks();
         int[] sticks = {2,3,4};
-        System.out.println(mctcs.connectSticks(sticks));
+        System.out.println(connectSticks(sticks));
     }
 }
