@@ -2,20 +2,17 @@ package lc.stack.m;
 
 import java.util.Stack;
 
-public class BrowserHistory {
-
+public class DesignBrowserHistory {
+    // O(n)-worst O(n)
     Stack<String> backwardStack = new Stack<>();
     Stack<String> forwardStack = new Stack<>();
-
-    public BrowserHistory(String homepage) {
+    public DesignBrowserHistory(String homepage) {
         backwardStack.push(homepage);
     }
-
     public void visit(String url) {
         while(!forwardStack.isEmpty()) forwardStack.pop();
         backwardStack.push(url);
     }
-
     public String back(int steps) {
         while(backwardStack.size()>1 && steps-- > 0){
             forwardStack.push(backwardStack.peek());
@@ -23,7 +20,6 @@ public class BrowserHistory {
         }
         return backwardStack.peek();
     }
-
     public String forward(int steps) {
         while(!forwardStack.isEmpty() && steps-- > 0){
             backwardStack.push(forwardStack.peek());
@@ -33,7 +29,7 @@ public class BrowserHistory {
     }
 
     public static void main(String[] args) {
-        BrowserHistory bh = new BrowserHistory("google");
+        DesignBrowserHistory bh = new DesignBrowserHistory("google");
         bh.visit("facebook");
         bh.visit("google");
         bh.visit("amazon");
@@ -43,6 +39,3 @@ public class BrowserHistory {
     }
 }
 
-/*
-    two stack approach
- */
