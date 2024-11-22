@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PartitionLabels {
     // O(n) O(n)
-    public List<Integer> partitionLabels(String s) {
+    static List<Integer> partitionLabels(String s) {
         if (s == null || s.length() == 0) return null;
         List<Integer> output_arr = new ArrayList();
         int[] lastIndexes = new int[26];
@@ -25,9 +25,8 @@ public class PartitionLabels {
     }
 
     public static void main(String[] args) {
-        PartitionLabels pl = new PartitionLabels();
         String s = "ababcbacadefegdehijhklij";
-        System.out.println(pl.partitionLabels(s));
+        System.out.println(partitionLabels(s));
     }
 
 }
