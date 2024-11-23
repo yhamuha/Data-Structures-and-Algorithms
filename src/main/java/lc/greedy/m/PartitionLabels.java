@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PartitionLabels {
-    // O(n) O(n)
+    // O(n) O(1)
     public List<Integer> partitionLabels(String s) {
         int n = s.length();
         int end = 0;
