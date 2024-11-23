@@ -13,6 +13,7 @@ public class DesignBrowserHistory {
         while(!forwardStack.isEmpty()) forwardStack.pop();
         backwardStack.push(url);
     }
+
     public String back(int steps) {
         while(backwardStack.size()>1 && steps-- > 0){
             forwardStack.push(backwardStack.peek());
@@ -20,6 +21,7 @@ public class DesignBrowserHistory {
         }
         return backwardStack.peek();
     }
+
     public String forward(int steps) {
         while(!forwardStack.isEmpty() && steps-- > 0){
             backwardStack.push(forwardStack.peek());
