@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PartitionLabels {
-    // O(n) O(n)
+    // O(n) O(1)
     static List<Integer> partitionLabels(String s) {
         if (s == null || s.length() == 0) return null;
         List<Integer> output_arr = new ArrayList();
