@@ -1,7 +1,7 @@
 package lc.binarysearch.m;
 public class HIndexII {
     // O(log n) O(1)
-    public int hIndex(int[] citations) {
+    static int hIndex(int[] citations) {
         int n = citations.length;
         int low = 0, high = n-1;
         while(low <= high){
@@ -15,7 +15,6 @@ public class HIndexII {
     }
 
     public static void main(String[] args) {
-        var hi = new HIndexII();
-        System.out.println(hi.hIndex(new int[] {0,1,3,5,6}));
+        System.out.println(hIndex(new int[] {0,1,3,5,6}));
     }
 }
