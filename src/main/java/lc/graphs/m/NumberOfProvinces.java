@@ -5,14 +5,14 @@ public class NumberOfProvinces {
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;
         boolean[] visited = new boolean[n];
-        int countPro = 0;
+        int countProvinces = 0;
         for (int i = 0; i < n; i++) {
             if (!visited[i]) {
-                countPro++;
+                countProvinces++;
                 dfs(isConnected, visited, i);
             }
         }
-        return countPro;
+        return countProvinces;
     }
     private void dfs(int[][] isConnected, boolean[] visited, int i) {
         visited[i] = true;
