@@ -1,8 +1,8 @@
 package lc.linkedlist.e;
 
 public class MergeTwoSortedLists {
-    // O(m+n) O(1)
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    // O(n) O(1)
+    static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode root = new ListNode();
         ListNode curr = root;
         ListNode id1 = list1;
@@ -21,10 +21,9 @@ public class MergeTwoSortedLists {
     }
 
     public static void main(String[] args) {
-        var mtsl = new MergeTwoSortedLists();
         ListNode list1 = new ListNode(1); list1.next = new ListNode(3); list1.next.next = new ListNode(5);
         ListNode list2 = new ListNode(2); list2.next = new ListNode(4); list2.next.next = new ListNode(6);
-        ListNode result = mtsl.mergeTwoLists(list1, list2);
+        ListNode result = mergeTwoLists(list1, list2);
         while(result != null) {
             System.out.print(result.val + " ");
             result = result.next;
