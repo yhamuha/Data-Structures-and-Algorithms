@@ -9,7 +9,7 @@ class ListNode {
 }
 public class ReverseLinkedList {
     // O(n) O(1)
-    public ListNode reverseList(ListNode head) {
+    static ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
         while (current != null) {
@@ -22,7 +22,6 @@ public class ReverseLinkedList {
     }
 
     public static void main(String[] args) {
-        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
         ListNode head = new ListNode(1);
         ListNode second = new ListNode(2);
         ListNode third = new ListNode(3);
@@ -32,7 +31,7 @@ public class ReverseLinkedList {
         second.next = third;
         third.next = fourth;
         fourth.next = fifth;
-        ListNode reversedHead = reverseLinkedList.reverseList(head);
+        ListNode reversedHead = reverseList(head);
         ListNode current = reversedHead;
         while (current != null) {
             System.out.print(current.val + " ");
