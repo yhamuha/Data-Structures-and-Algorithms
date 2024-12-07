@@ -35,6 +35,7 @@ public class ReorderList {
         }
         return prev;
     }
+
     public static void main(String[] args) {
         var rl = new ReorderList();
         ListNode list1 = new ListNode(1);
