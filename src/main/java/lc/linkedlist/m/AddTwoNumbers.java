@@ -1,7 +1,7 @@
 package lc.linkedlist.m;
 
 public class AddTwoNumbers {
-    // O(n) O(1)
+    // O(n) O(n)
     public ListNode addTwoNumbers(ListNode a, ListNode b) {
         ListNode n=new ListNode(0);int carry=0;
         ListNode dummy=n;
