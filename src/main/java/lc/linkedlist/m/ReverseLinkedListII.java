@@ -9,12 +9,12 @@ public class ReverseLinkedListII {
         for (int i = 1; i < left; i++)
             prev = prev.next;
         ListNode reverseStart = prev.next;
-        ListNode current = reverseStart.next;
+        ListNode curr = reverseStart.next;
         for (int i = 0; i < right - left; i++) {
-            reverseStart.next = current.next;
-            current.next = prev.next;
-            prev.next = current;
-            current = reverseStart.next;
+            reverseStart.next = curr.next;
+            curr.next = prev.next;
+            prev.next = curr;
+            curr = reverseStart.next;
         }
         return dummy.next;
     }
