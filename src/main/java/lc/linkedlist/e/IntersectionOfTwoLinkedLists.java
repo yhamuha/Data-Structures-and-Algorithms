@@ -2,7 +2,7 @@ package lc.linkedlist.e;
 
 public class IntersectionOfTwoLinkedLists {
     // O(n+m) O(1)
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA == null || headB == null) return null;
         ListNode a = headA;
         ListNode b = headB;
@@ -24,8 +24,7 @@ public class IntersectionOfTwoLinkedLists {
         headB.next = new ListNode(6);
         headB.next.next = new ListNode(1);
         headB.next.next.next = intersection;
-        IntersectionOfTwoLinkedLists solution = new IntersectionOfTwoLinkedLists();
-        ListNode result = solution.getIntersectionNode(headA, headB);
+        ListNode result = getIntersectionNode(headA, headB);
         System.out.println(result != null ? result.val : "No intersection");
     }
 }
