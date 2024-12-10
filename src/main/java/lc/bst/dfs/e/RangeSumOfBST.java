@@ -3,12 +3,13 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class RangeSumOfBST {
-    // O(n); O(n) unb, O(log n) bal
-    public int rangeSumBST(TreeNode root, int low, int high) {
+    // O(n) O(n)
+    static int rangeSumBST(TreeNode root, int low, int high) {
         if(root == null)
             return 0;
         if(root.val >= low && root.val <= high)
-            return rangeSumBST(root.left, low, high) + root.val + rangeSumBST(root.right, low, high);
+            return rangeSumBST(root.left, low, high)
+                    + root.val + rangeSumBST(root.right, low, high);
         else if (root.val > high)
             return rangeSumBST(root.left, low, high);
         else
@@ -23,6 +24,6 @@ public class RangeSumOfBST {
         root.left.right = new TreeNode(7);
         root.right.right = new TreeNode(18);
         int low = 7, high = 15;
-        System.out.println(new RangeSumOfBST().rangeSumBST(root, low, high));
+        System.out.println(rangeSumBST(root, low, high));
     }
 }
