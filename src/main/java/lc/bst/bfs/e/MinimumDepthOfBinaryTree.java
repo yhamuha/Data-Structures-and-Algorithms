@@ -11,12 +11,12 @@ public class MinimumDepthOfBinaryTree {
         Queue<TreeNode> q = new LinkedList();
         q.add(root);
         int depth=1;
-        while(!q.isEmpty())
+        while (!q.isEmpty())
         {
             int size = q.size();
-            while(size-- >0) {
+            while (size-- >0) {
                 root = q.poll();
-                if(root.left == null && root.right == null)
+                if (root.left == null && root.right == null)
                     return depth;
                 if(root.left!=null)
                     q.add(root.left);
