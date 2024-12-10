@@ -3,7 +3,11 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class PathSum {
-    // O(n), O(n) unbalanced O(log n) balanced
+    // O(n); O(n) unbalanced, O(log n) balanced
+    static boolean hasPathSum(TreeNode root, int targetSum) {
+        int sum = 0;
+        return rootToLeafPathSum(root, targetSum, sum);
+    }
     static boolean rootToLeafPathSum(TreeNode root, int targetSum, int sum){
         if(root == null)
             return false;
@@ -14,10 +18,6 @@ public class PathSum {
         }
         return rootToLeafPathSum(root.left, targetSum, sum + root.val)
                 || rootToLeafPathSum(root.right, targetSum, sum + root.val);
-    }
-    static boolean hasPathSum(TreeNode root, int targetSum) {
-        int sum = 0;
-        return rootToLeafPathSum(root, targetSum, sum);
     }
 
     public static void main(String[] args) {
