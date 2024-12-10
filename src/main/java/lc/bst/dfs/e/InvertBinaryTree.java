@@ -3,7 +3,7 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class InvertBinaryTree {
-    // O(n) O(n - for worst, log n - for balanced tree)
+    // O(n) O(n)
     static TreeNode invertTree(TreeNode root) {
         if (root == null)
             return null;
