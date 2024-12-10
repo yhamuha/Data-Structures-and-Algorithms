@@ -3,7 +3,7 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class SubtreeOfAnotherTree {
-    // O(n^2), O(n) unbalanced O(log n) balanced
+    // O(n*m), O(n)
     static boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if (root == null) return false;
         if (subRoot == null) return true;
