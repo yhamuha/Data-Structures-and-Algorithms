@@ -3,7 +3,7 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class SameTree {
-    // O(n), O(n) - unbalanced O(log n) - balanced
+    // O(n) O(n)
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if(p == null || q == null) {
             return (p == q);
