@@ -3,7 +3,7 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class BalancedBinaryTree {
-    // O(n), O(n) - unbalanced O(log n) - balanced
+    // O(n), O(n)
     public boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         if (height(root) == -1) return false;
