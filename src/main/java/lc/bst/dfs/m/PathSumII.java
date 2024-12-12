@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PathSumII {
-    // O(n); O(n) unbalanced O(log n) balanced
+    // O(n) O(n)
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        List<List<Integer>> list = new ArrayList<>();
-        List<Integer> sublist = new ArrayList<>();
-        dfs(list,sublist,root,targetSum);
-        return list;
+        List<List<Integer>> resultList = new ArrayList<>();
+        List<Integer> subList = new ArrayList<>();
+        dfs(resultList,subList,root,targetSum);
+        return resultList;
     }
     public void dfs(List<List<Integer>> list, List<Integer> sublist, TreeNode node, int sum) {
         if(node==null) return;
@@ -37,7 +37,6 @@ public class PathSumII {
         root.right.right.right = new TreeNode(1);
         PathSumII ps = new PathSumII();
         int targetSum = 22;
-        List<List<Integer>> result = ps.pathSum(root, targetSum);
-        System.out.println(result);
+        System.out.println(ps.pathSum(root, targetSum));
     }
 }
