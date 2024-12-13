@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class LowestCommonAncestorOfaBinarySearchTree {
-    // O(n); O(n) unbalanced O(log n) balanced
+    // O(n) O(n)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null)
             return null;
