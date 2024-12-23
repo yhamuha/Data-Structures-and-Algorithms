@@ -3,17 +3,17 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class DiameterOfBinaryTree {
-    // O(n), O(n)-skewed O(log n) - balanced
+    // O(n), O(n)
     static int diameterOfBinaryTree(TreeNode root) {
         int[] ans = new int[1];
-        height(root, ans);
+        dfs(root, ans);
         return ans[0];
     }
-    private static int height(TreeNode root, int[] ans) {
+    private static int dfs(TreeNode root, int[] ans) {
         if (root == null)
             return 0;
-        int lh = height(root.left, ans);
-        int rh = height(root.right, ans);
+        int lh = dfs(root.left, ans);
+        int rh = dfs(root.right, ans);
         ans[0] = Math.max(ans[0], lh + rh);
         return 1 + Math.max(lh, rh);
     }
