@@ -4,8 +4,8 @@ import lc.bst.TreeNode;
 
 import java.util.Stack;
 public class ValidateBinarySearchTree {
-    // O(n); O(n) unbalanced O(log n) balanced
-    public boolean isValidBST(TreeNode root) {
+    // O(n) O(n)
+    static boolean isValidBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         int left_child_val = - Integer.MAX_VALUE;
         while (!stack.isEmpty() || root != null) {
@@ -22,8 +22,7 @@ public class ValidateBinarySearchTree {
     }
 
     public static void main(String[] args) {
-        var vbst = new ValidateBinarySearchTree();
         TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
-        System.out.println(vbst.isValidBST(root));
+        System.out.println(isValidBST(root));
     }
 }
