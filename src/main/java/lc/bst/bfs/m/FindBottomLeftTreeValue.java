@@ -11,18 +11,18 @@ public class FindBottomLeftTreeValue {
         int ans = 0;
         if(root == null)
             return 0;
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        while(!q.isEmpty()) {
-            int sz = q.size();
-            for(int i=1; i<=sz; i++) {
-                TreeNode curr = q.poll();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            for(int i=1; i<=size; i++) {
+                TreeNode current = queue.poll();
                 if(i == 1)
-                    ans = curr.val;
-                if(curr.left != null)
-                    q.add(curr.left);
-                if(curr.right != null)
-                    q.add(curr.right);
+                    ans = current.val;
+                if(current.left != null)
+                    queue.add(current.left);
+                if(current.right != null)
+                    queue.add(current.right);
             }
         }
         return ans;
