@@ -1,4 +1,4 @@
-### dsa:
+### Data-Structures-and-Algorithms:
 
 adv_graph: [MinCostToConnectAllPoints](https://github.com/yhamuha/ds-algo/blob/58b672f25484201edc07476b7a045bb9ca31981f/src/main/java/lc/adv_graph/m/MinCostToConnectAllPoints.pdf)
 
