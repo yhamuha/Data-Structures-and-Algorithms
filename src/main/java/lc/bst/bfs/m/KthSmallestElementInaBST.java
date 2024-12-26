@@ -9,13 +9,13 @@ public class KthSmallestElementInaBST {
         Queue<TreeNode> queue = new LinkedList<>();
         List<Integer> list = new ArrayList<>();
         queue.offer(root);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()){
             int levelSize = queue.size();
-            for(int i=0; i<levelSize; i++) {
-                TreeNode curr = queue.poll();
-                list.add(curr.val);
-                if(curr.left!=null) queue.add(curr.left);
-                if(curr.right!=null) queue.add(curr.right);
+            for (int i=0; i<levelSize; i++) {
+                TreeNode temp = queue.poll();
+                list.add(temp.val);
+                if (temp.left != null) queue.add(temp.left);
+                if (temp.right != null) queue.add(temp.right);
             }
         }
         Collections.sort(list);
