@@ -11,9 +11,9 @@ public class SearchInaBinarySearchTree {
     static TreeNode searchBST(TreeNode root, int val) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while(!queue.isEmpty()) {
+        while(!queue.isEmpty()){
             TreeNode temp = queue.poll();
-            if(temp.val == val)
+            if (temp.val == val)
                 return temp;
             if (temp.left != null)
                 queue.add(temp.left);
