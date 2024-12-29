@@ -44,10 +44,10 @@ public class ConvertSortedListToBinarySearchTree {
         }
         TreeNode root=new TreeNode(slow.val);
         Node node=new Node(head,slow,tail,root);
-        Queue<Node> q=new LinkedList<>();
-        q.add(node);
-        while(!q.isEmpty()){
-            Node curr=q.poll();
+        Queue<Node> queue=new LinkedList<>();
+        queue.add(node);
+        while(!queue.isEmpty()){
+            Node curr=queue.poll();
             if(curr.head!=curr.slow){
                 head=curr.head;tail=curr.slow;
                 slow=head;fast=head;
@@ -57,7 +57,7 @@ public class ConvertSortedListToBinarySearchTree {
                 }
                 TreeNode left=new TreeNode(slow.val);
                 curr.tree.left=left;
-                q.add(new Node(curr.head,slow,curr.slow,left));
+                queue.add(new Node(curr.head,slow,curr.slow,left));
             }
             if(curr.tail!=curr.slow.next){
                 head=curr.slow.next;tail=curr.tail;
@@ -68,7 +68,7 @@ public class ConvertSortedListToBinarySearchTree {
                 }
                 TreeNode right=new TreeNode(slow.val);
                 curr.tree.right=right;
-                q.add(new Node(curr.slow.next,slow,curr.tail,right));
+                queue.add(new Node(curr.slow.next,slow,curr.tail,right));
             }
         }
         return root;
