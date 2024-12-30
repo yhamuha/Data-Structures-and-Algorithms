@@ -8,10 +8,10 @@ import java.util.Queue;
 
 public class BinaryTreeRightSideView {
     // O(n) O(n)
-    public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
+    static List<Integer> rightSideView(TreeNode root) {
+        List<Integer> resultList = new ArrayList<>();
         if (root == null)
-            return result;
+            return resultList;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
@@ -19,21 +19,20 @@ public class BinaryTreeRightSideView {
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 if (i == 0)
-                    result.add(node.val);
+                    resultList.add(node.val);
                 if (node.right != null)
                     queue.add(node.right);
                 if (node.left != null)
                     queue.add(node.left);
             }
         }
-        return result;
+        return resultList;
     }
 
     public static void main(String[] args) {
-        BinaryTreeRightSideView btrsv = new BinaryTreeRightSideView();
         TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         root.left = new TreeNode(2, null, new TreeNode(5));
         root.right = new TreeNode(3, null, new TreeNode (4));
-        System.out.println(btrsv.rightSideView(root));
+        System.out.println(rightSideView(root));
     }
 }
