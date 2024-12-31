@@ -10,16 +10,16 @@ public class BinaryTreeLevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> answer = new LinkedList<>();
         if (root == null) return answer;
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        while (q.size() > 0) {
-            int size = q.size();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
             List<Integer> l = new LinkedList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode temp = q.remove();
+                TreeNode temp = queue.remove();
                 l.add(temp.val);
-                if (temp.left != null) q.add(temp.left);
-                if (temp.right != null) q.add(temp.right);
+                if (temp.left != null) queue.add(temp.left);
+                if (temp.right != null) queue.add(temp.right);
             }
             answer.add(l);
         }
