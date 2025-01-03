@@ -3,17 +3,16 @@ package lc.linkedlist.e;
 public class RemoveDuplicatesFromSortedList {
     // O(n) O(1)
     public ListNode deleteDuplicates(ListNode head) {
-        if(head == null) return null;
-        ListNode start = head;
-        ListNode end = head;
-        while(end!=null) {
-            if(start.val!=end.val) {
-                start.next=end;
+        if (head == null) return null;
+        ListNode start = head, end = head;
+        while (end != null) {
+            if(start.val != end.val) {
+                start.next = end;
                 start = end;
             }
-            end=end.next;
+            end = end.next;
         }
-        start.next=null;
+        start.next = null;
         return head;
     }
 
