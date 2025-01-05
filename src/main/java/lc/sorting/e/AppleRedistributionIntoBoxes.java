@@ -1,4 +1,4 @@
-package lc.sorting;
+package lc.sorting.e;
 
 import java.util.Arrays;
 
