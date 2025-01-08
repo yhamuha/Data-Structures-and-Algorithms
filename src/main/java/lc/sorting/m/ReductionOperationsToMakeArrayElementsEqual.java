@@ -4,15 +4,16 @@ import java.util.Arrays;
 
 public class ReductionOperationsToMakeArrayElementsEqual {
     // O(n log n) O(1)
-    public static int reductionOperations(int[] nums) {
-        int n = nums.length;
+    static int reductionOperations(int[] nums) {
         Arrays.sort(nums);
-        int operations = 0;
-        for (int i = n - 2; i >= 0; i--) {
-            if (nums[i] < nums[i + 1])
-                operations += n - 1 - i;
+        int ans = 0;
+        int up = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1])
+                up++;
+            ans += up;
         }
-        return operations;
+        return ans;
     }
 
     public static void main(String[] args) {
