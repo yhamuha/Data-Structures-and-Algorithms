@@ -12,7 +12,7 @@ public class TopKFrequentElements {
         for(int i: nums){
             map.put(i, map.getOrDefault(i, 0) + 1);
         }
-        List<Integer>[] bucket = new ArrayList[nums.length + 1];
+        List<Integer>[] bucket = new ArrayList[nums.length + 1]; // skip [0] for natural order
         for(int key: map.keySet()){
             int frequency = map.get(key);
             if(bucket[frequency] == null){
