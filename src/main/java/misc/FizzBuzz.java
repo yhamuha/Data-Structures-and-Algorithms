@@ -1,18 +1,24 @@
 package misc;
 
 public class FizzBuzz {
+    // O(n) O(n)
+    public String fizzBuzz (int n) {
+        StringBuilder result = new StringBuilder();
+        for(int i=1; i<n; i++){
+            if (i % 15 == 0) result.append("FizzBuzz");
+            else if (i % 5 == 0) result.append("Buzz");
+            else if (i % 3 == 0) result.append("Fizz");
+            else result.append(i);
+            result.append(" ");
+        }
+        return result.toString().trim();
+    }
 
     public static void main(String[] args) {
-        int n = 20;
-        for(int i=1; i<=n; i++) {
-            // divisible by 15 print FizzBuzz
-            if (i%15 == 0) System.out.print("FizzBuzz" + " ");
-            // divisible by 5 print Fizz
-            else if (i%5 == 0) System.out.print("Fizz" + " ");
-            // divisible by 3 print Buzz
-            else if (i%3 == 0) System.out.print("Buzz" + " ");
-            else System.out.print(i + " ");
-        }
+        FizzBuzz example = new FizzBuzz();
+        int n = 15;
+        String result = example.fizzBuzz(n);
+        System.out.println(result);
     }
 }
 
