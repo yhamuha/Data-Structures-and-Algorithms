@@ -3,12 +3,12 @@ package lc.sorting.m;
 public class SortAnArray {
     // O(n) O(1)
     public int[] sortArray(int[] nums) {
-        var map = new int[100001];
-        for (var n : nums)
+        int[] map = new int[100001];
+        for (int n : nums)
             map[n + 50000]++;
-        var k = 0;
-        for (var i = 0; i < 100001; i++)
-            for (var j = 0; j < map[i]; j++)
+        int k = 0;
+        for (int i = 0; i < 100001; i++)
+            for (int j = 0; j < map[i]; j++)
                 nums[k++] = i - 50000;
         return nums;
     }
