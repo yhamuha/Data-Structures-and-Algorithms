@@ -15,10 +15,10 @@ import java.util.List;
         // O(n*m) O(n*m)
         Node root;
         public String longestCommonPrefix(String[] strs) {
-            if (strs == null || strs.length == 0) // O(1)
+            if (strs == null || strs.length == 0)
                 return "";
             root = new Node('\0');
-            int min = Integer.MAX_VALUE; // O(1)
+            int min = Integer.MAX_VALUE;
             List<Integer> list  = new ArrayList<>();
             for(int i = 0; i < strs.length; i++) {
                 int count = insert(strs[i], i);
@@ -26,7 +26,7 @@ import java.util.List;
                     min = Math.min(min, count);
             }
             min = Math.min(min, strs[0].length());
-            return strs[0].substring(0, min); // O(m)
+            return strs[0].substring(0, min);
         }
         public int insert(String word, int n) {
             Node curr = root;
@@ -46,8 +46,7 @@ import java.util.List;
         public static void main(String[] args) {
             LongestCommonPrefix lcp = new LongestCommonPrefix();
             String[] strs = {"flower", "flow", "flight"};
-            String result = lcp.longestCommonPrefix(strs);
-            System.out.println(result);
+            System.out.println(lcp.longestCommonPrefix(strs));
         }
     }
 
