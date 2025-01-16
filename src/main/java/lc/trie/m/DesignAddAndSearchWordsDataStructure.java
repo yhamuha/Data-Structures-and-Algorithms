@@ -36,7 +36,7 @@ class DesignAddAndSearchWordsDataStructure {
             if(ch == '.') {
                 for(char c : curr.children.keySet()) {
                     Node trieNode = curr.children.get(c);
-                    if(search(word, trieNode, i+1)) // dfs to find any variants of word
+                    if(search(word, trieNode, i+1))
                         return true;
                 }
                 return false;
