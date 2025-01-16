@@ -2,15 +2,15 @@ package lc.trie.m;
 
 import java.util.HashMap;
 
-class Node {
-    HashMap<Character, Node> children;
-    boolean isEnd;
-    Node() {
-        this.children = new HashMap<>();
-        this.isEnd = false;
-    }
-}
 class DesignAddAndSearchWordsDataStructure {
+    class Node {
+        HashMap<Character, Node> children;
+        boolean isEnd;
+        Node() {
+            this.children = new HashMap<>();
+            this.isEnd = false;
+        }
+    }
 
     private Node root;
     public DesignAddAndSearchWordsDataStructure() {
