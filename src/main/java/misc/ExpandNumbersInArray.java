@@ -3,17 +3,16 @@ package misc;
 import java.util.Arrays;
 
 public class ExpandNumbersInArray {
+    // O(n) O(1)
     static int[] expand (int[] nums){
         int resultSize = 0;
-        for(int num : nums){
+        for(int num : nums)
              resultSize += num;
-        }
         int[] result = new int[resultSize];
         int index = 0;
         for (int i=0; i<nums.length; i++) {
-            for(int j=1; j<=nums[i]; j++){
+            for(int j=1; j<=nums[i]; j++)
                 result[index++] = j;
-            }
         }
         return result;
     }
