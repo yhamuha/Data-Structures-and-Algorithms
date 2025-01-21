@@ -5,23 +5,19 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CombinationSumII {
+    // O(2^n) O(n)
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        // SC:O(n)
         List<List<Integer>> resultList = new ArrayList<>();
-        Arrays.sort(candidates);
+        Arrays.sort(candidates); // O(n log n)
         backtracking(resultList, new ArrayList<>(), candidates, target, 0);
         return resultList;
     }
-
     private void backtracking(List<List<Integer>> resultList, List<Integer> tempList, int[] candidates, int remain, int start){
-
         if (remain < 0) return;
-        else if (remain == 0) {
+        else if (remain == 0)
             resultList.add(new ArrayList<>(tempList));
-        }
         else {
             for (int i = start; i < candidates.length; i++) {
-                // TC:O(2^n)
                 if (i > start && candidates[i] == candidates[i - 1]) continue;
                 tempList.add(candidates[i]);
                 backtracking(resultList, tempList, candidates, remain - candidates[i], i+1);
@@ -29,8 +25,6 @@ public class CombinationSumII {
             }
         }
     }
-
-
 
     public static void main(String[] args) {
         var csII = new CombinationSumII();
