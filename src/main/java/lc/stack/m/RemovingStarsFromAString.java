@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class RemovingStarsFromAString {
     // O(n) O(n)
-    public String removeStars(String s) {
+    static String removeStars(String s) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++){
             if (!stack.isEmpty() && s.charAt(i) == '*')
@@ -20,7 +20,6 @@ public class RemovingStarsFromAString {
 
     public static void main(String[] args) {
         String s = "leet**cod*e";
-        RemovingStarsFromAString rsfs = new RemovingStarsFromAString();
-        System.out.println(rsfs.removeStars(s));
+        System.out.println(removeStars(s));
     }
 }
