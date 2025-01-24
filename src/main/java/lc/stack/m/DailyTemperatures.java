@@ -9,11 +9,11 @@ public class DailyTemperatures {
         Stack<Integer> stackOfIndexes = new Stack<>();
         int n = temperatures.length;
         int[] answer = new int[n];
-        for(int i = n-1; i >= 0; i--) {
-            while(!stackOfIndexes.isEmpty() && temperatures[i] >= temperatures[stackOfIndexes.peek()])
-                stackOfIndexes.pop();
-            if(!stackOfIndexes.isEmpty())
-                answer[i] = stackOfIndexes.peek() - i;
+        for (int i = 0; i < n; i++) {
+            while (!stackOfIndexes.isEmpty() && temperatures[i] > temperatures[stackOfIndexes.peek()]) {
+                int index = stackOfIndexes.pop();
+                answer[index] = i - index;
+            }
             stackOfIndexes.push(i);
         }
         return answer;
