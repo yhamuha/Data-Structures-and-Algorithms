@@ -2,7 +2,7 @@ package lc.binarysearch.e;
 
 public class MinimumCommonValue {
     // O(n log n) O(1)
-    public int getCommon(int[] nums1, int[] nums2) {
+    static int getCommon(int[] nums1, int[] nums2) {
     for (int num : nums2) {
         int left = 0;
         int right = nums1.length-1;
@@ -19,8 +19,7 @@ public class MinimumCommonValue {
     }
 
     public static void main(String[] args) {
-        var mcv = new MinimumCommonValue();
-        System.out.println(mcv.getCommon(
+        System.out.println(getCommon(
                 new int[]{1,2,3,6},
                 new int[]{2,3,4,5}));
     }
