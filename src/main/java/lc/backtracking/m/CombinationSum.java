@@ -5,13 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CombinationSum {
-    // O(2^n)
+// O(2^n) O(n)
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> resultList = new ArrayList<>();
         backtracking(resultList, new ArrayList<>(), candidates, target, 0);
         return resultList;
     }
-
     private void backtracking(List<List<Integer>> resultList, ArrayList<Integer> tempList,
                                 int[] candidates, int remains, int start) {
         if (remains < 0) return;
