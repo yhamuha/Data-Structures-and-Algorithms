@@ -22,7 +22,6 @@ public class LetterCombinationsOfaPhoneNumber {
         backtrack(digits, 0, hm, new StringBuilder(), resultList);
         return resultList;
     }
-
     private void backtrack(String digits, int i, Map<Character, String> hm, StringBuilder sb, List<String> resultList) {
         if (i == digits.length()) {
             resultList.add(sb.toString());
