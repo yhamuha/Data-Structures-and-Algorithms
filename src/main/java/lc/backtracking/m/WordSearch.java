@@ -1,8 +1,7 @@
 package lc.backtracking.m;
 
 public class WordSearch {
-
-    // O(n * m * 4^k) O(n)
+    // O(m*n*4^l) O(l)
     public boolean exist(char[][] board, String word) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
@@ -23,7 +22,6 @@ public class WordSearch {
                 backtrack(board,word,i,j+1,index+1) ||
                 backtrack(board,word,i-1,j,index+1) ||
                 backtrack(board,word,i,j-1,index+1);
-
         board[i][j]=temp;
         return found;
     }
