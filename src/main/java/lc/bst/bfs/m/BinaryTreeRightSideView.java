@@ -1,6 +1,5 @@
 package lc.bst.bfs.m;
 
-import lc.bst.ListNode;
 import lc.bst.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
