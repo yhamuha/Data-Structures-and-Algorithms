@@ -1,5 +1,6 @@
 package lc.bst.bfs.m;
 
+import lc.bst.ListNode;
 import lc.bst.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,15 +11,14 @@ public class BinaryTreeRightSideView {
     // O(n) O(n)
     static List<Integer> rightSideView(TreeNode root) {
         List<Integer> resultList = new ArrayList<>();
-        if (root == null)
-            return resultList;
+        if (root == null) return resultList;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()) {
+        while(!queue.isEmpty()) {
             int size = queue.size();
-            for (int i = 0; i < size; i++) {
+            for(int i=0; i<size; i++){
                 TreeNode node = queue.poll();
-                if (i == 0)
+                if (i==0)
                     resultList.add(node.val);
                 if (node.right != null)
                     queue.add(node.right);
