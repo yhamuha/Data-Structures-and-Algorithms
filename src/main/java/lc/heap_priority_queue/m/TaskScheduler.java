@@ -3,7 +3,7 @@ package lc.heap_priority_queue.m;
 import java.util.*;
 
 public class TaskScheduler {
-    // O(n log n) O(n)
+    // O(n log k) O(1)
     static int leastInterval(char[] tasks, int n) {
         Map<Character, Integer> map = new HashMap<>();
         for(char task : tasks)
@@ -41,6 +41,6 @@ public class TaskScheduler {
     public static void main(String[] args) {
         char[] tasks = {'A', 'A', 'A', 'B', 'B', 'B'};
         int n = 2;
-        System.out.println(leastInterval_arr(tasks,n));
+        System.out.println(leastInterval(tasks,n));
     }
 }
