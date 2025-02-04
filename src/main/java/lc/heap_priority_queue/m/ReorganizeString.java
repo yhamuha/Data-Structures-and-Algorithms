@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class ReorganizeString {
-    // O(n log n) O(n)
+    // O(n log m) O(m)
     public String reorganizeString(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for(char c : s.toCharArray())
