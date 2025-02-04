@@ -5,23 +5,23 @@ import java.util.*;
 public class TaskScheduler {
     // O(n log k) O(1)
     static int leastInterval(char[] tasks, int n) {
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> freqMap = new HashMap<>();
         for(char task : tasks)
-            map.put(task, map.getOrDefault(task,0)+1);
-        PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> b-a);
-        heap.addAll(map.values());
+            freqMap.put(task, freqMap.getOrDefault(task,0)+1);
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b-a);
+        maxHeap.addAll(freqMap.values());
         int cycle = 0;
-        while(!heap.isEmpty()) {
-            List<Integer> temp = new ArrayList<>();
+        while(!maxHeap.isEmpty()) {
+            List<Integer> tempList = new ArrayList<>();
             for(int i=0; i<n+1; i++) {
-                if(!heap.isEmpty())
-                    temp.add(heap.poll());
+                if(!maxHeap.isEmpty())
+                    tempList.add(maxHeap.poll());
             }
-            for(int i=0; i<temp.size(); i++){
-                if (temp.get(i)-1 > 0)
-                    heap.offer(temp.get(i)-1);
+            for(int i=0; i<tempList.size(); i++){
+                if (tempList.get(i)-1 > 0)
+                    maxHeap.offer(tempList.get(i)-1);
             }
-            cycle += heap.isEmpty() ? temp.size() : n+1;
+            cycle += maxHeap.isEmpty() ? tempList.size() : n+1;
         }
         return cycle;
     }
