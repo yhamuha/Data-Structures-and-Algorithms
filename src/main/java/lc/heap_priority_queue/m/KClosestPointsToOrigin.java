@@ -11,8 +11,6 @@ public class KClosestPointsToOrigin {
         for(int i=0;i<points.length;i++){
             int coordinate[] = new int[2];
             coordinate[0] = i;
-            // Euclidean distance is "sqrt ( (x1-x2)^2 + (y1-y2)^2 )"
-            // to check the min distance between the points
             coordinate[1] = (int)Math.pow(points[i][0],2)+(int)Math.pow(points[i][1],2);
             heap.add(coordinate);
         }
@@ -25,8 +23,8 @@ public class KClosestPointsToOrigin {
 
     public static void main(String[] args) {
         var kkpto = new KClosestPointsToOrigin();
-        int[][] points = {{1,3}, {-2,2}};
-        int k = 1;
+        int[][] points = {{1,3}, {-2,2}, {0,1}};
+        int k = 2;
         int[][] closestPoints = kkpto.kClosest(points, k);
         for (int[] point : closestPoints) {
             System.out.println(Arrays.toString(point));
