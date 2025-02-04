@@ -3,19 +3,19 @@ package lc.heap_priority_queue.m;
 import java.util.*;
 
 public class TopKFrequentElements {
-    // O(n log n) O(n)
+    // O(n log m) O(m)
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> freqMap = new HashMap<>();
         for(int num : nums)
-            map.put(num, map.getOrDefault(num,0)+1);
+            freqMap.put(num, freqMap.getOrDefault(num,0)+1);
         PriorityQueue<Map.Entry<Integer,Integer>> maxHeap =
-            new PriorityQueue<>((a,b)->(b.getValue() - a.getValue()));
-        maxHeap.addAll(map.entrySet());
+                new PriorityQueue<>((a,b) -> (b.getValue() - a.getValue()));
+        maxHeap.addAll(freqMap.entrySet());
         int[] result = new int[k];
-        int index=0;
-        while(index <k){
+        int index = 0;
+        while (index < k){
             Map.Entry<Integer,Integer> entry = maxHeap.poll();
-            result[index]=entry.getKey();
+            result[index] = entry.getKey();
             index++;
         }
         return result;
