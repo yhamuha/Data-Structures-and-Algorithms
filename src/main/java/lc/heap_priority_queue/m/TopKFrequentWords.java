@@ -8,17 +8,18 @@ public class TopKFrequentWords {
         Map<String, Integer> map = new HashMap<>();
         for (String word : words)
             map.put(word, map.getOrDefault(word, 0) + 1);
-        PriorityQueue<String> maxHeap = new PriorityQueue<>(
-                (s1, s2) -> map.get(s1).equals(map.get(s2)) ? s2.compareTo(s1)
-                                                            : map.get(s1) - map.get(s2));
+        PriorityQueue<String> minHeap = new PriorityQueue<>(
+                (s1, s2) -> map.get(s1).equals(map.get(s2))
+                            ? s2.compareTo(s1)
+                            : map.get(s1) - map.get(s2));
         for (String word : map.keySet()) {
-            maxHeap.offer(word);
-            if (maxHeap.size() > k)
-                maxHeap.poll();
+            minHeap.offer(word);
+            if (minHeap.size() > k)
+                minHeap.poll();
         }
         List<String> toReturn = new ArrayList<>();
-        while (!maxHeap.isEmpty())
-            toReturn.add(maxHeap.poll());
+        while (!minHeap.isEmpty())
+            toReturn.add(minHeap.poll());
         Collections.reverse(toReturn);
         return toReturn;
     }
