@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class SortCharactersByFrequency {
-    // O(n log n) O(n)
+    // O(n log m) O(m)
     static String frequencySort(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for(char str : s.toCharArray())
