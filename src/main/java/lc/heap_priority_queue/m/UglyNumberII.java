@@ -3,7 +3,7 @@ package lc.heap_priority_queue.m;
 import java.util.PriorityQueue;
 
 public class UglyNumberII {
-    // O(n log n) O(n)
+    // O(n*(k + log k) ~O(n^2); O(n)
     public int nthUglyNumber(int n) {
         PriorityQueue<Long> minHeap = new PriorityQueue<>();
         minHeap.add(1L);
