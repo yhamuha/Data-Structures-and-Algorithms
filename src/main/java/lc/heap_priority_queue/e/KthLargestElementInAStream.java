@@ -3,20 +3,18 @@ package lc.heap_priority_queue.e;
 import java.util.PriorityQueue;
 
 public class KthLargestElementInAStream {
-    // O(n log n) O(n)
+    // O(n log k) O(k)
     PriorityQueue<Integer> minHeap = new PriorityQueue<>();
     int k;
     public void KthLargestElementInAStream (int k, int[] nums){
         this.k = k;
-        for(int num : nums){
+        for(int num : nums)
             add(num);
-        }
     }
     public int add(int val) {
         minHeap.offer(val);
-        if (minHeap.size() > k){
+        if (minHeap.size() > k)
             minHeap.poll();
-        }
         return minHeap.peek();
     }
 
@@ -29,6 +27,6 @@ public class KthLargestElementInAStream {
         System.out.println(kleis.add(10));
         System.out.println(kleis.add(9));
         System.out.println(kleis.add(4));
-        System.out.println("Final heap values: " + kleis.minHeap);
+        System.out.println("Remains in heap" + kleis.minHeap);
     }
 }
