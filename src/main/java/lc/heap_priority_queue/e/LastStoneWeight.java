@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class LastStoneWeight {
+    // O(n log n) O(n)
     public int lastStoneWeight(int[] stones) {
-        // O(n log n) O(n)
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         for(int stone:stones)
             maxHeap.offer(stone);
@@ -17,6 +17,7 @@ public class LastStoneWeight {
         }
         return maxHeap.isEmpty() ? 0 : maxHeap.poll();
     }
+
     public static void main(String[] args) {
         var lsw = new LastStoneWeight();
         int[] stones = {2,7,4,1,8,1};
