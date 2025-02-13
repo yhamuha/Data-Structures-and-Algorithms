@@ -8,17 +8,17 @@ public class TwoOutOfThree {
     // O(n) O(n)
     public static List<Integer> twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
         List<Integer> resultList = new ArrayList<>();
-        HashSet<Integer> nums1Set = new HashSet<>();
+        HashSet<Integer> set1 = new HashSet<>();
         HashSet<Integer> complementarySet = new HashSet<>();
         for(int i:nums1)
-            nums1Set.add(i);
+            set1.add(i);
         for(int num : nums2)
-            if(nums1Set.contains(num) && !resultList.contains(num))
+            if(set1.contains(num) && !resultList.contains(num))
                 resultList.add(num);
             else
                 complementarySet.add(num);
         for(int num : nums3){
-            if(nums1Set.contains(num) && !resultList.contains(num))
+            if(set1.contains(num) && !resultList.contains(num))
                 resultList.add(num);
             if(complementarySet.contains(num) && !resultList.contains(num))
                 resultList.add(num);
