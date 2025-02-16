@@ -4,8 +4,8 @@ import java.util.*;
 
 public class TopKFrequentElements {
     // O(n) O(n)
-    public int[] topKFrequent(int[] nums, int k) {
-        List<Integer>[] bucket = new List[nums.length + 1];
+    static int[] topKFrequent(int[] nums, int k) {
+        List<Integer>[] bucket = new List[nums.length + 1]; // +1 to avoid 0-index
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int n : nums)
             freqMap.put(n, freqMap.getOrDefault(n, 0) + 1);
@@ -33,8 +33,7 @@ public class TopKFrequentElements {
     public static void main(String[] args) {
         int[] nums = {1,1,1,2,2,3};
         int k = 2;
-        TopKFrequentElements tkfe = new TopKFrequentElements();
-        System.out.println(Arrays.toString(tkfe.topKFrequent(nums, k)));
+        System.out.println(Arrays.toString(topKFrequent(nums, k)));
     }
 }
 
