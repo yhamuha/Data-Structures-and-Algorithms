@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class ValidSudoku {
     // O(n^2) O(n)
-    public boolean isValidSudoku(char[][] board) {
+    static boolean isValidSudoku(char[][] board) {
         Set<String> set = new HashSet<>();
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
@@ -33,7 +33,6 @@ public class ValidSudoku {
                 {'.','.','.','4','1','9','.','.','5'},
                 {'.','.','.','.','8','.','.','7','9'}
         };
-        ValidSudoku vs = new ValidSudoku();
-        System.out.println(vs.isValidSudoku(board));
+        System.out.println(isValidSudoku(board));
     }
 }
