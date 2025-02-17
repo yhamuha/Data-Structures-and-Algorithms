@@ -4,9 +4,9 @@ public class IntegerToRoman {
     // O(n) O(1)
     static String intToRoman(int num) {
         final String[] romans = new String[]
-                {   "M",    "CM",   "D",    "CD",   "C",
-                        "XC",   "L",    "XL",   "X",
-                        "IX",   "V",    "IV",   "I"};
+            {       "M",    "CM",   "D",    "CD",   "C",
+                    "XC",   "L",    "XL",   "X",
+                    "IX",   "V",    "IV",   "I"};
         final int[] decimals = new int[]
                 {   1000, 900,  500,  400,  100,
                         90,   50,    40,   10,
