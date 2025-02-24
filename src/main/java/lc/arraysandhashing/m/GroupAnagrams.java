@@ -19,7 +19,7 @@ public class GroupAnagrams {
     }
 
     public static void main(String[] args) {
-        String[] strs = new String[] {"eat", "tea", "cat", "bca", "abc"};
+        String[] strs = new String[] {"eat", "tea", "cat", "bca", "abc", "dac"};
         System.out.println(groupAnagrams(strs));
     }
 }
