@@ -4,8 +4,8 @@ public class MinimumAverageDifference {
     // O(n) O(1)
     static int minimumAverageDifference(int[] nums) {
         int n = nums.length;
-        if (n==1) return 0;
-        long prefix=0,postfix=0;
+        if (n==1) return nums[0]/1;
+        long prefix=0, postfix=0;
         for (int i=0; i<n; i++)
             postfix+=nums[i];
         long min = Integer.MAX_VALUE;
