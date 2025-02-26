@@ -5,31 +5,30 @@ import java.util.Set;
 
 public class NumberOfArithmeticTriplets {
     // O(n) O(n)
-    public int arithmeticTriplets(int[] nums, int diff) {
+    static int arithmeticTriplets(int[] nums, int diff) {
         Set<Integer> set = new HashSet<>();
         for(int num : nums)
             set.add(num);
-        int prev = 0, next = 1;
+        int left = 0, right = 1;
         int counter = 0;
-        while(prev <= next && next < nums.length){
-            if (nums[next] - nums[prev] < diff)
-                next++;
-            else if (nums[next] - nums[prev] > diff)
-                prev++;
+        while(left <= right && right < nums.length){
+            if (nums[right] - nums[left] < diff)
+                right++;
+            else if (nums[right] - nums[left] > diff)
+                left++;
             else {
-                if (set.contains(nums[next]+diff))
+                if (set.contains(nums[right]+diff))
                     counter++;
-                prev++;
-                next++;
+                left++;
+                right++;
             }
         }
         return counter;
     }
 
     public static void main(String[] args) {
-        NumberOfArithmeticTriplets nat = new NumberOfArithmeticTriplets();
         int[] nums = {0,1,4,6,7,10};
         int diff = 3;
-        System.out.println(nat.arithmeticTriplets(nums, diff));
+        System.out.println(arithmeticTriplets(nums, diff));
     }
 }
