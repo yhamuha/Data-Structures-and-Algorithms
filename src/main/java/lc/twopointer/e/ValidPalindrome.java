@@ -2,24 +2,25 @@ package lc.twopointer.e;
 
 public class ValidPalindrome {
     // O(n) O(1)
-    public boolean isPalindrome(String s) {
-        int low = 0; int high = s.length()-1;
-        while(low<high){
-            char l = s.charAt(low); char h = s.charAt(high);
-            if (!Character.isLetterOrDigit(l)) low++;
-                else if (!Character.isLetterOrDigit(h)) high--;
-                else {
-                    if(Character.isLetterOrDigit(l) != Character.isLetterOrDigit(h))
-                        return false;
-                    low++; high--;
+    static boolean isPalindrome(String s) {
+        int leftIdx = 0; int rightIdx = s.length()-1;
+        while(leftIdx < rightIdx){
+            char leftChar = s.charAt(leftIdx), rightChar = s.charAt(rightIdx);
+            if (!Character.isLetterOrDigit(leftChar))
+                leftIdx++;
+            else if (!Character.isLetterOrDigit(rightChar))
+                rightIdx--;
+            else {
+                if(Character.isLetterOrDigit(leftChar) != Character.isLetterOrDigit(rightChar))
+                    return false;
+                leftIdx++; rightIdx--;
             }
         }
         return true;
     }
 
     public static void main(String[] args) {
-        String s = "abba";
-        ValidPalindrome vp = new ValidPalindrome();
-        System.out.println(vp.isPalindrome(s));
+        String s = "raceacar";
+        System.out.println(isPalindrome(s));
     }
 }
