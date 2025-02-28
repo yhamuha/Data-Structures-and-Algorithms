@@ -2,7 +2,7 @@ package lc.twopointer.e;
 
 public class SquaresOfASortedArray {
     // O(n) O(n)
-    public int[] sortedSquares(int[] nums) {
+    static int[] sortedSquares(int[] nums) {
         int n = nums.length;
         int result[] = new int[n];
         for(int i=0; i<n; i++)
@@ -21,9 +21,8 @@ public class SquaresOfASortedArray {
     }
 
     public static void main(String[] args) {
-        SquaresOfASortedArray obj = new SquaresOfASortedArray();
         int[] nums = {-4, -1, 0, 3, 10};
-        int[] result = obj.sortedSquares(nums);
+        int[] result = sortedSquares(nums);
         for (int num : result) {
             System.out.print(num + " ");
         }
