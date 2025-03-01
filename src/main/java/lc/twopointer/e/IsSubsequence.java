@@ -1,8 +1,8 @@
 package lc.twopointer.e;
 
 public class IsSubsequence {
-    // O(n) O(1)
-    public boolean isSubsequence(String s, String t) {
+    // O(m+n) O(1)
+    static boolean isSubsequence(String s, String t) {
         int p1=0, p2=0;
         int n1 = s.length(), n2=t.length();
         int common = 0;
@@ -19,9 +19,8 @@ public class IsSubsequence {
     }
 
     public static void main(String[] args) {
-        IsSubsequence isSubsequence = new IsSubsequence();
         String s = "abc";
         String t = "ahbgdc";
-        System.out.println(isSubsequence.isSubsequence(s, t));
+        System.out.println(isSubsequence(s, t));
     }
 }
