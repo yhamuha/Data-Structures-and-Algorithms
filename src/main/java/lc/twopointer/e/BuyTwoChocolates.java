@@ -18,7 +18,7 @@ public class BuyTwoChocolates {
     }
     public static void main(String[] args) {
         BuyTwoChocolates buyTwoChocolates = new BuyTwoChocolates();
-        int[] prices = {3,2,3};
+        int[] prices = {1,2,2};
         int money = 3;
         int remainingMoney = buyTwoChocolates.buyChoco(prices, money);
         System.out.println(remainingMoney);

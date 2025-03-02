@@ -12,7 +12,6 @@ class BuyTwoChocolatesTest {
         int[] prices = {1, 2, 2};
         int money = 3;
         int expectedRemainingMoney = 0;
-        int actualRemainingMoney = buyTwoChocolates.buyChoco(prices, money);
-        assertEquals(expectedRemainingMoney, actualRemainingMoney);
+        assertEquals(expectedRemainingMoney, buyTwoChocolates.buyChoco(prices, money));
     }
 }
