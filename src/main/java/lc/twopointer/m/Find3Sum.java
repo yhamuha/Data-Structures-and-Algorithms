@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Find3Sum {
     // O(n^2) O(n)
-    public List<List<Integer>> findThreeSum(int[] nums) {
+    static List<List<Integer>> findThreeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         int n = nums.length;
         Arrays.sort(nums);
@@ -37,8 +37,7 @@ public class Find3Sum {
     }
 
     public static void main(String[] args) {
-        Find3Sum threeSum = new Find3Sum();
         int[] nums = {-1,0,1,2,-1,-4};
-        System.out.println(threeSum.findThreeSum(nums));
+        System.out.println(findThreeSum(nums));
     }
 }
