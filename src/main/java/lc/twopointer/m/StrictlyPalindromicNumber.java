@@ -1,6 +1,7 @@
 package lc.twopointer.m;
 
 public class StrictlyPalindromicNumber {
+    // O(log n) O(1)
     boolean isPalindrom(String str){
         int left = 0, right = str.length()-1;
         while(left < right){
@@ -12,17 +13,17 @@ public class StrictlyPalindromicNumber {
         }
         return true;
     }
-
+    // O(n) O(n)
     String convert(int n, int i){
         StringBuilder sb = new StringBuilder();
         while(n!=0){
-            int rem = n%i;
+            int reminder = n%i;
             n/=i;
-            sb.insert(0,rem);
+            sb.insert(0,reminder);
         }
         return sb.toString();
     }
-
+    // O(n) O(n) total
     public boolean isStrictlyPalindromic(int n) {
         for(int i=2; i<=(n-2); i++){
             String str = convert(n, i);
