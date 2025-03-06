@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class RearrangeArrayElementsBySign {
     // O(n) O(n)
-    public int[] rearrangeArray(int[] arr) {
+    static int[] rearrangeArray(int[] arr) {
         int n = arr.length;
         int first=0, second=1;
         int[] ans = new int[n];
@@ -21,8 +21,7 @@ public class RearrangeArrayElementsBySign {
     }
 
     public static void main(String[] args) {
-    RearrangeArrayElementsBySign rearr = new RearrangeArrayElementsBySign();
     int[] nums = {3,1,-2,-5,2,-4};
-    System.out.println(Arrays.toString(rearr.rearrangeArray(nums)));
+    System.out.println(Arrays.toString(rearrangeArray(nums)));
     }
 }
