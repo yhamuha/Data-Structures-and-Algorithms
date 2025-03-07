@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FindKClosestElements {
     // O(n) O(k)
-    public List<Integer> findClosestElements(int[] arr, int k, int x) {
+    static List<Integer> findClosestElements(int[] arr, int k, int x) {
         int start = 0;
         int end = arr.length - 1;
         while (end - start >= k) {
@@ -21,11 +21,9 @@ public class FindKClosestElements {
     }
 
     public static void main(String[] args) {
-        FindKClosestElements finder = new FindKClosestElements();
         int[] arr = {1, 2, 3, 4, 5};
         int k = 4;
         int x = 3;
-        List<Integer> closestElements = finder.findClosestElements(arr, k, x);
-        System.out.println(closestElements);
+        System.out.println(findClosestElements(arr, k, x));
     }
 }
