@@ -3,9 +3,8 @@ package lc.twopointer.m;
 import java.util.*;
 
 public class Find4Sum {
-
     // O(n^2) O(n)
-    public List<List<Integer>> fourSum(int[] nums, int target) {
+    static List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);
         Set<List<Integer>> set = new HashSet<>();
         int sum = 0;
@@ -28,7 +27,6 @@ public class Find4Sum {
     public static void main(String[] args) {
         int[] nums = {1,0,-1,0,-2,2};
         int target = 0;
-        Find4Sum find4sum = new Find4Sum();
-        System.out.println(find4sum.fourSum(nums,target));
+        System.out.println(fourSum(nums,target));
     }
 }
