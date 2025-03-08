@@ -9,9 +9,8 @@ public class PartitionLabels {
         if (s == null || s.length() == 0) return null;
         List<Integer> output_arr = new ArrayList();
         int[] lastIndexes = new int[26];
-        for (int i = 0; i<s.length(); i++) {
+        for (int i = 0; i<s.length(); i++)
             lastIndexes[s.charAt(i)-'a'] = i;
-        }
         int start = 0;
         int end = 0;
         for (int i=0; i<s.length(); i++) {
