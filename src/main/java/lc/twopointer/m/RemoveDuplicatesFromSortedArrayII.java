@@ -2,7 +2,7 @@ package lc.twopointer.m;
 
 public class RemoveDuplicatesFromSortedArrayII {
     //O(n) O(1)
-    public int removeDuplicates(int[] nums) {
+    static int removeDuplicates(int[] nums) {
         int i=0;
         for(int j=0;j<nums.length;j++){
             if(i<2 || nums[j]> nums[i-2])
@@ -12,8 +12,7 @@ public class RemoveDuplicatesFromSortedArrayII {
     }
 
     public static void main(String[] args) {
-        RemoveDuplicatesFromSortedArrayII obj = new RemoveDuplicatesFromSortedArrayII();
         int[] nums = {1, 1, 1, 2, 2, 3};
-        System.out.println(obj.removeDuplicates(nums));
+        System.out.println(removeDuplicates(nums));
     }
 }
