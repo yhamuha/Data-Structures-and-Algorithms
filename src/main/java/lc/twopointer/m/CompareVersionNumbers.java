@@ -2,7 +2,7 @@ package lc.twopointer.m;
 
 public class CompareVersionNumbers {
     // O(n+m) O(1)
-    public int compareVersion(String version1, String version2) {
+    static int compareVersion(String version1, String version2) {
         int n = version1.length();
         int m = version2.length();
         int i = 0;
@@ -29,9 +29,8 @@ public class CompareVersionNumbers {
     }
 
     public static void main(String[] args) {
-        CompareVersionNumbers obj = new CompareVersionNumbers();
-        String version1 = "1.2";
-        String version2 = "1.10";
-        System.out.println(obj.compareVersion(version1, version2));
+        String version1 = "1.0.1";
+        String version2 = "1";
+        System.out.println(compareVersion(version1, version2));
     }
 }
