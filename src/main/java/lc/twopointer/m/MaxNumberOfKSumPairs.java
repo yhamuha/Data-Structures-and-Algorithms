@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MaxNumberOfKSumPairs {
     // O(n) O(1)
-    public int maxOperations(int[] nums, int k) {
+    static int maxOperations(int[] nums, int k) {
         Arrays.sort(nums);
         int i=0;
         int j=nums.length-1;
@@ -24,9 +24,8 @@ public class MaxNumberOfKSumPairs {
     }
 
     public static void main(String[] args) {
-        MaxNumberOfKSumPairs obj = new MaxNumberOfKSumPairs();
         int[] nums = {1, 2, 3, 4, 5};
         int k = 5;
-        System.out.println(obj.maxOperations(nums, k));
+        System.out.println(maxOperations(nums, k));
     }
 }
