@@ -3,7 +3,7 @@ package lc.twopointer.m;
 import java.util.Arrays;
 
 public class MaxNumberOfKSumPairs {
-    // O(n) O(1)
+    // O(n log n) O(1)
     static int maxOperations(int[] nums, int k) {
         Arrays.sort(nums);
         int i=0;
