@@ -28,6 +28,8 @@ public class ImplementStackUsingQueues {
         ImplementStackUsingQueues stack = new ImplementStackUsingQueues();
         stack.push(1);
         stack.push(2);
+        stack.push(3);
+        stack.push(4);
         System.out.print(stack.top() + " ");
         System.out.print(stack.pop()+ " ");
         System.out.print(stack.empty());
