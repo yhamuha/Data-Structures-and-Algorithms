@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class MakeTheStringGreat {
     // O(n) O(n)
-    public String makeGood(String s) {
+    static String makeGood(String s) {
         Stack<Character> stack = new Stack<>();
         for (char ch : s.toCharArray()) {
             if (stack.isEmpty())
@@ -24,16 +24,15 @@ public class MakeTheStringGreat {
     }
 
     public static void main(String[] args) {
-        MakeTheStringGreat mg = new MakeTheStringGreat();
         String test1 = "leEeetcode";
         String test2 = "abBAcC";
         String test3 = "s";
         String test4 = "dDzeE";
         String test5 = "Pp";
-        System.out.println(mg.makeGood(test1));
-        System.out.println(mg.makeGood(test2));
-        System.out.println(mg.makeGood(test3));
-        System.out.println(mg.makeGood(test4));
-        System.out.println(mg.makeGood(test5));
+        System.out.println(makeGood(test1));
+        System.out.println(makeGood(test2));
+        System.out.println(makeGood(test3));
+        System.out.println(makeGood(test4));
+        System.out.println(makeGood(test5));
     }
 }
