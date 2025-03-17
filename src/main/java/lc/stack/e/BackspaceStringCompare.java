@@ -9,23 +9,20 @@ public class BackspaceStringCompare {
         Stack<Character> stackTwo = new Stack<>();
         for(char c : s.toCharArray()){
             if(c == '#'){
-                if (!stackOne.isEmpty()){
+                if (!stackOne.isEmpty())
                     stackOne.pop();
-                }
             } else
                 stackOne.push(c);
         }
         for(char ch : t.toCharArray()){
             if(ch == '#'){
-                if(!stackTwo.isEmpty()){
+                if(!stackTwo.isEmpty())
                     stackTwo.pop();
-                }
             }    else
                 stackTwo.push(ch);
         }
-        if (stackOne.equals(stackTwo)){
+        if (stackOne.equals(stackTwo))
             return true;
-        }
         else return false;
     }
 
