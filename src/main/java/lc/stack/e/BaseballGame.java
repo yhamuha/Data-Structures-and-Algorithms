@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class BaseballGame {
     // O(n) O(n)
-    static int calPoints(String[] operations) {
+    public int calPoints(String[] operations) {
         Stack<Integer> stack = new Stack<>();
         for(int i=0; i<operations.length; i++){
             if (operations[i].equals("C"))
@@ -27,7 +27,8 @@ public class BaseballGame {
         return sum;
     }
     public static void main(String[] args) {
+        BaseballGame game = new BaseballGame();
         String[] operations = {"5", "2", "C", "D", "+"};
-        System.out.println(calPoints(operations));
+        System.out.println(game.calPoints(operations));
     }
 }
