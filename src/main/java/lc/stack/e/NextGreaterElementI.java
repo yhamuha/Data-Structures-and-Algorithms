@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class NextGreaterElementI {
     // O(n) O(n)
-    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+    static int[] nextGreaterElement(int[] nums1, int[] nums2) {
         Map<Integer,Integer> next_greater = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         for(Integer num : nums2) {
@@ -23,7 +23,6 @@ public class NextGreaterElementI {
     public static void main(String[] args) {
         int[] nums1 = {4,1,2};
         int[] nums2 = {1,3,4,2};
-        NextGreaterElementI nge = new NextGreaterElementI();
-        System.out.println(Arrays.toString(nge.nextGreaterElement(nums1, nums2)));
+        System.out.println(Arrays.toString(nextGreaterElement(nums1, nums2)));
     }
 }
