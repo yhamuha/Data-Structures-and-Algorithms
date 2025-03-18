@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class BinaryStringWithSubstringsRepresenting1ToN {
     // O(n) O(n)
-    public boolean containsAllBinaryRepresentations(String binaryString, int n) {
+    static boolean containsAllBinaryRepresentations(String binaryString, int n) {
         Stack<String> stack = new Stack<>();
         for (int i = 1; i <= n; i++) {
             String binaryRepresentation = Integer.toBinaryString(i);
@@ -21,7 +21,6 @@ public class BinaryStringWithSubstringsRepresenting1ToN {
     public static void main(String[] args) {
         String s = "0110";
         int n = 3;
-        BinaryStringWithSubstringsRepresenting1ToN solution = new BinaryStringWithSubstringsRepresenting1ToN();
-        System.out.println(solution.containsAllBinaryRepresentations(s, n));
+        System.out.println(containsAllBinaryRepresentations(s, n));
     }
 }
