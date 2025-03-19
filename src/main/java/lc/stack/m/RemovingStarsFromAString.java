@@ -19,7 +19,7 @@ public class RemovingStarsFromAString {
     }
 
     public static void main(String[] args) {
-        String s = "leet**cod*e";
+        String s = "Start*gated*";
         System.out.println(removeStars(s));
     }
 }
