@@ -4,11 +4,11 @@ import java.util.Stack;
 
 public class ValidateStackSequences {
     // O(n) O(n)
-    public boolean validateStackSequences(int[] pushed, int[] popped) {
+    static boolean validateStackSequences(int[] pushed, int[] popped) {
         Stack<Integer> stack = new Stack<>();
         int j=0;
-        for(int each : pushed){
-            stack.push(each);
+        for(int number : pushed){
+            stack.push(number);
             while(!stack.isEmpty() && j<popped.length && stack.peek()==popped[j]){
                 j++;
                 stack.pop();
