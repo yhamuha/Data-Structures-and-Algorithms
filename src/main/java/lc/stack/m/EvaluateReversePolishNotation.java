@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class EvaluateReversePolishNotation {
         // O(n) O(n)
-        public int evalRPN(String[] tokens) {
+        static int evalRPN(String[] tokens) {
             Stack<Integer> stack = new Stack<>();
             Set<String> operations = Set.of("+", "-", "*", "/");
             for (String s : tokens) {
@@ -21,15 +21,15 @@ public class EvaluateReversePolishNotation {
                     }
                     stack.push(c);
                 }
-                else stack.push(Integer.parseInt(s));
+                else
+                    stack.push(Integer.parseInt(s));
             }
             return stack.peek();
         }
 
     public static void main(String[] args) {
         String[] tokens = {"2","1","+","3","*"};
-        EvaluateReversePolishNotation erpn = new EvaluateReversePolishNotation();
-        System.out.println(erpn.evalRPN(tokens));
+        System.out.println(evalRPN(tokens));
     }
 }
 
