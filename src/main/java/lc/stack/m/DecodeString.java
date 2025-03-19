@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class DecodeString {
     // O(n) O(n)
-    public String decodeString(String s) {
+    static String decodeString(String s) {
         Stack<Integer> stack = new Stack<>();
         Stack<StringBuilder> stackOfStrings = new Stack<>();
         StringBuilder sb = new StringBuilder();
@@ -21,9 +21,8 @@ public class DecodeString {
                 StringBuilder temp=sb;
                 sb=stackOfStrings.pop();
                 int count=stack.pop();
-                while(count-- > 0){
+                while(count-- > 0)
                     sb.append(temp);
-                }
             } else
                 sb.append(c);
         }
@@ -31,8 +30,7 @@ public class DecodeString {
     }
 
     public static void main(String[] args) {
-        DecodeString ds = new DecodeString();
         String s = "3[a]2[bc]";
-        System.out.println(ds.decodeString(s));
+        System.out.println(decodeString(s));
     }
 }
