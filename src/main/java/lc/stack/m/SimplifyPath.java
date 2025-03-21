@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class SimplifyPath {
     // O(n) O(n)
-    public String simplifyPath(String path) {
+    static String simplifyPath(String path) {
         Stack<String> stack = new Stack<>();
         String[] p = path.split("/");
         for (int i = 0; i < p.length; i++) {
@@ -24,16 +24,15 @@ public class SimplifyPath {
     }
 
     public static void main(String[] args) {
-        SimplifyPath sp = new SimplifyPath();
         String path1 = "/home/";
         String path2 = "/../";
         String path3 = "/home//foo/";
         String path4 = "/a/./b/../../c/";
         String path5 = "/a/b/c/../../../..";
-        System.out.println(sp.simplifyPath(path1));
-        System.out.println(sp.simplifyPath(path2));
-        System.out.println(sp.simplifyPath(path3));
-        System.out.println(sp.simplifyPath(path4));
-        System.out.println(sp.simplifyPath(path5));
+        System.out.println(simplifyPath(path1));
+        System.out.println(simplifyPath(path2));
+        System.out.println(simplifyPath(path3));
+        System.out.println(simplifyPath(path4));
+        System.out.println(simplifyPath(path5));
     }
 }
