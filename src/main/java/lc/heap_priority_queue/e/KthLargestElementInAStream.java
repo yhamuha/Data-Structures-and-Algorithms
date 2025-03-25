@@ -27,6 +27,6 @@ public class KthLargestElementInAStream {
         System.out.println(kleis.add(10));
         System.out.println(kleis.add(9));
         System.out.println(kleis.add(4));
-        System.out.println("Remains in heap" + kleis.minHeap);
+        System.out.println(kleis.minHeap);
     }
 }
