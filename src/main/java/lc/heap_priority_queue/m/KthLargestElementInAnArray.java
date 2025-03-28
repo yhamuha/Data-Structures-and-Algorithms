@@ -6,10 +6,10 @@ public class KthLargestElementInAnArray {
     static int findKthLargest(int[] nums, int k) {
         // O(n log k) O(n)
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-        for(int num : nums){
+        for(int num : nums) {
             if (minHeap.size() < k)
                 minHeap.offer(num);
-            else if(num > minHeap.peek()){
+            else if(num > minHeap.peek()) {
                 minHeap.poll();
                 minHeap.offer(num);
             }
