@@ -7,20 +7,20 @@ public class TakeGiftsFromTheRichestPile {
     // O(n log n) O(n)
     static long pickGifts(int[] gifts, int k) {
         long ans = 0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
             public int compare(Integer a, Integer b) {
                 return Integer.compare(b, a);
             }
         });
         for (int i = 0; i < gifts.length; i++)
-            pq.add(gifts[i]);
+            maxHeap.add(gifts[i]);
         for (int i = 0; i < k; i++) {
-            int val = pq.poll();
+            int val = maxHeap.poll();
             int y = (int) Math.floor(Math.sqrt(val));
-            pq.add(y);
+            maxHeap.add(y);
         }
-        while (pq.size() != 0)
-            ans = ans + pq.poll();
+        while (maxHeap.size() != 0)
+            ans = ans + maxHeap.poll();
         return ans;
     }
 
