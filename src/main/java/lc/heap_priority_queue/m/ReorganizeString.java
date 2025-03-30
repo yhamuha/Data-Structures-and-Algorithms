@@ -5,28 +5,28 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class ReorganizeString {
-    // O(n log m) O(m)
+    // O(n log n) O(n)
     public String reorganizeString(String s) {
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> freqMap = new HashMap<>();
         for(char c : s.toCharArray())
-            map.put(c,map.getOrDefault(c,0)+1);
-        PriorityQueue<Character> maxHeap = new PriorityQueue((a,b)->(map.get(b)-map.get(a)));
+            freqMap.put(c,freqMap.getOrDefault(c,0)+1);
+        PriorityQueue<Character> maxHeap = new PriorityQueue((a,b)->(freqMap.get(b)-freqMap.get(a)));
         StringBuilder sb = new StringBuilder();
-        maxHeap.addAll(map.keySet());
+        maxHeap.addAll(freqMap.keySet());
         while(maxHeap.size()>1){
             char first = maxHeap.poll();
             char second = maxHeap.poll();
             sb.append(first);
             sb.append(second);
-            map.put(first, map.get(first)-1);
-            map.put(second, map.get(second)-1);
-            if (map.get(first) > 0)
+            freqMap.put(first, freqMap.get(first)-1);
+            freqMap.put(second, freqMap.get(second)-1);
+            if (freqMap.get(first) > 0)
                 maxHeap.offer(first);
-            if (map.get(second) > 0)
+            if (freqMap.get(second) > 0)
                 maxHeap.offer(second);
         }
         if(!maxHeap.isEmpty()){
-            if(map.get(maxHeap.peek())>1)
+            if(freqMap.get(maxHeap.peek())>1)
                 return "";
             else
                 sb.append(maxHeap.poll());
