@@ -3,7 +3,7 @@ package lc.heap_priority_queue.m;
 import java.util.*;
 
 public class TaskScheduler {
-    // O(n log k) O(1)
+    // O(n log n) O(n)
     static int leastInterval(char[] tasks, int n) {
         Map<Character, Integer> freqMap = new HashMap<>();
         for(char task : tasks)
@@ -24,18 +24,6 @@ public class TaskScheduler {
             cycle += maxHeap.isEmpty() ? tempList.size() : n+1;
         }
         return cycle;
-    }
-    // O(n log n) O(1)
-    static int leastInterval_arr(char[] tasks, int n) {
-        int[] char_map = new int[26];
-        for(char c : tasks)
-            char_map[c-'A']++;
-        Arrays.sort(char_map);
-        int max_val=char_map[25]-1;
-        int idle_slots = max_val * n;
-        for(int i=24; i>=0; i--)
-            idle_slots -= Math.min(char_map[i], max_val);
-        return idle_slots > 0 ? idle_slots + tasks.length : tasks.length;
     }
 
     public static void main(String[] args) {
