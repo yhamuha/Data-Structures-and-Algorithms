@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TopKFrequentWords {
     // O(n log k) O(n)
-    public List<String> topKFrequent(String[] words, int k) {
+    static List<String> topKFrequent(String[] words, int k) {
         Map<String, Integer> map = new HashMap<>();
         for (String word : words)
             map.put(word, map.getOrDefault(word, 0) + 1);
@@ -25,9 +25,8 @@ public class TopKFrequentWords {
     }
 
     public static void main(String[] args) {
-        TopKFrequentWords tkfw = new TopKFrequentWords();
         String[] words = {"i","love","leetcode","i","love","coding"};
         int k = 2;
-        System.out.println(tkfw.topKFrequent(words, k));
+        System.out.println(topKFrequent(words, k));
     }
 }
