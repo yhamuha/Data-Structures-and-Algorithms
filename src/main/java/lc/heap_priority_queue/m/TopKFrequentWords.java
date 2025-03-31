@@ -5,14 +5,14 @@ import java.util.*;
 public class TopKFrequentWords {
     // O(n log k) O(n)
     static List<String> topKFrequent(String[] words, int k) {
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> freqMap = new HashMap<>();
         for (String word : words)
-            map.put(word, map.getOrDefault(word, 0) + 1);
+            freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
         PriorityQueue<String> minHeap = new PriorityQueue<>(
-                (s1, s2) -> map.get(s1).equals(map.get(s2))
+                (s1, s2) -> freqMap.get(s1).equals(freqMap.get(s2))
                             ? s2.compareTo(s1)
-                            : map.get(s1) - map.get(s2));
-        for (String word : map.keySet()) {
+                            : freqMap.get(s1) - freqMap.get(s2));
+        for (String word : freqMap.keySet()) {
             minHeap.offer(word);
             if (minHeap.size() > k)
                 minHeap.poll();
