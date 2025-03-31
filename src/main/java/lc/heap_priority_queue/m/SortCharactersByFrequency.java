@@ -7,15 +7,15 @@ import java.util.PriorityQueue;
 public class SortCharactersByFrequency {
     // O(n log m) O(m)
     static String frequencySort(String s) {
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> freqMap = new HashMap<>();
         for(char str : s.toCharArray())
-            map.put(str, map.getOrDefault(str,0)+1);
-        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a,b) -> (map.get(b))- (map.get(a)));
-        maxHeap.addAll(map.keySet());
+            freqMap.put(str, freqMap.getOrDefault(str,0)+1);
+        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a,b) -> (freqMap.get(b))- (freqMap.get(a)));
+        maxHeap.addAll(freqMap.keySet());
         StringBuilder sb = new StringBuilder();
         while(!maxHeap.isEmpty()){
             char c = maxHeap.poll();
-            for(int i=0; i<map.get(c); i++)
+            for(int i=0; i<freqMap.get(c); i++)
                 sb.append(c);
         }
         return sb.toString();
