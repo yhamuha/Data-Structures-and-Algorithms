@@ -1,10 +1,14 @@
 package lc.heap_priority_queue.m;
 
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class TopKFrequentElements {
-    // O(n log m) O(m)
-    public int[] topKFrequent(int[] nums, int k) {
+    // O(m log m) O(m)
+    static int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freqMap = new HashMap<>();
         for(int num : nums)
             freqMap.put(num, freqMap.getOrDefault(num,0)+1);
@@ -22,8 +26,7 @@ public class TopKFrequentElements {
     }
 
     public static void main(String[] args) {
-        var tkfe = new TopKFrequentElements();
         int[] nums = {1,1,1,2,2,3}; int k = 2;
-        System.out.println(Arrays.toString(tkfe.topKFrequent(nums, k)));
+        System.out.println(Arrays.toString(topKFrequent(nums, k)));
     }
 }
