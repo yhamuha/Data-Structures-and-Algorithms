@@ -18,7 +18,7 @@ public class MinimumCostToConnectSticks {
     }
 
     public static void main(String[] args) {
-        int[] sticks = {2,3,4};
+        int[] sticks = {1,8,3,5};
         System.out.println(connectSticks(sticks));
     }
 }
