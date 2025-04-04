@@ -12,7 +12,7 @@ class Interval{
 
 public class MeetingRoomsII {
     // O(n log n) O(n)
-    public int inMeetingRooms(Interval[] intervals) {
+    static int inMeetingRooms(Interval[] intervals) {
         if (intervals == null || intervals.length == 0)
             return 0;
         Arrays.sort(intervals, (a,b) -> a.start - b.start);
@@ -31,11 +31,10 @@ public class MeetingRoomsII {
     }
 
     public static void main(String[] args) {
-        var mrII = new MeetingRoomsII();
         Interval int1 = new Interval(0,30);
         Interval int2 = new Interval(5,10);
         Interval int3 = new Interval(15,20);
         Interval[] intervals = {int1, int2, int3};
-        System.out.println(mrII.inMeetingRooms(intervals));
+        System.out.println(inMeetingRooms(intervals));
     }
 }
