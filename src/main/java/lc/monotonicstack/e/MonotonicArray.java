@@ -4,11 +4,11 @@ import java.util.Stack;
 
 public class MonotonicArray {
     // O(n) O(n)
-    public boolean isMonotonic(int[] nums) {
+    static boolean isMonotonic(int[] nums) {
         boolean isAsc=nums[0]<nums[nums.length-1];
         return ans(nums,isAsc);
     }
-    public boolean ans(int[] nums, boolean isAsc){
+    static boolean ans(int[] nums, boolean isAsc){
         Stack<Integer> stack=new Stack<>();
         if(isAsc){
             for(int i:nums){
@@ -28,8 +28,7 @@ public class MonotonicArray {
     }
 
     public static void main(String[] args) {
-        MonotonicArray monotonicArray = new MonotonicArray();
-        int[] nums = {5,3,2,4,1};
-        System.out.println(monotonicArray.isMonotonic(nums));
+        int[] nums = {1,2,3,4,5};
+        System.out.println(isMonotonic(nums));
     }
 }
