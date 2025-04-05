@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class FinalPricesWithASpecialDiscountInAShop {
     // O(n) O(n)
-    public int[] finalPrices(int[] prices) {
+    static int[] finalPrices(int[] prices) {
         Stack<Integer> stack =new Stack<>();
         for(int i=prices.length-1; i>=0; i--){
             while(stack.size()>0 && stack.peek()>prices[i])
@@ -20,7 +20,6 @@ public class FinalPricesWithASpecialDiscountInAShop {
 
     public static void main(String[] args) {
         int[] prices = {8,4,6,2,3};
-        FinalPricesWithASpecialDiscountInAShop fpd = new FinalPricesWithASpecialDiscountInAShop();
-        System.out.println(Arrays.toString(fpd.finalPrices(prices)));
+        System.out.println(Arrays.toString(finalPrices(prices)));
     }
 }
