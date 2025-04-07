@@ -4,30 +4,28 @@ import java.util.Stack;
 
 public class RemoveDuplicateLetters {
     // O(n) O(n)
-    public String removeDuplicateLetters(String s) {
+    static String removeDuplicateLetters(String s) {
         int[] lastIndex = new int[26];
         for (int i = 0; i < s.length(); i++)
             lastIndex[s.charAt(i) - 'a'] = i;
         boolean[] seen = new boolean[26];
-        Stack<Integer> st = new Stack();
+        Stack<Integer> stackOfUniqueChars = new Stack();
         for (int i = 0; i < s.length(); i++) {
-            int curr = s.charAt(i) - 'a';
-            if (seen[curr]) continue;
-            while (!st.isEmpty() && st.peek() > curr && i < lastIndex[st.peek()]){
-                seen[st.pop()] = false;
-            }
-            st.push(curr);
-            seen[curr] = true;
+            int currChar = s.charAt(i) - 'a';
+            if (seen[currChar]) continue;
+            while (!stackOfUniqueChars.isEmpty() && stackOfUniqueChars.peek() > currChar && i < lastIndex[stackOfUniqueChars.peek()])
+                seen[stackOfUniqueChars.pop()] = false;
+            stackOfUniqueChars.push(currChar);
+            seen[currChar] = true;
         }
         StringBuilder sb = new StringBuilder();
-        while (!st.isEmpty())
-            sb.append((char) (st.pop() + 'a'));
+        while (!stackOfUniqueChars.isEmpty())
+            sb.append((char) (stackOfUniqueChars.pop() + 'a'));
         return sb.reverse().toString();
     }
 
     public static void main(String[] args) {
         String s = "bcabc";
-        RemoveDuplicateLetters rdl = new RemoveDuplicateLetters();
-        System.out.println(rdl.removeDuplicateLetters(s));
+        System.out.println(removeDuplicateLetters(s));
     }
 }
