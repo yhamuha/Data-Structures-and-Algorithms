@@ -13,7 +13,9 @@ public class RemoveDuplicateLetters {
         for (int i = 0; i < s.length(); i++) {
             int currChar = s.charAt(i) - 'a';
             if (seen[currChar]) continue;
-            while (!stackOfUniqueChars.isEmpty() && stackOfUniqueChars.peek() > currChar && i < lastIndex[stackOfUniqueChars.peek()])
+            while (!stackOfUniqueChars.isEmpty()
+                    && stackOfUniqueChars.peek() > currChar
+                    && i < lastIndex[stackOfUniqueChars.peek()])
                 seen[stackOfUniqueChars.pop()] = false;
             stackOfUniqueChars.push(currChar);
             seen[currChar] = true;
