@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class NextGreaterElementII {
     // O(n) O(n)
-    public int[] nextGreaterElements(int[] nums){
+    static int[] nextGreaterElements(int[] nums){
        int n = nums.length;
        int[] output_arr = new int[n];
        Arrays.fill(output_arr, -1);
@@ -19,8 +19,7 @@ public class NextGreaterElementII {
     }
 
     public static void main(String[] args) {
-        NextGreaterElementII ngeII = new NextGreaterElementII();
         int[] nums = {1,2,1};
-        System.out.println(Arrays.toString(ngeII.nextGreaterElements(nums)));
+        System.out.println(Arrays.toString(nextGreaterElements(nums)));
     }
 }
