@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class StepsToMakeArrayNonDecreasing {
     // O(n) O(n)
-    public int totalSteps(int[] nums) {
+    static int totalSteps(int[] nums) {
         int size = nums.length;
         Stack<Pair<Integer,Integer>> stack = new Stack();
         stack.push(new Pair<>(nums[size-1],0));
@@ -24,7 +24,6 @@ public class StepsToMakeArrayNonDecreasing {
 
     public static void main(String[] args) {
         int[] nums = {5,3,4,4,7,3};
-        StepsToMakeArrayNonDecreasing stma = new StepsToMakeArrayNonDecreasing();
-        System.out.println(stma.totalSteps(nums));
+        System.out.println(totalSteps(nums));
     }
 }
