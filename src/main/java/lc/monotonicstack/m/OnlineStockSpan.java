@@ -19,7 +19,7 @@ public class OnlineStockSpan {
     public static void main(String[] args) {
         OnlineStockSpan ss = new OnlineStockSpan();
         int[] prices = {100,80,60,70,60,75,85};
-        for(int i=0; i<prices.length;i++){
+        for(int i=0; i<prices.length; i++){
             System.out.print(ss.next(prices[i]));
             System.out.print(" ");
         }
