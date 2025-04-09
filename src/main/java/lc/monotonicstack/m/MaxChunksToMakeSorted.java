@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class MaxChunksToMakeSorted {
     // O(n) O(n)
-    public int maxChunksToSorted(int[] arr) {
+    static int maxChunksToSorted(int[] arr) {
         Stack<Integer> stack = new Stack();
         for(int x : arr){
             if (stack.isEmpty() || stack.peek() < x)
@@ -21,7 +21,6 @@ public class MaxChunksToMakeSorted {
 
     public static void main(String[] args) {
         int[] arr = {1,0,2,3,4};
-        MaxChunksToMakeSorted mcs = new MaxChunksToMakeSorted();
-        System.out.println(mcs.maxChunksToSorted(arr));
+        System.out.println(maxChunksToSorted(arr));
     }
 }
