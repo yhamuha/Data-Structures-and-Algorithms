@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LongestSubsequenceWithLimitedSum {
     // O(n log n) O(n)
-    public int[] answerQueries(int[] nums, int[] queries) {
+    static int[] answerQueries(int[] nums, int[] queries) {
         Arrays.sort(nums);
         int n = nums.length;
         int[] ans = new int[queries.length];
@@ -13,11 +13,11 @@ public class LongestSubsequenceWithLimitedSum {
             prefix[i] = prefix[i-1] + nums[i-1];
         for (int i=0; i<queries.length; i++) {
             int val = queries[i];
-            ans[i] = bS(val, prefix);
+            ans[i] = binarySearch(val, prefix);
             }
         return ans;
     }
-    private int bS(int val, int[] prefix) {
+    static private int binarySearch(int val, int[] prefix) {
         int left = 0;
         int right = prefix.length - 1;
         while (left <= right) {
@@ -32,8 +32,7 @@ public class LongestSubsequenceWithLimitedSum {
     }
 
     public static void main(String[] args) {
-        var lcs = new LongestSubsequenceWithLimitedSum();
-        System.out.println(Arrays.toString(lcs.answerQueries(
+        System.out.println(Arrays.toString(answerQueries(
                 new int[]{4,5,2,1},
                 new int[]{3,10,21})));
     }
