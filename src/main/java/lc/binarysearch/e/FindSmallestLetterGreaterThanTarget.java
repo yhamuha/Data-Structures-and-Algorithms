@@ -2,7 +2,7 @@ package lc.binarysearch.e;
 
 public class FindSmallestLetterGreaterThanTarget {
     // O(log n) O(1)
-    public char nextGreatestLetter(char[] letters, char target) {
+    static char nextGreatestLetter(char[] letters, char target) {
         int left = 0;
         int right = letters.length - 1;
         while (left <= right) {
@@ -17,9 +17,9 @@ public class FindSmallestLetterGreaterThanTarget {
         return letters[left % letters.length];
     }
     public static void main(String[] args) {
-        FindSmallestLetterGreaterThanTarget fslgtt = new FindSmallestLetterGreaterThanTarget();
         char[] letters = {'c', 'f', 'j'};
         char target = 'a';
-        System.out.println(fslgtt.nextGreatestLetter(letters, target));
+        System.out.println(nextGreatestLetter(letters, target));
     }
 }
+
