@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FindTargetIndicesAfterSortingArray {
     // O(log n) O(n)
-    public List<Integer> targetIndices(int[] nums, int target) {
+    static List<Integer> targetIndices(int[] nums, int target) {
         Arrays.sort(nums);
         int left = leftPosition(nums, target);
         int right = rightPosition(nums, target);
@@ -19,7 +19,7 @@ public class FindTargetIndicesAfterSortingArray {
         }
         return indices;
     }
-    private int leftPosition(int[] nums, int target) {
+    static private int leftPosition(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
@@ -30,7 +30,7 @@ public class FindTargetIndicesAfterSortingArray {
         }
         return (left < nums.length) && (nums[left] == target) ? left : -1;
     }
-    private int rightPosition(int[] nums, int target) {
+    static private int rightPosition(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
@@ -43,8 +43,7 @@ public class FindTargetIndicesAfterSortingArray {
     }
 
     public static void main(String[] args) {
-        FindTargetIndicesAfterSortingArray ft = new FindTargetIndicesAfterSortingArray();
         int[] nums = {1,2,5,2,3};
-        System.out.println(ft.targetIndices(nums, 3));
+        System.out.println(targetIndices(nums, 3));
     }
 }
