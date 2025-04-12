@@ -21,6 +21,6 @@ public class MinimumCommonValue {
     public static void main(String[] args) {
         System.out.println(getCommon(
                 new int[]{1,2,3,6},
-                new int[]{2,3,4,5}));
+                new int[]{1,2,3,4}));
     }
 }
