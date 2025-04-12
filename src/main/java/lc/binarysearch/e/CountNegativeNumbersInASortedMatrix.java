@@ -1,15 +1,15 @@
 package lc.binarysearch.e;
 
 public class CountNegativeNumbersInASortedMatrix {
-    // O(m log n) O(1)
-    public int countNegatives(int[][] grid) {
+    // O(log n) O(1)
+    static int countNegatives(int[][] grid) {
         int count = 0;
         for (int line[]: grid) {
-            count += bs(line);
+            count += binarySearch(line);
         }
         return count;
     }
-    private int bs(int[] line) {
+    static int binarySearch(int[] line) {
         int left = 0;
         int right = line.length - 1;
         while (left <= right) {
@@ -22,8 +22,7 @@ public class CountNegativeNumbersInASortedMatrix {
     }
 
     public static void main(String[] args) {
-        var cn = new CountNegativeNumbersInASortedMatrix();
-        System.out.println(cn.countNegatives(new int[][]{   {4,3,2,-1},
+        System.out.println(countNegatives(new int[][]{   {4,3,2,-1},
                                                             {3,2,1,-1},
                                                             {1,1,-1,-2},
                                                             {-1,-1,-2,-3}}));
