@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FindTargetIndicesAfterSortingArray {
-    // O(log n) O(n)
+    // O(n log n) O(n)
     static List<Integer> targetIndices(int[] nums, int target) {
         Arrays.sort(nums);
         int left = leftPosition(nums, target);
