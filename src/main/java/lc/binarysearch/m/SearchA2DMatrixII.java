@@ -2,7 +2,7 @@ package lc.binarysearch.m;
 
 public class SearchA2DMatrixII {
     // O(m+n) O(1)
-    public boolean searchMatrix(int[][] matrix, int target) {
+    static boolean searchMatrix(int[][] matrix, int target) {
         int row = 0;
         int col = matrix[0].length-1;
         while(row<matrix.length && col>=0){
@@ -14,7 +14,6 @@ public class SearchA2DMatrixII {
     }
 
     public static void main(String[] args) {
-        SearchA2DMatrixII obj = new SearchA2DMatrixII();
         int[][] matrix = {
                 {1,  4,  7, 11, 15},
                 {2,  5,  8, 12, 19},
@@ -23,7 +22,6 @@ public class SearchA2DMatrixII {
                 {18, 21, 23, 26, 30}
         };
         int target = 5;
-        boolean result = obj.searchMatrix(matrix, target);
-        System.out.println(result);
+        System.out.println(searchMatrix(matrix, target));
     }
 }
