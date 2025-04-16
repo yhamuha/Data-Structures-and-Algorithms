@@ -2,9 +2,9 @@ package lc.binarysearch.m;
 
 import java.util.Arrays;
 
-public class FrequencyOfTheMostFrequentElement {
+ class FrequencyOfTheMostFrequentElement {
     // O(n log n) O(1)
-    public int maxFrequency(int[] nums, int k) {
+    static int maxFrequency(int[] nums, int k) {
         int maxFrequency = 0;
         long currentSum = 0;
         Arrays.sort(nums);
@@ -20,11 +20,9 @@ public class FrequencyOfTheMostFrequentElement {
     }
 
     public static void main(String[] args) {
-        FrequencyOfTheMostFrequentElement solution = new FrequencyOfTheMostFrequentElement();
         int[] nums = {1, 2, 4};
         int k = 5;
-        int result = solution.maxFrequency(nums, k);
-        System.out.println(result);
+        System.out.println(maxFrequency(nums, k));
     }
 }
 
