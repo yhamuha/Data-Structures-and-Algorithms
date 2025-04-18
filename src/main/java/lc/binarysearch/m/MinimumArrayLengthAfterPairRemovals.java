@@ -11,7 +11,7 @@ public class MinimumArrayLengthAfterPairRemovals {
                 temp++;
                 if(max < temp)
                     max = temp;
-            }else
+            } else
                 temp = 1;
         }
         if(max > n / 2)
@@ -19,29 +19,6 @@ public class MinimumArrayLengthAfterPairRemovals {
         if(n % 2 == 1)
             return 1;
         return 0;
-    }
-
-    // O(n log n) O(n)
-    public int minLengthAfterRemovals_(List<Integer> nums) {
-        Map<Integer, Integer> cnt = new HashMap<>();
-        for (int x : nums)
-            cnt.merge(x, 1, Integer::sum);
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
-        for (int x : cnt.values())
-            pq.offer(x);
-        int ans = nums.size();
-        while (pq.size() > 1) {
-            int x = pq.poll();
-            int y = pq.poll();
-            x--;
-            y--;
-            if (x > 0)
-                pq.offer(x);
-            if (y > 0)
-                pq.offer(y);
-            ans -= 2;
-        }
-        return ans;
     }
 
     public static void main(String[] args) {
