@@ -1,4 +1,5 @@
 package lc.binarysearch.m;
+
 public class HIndexII {
     // O(log n) O(1)
     static int hIndex(int[] citations) {
@@ -6,7 +7,7 @@ public class HIndexII {
         int low = 0, high = n-1;
         while(low <= high){
             int mid = low + (high - low)/2;
-            if(citations[mid] < n-mid)
+            if (citations[mid] < n-mid)
                 low = mid + 1;
             else
                 high = mid - 1;
