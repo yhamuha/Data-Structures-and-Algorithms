@@ -2,7 +2,7 @@ package lc.binarysearch.m;
 
 public class MinimumTimeToCompleteTrips {
     // O(log n) O(1)
-    public long minimumTime(int[] time, int totalTrips) {
+    static long minimumTime(int[] time, int totalTrips) {
         long left = 1;
         long min = time[0];
         for(int t : time)
@@ -18,7 +18,7 @@ public class MinimumTimeToCompleteTrips {
         }
         return left;
     }
-    private long totalTripInGivenTime(int[] time, long givenTime){
+    private static long totalTripInGivenTime(int[] time, long givenTime){
         long totalTrips = 0l;
         for(int tripTime : time)
             totalTrips += ((long)givenTime) / tripTime;
@@ -26,7 +26,6 @@ public class MinimumTimeToCompleteTrips {
     }
 
     public static void main(String[] args) {
-        var mttt = new MinimumTimeToCompleteTrips();
-        System.out.println(mttt.minimumTime(new int[]{1,2,3},5));
+        System.out.println(minimumTime(new int[]{1,2,3},5));
     }
 }
