@@ -1,7 +1,7 @@
 package lc.binarysearch.m;
 
 public class OnlineElection {
-    // O(n log n) O(n)
+    // overall O(n) O(n)
     private int n;
     private int[] times, winner;
     public OnlineElection(int[] persons, int[] times) {
@@ -10,6 +10,7 @@ public class OnlineElection {
         this.winner = new int[n];
         calc_winner(persons);
     }
+    // O(n) O(n)
     private void calc_winner(int[] persons) {
         int[] votes = new int[n];
         int max_vote = 0, curr_winner = -1;
@@ -23,27 +24,25 @@ public class OnlineElection {
             winner[i] = curr_winner;
         }
     }
-    public int q(int t) {
-        int l = 0, r = n-1;
-        while(l<r){
-            int mid = r+(l-r)/2;
-            if(t < times[mid])
-                r = mid-1;
+    // O (log n) O(1)
+    public int q(int query) {
+        int left = 0, right = n-1;
+        while(left<right){
+            int mid = left+(right-left)/2;
+            if(query < times[mid])
+                right = mid-1;
             else
-                l = mid;
+                left = mid;
         }
-        return winner[l];
+        return winner[left];
     }
 
     public static void main(String[] args) {
         int[] persons = {0, 1, 1, 0, 0, 1, 0};
         int[] times = {0, 5, 10, 15, 20, 25, 30};
         OnlineElection election = new OnlineElection(persons, times);
-        System.out.println(election.q(3));
-        System.out.println(election.q(12));
-        System.out.println(election.q(25));
-        System.out.println(election.q(15));
-        System.out.println(election.q(24));
-        System.out.println(election.q(8));
+        int[] queries = {3,12,25,15,24,8};
+        for (int query : queries)
+            System.out.println(election.q(query));
     }
 }
