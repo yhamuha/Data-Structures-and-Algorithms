@@ -19,7 +19,7 @@ public class CheckAverageInArray {
         int windowSize = 2;
         double [] averages = calculateMovingAverages(array, windowSize);
         for (double avg : averages) {
-            System.out.print(avg + " ");
+            System.out.print(avg);
         }
     }
 }
