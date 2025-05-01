@@ -5,41 +5,40 @@ import java.util.Map;
 
 public class CountVowelSubstringsOfAString {
     // O(n) O(n)
-    public int countVowelSubstrings(String word) {
+    static int countVowelSubstrings(String word) {
         int res = 0;
-        int l = 0;
-        int r = 0;
-        int m = 0;
+        int left = 0;
+        int right = 0;
+        int middle = 0;
         Map<Character, Integer> vowelMap = new HashMap<>();
-        while (r < word.length()) {
-            char c = word.charAt(r);
-            r++;
+        while (right < word.length()) {
+            char c = word.charAt(right);
+            right++;
             if (!isVowel(c)) {
-                l = r;
-                m = l;
+                left = right;
+                middle = left;
                 vowelMap.clear();
                 continue;
             }
             vowelMap.put(c, vowelMap.getOrDefault(c, 0) + 1);
             while (vowelMap.size() == 5) {
-                char lc = word.charAt(m);
-                m++;
+                char lc = word.charAt(middle);
+                middle++;
                 vowelMap.put(lc, vowelMap.get(lc) - 1);
                 if (vowelMap.get(lc) == 0)
                     vowelMap.remove(lc);
             }
-            res += m - l;
+            res += middle - left;
         }
         return res;
     }
 
-    private boolean isVowel(char c) {
+    private static boolean isVowel(char c) {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
     public static void main(String[] args) {
-        CountVowelSubstringsOfAString solution = new CountVowelSubstringsOfAString();
         String word = "cuaieuouac";
-        System.out.println(solution.countVowelSubstrings(word));
+        System.out.println(countVowelSubstrings(word));
     }
 }
