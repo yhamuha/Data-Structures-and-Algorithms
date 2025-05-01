@@ -2,7 +2,7 @@ package lc.slidingwindow.e;
 
 public class MaximumAverageSubarrayI {
     // O(n) O(1)
-    public double findMaxAverage(int[] nums, int k) {
+    static double findMaxAverage(int[] nums, int k) {
         int sum = 0;
         for(int i = 0; i < k; i ++)
             sum += nums[i];
@@ -13,10 +13,10 @@ public class MaximumAverageSubarrayI {
         }
         return (double) maxSum / k;
     }
+
     public static void main(String[] args) {
-        MaximumAverageSubarrayI solution = new MaximumAverageSubarrayI();
         int[] nums = {1, 12, -5, -6, 50, 3};
         int k = 4;
-        System.out.println(solution.findMaxAverage(nums, k));
+        System.out.println(findMaxAverage(nums, k));
     }
 }
