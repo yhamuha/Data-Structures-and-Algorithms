@@ -7,9 +7,9 @@ import java.util.List;
 public class FindAllAnagramsInAString {
     // O(n) O(1)
     static List<Integer> findAnagrams(String s, String p) {
-        List<Integer> ansList = new ArrayList<>();
+        List<Integer> answerList = new ArrayList<>();
         if (p.length() > s.length())
-            return ansList;
+            return answerList;
         int[] pFreq = new int[26];
         int[] sFreq = new int[26];
         for (int i = 0; i < p.length(); i++) {
@@ -17,17 +17,17 @@ public class FindAllAnagramsInAString {
             sFreq[s.charAt(i) - 'a']++;
         }
         if (Arrays.equals(pFreq, sFreq))
-            ansList.add(0);
+            answerList.add(0);
         int i = 0, j = p.length();
         while (j < s.length()) {
             sFreq[s.charAt(i) - 'a']--;
             sFreq[s.charAt(j) - 'a']++;
             i++;
             if (Arrays.equals(sFreq, pFreq))
-                ansList.add(i);
+                answerList.add(i);
             j++;
         }
-        return ansList;
+        return answerList;
     }
 
     public static void main(String[] args) {
