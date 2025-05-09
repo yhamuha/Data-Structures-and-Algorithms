@@ -2,30 +2,28 @@ package lc.slidingwindow.m;
 
 public class GetEqualSubstringsWithinBudget {
     // O(n) O(1)
-    public int equalSubstring(String s, String t, int maxCost) {
-        int leftPtr = 0, size = s.length(), rightPtr = 0;
+    static int equalSubstring(String s, String t, int maxCost) {
+        int left = 0, size = s.length(), right = 0;
         int currCost = 0, maxLen = 0;
-        while (rightPtr < size) {
-            currCost += Math.abs(s.charAt(rightPtr) - t.charAt(rightPtr));
+        while (right < size) {
+            currCost += Math.abs(s.charAt(right) - t.charAt(right));
             if (currCost > maxCost) {
-                while (leftPtr <= rightPtr && currCost > maxCost) {
-                    currCost -= Math.abs(s.charAt(leftPtr) - t.charAt(leftPtr));
-                    leftPtr++;
+                while (left <= right && currCost > maxCost) {
+                    currCost -= Math.abs(s.charAt(left) - t.charAt(left));
+                    left++;
                 }
             }
-            if (leftPtr <= rightPtr)
-                maxLen = Math.max(maxLen, rightPtr - leftPtr + 1);
-            rightPtr++;
+            if (left <= right)
+                maxLen = Math.max(maxLen, right - left + 1);
+            right++;
         }
         return maxLen;
     }
 
     public static void main(String[] args) {
-        GetEqualSubstringsWithinBudget solution = new GetEqualSubstringsWithinBudget();
         String s = "abcd";
         String t = "bcdf";
         int maxCost = 3;
-        int result = solution.equalSubstring(s, t, maxCost);
-        System.out.println(result);
+        System.out.println(equalSubstring(s, t, maxCost));
     }
 }
