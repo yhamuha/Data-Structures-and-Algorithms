@@ -6,7 +6,7 @@ import java.util.Deque;
 
 public class SlidingWindowMaximum {
     // O(n) O(n)
-    public int[] maxSlidingWindow(int[] nums, int k) {
+    static int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         int[] result = new int[n - k + 1];
         Deque<Integer> window = new ArrayDeque<>();
@@ -23,8 +23,7 @@ public class SlidingWindowMaximum {
     }
 
     public static void main(String[] args) {
-        var swm = new SlidingWindowMaximum();
-        System.out.println(Arrays.toString(swm.maxSlidingWindow
-                                        (new int[]{1,3,-1,-3,5,3,6,7}, 3)));
+        System.out.println(Arrays.toString(
+                maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
     }
 }
