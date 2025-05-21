@@ -6,17 +6,16 @@ public class PalindromeLinkedList {
         if (head == null) return true;
         ListNode slow = head;
         ListNode fast = head;
-        while(fast!=null && fast.next!=null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         ListNode halfList = reverseList(slow);
-        while(head!=null && halfList!=null){
-            if(head.val!=halfList.val){
+        while (head != null && halfList != null) {
+            if (head.val != halfList.val)
                 return false;
-            }
-            head=head.next;
-            halfList=halfList.next;
+            head = head.next;
+            halfList = halfList.next;
         }
         return true;
     }
@@ -24,11 +23,11 @@ public class PalindromeLinkedList {
         ListNode prev = null;
         ListNode next = null;
         ListNode curr = head;
-        while(curr!=null) {
-            next=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
         return prev;
     }
