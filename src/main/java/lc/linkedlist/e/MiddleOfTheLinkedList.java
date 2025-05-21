@@ -5,12 +5,12 @@ public class MiddleOfTheLinkedList {
     public ListNode middleNode(ListNode head) {
         int length = 0;
         ListNode current = head;
-        while(current != null){
+        while (current != null) {
             length++;
             current = current.next;
         }
-        current=head;
-        for(int i=0; i<length/2; i++)
+        current = head;
+        for (int i = 0; i < length / 2; i++)
             current = current.next;
         return current;
     }
