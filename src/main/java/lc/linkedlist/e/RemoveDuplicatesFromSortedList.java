@@ -6,7 +6,7 @@ public class RemoveDuplicatesFromSortedList {
         if (head == null) return null;
         ListNode start = head, end = head;
         while (end != null) {
-            if(start.val != end.val) {
+            if (start.val != end.val) {
                 start.next = end;
                 start = end;
             }
