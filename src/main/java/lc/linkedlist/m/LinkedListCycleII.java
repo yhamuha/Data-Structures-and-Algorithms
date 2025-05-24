@@ -3,9 +3,18 @@ package lc.linkedlist.m;
 class ListNode {
     int val;
     ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }
 
 public class LinkedListCycleII {
@@ -13,14 +22,14 @@ public class LinkedListCycleII {
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
-        while(fast!=null && fast.next!=null){
-            slow=slow.next;
-            fast=fast.next.next;
-            if(slow==fast){
-                slow=head;
-                while(slow!=fast){
-                    slow=slow.next;
-                    fast=fast.next;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
                 }
                 return slow;
             }
@@ -39,7 +48,7 @@ public class LinkedListCycleII {
         node4.next = node2;
         LinkedListCycleII solution = new LinkedListCycleII();
         ListNode result = solution.detectCycle(node1);
-        if(result != null)
+        if (result != null)
             System.out.println(result.val);
         else
             System.out.println("No cycle");
