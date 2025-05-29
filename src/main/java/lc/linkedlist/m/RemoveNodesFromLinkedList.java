@@ -8,9 +8,9 @@ public class RemoveNodesFromLinkedList {
         Stack<Integer> stack = new Stack();
         ListNode rev = reverse(head);
         while (rev != null) {
-            if (stack.isEmpty() || (!stack.isEmpty() && rev.val >= stack.peek())) {
+            if (stack.isEmpty() ||
+                    (!stack.isEmpty() && rev.val >= stack.peek()))
                 stack.push(rev.val);
-            }
             rev = rev.next;
         }
         ListNode res = new ListNode();
@@ -21,6 +21,7 @@ public class RemoveNodesFromLinkedList {
         }
         return res.next;
     }
+
     ListNode reverse(ListNode head) {
         ListNode curr = head;
         ListNode prev = null;
