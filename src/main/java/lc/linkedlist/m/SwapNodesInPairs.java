@@ -19,6 +19,7 @@ public class SwapNodesInPairs {
         prev.next = curr;
         return head;
     }
+
     public static void printList(ListNode node) {
         while (node != null) {
             System.out.print(node.val + " ");
