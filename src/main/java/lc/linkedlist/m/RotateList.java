@@ -3,7 +3,7 @@ package lc.linkedlist.m;
 public class RotateList {
     // O(n) O(1)
     static ListNode rotateRight(ListNode head, int k) {
-        if(head == null || head.next == null || k == 0)
+        if (head == null || head.next == null || k == 0)
             return head;
         ListNode temp = head;
         int count = 1;
@@ -21,6 +21,7 @@ public class RotateList {
         temp.next = null;
         return newHead;
     }
+
     static void printList(ListNode node) {
         while (node != null) {
             System.out.print(node.val + " ");
