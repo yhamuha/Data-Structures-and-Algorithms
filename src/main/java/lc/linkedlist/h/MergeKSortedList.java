@@ -8,13 +8,13 @@ public class MergeKSortedList {
     // O(n log n) O(n)
     public ListNode mergeKLists(ListNode[] lists) {
         PriorityQueue<ListNode> heap = new PriorityQueue<>((a, b) -> a.val - b.val);
-        for(ListNode node : lists){
-            if(node != null)
+        for (ListNode node : lists) {
+            if (node != null)
                 heap.add(node);
         }
         ListNode head = new ListNode(0);
         ListNode current = head;
-        while(!heap.isEmpty()){
+        while (!heap.isEmpty()) {
             ListNode node = heap.poll();
             current.next = node;
             current = current.next;
@@ -23,6 +23,7 @@ public class MergeKSortedList {
         }
         return head.next;
     }
+
     public static void printList(ListNode node) {
         while (node != null) {
             System.out.print(node.val + " ");
