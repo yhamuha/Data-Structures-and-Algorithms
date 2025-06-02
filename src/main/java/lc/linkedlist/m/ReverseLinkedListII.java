@@ -18,6 +18,7 @@ public class ReverseLinkedListII {
         }
         return dummy.next;
     }
+
     private static void printList(ListNode head) {
         ListNode current = head;
         while (current != null) {
