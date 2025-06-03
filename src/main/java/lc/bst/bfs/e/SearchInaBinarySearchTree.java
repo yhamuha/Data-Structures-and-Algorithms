@@ -11,7 +11,7 @@ public class SearchInaBinarySearchTree {
     static TreeNode searchBST(TreeNode root, int val) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode temp = queue.poll();
             if (temp.val == val)
                 return temp;
@@ -22,13 +22,14 @@ public class SearchInaBinarySearchTree {
         }
         return null;
     }
+
     // O(n) O(1)
-    static TreeNode searchBST_opt(TreeNode root, int val){
-        while (root!=null) {
-            if (root.val>val)
-                root=root.left;
-            else if (root.val<val)
-                root=root.right;
+    static TreeNode searchBST_opt(TreeNode root, int val) {
+        while (root != null) {
+            if (root.val > val)
+                root = root.left;
+            else if (root.val < val)
+                root = root.right;
             else
                 return root;
         }
@@ -40,7 +41,7 @@ public class SearchInaBinarySearchTree {
         root.left = new TreeNode(2, new TreeNode(1), new TreeNode(3));
         root.right = new TreeNode(7, null, null);
         // TreeNode searched = searchBST(root,2);
-        TreeNode searched = searchBST_opt(root,2);
+        TreeNode searched = searchBST_opt(root, 2);
         PrintBst.printPreOrder(searched);
     }
 }
