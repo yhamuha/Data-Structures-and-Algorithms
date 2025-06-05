@@ -14,14 +14,14 @@ public class BinaryTreeLevelOrderTraversal {
         queue.add(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            List<Integer> l = new LinkedList<>();
+            List<Integer> list = new LinkedList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode temp = queue.remove();
-                l.add(temp.val);
+                list.add(temp.val);
                 if (temp.left != null) queue.add(temp.left);
                 if (temp.right != null) queue.add(temp.right);
             }
-            answer.add(l);
+            answer.add(list);
         }
         return answer;
     }
