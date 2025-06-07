@@ -8,7 +8,7 @@ public class ValidateBinarySearchTree {
     // O(n) O(n)
     static boolean isValidBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
-        int left_child_val = -Integer.MAX_VALUE;
+        int left_child_val = Integer.MIN_VALUE;
         while (!stack.isEmpty() || root != null) {
             while (root != null) {
                 stack.push(root);
