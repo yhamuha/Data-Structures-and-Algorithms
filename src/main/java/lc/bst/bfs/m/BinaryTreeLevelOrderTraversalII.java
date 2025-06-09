@@ -7,31 +7,31 @@ import java.util.*;
 public class BinaryTreeLevelOrderTraversalII {
     // O(n) O(n)
     static List<List<Integer>> levelOrderBottom(TreeNode root) {
-        Queue<TreeNode> nodeQueue = new LinkedList<>();
-        Stack<List<Integer>> levels = new Stack<>();
-        if(root != null)
-            nodeQueue.offer(root);
-        while(!nodeQueue.isEmpty()) {
-            int qSize = nodeQueue.size();
+        Queue<TreeNode> queue = new LinkedList<>();
+        Stack<List<Integer>> stack = new Stack<>();
+        if (root != null)
+            queue.offer(root);
+        while (!queue.isEmpty()) {
+            int qSize = queue.size();
             List<Integer> level = new ArrayList<>();
             for (int i = 0; i < qSize; i++) {
-                TreeNode curr = nodeQueue.poll();
+                TreeNode curr = queue.poll();
                 level.add(curr.val);
-                if(curr.left != null) nodeQueue.offer(curr.left);
-                if(curr.right != null) nodeQueue.offer(curr.right);
+                if (curr.left != null) queue.offer(curr.left);
+                if (curr.right != null) queue.offer(curr.right);
             }
-            levels.push(level);
+            stack.push(level);
         }
         List<List<Integer>> res = new ArrayList<>();
-        while(!levels.isEmpty())
-            res.add(levels.pop());
+        while (!stack.isEmpty())
+            res.add(stack.pop());
         return res;
     }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20));
         root.left = new TreeNode(9, null, null);
-        root.right = new TreeNode(20, new TreeNode(15), new TreeNode (7));
+        root.right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
         System.out.println(levelOrderBottom(root));
     }
 }
