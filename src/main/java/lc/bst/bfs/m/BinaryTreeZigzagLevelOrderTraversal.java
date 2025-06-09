@@ -11,20 +11,20 @@ public class BinaryTreeZigzagLevelOrderTraversal {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> answer = new LinkedList<>();
         if (root == null) return answer;
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
         boolean flag = true;
-        while (q.size() > 0) {
-            int size = q.size();
-            LinkedList<Integer> l = new LinkedList<>();
+        while (queue.size() > 0) {
+            int size = queue.size();
+            LinkedList<Integer> list = new LinkedList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode temp = q.remove();
-                if (flag) l.addLast(temp.val);
-                else l.addFirst(temp.val);
-                if (temp.left != null) q.add(temp.left);
-                if (temp.right != null) q.add(temp.right);
+                TreeNode temp = queue.remove();
+                if (flag) list.addLast(temp.val);
+                else list.addFirst(temp.val);
+                if (temp.left != null) queue.add(temp.left);
+                if (temp.right != null) queue.add(temp.right);
             }
-            answer.add(l);
+            answer.add(list);
             flag = !flag;
         }
         return answer;
@@ -34,7 +34,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
         var btzlot = new BinaryTreeZigzagLevelOrderTraversal();
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20));
         root.left = new TreeNode(9, null, null);
-        root.right = new TreeNode(20, new TreeNode(15), new TreeNode (7));
+        root.right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
         System.out.println(btzlot.zigzagLevelOrder(root));
     }
 }
