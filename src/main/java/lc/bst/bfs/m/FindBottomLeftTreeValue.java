@@ -9,19 +9,19 @@ public class FindBottomLeftTreeValue {
     // O(n) O(n)
     static int findBottomLeftValue(TreeNode root) {
         int ans = 0;
-        if(root == null)
+        if (root == null)
             return 0;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             int size = queue.size();
-            for(int i=1; i<=size; i++) {
+            for (int i = 1; i <= size; i++) {
                 TreeNode current = queue.poll();
-                if(i == 1)
+                if (i == 1)
                     ans = current.val;
-                if(current.left != null)
+                if (current.left != null)
                     queue.add(current.left);
-                if(current.right != null)
+                if (current.right != null)
                     queue.add(current.right);
             }
         }
