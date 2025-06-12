@@ -4,22 +4,25 @@ import lc.bst.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class BinarySearchTreeIterator {
     List<Integer> list = new ArrayList<>();
     int index = 0;
-    public BinarySearchTreeIterator(TreeNode root){
+
+    public BinarySearchTreeIterator(TreeNode root) {
         inorder(root);
     }
+
     // O(1) O(n)
-    public int next(){
+    public int next() {
         return list.get(index++);
     }
+
     // O(1) O(n)
-    public boolean hasNext(){
-        return index<list.size();
+    public boolean hasNext() {
+        return index < list.size();
     }
+
     // O(n) O(n)
     private void inorder(TreeNode root) {
         if (root == null) return;
@@ -28,10 +31,10 @@ public class BinarySearchTreeIterator {
         inorder(root.right);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         TreeNode root = new TreeNode(7, new TreeNode(3), new TreeNode(15));
         root.left = new TreeNode(3, null, null);
-        root.right = new TreeNode(15, new TreeNode(9), new TreeNode (20));
+        root.right = new TreeNode(15, new TreeNode(9), new TreeNode(20));
         BinarySearchTreeIterator obj = new BinarySearchTreeIterator(root);
         List<Object> output = new ArrayList<>();
         output.add(null);
