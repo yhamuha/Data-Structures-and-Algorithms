@@ -14,6 +14,7 @@ public class InvertBinaryTree {
         invertTree(root.right);
         return root;
     }
+
     public static void PreorderTraversal(TreeNode node) {
         if (node != null) {
             System.out.print(node.val + " ");
