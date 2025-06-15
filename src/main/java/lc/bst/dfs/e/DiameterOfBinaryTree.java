@@ -3,12 +3,13 @@ package lc.bst.dfs.e;
 import lc.bst.TreeNode;
 
 public class DiameterOfBinaryTree {
-    // O(n), O(n)
+    // O(n) O(n)
     static int diameterOfBinaryTree(TreeNode root) {
         int[] ans = new int[1];
         dfs(root, ans);
         return ans[0];
     }
+
     private static int dfs(TreeNode root, int[] ans) {
         if (root == null)
             return 0;
