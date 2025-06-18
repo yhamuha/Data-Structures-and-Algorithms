@@ -6,12 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTreePreorderTraversal {
-    // O(n), O(n)
+    // O(n) O(n)
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         traversal(root, res);
         return res;
     }
+
     public void traversal(TreeNode root, List<Integer> res) {
         if (root == null) return;
         res.add(root.val);
