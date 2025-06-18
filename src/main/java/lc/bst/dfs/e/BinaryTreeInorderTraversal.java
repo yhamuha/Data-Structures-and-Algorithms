@@ -9,21 +9,22 @@ public class BinaryTreeInorderTraversal {
     // O(n) O(n)
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        traversal (root,res);
-        return(res);
+        traversal(root, res);
+        return (res);
     }
-    public void traversal (TreeNode root , List<Integer> res ){
-        if (root==null) return;
-        traversal(root.left,res);
+
+    public void traversal(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        traversal(root.left, res);
         res.add(root.val);
-        traversal(root.right,res);
+        traversal(root.right, res);
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(15);
+        root.left.left = new TreeNode(2);
         root.left.right = new TreeNode(5);
         BinaryTreeInorderTraversal bti = new BinaryTreeInorderTraversal();
         System.out.println(bti.inorderTraversal(root));
