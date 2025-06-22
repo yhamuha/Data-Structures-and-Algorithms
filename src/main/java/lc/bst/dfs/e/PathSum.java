@@ -6,10 +6,10 @@ public class PathSum {
     // O(n) O(n) unbalanced | O(log n) balanced
     static boolean hasPathSum(TreeNode root, int targetSum) {
         int sum = 0;
-        return rootToLeafPathSum(root, targetSum, sum);
+        return dfs(root, targetSum, sum);
     }
 
-    static boolean rootToLeafPathSum(TreeNode root, int targetSum, int sum) {
+    static boolean dfs(TreeNode root, int targetSum, int sum) {
         if (root == null)
             return false;
         if (root.left == null && root.right == null) {
@@ -17,8 +17,8 @@ public class PathSum {
             if (sum == targetSum)
                 return true;
         }
-        return rootToLeafPathSum(root.left, targetSum, sum + root.val)
-                || rootToLeafPathSum(root.right, targetSum, sum + root.val);
+        return dfs(root.left, targetSum, sum + root.val)
+                || dfs(root.right, targetSum, sum + root.val);
     }
 
     public static void main(String[] args) {
