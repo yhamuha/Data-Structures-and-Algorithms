@@ -4,18 +4,19 @@ import lc.bst.TreeNode;
 
 public class CountGoodNodesInBinaryTree {
     // O(n) O(n)
-    public int goodNodes (TreeNode root) {
-        if(root == null) return 0;
+    public int goodNodes(TreeNode root) {
+        if (root == null) return 0;
         int count = 1;
         count += dfs(root.left, root.val);
         count += dfs(root.right, root.val);
         return count;
     }
-    public int dfs (TreeNode root, int max) {
+
+    public int dfs(TreeNode root, int max) {
         int count = 0;
-        if(root == null) return 0;
-        if(root.val >= max) {
-            count ++;
+        if (root == null) return 0;
+        if (root.val >= max) {
+            count++;
             max = root.val;
         }
         count += dfs(root.left, max);
