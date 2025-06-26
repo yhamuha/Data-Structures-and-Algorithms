@@ -3,19 +3,21 @@ package lc.bst.dfs.m;
 import lc.bst.TreeNode;
 
 public class PathSumIII {
-    // O(n^2); O(n) unbalanced O(log n) balanced
+    // O(n^2) O(n)
     int total = 0;
+
     public int pathSum(TreeNode root, int sum) {
-        if(root == null) return 0;
+        if (root == null) return 0;
         dfs(root, sum, 0);
         pathSum(root.left, sum);
         pathSum(root.right, sum);
         return total;
     }
+
     void dfs(TreeNode root, int sum, long curr) {
-        if(root == null) return;
+        if (root == null) return;
         curr += root.val;
-        if(curr == sum) total++;
+        if (curr == sum) total++;
         dfs(root.left, sum, curr);
         dfs(root.right, sum, curr);
     }
