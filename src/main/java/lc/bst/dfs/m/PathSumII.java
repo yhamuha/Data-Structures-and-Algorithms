@@ -10,18 +10,19 @@ public class PathSumII {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> resultList = new ArrayList<>();
         List<Integer> subList = new ArrayList<>();
-        dfs(resultList,subList,root,targetSum);
+        dfs(resultList, subList, root, targetSum);
         return resultList;
     }
+
     public void dfs(List<List<Integer>> list, List<Integer> sublist, TreeNode node, int sum) {
-        if(node==null) return;
+        if (node == null) return;
         sum -= node.val;
         sublist.add(node.val);
-        if(sum==0 && node.left==null && node.right==null)
+        if (sum == 0 && node.left == null && node.right == null)
             list.add(new ArrayList<Integer>(sublist));
-        dfs(list,sublist,node.left,sum);
-        dfs(list,sublist,node.right,sum);
-        sublist.remove(sublist.size()-1);
+        dfs(list, sublist, node.left, sum);
+        dfs(list, sublist, node.right, sum);
+        sublist.remove(sublist.size() - 1);
     }
 
     public static void main(String[] args) {
