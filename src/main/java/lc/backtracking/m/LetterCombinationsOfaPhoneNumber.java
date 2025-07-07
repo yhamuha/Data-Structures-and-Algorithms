@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LetterCombinationsOfaPhoneNumber {
-    // O(4^n) O(n)
+    // O(4^n * n) O(4^n * n)
     public List<String> letterCombinations(String digits) {
         List<String> resultList = new ArrayList<>();
         if (digits.length() == 0) return resultList;
@@ -22,6 +22,7 @@ public class LetterCombinationsOfaPhoneNumber {
         backtrack(digits, 0, hm, new StringBuilder(), resultList);
         return resultList;
     }
+
     private void backtrack(String digits, int i, Map<Character, String> hm, StringBuilder sb, List<String> resultList) {
         if (i == digits.length()) {
             resultList.add(sb.toString());
