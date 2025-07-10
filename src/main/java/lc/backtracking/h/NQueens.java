@@ -20,8 +20,7 @@ public class NQueens {
         return result;
     }
 
-    private void solveNQueens(char[][] board, int row, List<List<String>> result,
-                              Set<Integer> columns, Set<Integer> diagonals, Set<Integer> antiDiagonals) {
+    private void solveNQueens(char[][] board, int row, List<List<String>> result, Set<Integer> columns, Set<Integer> diagonals, Set<Integer> antiDiagonals) {
         if (row == board.length) {
             result.add(toResult(board));
             return;
