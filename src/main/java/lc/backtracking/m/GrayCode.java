@@ -34,12 +34,28 @@ public class GrayCode {
         return false;
     }
 
+    // O(2^n) O(2^n)
+    public List<Integer> grayCode_iterat(int n) {
+        List<Integer> resultList = new ArrayList<>();
+        resultList.add(0);
+        if (n == 0) return resultList;
+        resultList.add(1);
+        int curr = 1;
+        for (int i = 2; i <= n; i++) {
+            curr *= 2;
+            for (int j = resultList.size() - 1; j >= 0; j--)
+                resultList.add(curr + resultList.get(j));
+        }
+        return resultList;
+    }
+
     public static void main(String[] args) {
         int n = 2;
         GrayCode generator = new GrayCode();
-        List<Integer> grayCodes = generator.grayCode(n);
+        /*List<Integer> grayCodes = generator.grayCode(n);
         for (int code : grayCodes) {
             System.out.println(Integer.toBinaryString(code));
-        }
+        }*/
+        System.out.println(generator.grayCode_iterat(n));
     }
 }
