@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NQueens2 {
-
     // O(n! *n) O(n^2)
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> ans = new ArrayList<List<String>>();
@@ -33,16 +32,14 @@ public class NQueens2 {
     }
 
     private boolean valid(char[][] chess, int row, int col) {
-        for (int i = 0; i < row; i++) {
+        for (int i = 0; i < row; i++)
             if (chess[i][col] == 'Q') return false;
-        }
 
-        for (int i = row - 1, j = col + 1; i >= 0 && j < chess.length; i--, j++) {
+        for (int i = row - 1, j = col + 1; i >= 0 && j < chess.length; i--, j++)
             if (chess[i][j] == 'Q') return false;
-        }
-        for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
+
+        for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--)
             if (chess[i][j] == 'Q') return false;
-        }
         return true;
     }
 
@@ -59,9 +56,8 @@ public class NQueens2 {
         List<List<String>> solutions = nQueens.solveNQueens(n);
 
         for (List<String> solution : solutions) {
-            for (String row : solution) {
+            for (String row : solution)
                 System.out.println(row);
-            }
             System.out.println();
         }
     }
