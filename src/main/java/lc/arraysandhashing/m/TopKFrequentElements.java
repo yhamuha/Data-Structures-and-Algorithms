@@ -17,8 +17,9 @@ public class TopKFrequentElements {
         }
         int[] res = new int[k];
         int counter = 0, arrSize = 0;
-        for (int i = bucket.length - 1; i >= 0 && counter < k; i--) { // we are started from the end of bucket
-                                                                      // cause it automatically sorted by frequencies
+        // we are started from the end of bucket
+        // cause it automatically sorted by frequencies
+        for (int i = bucket.length - 1; i >= 0 && counter < k; i--) {
             if (bucket[i] != null) {
                 for (Integer integer : bucket[i]) {
                     if (arrSize < k) {
