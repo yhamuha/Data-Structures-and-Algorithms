@@ -6,6 +6,7 @@ public class RandomPickWithWeight {
     private int[] prefixSum;
     private int totalWeight;
     private Random rand;
+
     // O(log n) O(n)
     public RandomPickWithWeight(int[] w) {
         int n = w.length;
@@ -17,6 +18,7 @@ public class RandomPickWithWeight {
         }
         rand = new Random();
     }
+
     public int pickIndex() {
         int target = rand.nextInt(totalWeight) + 1;
         int low = 0, high = prefixSum.length - 1;
