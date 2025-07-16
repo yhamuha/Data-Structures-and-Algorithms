@@ -18,7 +18,7 @@ public class TopKFrequentElements {
         int[] res = new int[k];
         int counter = 0, arrSize = 0;
         for (int i = bucket.length - 1; i >= 0 && counter < k; i--) {
-            if (bucket[i] != null ) {
+            if (bucket[i] != null) {
                 for (Integer integer : bucket[i]) {
                     if (arrSize < k) {
                         res[counter++] = integer;
@@ -31,7 +31,7 @@ public class TopKFrequentElements {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,1,1,2,2,3};
+        int[] nums = {1, 1, 1, 2, 2, 3};
         int k = 2;
         System.out.println(Arrays.toString(topKFrequent(nums, k)));
     }
