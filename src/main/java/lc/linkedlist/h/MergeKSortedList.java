@@ -34,7 +34,7 @@ public class MergeKSortedList {
 
     public static void main(String[] args) {
         MergeKSortedList merger = new MergeKSortedList();
-        ListNode[] lists = new ListNode[3]; // Example initialization
+        ListNode[] lists = new ListNode[3];
         lists[0] = new ListNode(1, new ListNode(4, new ListNode(5)));
         lists[1] = new ListNode(1, new ListNode(3, new ListNode(4)));
         lists[2] = new ListNode(2, new ListNode(6));
