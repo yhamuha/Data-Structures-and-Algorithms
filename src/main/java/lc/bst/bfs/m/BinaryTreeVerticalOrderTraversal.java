@@ -38,12 +38,9 @@ public class BinaryTreeVerticalOrderTraversal {
         root.right = new TreeNode(20);
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
-
         BinaryTreeVerticalOrderTraversal traversal = new BinaryTreeVerticalOrderTraversal();
         List<List<Integer>> result = traversal.verticalOrder(root);
-
-        for (List<Integer> level : result) {
+        for (List<Integer> level : result)
             System.out.println(level);
-        }
     }
 }
