@@ -54,4 +54,3 @@ public class ShortestPathInBinaryMatrix {
         System.out.println("Test case 2: " + solution.shortestPathBinaryMatrix(grid2));
     }
 }
-}
