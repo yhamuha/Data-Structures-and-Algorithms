@@ -6,16 +6,16 @@ import java.util.LinkedList;
 public class BuildingsWithAnOceanView {
     // O(n) O(n)
     public int[] findBuildings(int[] heights) {
-        int mx = 0;
-        LinkedList<Integer> ans = new LinkedList<>();
+        int max = 0;
+        LinkedList<Integer> result = new LinkedList<>();
         for (int i = heights.length - 1; i >= 0; --i) {
-            int v = heights[i];
-            if (mx < v) {
-                ans.addFirst(i);
-                mx = v;
+            int current = heights[i];
+            if (max < current) {
+                result.addFirst(i);
+                max = current;
             }
         }
-        return ans.stream().mapToInt(i -> i).toArray();
+        return result.stream().mapToInt(i -> i).toArray();
     }
 
     public static void main(String[] args) {
