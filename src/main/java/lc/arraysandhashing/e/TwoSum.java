@@ -32,6 +32,7 @@ public class TwoSum {
 
     public static void main(String[] args) {
         int[] arr = new int[]{3,2,4};
+        System.out.println(Arrays.toString(findTwoSum(arr, 6)));
         System.out.println(Arrays.toString(findTwoSumImproved(arr, 6)));
     }
 }
