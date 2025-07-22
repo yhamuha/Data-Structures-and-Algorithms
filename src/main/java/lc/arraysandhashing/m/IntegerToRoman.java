@@ -11,7 +11,8 @@ public class IntegerToRoman {
                 {1000, 900, 500, 400, 100,
                         90, 50, 40, 10,
                         9, 5, 4, 1};
-        if (num > 3999 || num < 1) throw new IllegalArgumentException();
+        if (num > 3999 || num < 1) // abide constraints
+            throw new IllegalArgumentException();
         StringBuilder roman = new StringBuilder();
         int i = 0;
         while (num > 0) {
