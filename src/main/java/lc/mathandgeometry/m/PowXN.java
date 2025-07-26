@@ -23,7 +23,7 @@ public class PowXN {
 
     public static void main(String[] args) {
         double x = 2.0;
-        int n = 10;
+        int n = 3;
         System.out.println(myPow(x, n));
     }
 }
