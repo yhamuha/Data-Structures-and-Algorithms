@@ -24,7 +24,7 @@ public class GenerateParentheses {
 
     public static void main(String[] args) {
         var gp = new GenerateParentheses();
-        int n = 3;
+        int n = 4;
         System.out.println(gp.generateParenthesis(n));
     }
 }
