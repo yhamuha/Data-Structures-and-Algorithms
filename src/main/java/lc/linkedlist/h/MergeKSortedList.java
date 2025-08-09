@@ -7,19 +7,19 @@ import java.util.PriorityQueue;
 public class MergeKSortedList {
     // O(n log n) O(n)
     public ListNode mergeKLists(ListNode[] lists) {
-        PriorityQueue<ListNode> heap = new PriorityQueue<>((a, b) -> a.val - b.val);
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
         for (ListNode node : lists) {
             if (node != null)
-                heap.add(node);
+                minHeap.add(node);
         }
         ListNode head = new ListNode(0);
         ListNode current = head;
-        while (!heap.isEmpty()) {
-            ListNode node = heap.poll();
+        while (!minHeap.isEmpty()) {
+            ListNode node = minHeap.poll();
             current.next = node;
             current = current.next;
             if (node.next != null)
-                heap.add(node.next);
+                minHeap.add(node.next);
         }
         return head.next;
     }
