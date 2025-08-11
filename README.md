@@ -4,7 +4,7 @@
 2. Stack
 3. Monotonic stack
 4. Two pointer
-5. Binaru searsh
+5. Binary searsh
 6. Sliding window
 7. Linked list
 8. Binary search tree: dfs
