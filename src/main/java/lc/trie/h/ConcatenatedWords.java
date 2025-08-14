@@ -15,8 +15,6 @@ public class ConcatenatedWords {
         }
     }
 
-    ;
-
     void insert(TrieNode root, String key) {
         TrieNode curr = root;
         for (int i = 0; i < key.length(); i++) {
