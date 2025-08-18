@@ -13,7 +13,7 @@ class Node {
 }
 
 public class CopyListWithRandomPointer {
-    // O(n) O(n)
+    // O(n) O(n) #amazon
     public Node copyRandomList(Node head) {
         Node current = head;
         Node next;
