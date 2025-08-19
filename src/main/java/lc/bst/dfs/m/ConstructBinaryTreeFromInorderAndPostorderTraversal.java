@@ -5,7 +5,7 @@ import lc.bst.TreeNode;
 import java.util.HashMap;
 
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
-    // O(n) O(n) unbalanced | O(log n) balanced
+    // O(n) O(n) unbalanced | O(log n) balanced #walmart
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < inorder.length; i++)

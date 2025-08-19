@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class SortTheMatrixDiagonally {
     PriorityQueue<Integer> pQ = new PriorityQueue<>();
-    // O (n log n) O(m * n)
+    // O (n log n) O(m * n) #walmart
     public int[][] diagonalSort(int[][] mat) {
         int[][] seen = new int[mat.length][mat[0].length];
         for (int i = 0; i < mat.length; i++) {

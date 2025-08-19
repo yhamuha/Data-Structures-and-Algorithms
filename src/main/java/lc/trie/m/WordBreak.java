@@ -12,7 +12,7 @@ public class WordBreak {
             }
         }
     }
-    // Overall O(d*m + n^2) O(d*m + n)
+    // Overall O(d*m + n^2) O(d*m + n) #walmart
     public static Node root = new Node();
     // O(d*m)
     public static void insert(String words){

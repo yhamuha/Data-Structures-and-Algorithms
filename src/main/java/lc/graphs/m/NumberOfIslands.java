@@ -1,7 +1,7 @@
 package lc.graphs.m;
 
 public class NumberOfIslands {
-    // O(m * n) O(m * n) #amazon
+    // O(m * n) O(m * n) #amazon #walmart
     public int numIslands(char[][] grid) {
         if (grid == null) return 0;
         int islandCount = 0;

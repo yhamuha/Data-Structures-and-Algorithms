@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
-    // O(n) O(n) #amazon
+    // O(n) O(n) #amazon #walmart
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
         int maxLength = 0;

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class TrappingRainWater {
-    // O(n) O(n) #amazon
+    // O(n) O(n) #amazon #walmart
     public int trap(List<Integer> height) {
         int n = height.size();
         int water = 0;
