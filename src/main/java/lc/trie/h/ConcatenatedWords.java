@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConcatenatedWords {
-    // O(n * l^2) O(n * l)
+    // O(n * l^2) O(n * l) #amazon
     class TrieNode {
         TrieNode[] arr = new TrieNode[26];
         boolean is_end;

@@ -4,7 +4,7 @@ import lc.bst.Pair;
 import java.util.*;
 
 public class WordLadder {
-    // O(n * l) O(n * l)
+    // O(n * l) O(n * l) #amazon
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> st = new HashSet<>(wordList);
         if (!st.contains(endWord)) return 0;

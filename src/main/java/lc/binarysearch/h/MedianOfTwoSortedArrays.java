@@ -1,7 +1,7 @@
 package lc.binarysearch.h;
 
 public class MedianOfTwoSortedArrays {
-    // O(log min(n,m)) O(1)
+    // O(log min(n,m)) O(1) #amazon
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
             int n1 = nums1.length, n2 = nums2.length;
             if (n1 > n2)

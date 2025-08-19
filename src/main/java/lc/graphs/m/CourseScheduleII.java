@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class CourseScheduleII {
-    // O(V+E) O(V+E)
+    // O(V+E) O(V+E) #amazon
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         List<List<Integer>> adjList = new ArrayList<>(numCourses) ;
         for(int i =0; i< numCourses;i++)

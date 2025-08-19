@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class CourseSchedule {
-    // O(V+E) O(V+E)
+    // O(V+E) O(V+E) #amazon
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         List<List<Integer>> graph = new ArrayList<>();
         int[] inDegree = new int[numCourses];

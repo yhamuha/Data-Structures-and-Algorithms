@@ -1,7 +1,7 @@
 package lc.greedy.m;
 
 public class MaximumSubarray {
-    // O(n) O(1)
+    // O(n) O(1) #amazon
     static int maxSubArray(int[] nums) {
         if (nums.length == 0) return 0;
         int currSum = nums[0];

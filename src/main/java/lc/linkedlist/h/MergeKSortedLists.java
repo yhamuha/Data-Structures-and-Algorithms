@@ -5,7 +5,7 @@ import lc.bst.ListNode;
 import java.util.PriorityQueue;
 
 public class MergeKSortedLists {
-    // O(n log n) O(n) #meta
+    // O(n log n) O(n) #meta #amazon
     public ListNode mergeKLists(ListNode[] lists) {
         PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
         for (ListNode node : lists) {

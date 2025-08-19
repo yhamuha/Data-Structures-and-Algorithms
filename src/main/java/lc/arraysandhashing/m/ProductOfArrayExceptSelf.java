@@ -3,7 +3,7 @@ package lc.arraysandhashing.m;
 import java.util.Arrays;
 
 public class ProductOfArrayExceptSelf {
-    // O(n) O(1)
+    // O(n) O(1) #amazon
     public int[] productExceptSelf(int[] nums) {
         int[] left = new int[nums.length];
         int[] right = new int[nums.length];

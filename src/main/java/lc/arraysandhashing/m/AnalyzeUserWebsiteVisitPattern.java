@@ -15,7 +15,7 @@ class Node {
 }
 
 public class AnalyzeUserWebsiteVisitPattern {
-    // O(n^3) O(n^3)
+    // O(n^3) O(n^3) #amazon
     public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
         Map<String, List<Node>> d = new HashMap<>();
         int n = username.length;

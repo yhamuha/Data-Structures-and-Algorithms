@@ -1,7 +1,7 @@
 package lc.greedy.e;
 
 public class BestTimeToBuyAndSellStock {
-    // O(n) O(1)
+    // O(n) O(1) #amazon
     public int maxProfit(int[] prices) {
         int prev = prices[0];
         int max = 0;

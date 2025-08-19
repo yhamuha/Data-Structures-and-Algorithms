@@ -1,7 +1,7 @@
 package lc.arraysandhashing.e;
 
 public class BestTimeBuyAndSell {
-    // O(n) O(1)
+    // O(n) O(1) #amazon
     public static int maxProfit(int[] prices) {
         int profit = 0, left = 0;
         for (int i = 1; i < prices.length; i++) {

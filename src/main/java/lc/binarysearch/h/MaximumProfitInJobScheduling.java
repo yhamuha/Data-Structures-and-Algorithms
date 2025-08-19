@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class MaximumProfitInJobScheduling {
-    // O(n log n) O(n)
+    // O(n log n) O(n) #amazon
     public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
         int numJobs = profit.length;
         Job[] jobs = new Job[numJobs];

@@ -3,7 +3,7 @@ package lc.stack.e;
 import java.util.Stack;
 
 public class ValidParentheses {
-    // O(n) O(n)
+    // O(n) O(n) #amazon
     static boolean isValid(String s) {
         if (s.length() % 2 != 0) return false;
         Stack<Character> stack = new Stack<>();

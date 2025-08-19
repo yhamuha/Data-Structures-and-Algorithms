@@ -18,6 +18,7 @@ class Node2 {
 }
 
 public class LRUCache {
+    // #amazon
     private Map<Integer, Node2> m;
     private Node2 head;
     private Node2 tail;
