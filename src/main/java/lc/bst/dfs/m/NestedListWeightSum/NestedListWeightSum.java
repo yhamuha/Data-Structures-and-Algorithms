@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class NestedListWeightSum {
-    // O(n) O(d)
+    // O(n) O(d) #meta
     public int depthSum(List<NestedInteger> nestedList) {
         return dfs(nestedList, 1);
     }

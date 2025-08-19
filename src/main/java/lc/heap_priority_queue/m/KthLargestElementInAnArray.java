@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class KthLargestElementInAnArray {
     static int findKthLargest(int[] nums, int k) {
-        // O(n log k) O(n)
+        // O(n log k) O(n) #meta
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int num : nums) {
             if (minHeap.size() < k)

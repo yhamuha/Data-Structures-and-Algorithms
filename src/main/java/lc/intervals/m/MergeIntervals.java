@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class MergeIntervals {
-    // O(n log n) O(n)
+    // O(n log n) O(n) #meta
     static int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
         LinkedList<int[]> merged = new LinkedList<>();

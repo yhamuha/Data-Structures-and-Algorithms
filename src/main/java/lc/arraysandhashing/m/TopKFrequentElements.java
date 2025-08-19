@@ -3,7 +3,7 @@ package lc.arraysandhashing.m;
 import java.util.*;
 
 public class TopKFrequentElements {
-    // O(n) O(n)
+    // O(n) O(n) #meta
     static int[] topKFrequent(int[] nums, int k) {
         List<Integer>[] bucket = new List[nums.length + 1]; // +1 to avoid 0-index
         // create frequency map

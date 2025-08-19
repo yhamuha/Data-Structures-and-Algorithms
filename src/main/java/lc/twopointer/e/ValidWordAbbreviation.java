@@ -1,7 +1,7 @@
 package lc.twopointer.e;
 
 public class ValidWordAbbreviation {
-    // O(m+n) O(1)
+    // O(m+n) O(1) #meta
     public static boolean validWordAbbreviation(String word, String abbr) {
         int m = word.length(), n = abbr.length();
         int i = 0, j = 0, x = 0;

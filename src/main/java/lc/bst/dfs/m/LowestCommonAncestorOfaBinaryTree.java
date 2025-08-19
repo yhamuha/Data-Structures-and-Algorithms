@@ -3,7 +3,7 @@ package lc.bst.dfs.m;
 import lc.bst.TreeNode;
 
 public class LowestCommonAncestorOfaBinaryTree {
-    // O(n) O(n) unbalanced | O(log n) balanced
+    // O(n) O(n) unbalanced | O(log n) balanced #meta
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) return null;
         if (root == p) return p;

@@ -6,7 +6,7 @@ import lc.bst.Pair;
 import java.util.*;
 
 public class BinaryTreeVerticalOrderTraversal {
-    // O(n log n) O(n)
+    // O(n log n) O(n) #meta
     public List<List<Integer>> verticalOrder(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
         if (root == null)

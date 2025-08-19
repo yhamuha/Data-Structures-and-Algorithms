@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ShortestPathInBinaryMatrix {
-    // O(n * m) O(n * m)
+    // O(n * m) O(n * m) #meta
     public int shortestPathBinaryMatrix(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0)
             return -1;

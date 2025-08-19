@@ -1,7 +1,7 @@
 package lc.binarysearch.m;
 
 public class FindPeakElement {
-    // O(log n) O(1)
+    // O(log n) O(1) #meta
     static int findPeakElement(int[] nums) {
         int left = 0;
         int right = nums.length - 1;

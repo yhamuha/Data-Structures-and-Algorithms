@@ -2,7 +2,7 @@ package lc.twopointer;
 
 public class ValidPalindromeII {
     public boolean validPalindrome(String s) {
-        // O(n) O(1)
+        // O(n) O(1) #meta
         int left = 0, right = s.length() - 1;
 
         while (left < right) {

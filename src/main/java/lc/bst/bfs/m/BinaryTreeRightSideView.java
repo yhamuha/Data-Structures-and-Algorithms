@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeRightSideView {
-    // O(n) O(n)
+    // O(n) O(n) #meta
     static List<Integer> rightSideView(TreeNode root) {
         List<Integer> resultList = new ArrayList<>();
         if (root == null) return resultList;

@@ -1,7 +1,7 @@
 package lc.twopointer.m;
 
 public class NextPermutation {
-    // O(n) O(1)
+    // O(n) O(1) #meta
     public void nextPermutation(int[] nums) {
         int index1 = -1;
         int index2 = -1, n = nums.length;

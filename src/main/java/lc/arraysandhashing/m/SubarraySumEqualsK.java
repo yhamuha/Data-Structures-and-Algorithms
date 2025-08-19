@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubarraySumEqualsK {
-    // O(n) O(n)
+    // O(n) O(n) #meta
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
         Map<Integer, Integer> map = new HashMap<>();

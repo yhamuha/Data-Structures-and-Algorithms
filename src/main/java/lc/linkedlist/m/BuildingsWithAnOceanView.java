@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class BuildingsWithAnOceanView {
-    // O(n) O(n)
+    // O(n) O(n) #meta
     public int[] findBuildings(int[] heights) {
         int max = 0;
         LinkedList<Integer> result = new LinkedList<>();

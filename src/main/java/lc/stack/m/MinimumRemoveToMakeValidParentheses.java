@@ -3,7 +3,7 @@ package lc.stack.m;
 import java.util.Stack;
 
 public class MinimumRemoveToMakeValidParentheses {
-    // O(n) O(n)
+    // O(n) O(n) #meta
     static String minRemoveToMakeValid(String s) {
         Stack<Integer> stack = new Stack<>();
         StringBuilder valid = new StringBuilder(s);

@@ -4,8 +4,8 @@ import lc.bst.ListNode;
 
 import java.util.PriorityQueue;
 
-public class MergeKSortedList {
-    // O(n log n) O(n)
+public class MergeKSortedLists {
+    // O(n log n) O(n) #meta
     public ListNode mergeKLists(ListNode[] lists) {
         PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
         for (ListNode node : lists) {
@@ -33,7 +33,7 @@ public class MergeKSortedList {
     }
 
     public static void main(String[] args) {
-        MergeKSortedList merger = new MergeKSortedList();
+        MergeKSortedLists merger = new MergeKSortedLists();
         ListNode[] lists = new ListNode[3];
         lists[0] = new ListNode(1, new ListNode(4, new ListNode(5)));
         lists[1] = new ListNode(1, new ListNode(3, new ListNode(4)));

@@ -7,7 +7,7 @@ public class RandomPickWithWeight {
     private int totalWeight;
     private Random rand;
 
-    // O(log n) O(n)
+    // O(log n) O(n) #meta
     public RandomPickWithWeight(int[] w) {
         int n = w.length;
         prefixSum = new int[n];
