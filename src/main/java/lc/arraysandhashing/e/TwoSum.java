@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
-    // O(n^2) O(1) #meta #amazon
+    // O(n^2) O(1)
     static public int[] findTwoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             int num1 = nums[i];
@@ -18,7 +18,7 @@ public class TwoSum {
         return null;
     }
 
-    // O(n) O(n)
+    // O(n) O(n) #meta #amazon #ibm
     static public int[] findTwoSumImproved(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
