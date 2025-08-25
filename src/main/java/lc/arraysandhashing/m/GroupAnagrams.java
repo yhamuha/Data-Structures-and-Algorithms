@@ -3,7 +3,7 @@ package lc.arraysandhashing.m;
 import java.util.*;
 
 public class GroupAnagrams {
-    // O(n log n) O(n)
+    // O(n log n) O(n) #ibm
     static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> groupedAnagrams = new HashMap<>();
         for(String str : strs){
