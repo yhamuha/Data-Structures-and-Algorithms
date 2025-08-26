@@ -1,10 +1,10 @@
 package misc;
 
 public class FizzBuzz {
-    // O(n) O(n)
-    public String fizzBuzz (int n) {
+    // O(n) O(n) #ibm
+    public String fizzBuzz(int n) {
         StringBuilder result = new StringBuilder();
-        for(int i=1; i<n; i++){
+        for (int i = 1; i < n; i++) {
             if (i % 15 == 0) result.append("FizzBuzz");
             else if (i % 5 == 0) result.append("Buzz");
             else if (i % 3 == 0) result.append("Fizz");
@@ -17,8 +17,7 @@ public class FizzBuzz {
     public static void main(String[] args) {
         FizzBuzz example = new FizzBuzz();
         int n = 15;
-        String result = example.fizzBuzz(n);
-        System.out.println(result);
+        System.out.println(example.fizzBuzz(n));
     }
 }
 
