@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class TopKFrequentElements {
-    // O(n log n) O(n)
+    // O(n log n) O(n) #walmart
     static int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int num : nums)
@@ -18,8 +18,7 @@ public class TopKFrequentElements {
         int index = 0;
         while (index < k) {
             Map.Entry<Integer, Integer> entry = maxHeap.poll();
-            result[index] = entry.getKey();
-            index++;
+            result[index++] = entry.getKey();
         }
         return result;
     }
