@@ -6,7 +6,7 @@ import java.util.Queue;
 public class RottingOranges {
     int[][] directions = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
 
-    // O(n^2) O(n) #amazon
+    // O(n^2) O(n) #amazon #walmart
     public int orangesRotting(int[][] grid) {
         int m = grid.length, n = grid[0].length;
         int freshOranges = 0;
