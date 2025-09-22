@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParentheses {
-    // O(n!) O(n)
+    // O(n!) O(n) #walmart
     public List<String> generateParenthesis(int n) {
         List<String> resultList = new ArrayList<>();
         backtrack(resultList, "", 0, 0, n);
