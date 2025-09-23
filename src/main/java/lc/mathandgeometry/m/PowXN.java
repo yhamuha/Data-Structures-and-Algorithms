@@ -1,7 +1,7 @@
 package lc.mathandgeometry.m;
 
 public class PowXN {
-    // O(log n) O(1)
+    // O(log n) O(1) #walmart
     public static double myPow(double x, int n) {
         double ans = 1;
         long n_temp = n;
