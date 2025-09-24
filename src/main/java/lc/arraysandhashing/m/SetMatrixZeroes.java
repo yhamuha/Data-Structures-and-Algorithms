@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SetMatrixZeroes {
-    // O(m * n) O(m + n)
+    // O(m * n) O(m + n) #walmart
     public static void setZeroes(int[][] matrix) {
         ArrayList<Integer> zeroesList = new ArrayList<>();
         for (int i = 0; i < matrix.length; i++) {
