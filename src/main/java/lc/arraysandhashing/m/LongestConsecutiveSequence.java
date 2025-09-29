@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LongestConsecutiveSequence {
-    // O(n) O(n)
+    // O(n) O(n) #walmart
     public int longestConsecutive(int[] nums) {
         int longestLength = 0;
         Map<Integer, Boolean> map = new HashMap<>();
