@@ -19,7 +19,7 @@
 16. Greedy
 17. Bit manipulations
 
-<sub>
+
 <table style="width:100%; border-collapse:collapse; font-size:12px;">
   <tr>
     <td style="vertical-align:top; width:25%; border:1px solid #ccc; padding:4px;">Sets and probability theory</td>
@@ -99,6 +99,5 @@
   </tr>
 </table>
 
-</sub>
 
 
