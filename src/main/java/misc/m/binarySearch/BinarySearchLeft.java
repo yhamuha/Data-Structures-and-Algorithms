@@ -1,4 +1,4 @@
-package misc.m.binarysearch;
+package misc.m.binarySearch;
 
 public class BinarySearchLeft {
     // O(log n) O(1)

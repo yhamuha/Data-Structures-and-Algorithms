@@ -1,4 +1,4 @@
-package misc.m.binarysearch;
+package misc.m.binarySearch;
 
 public class PivotIndex {
     // O(n) O(n)
