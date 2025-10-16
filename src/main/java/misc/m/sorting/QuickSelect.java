@@ -1,11 +1,8 @@
 package misc.m.sorting;
 
-import java.util.Random;
-
 public class QuickSelect {
     // TC: avg O(n) worst O(n^2)
     public int findKthLargest(int[] nums, int k) {
-        shuffle(nums);
         int find = nums.length - k;
         int lo = 0, hi = nums.length - 1;
         while (lo < hi) {
@@ -34,14 +31,6 @@ public class QuickSelect {
         int temp = nums[a];
         nums[a] = nums[b];
         nums[b] = temp;
-    }
-
-    private void shuffle(int[] nums) {
-        Random random = new Random();
-        for (int i = 0; i < nums.length; i++) {
-            int r = random.nextInt(i + 1);
-            swap(nums, i, r);
-        }
     }
 
     public static void main(String[] args) {
