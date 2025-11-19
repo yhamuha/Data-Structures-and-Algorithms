@@ -1,7 +1,7 @@
 package lc.binarysearch.m;
 
 public class SearchInRotatedSortedArray {
-    // O(log n) O(1) #walmart
+    // O(log n) O(1) #walmart #klarma
     static int search(int[] nums, int target) {
         int low = 0;
         int high = nums.length - 1;
