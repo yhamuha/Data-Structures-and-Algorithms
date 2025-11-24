@@ -3,7 +3,7 @@ package lc.stack.e;
 import java.util.Stack;
 
 public class RemoveAllAdjacentDuplicatesInString {
-    // O(n) O(n)
+    // O(n) O(n) #klarna
     static String removeDuplicates(String s) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
