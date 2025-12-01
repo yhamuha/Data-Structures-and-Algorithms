@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class EvaluateReversePolishNotation {
-        // O(n) O(n)
+        // O(n) O(n) #klarna
         static int evalRPN(String[] tokens) {
             Stack<Integer> stack = new Stack<>();
             Set<String> operations = Set.of("+", "-", "*", "/");
