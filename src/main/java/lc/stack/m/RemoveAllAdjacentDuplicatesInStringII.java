@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class RemoveAllAdjacentDuplicatesInStringII {
-    // O(n) O(n) #walmart
+    // O(n) O(n) #walmart #klarna
     public String removeDuplicates(String s, int k) {
         if (s == null || k <= 1)
             throw new IllegalArgumentException("Invalid Input");
@@ -21,7 +21,7 @@ public class RemoveAllAdjacentDuplicatesInStringII {
                 if (count + 1 < k)
                     countStack.push(count + 1);
                 else
-                    sb.setLength(sb.length() - k);
+                    sb.setLength(sb.length() - k); // cut k letters from sb
             } else
                 countStack.push(1);
         }
