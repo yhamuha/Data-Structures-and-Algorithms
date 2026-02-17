@@ -2,21 +2,27 @@ package lc.twopointer.m;
 
 public class ContainerWithMostWater {
     // O(n) O(1)
-    static int maxArea(int[] height) {
-        int maxArea = 0, left = 0, right = height.length-1;
-        while (left < right){
-            int localArea = (right-left) * Math.min(height[left],height[right]);
-            maxArea=Math.max(maxArea,localArea);
-            if (height[left]<height[right])
+    static Integer maxArea(int[] heights) {
+        int left = 0, right = heights.length - 1;
+        int currentMaxArea = 0;
+
+        while (left < right) {
+            int length = right - left;
+            int height = Math.min(heights[left], heights[right]);
+            int currentArea = length * height;
+
+            currentMaxArea = Math.max(currentMaxArea, currentArea);
+
+            if (heights[left] < heights[right])
                 left++;
             else
                 right--;
         }
-        return maxArea;
+        return currentMaxArea;
     }
 
     public static void main(String[] args) {
-        int[] height = {1,8,6,2,5,4,8,3,7};
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(maxArea(height));
     }
 }
