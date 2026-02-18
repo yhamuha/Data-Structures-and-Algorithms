@@ -4,7 +4,7 @@
    1. Arrays and hashing                  
    2. Stack         
    3. Monotonic stack
-   4. Two pointer                *        
+   4. <b>T</b>wo pointer       
    5. Binary search
    6. Sliding window
    7. Linked list
