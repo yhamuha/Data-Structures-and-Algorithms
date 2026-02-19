@@ -1,8 +1,7 @@
 package lc.slidingwindow.m;
 
 public class MaximumPointsYouCanObtainFromCards {
-    // O(n) O(1)
-    static int maxScore(int[] cardPoints, int k) {
+    /*static int maxScore(int[] cardPoints, int k) {
         int leftSum = 0, rightSum = 0, maxSum;
         for (int i = 0; i < k; i++)
             leftSum += cardPoints[i];
@@ -14,10 +13,27 @@ public class MaximumPointsYouCanObtainFromCards {
             maxSum = Math.max(maxSum, leftSum + rightSum);
         }
         return maxSum;
+    }*/
+    // O(n) O(1)
+    static int maxScore(int[] cards, int k) {
+        int total = 0;
+        for (int card : cards)
+            total += card;
+
+        int state = 0, maxPoints = 0, start = 0;
+        for (int end = 0; end < cards.length; end++) {
+            state += cards[end];
+            if (end - start + 1 == cards.length - k) {
+                maxPoints = Math.max(total - state, maxPoints);
+                state -= cards[start];
+                start++;
+            }
+        }
+        return maxPoints;
     }
 
     public static void main(String[] args) {
-        int[] cardPoints = {1, 2, 3, 4, 5, 6, 1};
+        int[] cardPoints = {2,11,4,5,3,9,2};
         int k = 3;
         System.out.println(maxScore(cardPoints, k));
     }

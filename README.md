@@ -6,7 +6,7 @@
    3. Monotonic stack
    4. <b>T</b>wo pointer       
    5. Binary search
-   6. Sliding window
+   6. <b>S</b>liding window
    7. Linked list
    8. Binary search tree: dfs
    9. Binary search tree: bfs
