@@ -1,10 +1,30 @@
 package lc.slidingwindow.m;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class FruitIntoBaskets {
-    // O(n) O(n)
-    static int totalFruit(int[] fruits) {
+    // O(n^3) O(n)
+    /*static int fruitIntoBaskets(int[] fruits) {
+        int maxLength = 0;
+        for (int i = 0; i < fruits.length; i++) {
+            for (int j = i; j < fruits.length; j++) {
+                Set<Integer> distinct = new HashSet<>();
+                for (int k = i; k <= j; k++)
+                    distinct.add(fruits[k]);
+                if (distinct.size() <= 2) {
+                    maxLength = Math.max(maxLength, j - i + 1);
+                } else {
+                    break;
+                }
+            }
+        }
+
+        return maxLength;
+    }*/
+
+    // O(n) O(1)
+    /*static int totalFruit(int[] fruits) {
         HashMap<Integer, Integer> map = new HashMap();
         int n = fruits.length;
         int right = 0;
@@ -32,10 +52,29 @@ public class FruitIntoBaskets {
             maxFruits = Math.max(count, maxFruits);
         }
         return maxFruits;
+    }*/
+
+    // O(n) O(1)
+    static int totalFruit(int[] fruits) {
+        int start = 0;
+        Map<Integer, Integer> basket = new HashMap<>();
+        int maxFruit = 0;
+        for (int end = 0; end < fruits.length; end++) {
+            basket.put(fruits[end], basket.getOrDefault(fruits[end], 0) + 1);
+            while (basket.size() > 2) {
+                basket.put(fruits[start], basket.get(fruits[start]) - 1);
+                if (basket.get(fruits[start]) == 0) {
+                    basket.remove(fruits[start]);
+                }
+                start++;
+            }
+            maxFruit = Math.max(maxFruit, end - start + 1);
+        }
+        return maxFruit;
     }
 
     public static void main(String[] args) {
-        int[] fruits = {0,1,2,2};
+        int[] fruits = {3, 3, 2, 1, 2, 1, 0};
         System.out.println(totalFruit(fruits));
     }
 }
