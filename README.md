@@ -15,6 +15,6 @@
    12. Heap: priority queue
    13. Graphs
    14. Dynamic programming
-   15. Intervals
+   15. <b>I</b>ntervals
    16. Greedy
    17. Bit manipulations
