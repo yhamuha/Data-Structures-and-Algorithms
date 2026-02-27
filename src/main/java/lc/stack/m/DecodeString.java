@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class DecodeString {
     // O(n) O(n)
-    static String decodeString(String s) {
+    /*static String decodeString(String s) {
         Stack<Integer> stack = new Stack<>();
         Stack<StringBuilder> stackOfStrings = new Stack<>();
         StringBuilder sb = new StringBuilder();
@@ -27,10 +27,35 @@ public class DecodeString {
                 sb.append(c);
         }
         return sb.toString();
+    }*/
+
+    // O(n) | O(n)
+    public static String decodeString(String s) {
+        Stack<String> stringStack = new Stack<>();
+        Stack<Integer> numberStack = new Stack<>();
+        String currString = "";
+        int currentNumber = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '[') {
+                stringStack.push(currString);
+                numberStack.push(currentNumber);
+                currString = "";
+                currentNumber = 0;
+            } else if (c == ']') {
+                int num = numberStack.pop();
+                String prevString = stringStack.pop();
+                currString = prevString + currString.repeat(num);
+            } else if (Character.isDigit(c)) {
+                currentNumber = currentNumber * 10 + (c - '0');
+            } else {
+                currString += c;
+            }
+        }
+        return currString;
     }
 
     public static void main(String[] args) {
-        String s = "3[a]2[bc]";
+        String s = "3[a2[c]]";
         System.out.println(decodeString(s));
     }
 }
