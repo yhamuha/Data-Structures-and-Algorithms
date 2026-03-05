@@ -25,7 +25,7 @@ public class ValidPalindromeII {
 
     public static void main(String[] args) {
         ValidPalindromeII solution = new ValidPalindromeII();
-        String s = "abca";
+        String s = "race a car";
         System.out.println(solution.validPalindrome(s));
     }
 }
