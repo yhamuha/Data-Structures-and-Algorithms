@@ -8,20 +8,26 @@ public class SummaryRanges {
     public static List<String> summaryRanges(int[] nums) {
         List<String> ranges = new ArrayList<>();
         int n = nums.length;
-        for(int i=0; i<n; i++){
+
+        for (int i = 0; i < n; i++) {
             int start = nums[i];
-            while (i+1<n && nums[i+1]==(nums[i])+1)
+
+            while (i + 1 < n && nums[i + 1] == nums[i] + 1) {
                 i++;
-            if (start != nums[i])
+            }
+
+            if (start != nums[i]) {
                 ranges.add(start + "->" + nums[i]);
-            else
-                ranges.add("" + start);
+            } else {
+                ranges.add(String.valueOf(start));
+            }
         }
+
         return ranges;
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,5,6,7,9};
+        int[] nums = {1, 2, 3, 5, 6, 7, 9};
         System.out.println(summaryRanges(nums));
     }
 }
