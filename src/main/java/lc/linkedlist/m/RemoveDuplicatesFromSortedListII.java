@@ -3,7 +3,7 @@ package lc.linkedlist.m;
 public class RemoveDuplicatesFromSortedListII {
     // O(n) O(1)
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode dummy = new ListNode(-101);
+        ListNode dummy = new ListNode(Integer.MIN_VALUE);
         ListNode res = dummy;
         ListNode prev = dummy;
         ListNode cur = head;
