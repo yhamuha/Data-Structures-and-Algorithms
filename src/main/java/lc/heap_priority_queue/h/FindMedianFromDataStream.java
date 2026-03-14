@@ -5,13 +5,16 @@ import java.util.Queue;
 
 public class FindMedianFromDataStream {
     // O(n log n) O(n)
-    Queue<Integer> maxHeap = new PriorityQueue<>((a,b) -> b-a);
+    Queue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
     Queue<Integer> minHeap = new PriorityQueue<>();
     int size = 0;
-    public FindMedianFromDataStream(){}
-    public void addNum (int num) {
+
+    public FindMedianFromDataStream() {
+    }
+
+    public void addNum(int num) {
         size++;
-        if(maxHeap.isEmpty() || num <= maxHeap.peek())
+        if (maxHeap.isEmpty() || num <= maxHeap.peek())
             maxHeap.add(num);
         else
             minHeap.add(num);
@@ -23,9 +26,10 @@ public class FindMedianFromDataStream {
             maxHeap.add(element);
         }
     }
+
     public double findMedian() {
-            if(size % 2 != 0)
-                return (double) maxHeap.peek();
+        if (size % 2 != 0)
+            return (double) maxHeap.peek();
         return (maxHeap.peek() + minHeap.peek()) / 2.0;
     }
 
