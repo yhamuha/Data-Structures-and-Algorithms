@@ -5,16 +5,14 @@ import lc.bst.TreeNode;
 public class LowestCommonAncestorOfaBinaryTree {
     // O(n) O(n) unbalanced | O(log n) balanced #meta
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) return null;
-        if (root == p) return p;
-        if (root == q) return q;
-        TreeNode lef = lowestCommonAncestor(root.left, p, q);
-        TreeNode rig = lowestCommonAncestor(root.right, p, q);
-        if (lef == null)
-            return rig;
-        if (rig == null)
-            return lef;
-        return root;
+        if (root == null || root == p || root == q)
+            return root;
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null && right != null)
+            return root;
+
+        return left != null ? left : right;
     }
 
     public static void main(String[] args) {

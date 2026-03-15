@@ -20,7 +20,7 @@ public class FlattenBinaryTreeToLinkedList {
             root.left = null;
             root = root.right;
         }
-        root.val = list.get(list.size() - 1); // put last node without creating the new one
+        root.val = list.get(list.size() - 1);
         root = node;
     }
 
