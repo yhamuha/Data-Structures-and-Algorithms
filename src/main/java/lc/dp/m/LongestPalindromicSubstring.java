@@ -1,7 +1,7 @@
 package lc.dp.m;
 
 public class LongestPalindromicSubstring {
-    // O(n) O(1)
+    // O(n^2) O(n)
     public String longestPalindrome(String s) {
         int n = s.length();
         boolean[][] dp = new boolean[n][n];
