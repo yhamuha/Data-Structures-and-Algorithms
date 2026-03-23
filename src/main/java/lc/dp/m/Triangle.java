@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Triangle {
+    // O(n^2) O(n)
     public int minimumTotal(List<List<Integer>> triangle) {
         int n = triangle.size();
         int[] dp = new int[n];
