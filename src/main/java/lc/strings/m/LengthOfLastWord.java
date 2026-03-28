@@ -1,6 +1,7 @@
 package lc.strings.m;
 
 public class LengthOfLastWord {
+    // O(n) O(1)
     public static int lengthOfLastWord(String s) {
         int i = s.length() - 1;
         int length = 0;
