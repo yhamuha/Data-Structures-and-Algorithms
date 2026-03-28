@@ -1,8 +1,8 @@
-package lc.twopointer.m;
+package lc.greedy.m;
 
 import java.util.Arrays;
 
-public class TriangleNumbers {
+public class ValidTriangleNumber {
     public static int triangleNumber(int[] nums) {
         Arrays.sort(nums);
         int count = 0;
