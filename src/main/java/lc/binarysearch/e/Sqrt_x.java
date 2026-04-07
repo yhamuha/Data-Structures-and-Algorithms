@@ -22,7 +22,7 @@ public class Sqrt_x {
 
     public static void main(String[] args) {
         var sqrt_x = new Sqrt_x();
-        int x = 4;
+        int x = 8;
         System.out.println(sqrt_x.mySqrt(x));
     }
 }
