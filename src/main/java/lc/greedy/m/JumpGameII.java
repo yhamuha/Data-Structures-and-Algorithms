@@ -6,13 +6,16 @@ public class JumpGameII {
         int destIndex = nums.length - 1;
         int coverageIndex = 0, lastJumpIndex = 0;
         int totalJumps = 0;
-        for (int i = 0; i <= nums.length; i++) {
+        for (int i = 0; i < nums.length - 1; i++) {
             coverageIndex = Math.max(coverageIndex, i + nums[i]);
-            if (lastJumpIndex == i) {
-                lastJumpIndex = coverageIndex;
+
+            if (i == lastJumpIndex) {
                 totalJumps++;
-                if (coverageIndex >= destIndex)
+                lastJumpIndex = coverageIndex;
+
+                if (coverageIndex >= destIndex) {
                     return totalJumps;
+                }
             }
         }
         return totalJumps;
