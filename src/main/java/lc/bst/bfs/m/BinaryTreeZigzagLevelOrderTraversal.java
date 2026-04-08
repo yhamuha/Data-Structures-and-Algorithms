@@ -20,7 +20,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
             for (int i = 0; i < size; i++) {
                 TreeNode temp = queue.remove();
                 if (flag) list.addLast(temp.val);
-                else list.addFirst(temp.val);
+                    else list.addFirst(temp.val);
                 if (temp.left != null) queue.add(temp.left);
                 if (temp.right != null) queue.add(temp.right);
             }
