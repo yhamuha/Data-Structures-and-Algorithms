@@ -8,7 +8,6 @@ public int hammingWeight(int n) {
         n = n & (n-1);
         cnt++;
     }
-
     return cnt;
 }
 public static void main(String[] args) {
