@@ -1,6 +1,7 @@
 package lc.strings.e;
 
 public class AddBinary {
+    // O(max(n, m)) O(max(n, m))
     public static String addBinary(String a, String b) {
         StringBuilder result = new StringBuilder();
         int i = a.length() - 1, j = b.length() - 1, carry = 0;
