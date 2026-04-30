@@ -10,7 +10,6 @@ public class SumRootToLeafNumbers {
         int[] sum = {0};
         dfs (root, 0, sum);
         return sum[0];
-
     }
     private static void dfs (TreeNode root, int currentSum, int[] sum) {
         if (root == null)
