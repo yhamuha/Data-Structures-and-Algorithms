@@ -11,9 +11,10 @@ public class ValidSudoku {
                 for (int column = 0; column < 9; column++) {
                     char number = board[row][column];
                     if (number != '.') {
-                        if (    !set.add(number + " in row " + row) ||
-                                !set.add(number + " in column " + column) ||
-                                !set.add(number + " in block " + (row / 3) + "," + (column / 3))) {
+                        boolean rowCheck = set.add(number + " in row " + row);
+                        boolean colCheck = set.add(number + " in column " + column);
+                        boolean blockCheck = set.add(number + " in block " + (row / 3) + "," + (column / 3));
+                        if (!rowCheck || !colCheck || !blockCheck) {
                             return false;
                         }
                     }
@@ -24,7 +25,7 @@ public class ValidSudoku {
 
         public static void main(String[] args) {
             char[][] board = {
-                    {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                    {'5', '3', '.', '.', '5', '.', '.', '.', '.'},
                     {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
                     {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
                     {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
