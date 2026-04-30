@@ -34,6 +34,6 @@ public class ValidSudoku {
                     {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
                     {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
             };
-            System.out.println(isValidSudoku(board)); // MUST be true
+            System.out.println(isValidSudoku(board));
         }
     }
