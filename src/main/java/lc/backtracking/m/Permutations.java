@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutations {
-    // O(n×n!) O(n×n!)
+    // O(n×n!) O(n)
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> resultList = new ArrayList<>();
         backtracking(resultList, new ArrayList<>(), nums);
