@@ -6,16 +6,17 @@ import lc.bst.TreeNode;
 public class MinimumAbsoluteDifferenceInBST {
     int prev = Integer.MAX_VALUE;
     int ans = Integer.MAX_VALUE;
+
     public int getMinimumDifference(TreeNode root) {
         dfs(root);
         return ans;
     }
 
-    public void dfs(TreeNode root){
-        if(root.left!=null) dfs(root.left);
-        ans = Math.min(ans,Math.abs(root.val-prev));
+    public void dfs(TreeNode root) {
+        if (root.left != null) dfs(root.left);
+        ans = Math.min(ans, Math.abs(root.val - prev));
         prev = root.val;
-        if(root.right!=null) dfs(root.right);
+        if (root.right != null) dfs(root.right);
     }
 
     public static void main(String[] args) {
