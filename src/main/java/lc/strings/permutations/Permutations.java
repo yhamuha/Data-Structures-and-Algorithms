@@ -2,7 +2,7 @@ package lc.strings.permutations;
 
 public class Permutations {
 
-    // tc: n!
+    // O (n!) O(n^2)
     private static void permuteAndPrint(String prefix, String str) {
         int n = str.length();
         if (n == 0) {
