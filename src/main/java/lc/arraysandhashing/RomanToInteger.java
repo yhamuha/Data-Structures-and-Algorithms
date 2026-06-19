@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RomanToInteger {
-    // O(n) O(1)
+    // O(n) O(1) - cause Roman symbols id restricted
     public int romanToInt(String s) {
         Map<Character, Integer> m = new HashMap<>();
         m.put('I', 1);
