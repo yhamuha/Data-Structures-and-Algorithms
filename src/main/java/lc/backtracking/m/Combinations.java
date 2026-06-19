@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Combinations {
-    // O(C(n,k)×k) O(C(n,k)×k)
+    // O(C(n,k)*k) O(C(n,k)*k)
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(1, n, k, new ArrayList<>(), result);
