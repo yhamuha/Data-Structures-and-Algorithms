@@ -1,6 +1,7 @@
 package lc.linkedlist.m;
 
 public class PartitionList {
+    // O(n) O(1)
     public static ListNode partition(ListNode head, int x) {
         ListNode lessDummy = new ListNode(0);
         ListNode greaterDummy = new ListNode(0);
