@@ -21,8 +21,7 @@ public class FindKPairsWithSmallestSums {
             }
         }
         List<List<Integer>> result = new ArrayList<>();
-        int n = maxHeap.size();
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < k; i++){
             int[] pairArr = maxHeap.poll();
             List<Integer> pair = new ArrayList<>();
             pair.add(pairArr[0]);
