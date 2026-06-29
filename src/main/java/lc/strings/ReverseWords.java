@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class ReverseWords {
 
     private static final String WHITESPACE = " ";
-
+    // O(n) O(n)
     public static String reverseWords(String str) {
         String[] words = str.split(WHITESPACE);
         StringBuilder reversedString = new StringBuilder();
